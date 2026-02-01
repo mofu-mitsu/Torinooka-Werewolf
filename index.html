@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>とりの丘人狼</title>
+    <!-- FontAwesomeの読み込み (CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- ==========================
+             1. タイトル画面
+        =========================== -->
+        <section id="title-screen" class="screen">
+            <div class="title-logo">
+                <i class="fa-solid fa-moon"></i>
+                <i class="fa-solid fa-feather-pointed"></i>
+            </div>
+            <h1 class="game-title">TORI-OKA<br>WEREWOLF</h1>
+            <p class="sub-title">とりの丘学園 混沌の人狼ゲーム</p>
+            
+            <div class="input-area">
+                <i class="fa-solid fa-user-pen"></i>
+                <input type="text" id="player-name-input" placeholder="あなた">
+            </div>
+
+            <button id="to-selection-btn" class="main-btn">
+                キャラ選択へ <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </section>
+
+        <!-- ==========================
+            2. キャラ選択画面 (修正)
+        =========================== -->
+        <section id="selection-screen" class="screen hidden">
+            <header class="selection-header">
+                <h2><i class="fa-solid fa-users"></i> 参加メンバー選択</h2>
+                <p>現在選択中: <span id="selected-count">0</span> 人</p>
+            </header>
+
+            <div id="class-tabs" class="tabs-container">
+                <!-- JSで生成 -->
+            </div>
+
+            <!-- 横スクロールのキャラ一覧 -->
+            <div id="char-grid" class="char-grid">
+                <!-- JSで生成 -->
+            </div>
+
+            <!-- ★ NEW: キャラプロフィール表示エリア -->
+            <div id="char-details-preview" class="char-details-box hidden">
+                <div class="details-content">
+                    <img id="detail-img" src="" alt="icon">
+                    <div class="text-info">
+                        <h3 id="detail-name">名前</h3>
+                        <p class="meta-info">
+                            <span id="detail-gender"><i class="fa-solid fa-venus-mars"></i> ?</span>
+                            <span id="detail-mbti">MBTI</span>
+                            <span id="detail-class">Class</span>
+                        </p>
+                        <p id="detail-profile" class="profile-text">ここにプロフィールが入ります。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-action">
+                <button id="game-start-btn" class="main-btn disabled">
+                    配役決定して開始 <i class="fa-solid fa-play"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- ==========================
+            3. ゲーム画面 (修正)
+        =========================== -->
+        <section id="game-screen" class="screen hidden">
+            <!-- ヘッダー：役職とステータス（議論中は小さくなる） -->
+            <div id="game-header-area">
+                <div id="my-role-area" class="role-reveal-area">
+                    <h3>あなたの役職</h3>
+                    <div id="my-role-card" class="role-card flip-in">
+                        <!-- JSで描画 -->
+                    </div>
+                </div>
+                
+                <div class="members-area">
+                    <h3><i class="fa-solid fa-list-ul"></i> 参加者リスト</h3>
+                    <div id="members-list" class="members-grid">
+                        <!-- JSで生成 -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- ★ NEW: 議論ログエリア（最初は隠しておく） -->
+            <div id="dialogue-area" class="dialogue-container hidden">
+                <!-- ここにチャットが流れる -->
+            </div>
+
+            <div class="footer-action">
+                <button id="start-day-btn" class="main-btn">
+                    初日の議論へ <i class="fa-solid fa-comments"></i>
+                </button>
+            </div>
+        </section>
+
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
