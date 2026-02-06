@@ -370,5 +370,89 @@ input[type="text"] {
 .dialogue-container.hidden {
     display: none;
 }
+/* --- 議論中の固定ヘッダー --- */
+.discussion-header {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    border-bottom: 2px solid #ff0055;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* 左寄せと右寄せ */
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
 
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+#mini-role-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+}
+
+.sub-btn {
+    background: #444;
+    color: #fff;
+    border: 1px solid #888;
+    padding: 5px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.sub-btn:hover {
+    background: #666;
+}
+
+/* --- モーダル（ポップアップ） --- */
+.modal {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background: #2a1a3a;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px solid #ff0055;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+}
+
+#role-breakdown-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin: 20px 0;
+}
+
+#role-breakdown-list li {
+    padding: 5px;
+    border-bottom: 1px solid #444;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 投票ボタン用色 */
+.vote-color {
+    background: #ff4400 !important;
+}
 /* メンバーリスト（議論中は下に固定とかにしてもいいけど今回はヘッダーごと消す仕様でスッキリさせる） */
