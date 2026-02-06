@@ -1,5 +1,5 @@
 // ==========================================
-// script.js - とりの丘人狼 メインロジック (修正版)
+// script.js - とりの丘人狼 メインロジック (修正版: shuffleArray追加)
 // ==========================================
 
 // --- グローバル変数 ---
@@ -33,8 +33,20 @@ const detailMbti = document.getElementById("detail-mbti");
 const detailClass = document.getElementById("detail-class");
 const detailProfile = document.getElementById("detail-profile");
 
-// 議論ログエリア (最初はDOMに存在しない)
-// ★ここでgetElementByIdしてもまだ無いので、nullのままにしておく
+// ゲーム画面パーツ
+const discussionHeader = document.getElementById("discussion-header");
+const gameSetupArea = document.getElementById("game-setup-area");
+const miniRoleIcon = document.getElementById("mini-role-icon");
+const miniRoleText = document.getElementById("mini-role-text");
+const showInfoBtn = document.getElementById("show-info-btn");
+const infoModal = document.getElementById("info-modal");
+const closeModalBtn = document.getElementById("close-modal-btn");
+const roleBreakdownList = document.getElementById("role-breakdown-list");
+const actionButtons = document.getElementById("action-buttons");
+const nextTurnBtn = document.getElementById("next-turn-btn");
+const votePhaseBtn = document.getElementById("vote-phase-btn");
+
+// 議論ログエリア
 let dialogueArea = null; 
 
 // ==========================================
@@ -138,7 +150,14 @@ function updateStartButton() {
 // ==========================================
 // 3. ゲーム開始 & 配役
 // ==========================================
+
 gameStartBtn.addEventListener("click", () => {
+    // 参加者が0人だとエラーになるのでガード
+    if (selectedCharIds.length === 0) {
+        alert("参加者を最低1人は選んでね！");
+        return;
+    }
+
     setupParticipants();
     assignRoles();
     
@@ -146,8 +165,6 @@ gameStartBtn.addEventListener("click", () => {
     gameScreen.classList.remove("hidden");
     
     renderGameScreen();
-    
-    // ★ここで確実にログエリアを生成・取得する！
     createDialogueArea(); 
 });
 
@@ -160,7 +177,6 @@ function setupParticipants() {
             isPlayer: false,
             isAlive: true,
             status: "alive",
-            // メンタル初期値がない場合は100にする
             mental: charData.params.mental || 100 
         });
     });
@@ -192,7 +208,10 @@ function assignRoles() {
         for(let i=0; i<villagers; i++) base.push("村人");
         roles = base.slice(0, total);
     }
-    roles = shuffleArray(roles);
+    
+    // ★ここがエラーの原因だった！関数を追加したので動くはず！
+    roles = shuffleArray(roles); 
+
     participants.forEach((p, index) => {
         p.role = roles[index];
     });
@@ -242,12 +261,8 @@ function getRoleDisplayInfo(roleName) {
     return { cssClass: info.css, img: `img/cards/${info.img}.png` };
 }
 
-// ★ログエリア生成関数（HTMLにあるdivを取得する形に修正）
 function createDialogueArea() {
-    // index.htmlにあらかじめ書いておいた id="dialogue-area" を取得する
     dialogueArea = document.getElementById("dialogue-area");
-    
-    // 中身をクリアしておく
     if (dialogueArea) {
         dialogueArea.innerHTML = "";
     } else {
@@ -258,44 +273,134 @@ function createDialogueArea() {
 // ==========================================
 // 4. 議論パート
 // ==========================================
+
 startDayBtn.addEventListener("click", () => {
+    // 1. レイアウト切り替え
     startDayBtn.classList.add("hidden");
-    gameScreen.classList.add("discussion-mode");
-    
-    // HTML上のログエリアを表示
-    if(dialogueArea) dialogueArea.classList.remove("hidden");
-    
+    gameSetupArea.classList.add("hidden"); // デカいカードを消す
+    discussionHeader.classList.remove("hidden"); // 上部バーを表示
+    dialogueArea.classList.remove("hidden");
+    actionButtons.classList.remove("hidden"); // 操作ボタン表示
+
+    // 2. ミニヘッダーに情報をセット
+    const me = participants.find(p => p.isPlayer);
+    const roleInfo = getRoleDisplayInfo(me.role);
+    miniRoleIcon.innerHTML = `<img src="${roleInfo.img}" style="width:100%; height:100%;">`;
+    miniRoleText.innerText = `${me.role}`;
+
     addLog("system", "=== 1日目の朝が来ました ===");
-    addLog("system", "（役職カードを隠しました。上部のバーで確認できます）");
     
+    // イントロ開始
     playIntroPhase();
 });
 
-async function playIntroPhase() {
-    const npcs = participants.filter(p => !p.isPlayer && p.isAlive);
-    for (const npc of npcs) {
-        await new Promise(r => setTimeout(r, 500));
-        const text = getRandomDialogue(npc, "intro");
-        addLog(npc.id, text, "intro");
+// --- 内訳モーダル操作 ---
+showInfoBtn.addEventListener("click", () => {
+    updateRoleBreakdown();
+    infoModal.classList.remove("hidden");
+});
+closeModalBtn.addEventListener("click", () => {
+    infoModal.classList.add("hidden");
+});
+
+function updateRoleBreakdown() {
+    const breakdown = {};
+    participants.forEach(p => {
+        breakdown[p.role] = (breakdown[p.role] || 0) + 1;
+    });
+
+    roleBreakdownList.innerHTML = "";
+    for (const [role, count] of Object.entries(breakdown)) {
+        const li = document.createElement("li");
+        li.innerHTML = `<span>${role}</span> <span>x ${count}</span>`;
+        roleBreakdownList.appendChild(li);
     }
-    addLog("system", "議論を開始してください。");
 }
 
-function getRandomDialogue(char, type, target = null) {
-    if (!char.dialogues || !char.dialogues[type]) {
-        return "……";
+// --- 議論進行ロジック ---
+
+// 議論を進めるボタン
+nextTurnBtn.addEventListener("click", () => {
+    playDiscussionTurn();
+});
+
+// イントロフェーズ
+async function playIntroPhase() {
+    const npcs = participants.filter(p => !p.isPlayer && p.isAlive);
+    
+    // specificチェック
+    for (const npc of npcs) {
+        await sleep(600);
+        let text = getSpecificDialogue(npc, "intro", null); 
+        
+        if (!text) {
+            text = getRandomDialogue(npc, "intro"); 
+        }
+        addLog(npc.id, text, "intro");
     }
+    addLog("system", "自己紹介終了。議論を開始します。（「議論を進める」を押してね）");
+}
+
+// 議論1ターン分
+async function playDiscussionTurn() {
+    const speakers = participants.filter(p => !p.isPlayer && p.isAlive);
+    if (speakers.length < 2) return; 
+
+    const speaker = speakers[Math.floor(Math.random() * speakers.length)];
+    const targets = participants.filter(p => p.id !== speaker.id && p.isAlive);
+    const target = targets[Math.floor(Math.random() * targets.length)];
+
+    // 行動決定 (簡易ランダム)
+    const actionType = Math.random() > 0.3 ? "accuse" : "defend"; 
+
+    // Specificチェック
+    let text = getSpecificDialogue(speaker, actionType, target);
+
+    if (!text) {
+        // 通常会話
+        let dialKey = actionType === "accuse" ? 
+            (Math.random() > 0.5 ? "accuse_strong" : "accuse_weak") : "defend_other";
+        
+        text = getRandomDialogue(speaker, dialKey, target);
+    }
+
+    addLog(speaker.id, text);
+}
+
+
+// --- Specific会話の取得 ---
+function getSpecificDialogue(char, situation, target) {
+    if (!char.dialogues || !char.dialogues.specific) return null;
+
+    const match = char.dialogues.specific.find(spec => {
+        // targetが指定されている場合はID一致チェック
+        const targetMatch = target ? (spec.target === target.id) : true;
+        // situationの前方一致 (accuse_weak -> accuse)
+        const situationMatch = spec.situation === situation || situation.startsWith(spec.situation);
+
+        return targetMatch && situationMatch;
+    });
+
+    if (match) {
+        const lines = match.texts;
+        let text = lines[Math.floor(Math.random() * lines.length)];
+        if(target) text = text.replace(/{target}/g, target.name);
+        return text;
+    }
+    return null;
+}
+
+// --- 共通関数 ---
+
+function getRandomDialogue(char, type, target = null) {
+    if (!char.dialogues || !char.dialogues[type]) return "……";
+    
     const lines = char.dialogues[type];
     let text = lines[Math.floor(Math.random() * lines.length)];
     
-    // ★自己投票・自分指名時の置換処理
     if (target) {
-        if (target.id === char.id) {
-            // 自分自身を指名した場合
-            text = text.replace(/{target}/g, "自分"); // キャラの性別や一人称に合わせて変えるならここを拡張
-        } else {
-            text = text.replace(/{target}/g, target.name);
-        }
+        if (target.id === char.id) text = text.replace(/{target}/g, "私");
+        else text = text.replace(/{target}/g, target.name);
     } else {
         text = text.replace(/{target}/g, "みんな");
     }
@@ -303,11 +408,7 @@ function getRandomDialogue(char, type, target = null) {
 }
 
 function addLog(charId, text, emotion = "normal") {
-    // エラーガード：dialogueAreaがなければ何もしない
-    if (!dialogueArea) {
-        console.error("Log area is null!");
-        return; 
-    }
+    if (!dialogueArea) return;
 
     const logItem = document.createElement("div");
     logItem.style.marginBottom = "10px";
@@ -315,7 +416,7 @@ function addLog(charId, text, emotion = "normal") {
     logItem.style.alignItems = "center";
     
     if (charId === "system") {
-        logItem.innerHTML = `<span style="color:#ffcc00; font-weight:bold;">📢 ${text}</span>`;
+        logItem.innerHTML = `<span style="color:#ffcc00; font-weight:bold; width:100%; text-align:center; display:block; padding:10px; background:rgba(255,200,0,0.1);">📢 ${text}</span>`;
     } else {
         const char = participants.find(p => p.id === charId);
         if (!char) return;
@@ -325,18 +426,22 @@ function addLog(charId, text, emotion = "normal") {
 
         logItem.innerHTML = `
             <img src="${imgSrc}" onerror="this.src='${fallbackSrc}'" 
-                 style="width:50px; height:50px; border-radius:50%; margin-right:10px; border:2px solid #fff; object-fit:cover;">
+                 style="width:50px; height:50px; border-radius:50%; margin-right:10px; border:2px solid #fff; object-fit:cover; flex-shrink:0;">
             <div>
-                <div style="font-size:0.8rem; color:#ccc;">${char.name}</div>
-                <div style="background:rgba(255,255,255,0.1); padding:8px; border-radius:8px;">${text}</div>
+                <div style="font-size:0.8rem; color:#ccc;">${char.name} (${char.class})</div>
+                <div style="background:rgba(255,255,255,0.1); padding:8px; border-radius:8px; line-height:1.4;">${text}</div>
             </div>
         `;
     }
-    
     dialogueArea.appendChild(logItem);
     dialogueArea.scrollTop = dialogueArea.scrollHeight; 
 }
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+// ★迷子になってた関数をここに追加！★
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -344,4 +449,3 @@ function shuffleArray(array) {
     }
     return array;
 }
-
