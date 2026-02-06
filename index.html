@@ -73,42 +73,66 @@
             </div>
         </section>
 
-        <!-- ==========================
-            3. ゲーム画面 (修正)
-        =========================== -->
-        <section id="game-screen" class="screen hidden">
-            <!-- ヘッダー：役職とステータス（議論中は小さくなる） -->
-            <div id="game-header-area">
-                <div id="my-role-area" class="role-reveal-area">
-                    <h3>あなたの役職</h3>
-                    <div id="my-role-card" class="role-card flip-in">
-                        <!-- JSで描画 -->
-                    </div>
-                </div>
-                
-                <div class="members-area">
-                    <h3><i class="fa-solid fa-list-ul"></i> 参加者リスト</h3>
-                    <div id="members-list" class="members-grid">
-                        <!-- JSで生成 -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- ★ NEW: 議論ログエリア（最初は隠しておく） -->
-            <div id="dialogue-area" class="dialogue-container hidden">
-                <!-- ここにチャットが流れる -->
-            </div>
-
-            <div class="footer-action">
-                <button id="start-day-btn" class="main-btn">
-                    初日の議論へ <i class="fa-solid fa-comments"></i>
-                </button>
-            </div>
-        </section>
-
+<!-- ==========================
+     3. ゲーム画面 (修正)
+=========================== -->
+<section id="game-screen" class="screen hidden">
+    
+    <!-- ★ NEW: 議論中だけ出る固定ヘッダー -->
+    <div id="discussion-header" class="discussion-header hidden">
+        <div class="header-left">
+            <div id="mini-role-icon"></div> <!-- ここにアイコン画像 -->
+            <span id="mini-role-text">役職: ???</span>
+        </div>
+        <button id="show-info-btn" class="sub-btn"><i class="fa-solid fa-circle-info"></i> 内訳</button>
     </div>
+
+    <!-- 配役決定時のデカい表示（議論開始で消える） -->
+    <div id="game-setup-area">
+        <div id="my-role-area" class="role-reveal-area">
+            <h3>あなたの役職</h3>
+            <div id="my-role-card" class="role-card flip-in">
+                <!-- JSで描画 -->
+            </div>
+        </div>
+        
+        <div class="members-area">
+            <h3><i class="fa-solid fa-list-ul"></i> 参加者リスト</h3>
+            <div id="members-list" class="members-grid">
+                <!-- JSで生成 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 議論ログエリア -->
+    <div id="dialogue-area" class="dialogue-container hidden">
+        <!-- ここにチャットが流れる -->
+    </div>
+
+    <!-- アクションボタンエリア -->
+    <div class="footer-action">
+        <button id="start-day-btn" class="main-btn">
+            初日の議論へ <i class="fa-solid fa-comments"></i>
+        </button>
+        <!-- ★ NEW: 議論中の操作ボタン（最初は隠す） -->
+        <div id="action-buttons" class="hidden">
+            <button id="next-turn-btn" class="main-btn">議論を進める <i class="fa-solid fa-forward"></i></button>
+            <button id="vote-phase-btn" class="main-btn vote-color">投票へ <i class="fa-solid fa-gavel"></i></button>
+        </div>
+    </div>
+</section>
+
+<!-- ★ NEW: 内訳確認用モーダル（ポップアップ） -->
+<div id="info-modal" class="modal hidden">
+    <div class="modal-content">
+        <h3><i class="fa-solid fa-users-gear"></i> 現在の生存状況</h3>
+        <ul id="role-breakdown-list"></ul>
+        <button id="close-modal-btn" class="main-btn">閉じる</button>
+    </div>
+</div>
 
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
