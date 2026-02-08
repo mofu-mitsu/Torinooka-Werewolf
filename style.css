@@ -323,15 +323,29 @@ input[type="text"] {
 
 /* --- ゲーム画面のレイアウト調整 --- */
 #game-screen {
-    /* 縦並びにして、中身がいっぱいになったらスクロール */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%; /* app-containerの高さを使う */
 }
 
-#game-header-area {
+#game-setup-area { /* 旧 #game-header-area */
     width: 100%;
     transition: all 0.5s ease;
+}
+
+/* gameSetupAreaが隠れる時のCSS */
+#game-setup-area.hidden {
+    height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 議論ログのメッセージ部分の幅を調整 */
+.dialogue-container div > div:last-child {
+    max-width: calc(100% - 70px); /* アイコンの幅 + margin分を引く */
 }
 
 /* 議論モードになった時の変化（ヘッダーを隠す/小さくする） */
@@ -377,13 +391,14 @@ input[type="text"] {
     border-bottom: 2px solid #ff0055;
     padding: 10px 20px;
     display: flex;
-    justify-content: space-between; /* 左寄せと右寄せ */
+    justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 100;
     margin-bottom: 10px;
     border-radius: 8px;
+    box-sizing: border-box; /* paddingを含めてwidth100%になるように */
 }
 
 .header-left {
@@ -394,12 +409,22 @@ input[type="text"] {
     font-size: 1.1rem;
 }
 
-#mini-role-icon img {
-    width: 40px;
+#mini-role-icon {
+    width: 40px; /* 親要素のサイズを指定 */
     height: 40px;
+    display: flex; /* flexboxにして子要素を中央寄せ */
+    justify-content: center;
+    align-items: center;
+}
+
+#mini-role-icon img {
+    width: 100%; /* 親要素いっぱいに広げる */
+    height: 100%;
     border-radius: 5px;
     border: 1px solid #fff;
+    object-fit: cover;
 }
+
 
 .sub-btn {
     background: #444;
@@ -456,3 +481,267 @@ input[type="text"] {
     background: #ff4400 !important;
 }
 /* メンバーリスト（議論中は下に固定とかにしてもいいけど今回はヘッダーごと消す仕様でスッキリさせる） */
+/* アクションタイプ切り替えボタン */
+.action-type-selector {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.act-type-btn {
+    padding: 8px 16px;
+    background: #444;
+    border: 1px solid #888;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.act-type-btn.selected {
+    background: #22cc88; /* 選択中は緑 */
+    border-color: #fff;
+    font-weight: bold;
+}
+
+/* セレクトボックス周り */
+.selector-area {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.selector-area label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    background: #fff;
+    color: #333;
+}
+
+.modal-footer {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* --- 投票画面モーダル --- */
+#vote-modal {
+    z-index: 2000; /* 最前面 */
+}
+
+.vote-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.vote-card {
+    background: #444;
+    border: 2px solid #666;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.vote-card:hover {
+    background: #666;
+    border-color: #ff4400;
+}
+
+.vote-card.selected {
+    background: #ff4400;
+    border-color: #fff;
+    transform: scale(1.05);
+}
+
+.vote-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    object-fit: cover;
+}
+
+/* 処刑演出用 */
+.execution-log {
+    color: #ff0055;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 2px solid #ff0055;
+    padding: 20px;
+    background: rgba(0,0,0,0.8);
+    margin: 20px 0;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+    100% { transform: translateX(0); }
+}
+/* --- 人狼・占い結果のマーク --- */
+.wolf-mark {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff0055;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #fff;
+    z-index: 10;
+}
+
+.member-chip {
+    position: relative; /* バッジ表示用 */
+}
+
+/* 夜フェーズの演出 */
+.night-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(10, 0, 20, 0.95);
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.night-title {
+    font-size: 2rem;
+    color: #aaddff;
+    text-shadow: 0 0 10px #0055ff;
+    margin-bottom: 20px;
+}
+
+/* リザルトカード */
+.result-card {
+    background: #333;
+    border: 2px solid #555;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.result-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    object-fit: cover;
+}
+
+.result-card .role-badge {
+    display: block;
+    font-weight: bold;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    padding: 2px 5px;
+    border-radius: 4px;
+    color: #000;
+}
+
+/* 陣営ごとの色 */
+.win-human .role-badge { background: #00ccff; }
+.win-wolf .role-badge { background: #ff0055; }
+
+/* --- ターンカウンター（日没ゲージ） --- */
+.turn-counter {
+    background: rgba(0, 0, 0, 0.6);
+    color: #ffaa00;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid #ffaa00;
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-right: 10px;
+}
+
+/* 夜の会話ログ（オーバーレイ内） */
+.night-chat {
+    background: rgba(255, 0, 85, 0.2);
+    border: 1px solid #ff0055;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    text-align: left;
+    width: 80%;
+    max-width: 400px;
+    font-size: 0.9rem;
+}
+
+/* BGMボタン */
+.bgm-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 2000;
+}
+
+/* オプションエリア */
+.options-area {
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.options-area summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.roles-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.roles-options label {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* 役職カード (リザルト等) */
+.win-fox .role-badge { background: #ffaa00; color: #000; } /* 妖狐勝利色 */
+.win-teru .role-badge { background: #eeeeee; color: #000; } /* てるてる勝利色 */
