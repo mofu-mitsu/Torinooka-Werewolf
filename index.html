@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>とりの丘人狼</title>
-    <!-- FontAwesomeの読み込み (CDN) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- BGM -->
+    <audio id="bgm-title" loop><source src="wolf_title.mp3" type="audio/mp3"></audio>
+    <audio id="bgm-noon" loop><source src="wolf_noon.mp3" type="audio/mp3"></audio>
+    <audio id="bgm-night" loop><source src="wolf_night.mp3" type="audio/mp3"></audio>
+    
+    <button id="bgm-toggle" class="bgm-btn"><i class="fa-solid fa-volume-high"></i></button>
 
     <div class="app-container">
-        <!-- ==========================
-             1. タイトル画面
-        =========================== -->
+        <!-- 1. タイトル画面 -->
         <section id="title-screen" class="screen">
             <div class="title-logo">
                 <i class="fa-solid fa-moon"></i>
@@ -27,112 +30,195 @@
                 <input type="text" id="player-name-input" placeholder="あなた">
             </div>
 
-            <button id="to-selection-btn" class="main-btn">
-                キャラ選択へ <i class="fa-solid fa-chevron-right"></i>
-            </button>
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <button id="to-selection-btn" class="main-btn">キャラ選択へ <i class="fa-solid fa-chevron-right"></i></button>
+                <button id="spectator-mode-btn" class="main-btn" style="background: #8844ff;">観戦モード <i class="fa-solid fa-tv"></i></button>
+            </div>
+            <button id="show-rules-btn" class="sub-btn" style="margin-top:20px;">ルール・役職説明</button>
         </section>
 
-        <!-- ==========================
-            2. キャラ選択画面 (修正)
-        =========================== -->
+        <!-- 2. キャラ選択画面 -->
         <section id="selection-screen" class="screen hidden">
             <header class="selection-header">
                 <h2><i class="fa-solid fa-users"></i> 参加メンバー選択</h2>
                 <p>現在選択中: <span id="selected-count">0</span> 人</p>
             </header>
 
-            <div id="class-tabs" class="tabs-container">
-                <!-- JSで生成 -->
+            <div class="options-area">
+                <details>
+                    <summary><i class="fa-solid fa-gear"></i> 追加役職オプション</summary>
+                    <div class="roles-options">
+                        <label><input type="checkbox" class="role-opt" value="妖狐"> 妖狐</label>
+                        <label><input type="checkbox" class="role-opt" value="狂信者"> 狂信者</label>
+                        <label><input type="checkbox" class="role-opt" value="共有者"> 共有者</label>
+                        <label><input type="checkbox" class="role-opt" value="てるてる坊主"> てるてる</label>
+                        <label><input type="checkbox" class="role-opt" value="背徳者"> 背徳者</label>
+                        <label><input type="checkbox" class="role-opt" value="猫又"> 猫又</label>
+                        <label><input type="checkbox" class="role-opt" value="番犬"> 番犬</label>
+                        <label><input type="checkbox" class="role-opt" value="訪問者"> 訪問者</label>
+                    </div>
+                </details>
             </div>
 
-            <!-- 横スクロールのキャラ一覧 -->
-            <div id="char-grid" class="char-grid">
-                <!-- JSで生成 -->
-            </div>
-
-            <!-- ★ NEW: キャラプロフィール表示エリア -->
+            <div id="class-tabs" class="tabs-container"></div>
+            <div id="char-grid" class="char-grid"></div>
             <div id="char-details-preview" class="char-details-box hidden">
                 <div class="details-content">
                     <img id="detail-img" src="" alt="icon">
                     <div class="text-info">
                         <h3 id="detail-name">名前</h3>
                         <p class="meta-info">
-                            <span id="detail-gender"><i class="fa-solid fa-venus-mars"></i> ?</span>
-                            <span id="detail-mbti">MBTI</span>
-                            <span id="detail-class">Class</span>
+                            <span id="detail-gender"></span>
+                            <span id="detail-mbti"></span>
+                            <span id="detail-class"></span>
                         </p>
-                        <p id="detail-profile" class="profile-text">ここにプロフィールが入ります。</p>
+                        <p id="detail-profile" class="profile-text"></p>
                     </div>
                 </div>
             </div>
-
             <div class="footer-action">
-                <button id="game-start-btn" class="main-btn disabled">
-                    配役決定して開始 <i class="fa-solid fa-play"></i>
-                </button>
+                <button id="game-start-btn" class="main-btn disabled">配役決定して開始 <i class="fa-solid fa-play"></i></button>
             </div>
         </section>
 
-<!-- ==========================
-     3. ゲーム画面 (修正)
-=========================== -->
-<section id="game-screen" class="screen hidden">
-    
-    <!-- ★ NEW: 議論中だけ出る固定ヘッダー -->
-    <div id="discussion-header" class="discussion-header hidden">
-        <div class="header-left">
-            <div id="mini-role-icon"></div> <!-- ここにアイコン画像 -->
-            <span id="mini-role-text">役職: ???</span>
-        </div>
-        <button id="show-info-btn" class="sub-btn"><i class="fa-solid fa-circle-info"></i> 内訳</button>
+        <!-- 3. ゲーム画面 -->
+        <section id="game-screen" class="screen hidden">
+            <div id="discussion-header" class="discussion-header hidden">
+                <div class="header-left">
+                    <div id="mini-role-icon"></div>
+                    <span id="mini-role-text"></span>
+                </div>
+                <button id="show-info-btn" class="sub-btn"><i class="fa-solid fa-circle-info"></i> 内訳</button>
+            </div>
+
+            <div id="game-setup-area">
+                <div id="my-role-area" class="role-reveal-area">
+                    <h3>あなたの役職</h3>
+                    <div id="my-role-card" class="role-card flip-in"></div>
+                </div>
+                <div class="members-area">
+                    <h3><i class="fa-solid fa-list-ul"></i> 参加者リスト</h3>
+                    <div id="members-list" class="members-grid"></div>
+                </div>
+            </div>
+
+            <div id="dialogue-area" class="dialogue-container hidden"></div>
+
+            <div class="footer-action">
+                <button id="start-day-btn" class="main-btn">初日の議論へ <i class="fa-solid fa-comments"></i></button>
+                <div id="action-buttons" class="hidden" style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+                    <button id="next-turn-btn" class="main-btn">議論を進める <i class="fa-solid fa-forward"></i></button>
+                    <button id="player-act-btn" class="main-btn" style="background:#22cc88;">発言する <i class="fa-solid fa-comment-dots"></i></button>
+                    <button id="skip-btn" class="main-btn hidden" style="background:#555;">結果までスキップ <i class="fa-solid fa-forward-fast"></i></button>
+                </div>
+            </div>
+        </section>
     </div>
 
-    <!-- 配役決定時のデカい表示（議論開始で消える） -->
-    <div id="game-setup-area">
-        <div id="my-role-area" class="role-reveal-area">
-            <h3>あなたの役職</h3>
-            <div id="my-role-card" class="role-card flip-in">
-                <!-- JSで描画 -->
+    <!-- モーダル類 -->
+    <div id="info-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3><i class="fa-solid fa-users-gear"></i> 配役内訳</h3>
+            <ul id="role-breakdown-list"></ul>
+            <button id="close-modal-btn" class="main-btn">閉じる</button>
+        </div>
+    </div>
+
+    <!-- ★ ルール説明モーダル -->
+    <div id="rules-modal" class="modal hidden">
+        <div class="modal-content" style="max-width:700px; text-align:left; max-height:80vh; overflow-y:auto;">
+            <h3><i class="fa-solid fa-book"></i> ルール・役職説明</h3>
+            <h4>■ 勝利条件</h4>
+            <p><strong>村人陣営:</strong> 人狼を全滅させれば勝利。</p>
+            <p><strong>人狼陣営:</strong> 村人の数を人狼以下に減らせば勝利。</p>
+            <p><strong>第三陣営:</strong> それぞれ固有の条件を満たせば単独勝利。</p>
+            <hr>
+            <h4>■ 村人陣営</h4>
+            <ul>
+                <li><strong>村人:</strong> 特殊能力はないが、議論と投票で人狼を見つける。</li>
+                <li><strong>占い師:</strong> 夜に1人を占い、「人狼」か「人間」かを知る。</li>
+                <li><strong>霊媒師:</strong> 処刑された人が「人狼」か「人間」かを知る。</li>
+                <li><strong>騎士:</strong> 夜に1人を守る。人狼の襲撃を防ぐ。</li>
+                <li><strong>共有者:</strong> 2人組。お互いを知っており、夜に相談できる。</li>
+                <li><strong>パン屋:</strong> 生きている間、朝に「パン屋の知らせ」が届く。</li>
+                <li><strong>番犬:</strong> 初夜に飼い主を選び、その家を見張る特殊な護衛役。</li>
+                <li><strong>猫又:</strong> 処刑または噛まれた際、ランダムで1人を道連れにする。</li>
+                <li><strong>訪問者:</strong> 夜に誰かの家を訪問する。能力はないが情報を得られることがある。</li>
+            </ul>
+            <h5>▼ 番犬の詳細</h5>
+            <ul style="font-size:0.85rem; line-height:1.6;">
+                <li>初夜に「飼い主」を1人選ぶ。以後、毎晩その飼い主を守る。</li>
+                <li>番犬は飼い主の正体を知らない。</li>
+                <li>飼い主が人狼だと判明した場合、次の夜にその人狼を噛み殺す（1回限り）。</li>
+                <li>飼い主の家に訪問者がいた場合、通知される。</li>
+            </ul>
+            <hr>
+            <h4>■ 人狼陣営</h4>
+            <ul>
+                <li><strong>人狼:</strong> 夜に1人を襲撃する。</li>
+                <li><strong>狂人:</strong> 人狼の味方。能力はない。</li>
+                <li><strong>狂信者:</strong> 人狼が誰か知っている狂人。</li>
+            </ul>
+            <hr>
+            <h4>■ 第三陣営・その他</h4>
+            <ul>
+                <li><strong>妖狐:</strong> 人狼にも村人にも属さない。最後まで生き残れば単独勝利。占われると死ぬ。人狼に噛まれても死なない。</li>
+                <li><strong>てるてる坊主:</strong> 処刑されれば単独勝利。噛まれると負け。</li>
+                <li><strong>背徳者:</strong> 妖狐陣営。妖狐が誰か知っている。妖狐が死ぬと道連れで死ぬ。</li>
+            </ul>
+            <div style="text-align:center; margin-top:20px;">
+                <button id="close-rules-btn" class="main-btn">閉じる</button>
             </div>
         </div>
-        
-        <div class="members-area">
-            <h3><i class="fa-solid fa-list-ul"></i> 参加者リスト</h3>
-            <div id="members-list" class="members-grid">
-                <!-- JSで生成 -->
+    </div>
+
+    <div id="action-modal" class="modal hidden">
+        <div class="modal-content">
+            <h3><i class="fa-solid fa-bullhorn"></i> 行動を選択</h3>
+            <div class="action-type-selector">
+                <button class="act-type-btn selected" data-type="accuse">疑う</button>
+                <button class="act-type-btn" data-type="defend">かばう</button>
+                <button class="act-type-btn" data-type="co">役職CO</button>
+                <button class="act-type-btn" data-type="report">結果報告</button>
+            </div>
+            <div id="target-selector-area" class="selector-area">
+                <label>誰に対して？</label>
+                <select id="target-select"></select>
+            </div>
+            <div id="role-selector-area" class="selector-area hidden">
+                <label>なんと名乗る？</label>
+                <select id="role-co-select">
+                    <option value="村人">村人</option>
+                    <option value="占い師">占い師</option>
+                    <option value="霊媒師">霊媒師</option>
+                    <option value="騎士">騎士</option>
+                    <option value="狂人">狂人</option>
+                    <option value="人狼">人狼</option>
+                </select>
+            </div>
+            <div id="result-selector-area" class="selector-area hidden">
+                <label>判定結果は？</label>
+                <select id="result-select">
+                    <option value="white">人間 (シロ)</option>
+                    <option value="black">人狼 (クロ)</option>
+                </select>
+            </div>
+            <div class="modal-footer">
+                <button id="execute-action-btn" class="main-btn">発言する</button>
+                <button id="close-action-modal-btn" class="sub-btn">キャンセル</button>
             </div>
         </div>
     </div>
 
-    <!-- 議論ログエリア -->
-    <div id="dialogue-area" class="dialogue-container hidden">
-        <!-- ここにチャットが流れる -->
-    </div>
-
-    <!-- アクションボタンエリア -->
-    <div class="footer-action">
-        <button id="start-day-btn" class="main-btn">
-            初日の議論へ <i class="fa-solid fa-comments"></i>
-        </button>
-        <!-- ★ NEW: 議論中の操作ボタン（最初は隠す） -->
-        <div id="action-buttons" class="hidden">
-            <button id="next-turn-btn" class="main-btn">議論を進める <i class="fa-solid fa-forward"></i></button>
-            <button id="vote-phase-btn" class="main-btn vote-color">投票へ <i class="fa-solid fa-gavel"></i></button>
+    <div id="result-modal" class="modal hidden">
+        <div class="modal-content" style="max-width: 800px;">
+            <h2 id="result-title" style="font-size: 2rem; margin-bottom: 20px;">WINNER</h2>
+            <div id="result-grid" class="vote-list"></div>
+            <button onclick="location.reload()" class="main-btn" style="margin-top: 20px;">タイトルへ戻る</button>
         </div>
     </div>
-</section>
-
-<!-- ★ NEW: 内訳確認用モーダル（ポップアップ） -->
-<div id="info-modal" class="modal hidden">
-    <div class="modal-content">
-        <h3><i class="fa-solid fa-users-gear"></i> 現在の生存状況</h3>
-        <ul id="role-breakdown-list"></ul>
-        <button id="close-modal-btn" class="main-btn">閉じる</button>
-    </div>
-</div>
 
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
-
 </html>
