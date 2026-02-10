@@ -29,8 +29,9 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: space-between; /* 上下左右に配置 */
     align-items: center;
-    /* transition: opacity 0.3s; */
+    overflow: hidden; /* 画面全体はスクロールさせない */
 }
 
 .hidden {
@@ -158,9 +159,10 @@ input[type="text"] {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    object-fit: cover;
-    background: #333; /* 画像がない時の背景 */
+    object-fit: cover; /* ★ここが重要！画像をトリミングして比率を保つ */
+    background: #333;
     margin-bottom: 5px;
+    border: 2px solid #fff; /* 枠線もつけておく */
 }
 
 .char-name {
@@ -244,12 +246,10 @@ input[type="text"] {
 /* メンバーリストのグリッド */
 .members-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-    gap: 10px;
-    max-height: 300px;
-    overflow-y: auto;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 8px;
     width: 100%;
-    padding: 10px;
+    /* max-height指定は削除！scroll-contentに任せる */
 }
 
 .member-chip {
@@ -269,8 +269,8 @@ input[type="text"] {
     border-radius: 50%;
     margin-bottom: 5px;
     border: 2px solid transparent;
+    object-fit: cover; /* これも追加 */
 }
-
 .member-chip.is-player img {
     border-color: #ffd700; /* 自分は金色枠 */
 }
@@ -573,7 +573,7 @@ select {
     height: 60px;
     border-radius: 50%;
     margin-bottom: 5px;
-    object-fit: cover;
+    object-fit: cover; /* これも追加 */
 }
 
 /* 処刑演出用 */
@@ -745,3 +745,201 @@ select {
 /* 役職カード (リザルト等) */
 .win-fox .role-badge { background: #ffaa00; color: #000; } /* 妖狐勝利色 */
 .win-teru .role-badge { background: #eeeeee; color: #000; } /* てるてる勝利色 */
+
+
+/* --- リザルト画面の修正 --- */
+.result-card {
+    /* クリックで切り替えるのでポインターにする */
+    cursor: pointer;
+    /* 吹き出しがはみ出ても表示されるように */
+    overflow: visible; 
+    margin-bottom: 20px; /* 上下に隙間を開ける */
+}
+
+/* リザルト画面の調整 */
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 15px;
+    /* ★修正: 上の段の吹き出しが切れないように余白をたっぷり取る */
+    margin-top: 50px; 
+    padding-top: 40px; 
+    padding-bottom: 20px;
+}
+
+
+/* 吹き出し (位置微調整) */
+.result-comment {
+    position: absolute;
+    top: -50px; /* もう少し上に */
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    color: #000;
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    width: 150px; /* 少し広く */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    z-index: 100;
+    opacity: 1;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    line-height: 1.2;
+}
+
+/* 吹き出しのしっぽ（下向き） */
+.result-comment::after {
+    content: '';
+    position: absolute;
+    bottom: -5px; /* 下に突き出す */
+    top: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px 5px 0 5px; /* 下向き三角形 */
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+}
+
+/* 非表示用クラス */
+.result-comment.hidden-bubble {
+    opacity: 0;
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: translate(-50%, 10px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+/* ★ NEW: 真ん中のスクロールエリア */
+.scroll-content {
+    flex: 1; /* 余ったスペースを全部使う */
+    width: 100%;
+    overflow-y: auto; /* 縦スクロール許可 */
+    padding: 10px;
+    box-sizing: border-box;
+    
+    /* スクロールバーの見た目 */
+    scrollbar-width: thin;
+    scrollbar-color: #ff0055 rgba(0,0,0,0.3);
+}
+
+/* Chrome/Safari用スクロールバー */
+.scroll-content::-webkit-scrollbar { height: 8px; width: 8px; }
+.scroll-content::-webkit-scrollbar-thumb { background: #ff0055; border-radius: 4px; }
+
+/* フッター（ボタンエリア）を固定化 */
+.footer-action {
+    width: 100%;
+    padding: 15px 0;
+    background: rgba(0, 0, 0, 0.8); /* 背景を濃くして浮き上がらせる */
+    flex-shrink: 0; /* 縮ませない */
+    z-index: 100;
+    border-top: 1px solid #444;
+}
+
+
+
+/* 議論ログエリア調整 */
+.dialogue-container {
+    width: 100%;
+    /* ここも max-height は削除してOK、または scroll-content 内で自然に伸ばす */
+    background: rgba(0,0,0,0.3);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+/* 視認マークの色分け */
+.mark-wolf { background: #ff0055; } /* 人狼 */
+.mark-fox  { background: #ffaa00; } /* 妖狐 */
+.mark-mason { background: #00aaff; } /* 共有 */
+.mark-fanatic { background: #aa00ff; } /* 狂信者が見る人狼も赤でいいけど区別するなら */
+
+/* 吹き出しの重なり順を最強にする */
+.result-comment {
+    z-index: 1000;
+    width: 160px; /* 少し横長に */
+}
+
+/* ヘッダー内の仲間リスト */
+.ally-list-display {
+    font-size: 0.85rem;
+    color: #00ffcc;
+    margin-left: 15px;
+    background: rgba(0, 255, 204, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #00ffcc;
+    display: flex;
+    gap: 5px;
+}
+
+/* チャットログ内の名前横マーク */
+.chat-role-mark {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 0.8rem;
+    padding: 1px 4px;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* マークの色分け */
+.mark-wolf { background-color: #ff0055; border: 1px solid #fff; }
+.mark-fox { background-color: #ffaa00; border: 1px solid #fff; }
+.mark-mason { background-color: #00aaff; border: 1px solid #fff; }
+.mark-dog { background-color: #aaaaaa; border: 1px solid #fff; } /* 飼い主用 */
+
+/* 夜のアクションボタン（番犬用） */
+.night-action-btn {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 15px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+}
+.btn-protect { background: #00aaff; }
+.btn-attack { background: #ff0055; }
+/* --- ★ スマホ対応 (レスポンシブ) --- */
+@media screen and (max-width: 600px) {
+    .app-container {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+        padding: 10px;
+    }
+
+    /* タイトルなどを小さく */
+    .game-title { font-size: 2rem; margin-top: 20px; }
+    
+    /* メンバーリストを少し小さく */
+    .members-grid {
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+    }
+    .member-chip img { width: 30px; height: 30px; }
+    .member-chip { font-size: 0.6rem; }
+
+    /* 自分の役職カードを小さく */
+    .role-card {
+        width: 120px;
+        height: 90px;
+    }
+    .role-card img { width: 40px; height: 40px; }
+
+    /* ボタンを押しやすく */
+    .main-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* モーダルを画面いっぱいに */
+    .modal-content {
+        width: 95%;
+        max-height: 90vh;
+    }
+}
