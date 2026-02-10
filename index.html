@@ -82,38 +82,48 @@
         </section>
 
         <!-- 3. ゲーム画面 -->
-        <section id="game-screen" class="screen hidden">
-            <div id="discussion-header" class="discussion-header hidden">
-                <div class="header-left">
-                    <div id="mini-role-icon"></div>
-                    <span id="mini-role-text"></span>
-                </div>
-                <button id="show-info-btn" class="sub-btn"><i class="fa-solid fa-circle-info"></i> 内訳</button>
-            </div>
-
-            <div id="game-setup-area">
-                <div id="my-role-area" class="role-reveal-area">
-                    <h3>あなたの役職</h3>
-                    <div id="my-role-card" class="role-card flip-in"></div>
-                </div>
-                <div class="members-area">
-                    <h3><i class="fa-solid fa-list-ul"></i> 参加者リスト</h3>
-                    <div id="members-list" class="members-grid"></div>
-                </div>
-            </div>
-
-            <div id="dialogue-area" class="dialogue-container hidden"></div>
-
-            <div class="footer-action">
-                <button id="start-day-btn" class="main-btn">初日の議論へ <i class="fa-solid fa-comments"></i></button>
-                <div id="action-buttons" class="hidden" style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
-                    <button id="next-turn-btn" class="main-btn">議論を進める <i class="fa-solid fa-forward"></i></button>
-                    <button id="player-act-btn" class="main-btn" style="background:#22cc88;">発言する <i class="fa-solid fa-comment-dots"></i></button>
-                    <button id="skip-btn" class="main-btn hidden" style="background:#555;">結果までスキップ <i class="fa-solid fa-forward-fast"></i></button>
-                </div>
-            </div>
-        </section>
+<!-- 3. ゲーム画面 -->
+<section id="game-screen" class="screen hidden">
+    <!-- ▼ ヘッダー（固定） -->
+    <div id="discussion-header" class="discussion-header hidden">
+        <div class="header-left">
+            <div id="mini-role-icon"></div>
+            <span id="mini-role-text"></span>
+        </div>
+        <button id="show-info-btn" class="sub-btn"><i class="fa-solid fa-circle-info"></i> 内訳</button>
     </div>
+
+    <!-- ▼▼▼ ここからスクロールエリア開始 ▼▼▼ -->
+    <div class="scroll-content">
+        
+        <div id="game-setup-area">
+            <div id="my-role-area" class="role-reveal-area">
+                <h3>あなたの役職</h3>
+                <div id="my-role-card" class="role-card flip-in"></div>
+            </div>
+            <div class="members-area">
+                <h3><i class="fa-solid fa-list-ul"></i> 参加者リスト</h3>
+                <div id="members-list" class="members-grid"></div>
+            </div>
+        </div>
+
+        <div id="dialogue-area" class="dialogue-container hidden"></div>
+        
+    </div>
+    <!-- ▲▲▲ スクロールエリア終了 ▲▲▲ -->
+
+    <!-- ▼ フッター（ボタンエリア・固定） -->
+    <div class="footer-action">
+        <button id="start-day-btn" class="main-btn">
+            初日の議論へ <i class="fa-solid fa-comments"></i>
+        </button>
+        <div id="action-buttons" class="hidden" style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+            <button id="next-turn-btn" class="main-btn">議論を進める <i class="fa-solid fa-forward"></i></button>
+            <button id="player-act-btn" class="main-btn" style="background:#22cc88;">発言する <i class="fa-solid fa-comment-dots"></i></button>
+            <button id="skip-btn" class="main-btn hidden" style="background:#555;">結果までスキップ <i class="fa-solid fa-forward-fast"></i></button>
+        </div>
+    </div>
+</section>
 
     <!-- モーダル類 -->
     <div id="info-modal" class="modal hidden">
@@ -143,14 +153,13 @@
                 <li><strong>パン屋:</strong> 生きている間、朝に「パン屋の知らせ」が届く。</li>
                 <li><strong>番犬:</strong> 初夜に飼い主を選び、その家を見張る特殊な護衛役。</li>
                 <li><strong>猫又:</strong> 処刑または噛まれた際、ランダムで1人を道連れにする。</li>
-                <li><strong>訪問者:</strong> 夜に誰かの家を訪問する。能力はないが情報を得られることがある。</li>
+                <li><strong>訪問者:</strong> 夜に誰かの家を訪問する。訪問された人に通知される。</li>
             </ul>
             <h5>▼ 番犬の詳細</h5>
             <ul style="font-size:0.85rem; line-height:1.6;">
                 <li>初夜に「飼い主」を1人選ぶ。以後、毎晩その飼い主を守る。</li>
                 <li>番犬は飼い主の正体を知らない。</li>
                 <li>飼い主が人狼だと判明した場合、次の夜にその人狼を噛み殺す（1回限り）。</li>
-                <li>飼い主の家に訪問者がいた場合、通知される。</li>
             </ul>
             <hr>
             <h4>■ 人狼陣営</h4>
