@@ -16,8 +16,9 @@
     <button id="bgm-toggle" class="bgm-btn"><i class="fa-solid fa-volume-high"></i></button>
 
     <div class="app-container">
-        <!-- 1. タイトル画面 -->
+<!-- 1. タイトル画面 -->
         <section id="title-screen" class="screen">
+            <!-- ロゴとタイトル -->
             <div class="title-logo">
                 <i class="fa-solid fa-moon"></i>
                 <i class="fa-solid fa-feather-pointed"></i>
@@ -25,16 +26,46 @@
             <h1 class="game-title">TORI-OKA<br>WEREWOLF</h1>
             <p class="sub-title">とりの丘学園 混沌の人狼ゲーム</p>
             
+            <!-- 名前・アイコン入力エリア -->
             <div class="input-area">
-                <i class="fa-solid fa-user-pen"></i>
-                <input type="text" id="player-name-input" placeholder="あなた">
+                
+                <!-- 名前入力ブロック -->
+                <div class="input-block">
+                    <p class="input-label">プレイヤー名</p>
+                    <div class="input-group">
+                        <i class="fa-solid fa-user-pen"></i>
+                        <input type="text" id="player-name-input" placeholder="あなた">
+                    </div>
+                </div>
+
+                <!-- 画像選択ブロック -->
+                <div class="input-block">
+                    <p class="input-label">アイコン画像 <span style="font-size:0.7rem; color:#888;">(任意)</span></p>
+                    <div class="file-upload-wrapper">
+                        <!-- プレビュー画像 -->
+                        <img id="preview-icon" src="img/player.png" class="preview-img" onerror="this.src='https://via.placeholder.com/50'">
+                        
+                        <!-- アップロードボタン -->
+                        <label for="player-icon-input" class="icon-upload-btn">
+                            <i class="fa-solid fa-camera"></i> 変更する
+                        </label>
+                        <input type="file" id="player-icon-input" accept="image/*" style="display:none;">
+                    </div>
+                </div>
+
             </div>
 
-            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
-                <button id="to-selection-btn" class="main-btn">キャラ選択へ <i class="fa-solid fa-chevron-right"></i></button>
-                <button id="spectator-mode-btn" class="main-btn" style="background: #8844ff;">観戦モード <i class="fa-solid fa-tv"></i></button>
+            <!-- ボタンエリア -->
+            <div class="title-buttons">
+                <button id="to-selection-btn" class="main-btn">
+                    キャラ選択へ <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                <button id="spectator-mode-btn" class="main-btn spectator-btn">
+                    観戦モード <i class="fa-solid fa-tv"></i>
+                </button>
             </div>
-            <button id="show-rules-btn" class="sub-btn" style="margin-top:20px;">ルール・役職説明</button>
+            
+            <button id="show-rules-btn" class="sub-btn">ルール・役職説明</button>
         </section>
 
         <!-- 2. キャラ選択画面 -->
@@ -56,6 +87,7 @@
                         <label><input type="checkbox" class="role-opt" value="猫又"> 猫又</label>
                         <label><input type="checkbox" class="role-opt" value="番犬"> 番犬</label>
                         <label><input type="checkbox" class="role-opt" value="訪問者"> 訪問者</label>
+                        <label><input type="checkbox" class="role-opt" value="怪盗"> 怪盗</label>
                     </div>
                 </details>
             </div>
@@ -154,6 +186,7 @@
                 <li><strong>番犬:</strong> 初夜に飼い主を選び、その家を見張る特殊な護衛役。</li>
                 <li><strong>猫又:</strong> 処刑または噛まれた際、ランダムで1人を道連れにする。</li>
                 <li><strong>訪問者:</strong> 夜に誰かの家を訪問する。訪問された人に通知される。</li>
+                <li><strong>怪盗:</strong> 初夜に1人を選び、その人と役職を入れ替える。相手は村人になる。</li>
             </ul>
             <h5>▼ 番犬の詳細</h5>
             <ul style="font-size:0.85rem; line-height:1.6;">
@@ -226,7 +259,16 @@
             <button onclick="location.reload()" class="main-btn" style="margin-top: 20px;">タイトルへ戻る</button>
         </div>
     </div>
-
+    <div id="skip-modal" class="modal hidden">
+        <div class="modal-content" style="max-width: 400px;">
+            <h3><i class="fa-solid fa-forward-fast"></i> スキップ確認</h3>
+            <p>結果が出るまで高速進行しますか？<br><span style="font-size:0.8rem; color:#aaa;">(処理中は操作できません)</span></p>
+            <div style="display:flex; gap:10px; justify-content:center; margin-top:20px;">
+                <button id="skip-yes-btn" class="main-btn" style="background:#ff0055;">はい</button>
+                <button id="skip-no-btn" class="sub-btn">いいえ</button>
+            </div>
+        </div>
+    </div>
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
