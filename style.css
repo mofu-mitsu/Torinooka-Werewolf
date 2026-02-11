@@ -197,7 +197,27 @@ input[type="text"] {
     text-shadow: 0 0 15px rgba(255, 0, 85, 0.6);
     text-align: center;
 }
+/* タイトル画面の調整 */
+#title-screen {
+    /* 中央寄せにしつつ、はみ出たらスクロールさせる設定 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* 上詰めにする */
+    overflow-y: auto;  /* ★ 縦スクロール許可 */
+    padding-top: 40px;
+    padding-bottom: 60px; /* ★ 下にボタン分の余白を確保 */
+    height: 100%;
+}
 
+/* スクロールバーのデザイン（タイトル画面用） */
+#title-screen::-webkit-scrollbar { width: 8px; }
+#title-screen::-webkit-scrollbar-thumb { background: #ff0055; border-radius: 4px; }
+
+/* 入力エリアの縮小防止 */
+.input-area {
+    flex-shrink: 0; 
+}
 /* --- ここから新しいゲーム画面用 --- */
 
 /* 自分の役職表示エリア */
@@ -460,6 +480,7 @@ input[type="text"] {
     text-align: center;
     width: 80%;
     max-width: 400px;
+    padding-bottom: 40px;
 }
 
 #role-breakdown-list {
@@ -741,6 +762,33 @@ select {
     cursor: pointer;
     font-size: 0.9rem;
 }
+/* --- オプションの横スクロール --- */
+.roles-options-scroll {
+    display: flex;
+    flex-wrap: nowrap; /* 折り返さない */
+    overflow-x: auto;  /* 横スクロール */
+    gap: 10px;
+    margin-top: 10px;
+    padding-bottom: 10px; /* スクロールバーのスペース */
+    white-space: nowrap; /* 文字折り返し禁止 */
+}
+
+.roles-options-scroll::-webkit-scrollbar { height: 6px; }
+.roles-options-scroll::-webkit-scrollbar-thumb { background: #ff0055; border-radius: 3px; }
+.roles-options-scroll::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); }
+
+.roles-options-scroll label {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid rgba(255,255,255,0.2);
+    flex-shrink: 0; /* 縮ませない */
+}
 
 /* 役職カード (リザルト等) */
 .win-fox .role-badge { background: #ffaa00; color: #000; } /* 妖狐勝利色 */
@@ -876,20 +924,33 @@ select {
 
 /* チャットログ内の名前横マーク */
 .chat-role-mark {
-    display: inline-block;
-    margin-left: 5px;
-    font-size: 0.8rem;
-    padding: 1px 4px;
+    display: inline-block;      /* 文字列と同じ並びに */
+    margin-left: 6px;           /* 名前との隙間 */
+    padding: 1px 5px;
     border-radius: 4px;
+    font-size: 0.7rem;
     color: #fff;
     font-weight: bold;
+    vertical-align: middle;     /* 高さ合わせ */
+    line-height: 1.2;
+    border: 1px solid rgba(255,255,255,0.6);
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+    position: static; /* ★重要: 絶対配置を解除 */
 }
 
 /* マークの色分け */
 .mark-wolf { background-color: #ff0055; border: 1px solid #fff; }
 .mark-fox { background-color: #ffaa00; border: 1px solid #fff; }
-.mark-mason { background-color: #00aaff; border: 1px solid #fff; }
 .mark-dog { background-color: #aaaaaa; border: 1px solid #fff; } /* 飼い主用 */
+.mark-thief { background: #444; border: 1px solid #fff; }
+.mark-mason { background: #00aaff; border: 1px solid #aaddff; }
+.mark-fanatic { background: #aa00ff; border: 1px solid #eeaaff; }
+.mark-seer { background: #8844ff; }
+.mark-medium { background: #4400aa; }
+.mark-knight { background: #0055ff; }
+.mark-madman { background: #ff88aa; }
+.mark-villager { background: #888; }
+
 
 /* 夜のアクションボタン（番犬用） */
 .night-action-btn {
@@ -905,6 +966,24 @@ select {
 }
 .btn-protect { background: #00aaff; }
 .btn-attack { background: #ff0055; }
+
+
+/* 画像アップロード周り */
+.file-upload-wrapper {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.preview-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+}
 /* --- ★ スマホ対応 (レスポンシブ) --- */
 @media screen and (max-width: 600px) {
     .app-container {
@@ -943,3 +1022,4 @@ select {
         max-height: 90vh;
     }
 }
+
