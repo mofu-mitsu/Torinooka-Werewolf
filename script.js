@@ -1,8 +1,8 @@
 // ==========================================
-// script.js - てるてる強化 & 完全修正版
+// script.js - 観戦夜バグ修正 & 完全版
 // ==========================================
 
-// --- 0. ユーティリティ & ヘルパー関数 (最優先定義) ---
+// --- 0. ユーティリティ & ヘルパー関数 ---
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -14,6 +14,7 @@ function shuffleArray(array) {
 
 function sleep(ms) { return new Promise(r => setTimeout(r, isSkipping ? 0 : ms)); }
 
+// ★ メンバーリスト用（アイコン右上・絶対配置）
 function getBadgeHTML(role) {
     if (role === "人狼") return `<div class="wolf-mark mark-wolf">🐺</div>`;
     if (role === "妖狐") return `<div class="wolf-mark mark-fox">🦊</div>`;
@@ -33,6 +34,7 @@ function getBadgeHTML(role) {
     return ""; 
 }
 
+// ★ チャットログ用（名前の横・インライン配置）
 function getChatBadgeHTML(role) {
     if (role === "人狼") return `<span class="chat-role-mark mark-wolf">🐺</span>`;
     if (role === "妖狐") return `<span class="chat-role-mark mark-fox">🦊</span>`;
@@ -164,13 +166,11 @@ let dialogueArea = document.getElementById("dialogue-area");
 let voteModal = null; 
 let isBgmOn = true;
 
-// UI初期化
 const turnCounterDiv = document.createElement("div");
 turnCounterDiv.className = "turn-counter";
 if (!document.querySelector(".turn-counter")) {
     document.querySelector(".header-left").appendChild(turnCounterDiv);
 }
-
 const allyListDisplay = document.getElementById("ally-list-display") || document.createElement("div");
 if (!document.getElementById("ally-list-display")) {
     allyListDisplay.id = "ally-list-display";
@@ -216,7 +216,6 @@ bgmTitle.volume = 0.3; bgmNoon.volume = 0.3; bgmNight.volume = 0.3;
 
 showRulesBtn.addEventListener("click", () => rulesModal.classList.remove("hidden"));
 closeRulesBtn.addEventListener("click", () => rulesModal.classList.add("hidden"));
-
 
 // ==========================================
 // 1. 画面遷移・初期設定
@@ -496,10 +495,7 @@ startDayBtn.addEventListener("click", () => {
     addLog("system", `=== ${dayCount}日目の朝が来ました ===`);
     
     // 発言カウントリセット
-    participants.forEach(p => {
-        p.speechCount = 0;
-        p.agitation = 0; // ヘイトリセット
-    });
+    participants.forEach(p => p.speechCount = 0);
 
     const me = participants.find(p => p.isPlayer);
     if (isSpectator && me) checkMorningEvents(me); 
@@ -545,10 +541,8 @@ function checkMorningEvents(me) {
 }
 
 function updateTurnDisplay() {
-    if(turnCounterDiv) {
-        turnCounterDiv.innerText = `日没まで: ${remainingTurns}`;
-        turnCounterDiv.style.color = remainingTurns <= 3 ? "#ff4444" : "#ffaa00";
-    }
+    turnCounterDiv.innerText = `日没まで: ${remainingTurns}`;
+    turnCounterDiv.style.color = remainingTurns <= 3 ? "#ff4444" : "#ffaa00";
 }
 
 showInfoBtn.addEventListener("click", () => {
@@ -649,11 +643,7 @@ executeActionBtn.addEventListener("click", () => {
             text = "私は信じてください！ 絶対に人間です！";
             playerStats.selfDefendCount++;
             me.agitation += 5; 
-            if (playerStats.selfDefendCount <= 3) {
-                applySuspicionImpact(null, me, -10);
-            } else {
-                applySuspicionImpact(null, me, 10);
-            }
+            if (playerStats.selfDefendCount > 3) applySuspicionImpact(null, me, 10);
         } else {
             text = `私は ${target.name} さんを信じたいです。`;
             applySuspicionImpact(me, target, -40); 
@@ -702,7 +692,7 @@ function consumeTurn() {
 }
 
 // ==========================================
-// 4. 思考エンジン (AI Logic - てるてる対策版)
+// 4. 思考エンジン (AI Logic)
 // ==========================================
 function isAlly(p1, p2) {
     if (!p1 || !p2) return false;
@@ -716,7 +706,6 @@ function isAlly(p1, p2) {
 function applySuspicionImpact(source, target, amount) {
     if (source && isAlly(source, target) && amount > 0) return;
     
-    // かばわれたら信頼度アップ
     if (source && amount < 0) {
         if (!target.suspicionMeter) target.suspicionMeter = {};
         target.suspicionMeter[source.id] = (target.suspicionMeter[source.id] || 0) - 50; 
@@ -728,7 +717,6 @@ function applySuspicionImpact(source, target, amount) {
         
         let impact = amount;
         
-        // カウンター
         if (amount > 0 && !isAlly(p, source) && target.id === p.id) {
              p.suspicionMeter[source.id] = (p.suspicionMeter[source.id] || 0) + (amount * 0.5); 
         }
@@ -751,6 +739,7 @@ function chooseTarget(observer, type) {
     const candidates = participants.filter(p => p.id !== observer.id && p.isAlive);
     if (candidates.length === 0) return null;
     
+    const knownFox = (observer.role === "背徳者") ? participants.find(p => p.role === "妖狐") : null;
     const seerCOs = participants.filter(p => p.coRole === "占い師");
     const livingSeers = seerCOs.filter(p => p.isAlive);
     const bittenSeers = seerCOs.filter(p => !p.isAlive && p.id !== lastExecutedId); 
@@ -768,14 +757,8 @@ function chooseTarget(observer, type) {
         if (p.coRole === "占い師" && observer.role === "占い師") suspicion += 50; 
         if (p.coRole === "人狼") suspicion += 999; 
 
-        // てるてる対策（スルー力）
-        if (p.agitation > 40) {
-            // 論理派はスルー
-            if ((observer.params.logic || 50) > 60) suspicion -= 100;
-            else suspicion += 30; // 感情派は釣られる
-        }
+        if (p.agitation > 40) suspicion += 20;
 
-        // 残り占い師
         if (livingSeers.length === 1 && bittenSeers.length >= 1 && p.id === livingSeers[0].id) {
             suspicion += 100;
         }
@@ -813,33 +796,27 @@ async function playDiscussionTurn() {
         else if (LIARS.includes(speaker.role) && rand < 0.15) {
             coTargetRole = Math.random() > 0.5 ? "占い師" : "霊媒師";
         }
-        if (speaker.role === "てるてる坊主" && rand < 0.4) {
-            coTargetRole = Math.random() > 0.5 ? "占い師" : "人狼"; // てるてるは人狼COもする
+        if (speaker.role === "てるてる坊主" && rand < 0.3) {
+            coTargetRole = "占い師";
         }
 
         if (coTargetRole) {
             speaker.coRole = coTargetRole;
-            // 人狼CO
-            if (coTargetRole === "人狼") {
-                 addLog(speaker.id, "私が人狼よ！ 誰か私を疑って！", "angry");
-            } else {
-                let dialKey = coTargetRole === "占い師" ? "co_seer" : "co_medium";
-                let text = getRandomDialogue(speaker, dialKey);
-                addLog(speaker.id, text, "angry");
-            }
+            let dialKey = coTargetRole === "占い師" ? "co_seer" : "co_medium";
+            let text = getRandomDialogue(speaker, dialKey);
+            addLog(speaker.id, text, "angry");
             speaker.speechCount++;
-            speaker.agitation += 20;
             updateMembersList();
             return; 
         }
     }
 
-    // 結果報告
+    // 結果報告ロジック
     if (speaker.coRole && Math.random() < 0.4) {
         let reportType = null;
         let target = null;
         let result = "white"; 
-        // ...(前回と同じ)...
+        
         if (speaker.coRole === "占い師") {
             if (speaker.role === "占い師" && speaker.nightInfo) {
                 target = participants.find(p => p.id === speaker.nightInfo.targetId);
@@ -848,7 +825,7 @@ async function playDiscussionTurn() {
                 const targets = participants.filter(p => p.id !== speaker.id && p.isAlive);
                 target = targets[Math.floor(Math.random() * targets.length)];
                 if (isAlly(speaker, target)) result = "white";
-                else if (speaker.role === "てるてる坊主") result = Math.random() > 0.5 ? "black" : "white"; 
+                else if (speaker.role === "てるてる坊主") result = "black"; 
                 else result = Math.random() > 0.7 ? "black" : "white"; 
             }
             reportType = result === "white" ? "report_seer_white" : "report_seer_black";
@@ -875,25 +852,6 @@ async function playDiscussionTurn() {
         }
     }
 
-    // 戦術会話... (省略なし)
-    const seers = participants.filter(p => p.coRole === "占い師" && p.isAlive);
-    if (seers.length >= 2 && Math.random() < 0.2) {
-        const target = seers.find(p => p.id !== speaker.id) || seers[0];
-        let text = getSpecificDialogue(speaker, "suggest_roller", target);
-        if(!text) text = getRandomDialogue(speaker, "suggest_roller", target);
-        addLog(speaker.id, text, "angry");
-        speaker.speechCount++;
-        return;
-    }
-    
-    if (speaker.coRole && ["占い師", "霊媒師"].includes(speaker.coRole) && Math.random() < 0.1) {
-        let text = getSpecificDialogue(speaker, "request_guard", null);
-        if(!text) text = getRandomDialogue(speaker, "request_guard");
-        addLog(speaker.id, text, "normal");
-        speaker.speechCount++;
-        return;
-    }
-
     const aggression = speaker.params.aggressiveness || 50;
     const isAccuseMode = Math.random() * 100 < (aggression + 10); 
     let baseAction = isAccuseMode ? "accuse" : "defend";
@@ -905,6 +863,11 @@ async function playDiscussionTurn() {
     }
 
     let actionKey = decideAction(speaker, target);
+
+    // ★ 最終安全装置: 仲間への攻撃は絶対にかばうに変更
+    if (isAlly(speaker, target) && (actionKey.includes("accuse") || actionKey.includes("fake"))) {
+        actionKey = "defend_other";
+    }
 
     if (actionKey === "self_sacrifice") {
         let text = getSpecificDialogue(speaker, "self_sacrifice", null);
@@ -931,8 +894,7 @@ async function playDiscussionTurn() {
 
 function decideAction(speaker, target) {
     const mental = speaker.mental || 100;
-    // ★ てるてる坊主は「self_sacrifice」の確率を爆上げ
-    let weights = { "accuse_weak": 10, "accuse_strong": 5, "accuse_quiet": 5, "defend_other": 5, "fake_logic": 5, "self_sacrifice": 0 };
+    let weights = { "accuse_weak": 10, "accuse_strong": 5, "accuse_quiet": 5, "defend_other": 5, "fake_logic": 5, "defend_self": 0 };
 
     if (["狂人", "狂信者", "背徳者", "てるてる坊主"].includes(speaker.role)) {
         weights["fake_logic"] += 40;
@@ -940,16 +902,11 @@ function decideAction(speaker, target) {
     }
     if (speaker.role === "てるてる坊主") {
         weights["fake_logic"] += 60; 
-        weights["accuse_strong"] += 50;
-        weights["self_sacrifice"] += 80; // ★ここで追加！
+        weights["accuse_strong"] += 50; 
     }
 
     const logic = speaker.params.logic || 50;
-    if (logic > 70 && target && target.agitation > 50) {
-        weights["accuse_strong"] = 0;
-        weights["accuse_weak"] = 0;
-        return "accuse_quiet";
-    }
+    if (logic > 70 && target && target.agitation > 50) return "accuse_quiet";
 
     if (speaker.id === "noriomi") {
         weights["accuse_weak"] += 20; weights["defend_other"] += 30; 
@@ -990,8 +947,7 @@ function decideAction(speaker, target) {
     return "accuse_weak";
 }
 
-// ... (投票、夜フェーズ、リザルトなどは変更なし) ...
-// ... (前回のコードの後半部分をそのまま使ってね) ...
+// ... (投票フェーズなどはそのまま) ...
 function startVotingPhase() {
     nextTurnBtn.disabled = true;
     playerActBtn.disabled = true;
@@ -1049,11 +1005,6 @@ async function submitVote(playerVoteTargetId) {
             target = participants.find(p => p.id === voteTargetId);
         } else {
             target = chooseTarget(voter, "accuse");
-            // ★ てるてる坊主は自分に投票しやすい
-            if (voter.role === "てるてる坊主" && Math.random() < 0.6) {
-                target = voter;
-            }
-
             if (target && target.id === voter.id) {
                 voteTargetId = target.id;
                 let voteText = getSpecificDialogue(voter, "self_vote", null);
@@ -1195,7 +1146,9 @@ async function showResultScreen(winnerType) {
     }
 }
 
-// ... (夜フェーズ: startNightPhase, resolveNight も省略なし) ...
+// ==========================================
+// 6. 夜フェーズ (Night Phase) 
+// ==========================================
 async function startNightPhase() {
     playBgm("night");
     addLog("system", "夜が来ました。");
@@ -1207,7 +1160,7 @@ async function startNightPhase() {
     let myActionTarget = null;
 
     // ★怪盗の処理 (初日のみ)
-    if (me.role === "怪盗" && dayCount === 1) {
+    if (me && me.role === "怪盗" && dayCount === 1) {
          nightOverlay.innerHTML += `<p>役職を盗む相手を選んでください。</p>`;
          let actionHTML = `<div style="margin-top:20px; display:flex; flex-wrap:wrap; justify-content:center;">`;
          const targets = participants.filter(p => !p.isPlayer);
@@ -1221,10 +1174,12 @@ async function startNightPhase() {
          });
     }
     // ... (他の役職処理) ...
-    else if (isSpectator || !me.isAlive || isSkipping) {
+    // ★ 修正: 観戦モード・死者・スキップ中は待つ
+    else if (isSpectator || (me && !me.isAlive) || isSkipping) {
         await sleep(isSkipping ? 0 : 2000);
     } 
-    else if (["人狼", "占い師", "騎士", "共有者", "番犬", "訪問者"].includes(me.role)) {
+    // ★ 修正: 生存プレイヤーの行動
+    else if (me && ["人狼", "占い師", "騎士", "共有者", "番犬", "訪問者"].includes(me.role)) {
         if (me.role === "人狼" || me.role === "共有者") {
             const partnerRole = me.role;
             const partners = participants.filter(p => p.role === partnerRole && p.isAlive && !p.isPlayer);
@@ -1241,27 +1196,41 @@ async function startNightPhase() {
             }
         }
 
-        let actionHTML = `<div style="margin-top:20px; display:flex; flex-wrap:wrap; justify-content:center;">`;
-        const targets = participants.filter(p => {
-            if (!p.isAlive || p.id === me.id) return false;
-            // ★ 同族選択禁止 (人狼のみ)
-            if (me.role === "人狼" && p.role === "人狼") return false; 
-            return true;
-        });
-        
-        targets.forEach(t => {
-            const btnColor = "#444"; 
-            actionHTML += `<button onclick="setNightAction('${t.id}')" style="margin:5px; padding:10px 20px; background:${btnColor}; color:white; border:none; border-radius:5px; font-size:1.1rem; cursor:pointer;">${t.name}</button>`;
-        });
-        actionHTML += `</div>`;
-        nightOverlay.innerHTML += actionHTML;
+        // 番犬2日目
+        if (me.role === "番犬" && dayCount > 1) {
+            const owner = participants.find(p => p.id === me.watchdogTarget);
+            if (!owner || !owner.isAlive) {
+                nightOverlay.innerHTML += `<p>飼い主 (${owner ? owner.name : "不明"}) は既に死亡しています。</p>`;
+                await sleep(2000);
+            } else {
+                nightOverlay.innerHTML += `<p>飼い主: <strong>${owner.name}</strong></p><button id="dog-protect-btn" class="night-action-btn btn-protect">守る (Protect)</button><button id="dog-attack-btn" class="night-action-btn btn-attack">噛む (Attack)</button>`;
+                myActionTarget = await new Promise(resolve => {
+                    document.getElementById("dog-protect-btn").onclick = () => { nightOverlay.innerHTML = `<p>${owner.name} を守ります。</p>`; resolve("protect"); };
+                    document.getElementById("dog-attack-btn").onclick = () => { nightOverlay.innerHTML = `<p>${owner.name} を噛みます！</p>`; resolve("attack"); };
+                });
+            }
+        } else {
+            let actionHTML = `<div style="margin-top:20px; display:flex; flex-wrap:wrap; justify-content:center;">`;
+            const targets = participants.filter(p => {
+                if (!p.isAlive || p.id === me.id) return false;
+                // ★ 同族選択禁止 (人狼のみ)
+                if (me.role === "人狼" && p.role === "人狼") return false; 
+                return true;
+            });
+            targets.forEach(t => {
+                const btnColor = "#444"; 
+                actionHTML += `<button onclick="setNightAction('${t.id}')" style="margin:5px; padding:10px 20px; background:${btnColor}; color:white; border:none; border-radius:5px; font-size:1.1rem; cursor:pointer;">${t.name}</button>`;
+            });
+            actionHTML += `</div>`;
+            nightOverlay.innerHTML += actionHTML;
 
-        myActionTarget = await new Promise(resolve => {
-            window.setNightAction = (id) => {
-                nightOverlay.innerHTML = `<div class="night-title">🌙 Night Phase</div><p>行動を受け付けました。朝を待っています...</p>`;
-                resolve(id);
-            };
-        });
+            myActionTarget = await new Promise(resolve => {
+                window.setNightAction = (id) => {
+                    nightOverlay.innerHTML = `<div class="night-title">🌙 Night Phase</div><p>行動を受け付けました。朝を待っています...</p>`;
+                    resolve(id);
+                };
+            });
+        }
     } else {
         await sleep(2000); 
     }
@@ -1501,16 +1470,13 @@ function addLog(charId, text, emotion = "normal") {
         let markHtml = "";
         const me = participants.find(p => p.isPlayer);
         if (isSpectator) {
-             markHtml = getBadgeHTML(char.role);
+             markHtml = getChatBadgeHTML(char.role); // ★ ここで正しい関数を呼ぶ！
         } else if (me && isAlly(me, char) && me.id !== char.id) {
-            if (char.role === "人狼") markHtml = `<span class="chat-role-mark mark-wolf">🐺</span>`;
-            if (char.role === "共有者") markHtml = `<span class="chat-role-mark mark-mason">共</span>`;
-            if (char.role === "妖狐") markHtml = `<span class="chat-role-mark mark-fox">🦊</span>`;
+             markHtml = getChatBadgeHTML(char.role); // ★ ここも！
         }
         if (me && me.role === "番犬" && me.watchdogTarget === char.id) {
             markHtml = `<span class="chat-role-mark mark-dog">🐕</span>`;
         }
-
         // プレイヤー画像反映
         if (char.isPlayer && playerCustomImg) {
             imgSrc = playerCustomImg;
