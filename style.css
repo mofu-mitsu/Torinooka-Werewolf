@@ -199,21 +199,20 @@ input[type="text"] {
 }
 /* タイトル画面の調整 */
 #title-screen {
-    /* 中央寄せにしつつ、はみ出たらスクロールさせる設定 */
+    padding-bottom: 150px !important; /* 60px -> 150px に増量 */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; /* 上詰めにする */
-    overflow-y: auto;  /* ★ 縦スクロール許可 */
-    padding-top: 40px;
-    padding-bottom: 60px; /* ★ 下にボタン分の余白を確保 */
-    height: 100%;
+    justify-content: flex-start;
+    overflow-y: auto;
 }
-
 /* スクロールバーのデザイン（タイトル画面用） */
 #title-screen::-webkit-scrollbar { width: 8px; }
 #title-screen::-webkit-scrollbar-thumb { background: #ff0055; border-radius: 4px; }
-
+#show-rules-btn {
+    flex-shrink: 0; 
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
 /* 入力エリアの縮小防止 */
 .input-area {
     flex-shrink: 0; 
@@ -795,69 +794,96 @@ select {
 .win-teru .role-badge { background: #eeeeee; color: #000; } /* てるてる勝利色 */
 
 
-/* --- リザルト画面の修正 --- */
+
+.modal-content {
+    overflow-y: auto; /* スクロール許可 */
+    padding-top: 60px !important;  /* モーダル自体の上の余白も増やす */
+}
+.scroll-content {
+    padding-bottom: 50px; 
+}
+/* =========================================
+   ★ 吹き出し「下向き」変更パッチ
+   ========================================= */
+
+/* カード自体の設定（はみ出し許可） */
 .result-card {
-    /* クリックで切り替えるのでポインターにする */
+    background: #333;
+    border: 2px solid #555;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    position: relative; /* 基準点 */
     cursor: pointer;
-    /* 吹き出しがはみ出ても表示されるように */
-    overflow: visible; 
-    margin-bottom: 20px; /* 上下に隙間を開ける */
+    overflow: visible !important; /* 必須：吹き出しをはみ出させる */
+    margin-bottom: 20px;
 }
 
-/* リザルト画面の調整 */
-.result-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 15px;
-    /* ★修正: 上の段の吹き出しが切れないように余白をたっぷり取る */
-    margin-top: 50px; 
-    padding-top: 40px; 
-    padding-bottom: 20px;
-}
-
-
-/* 吹き出し (位置微調整) */
+/* 吹き出し本体 */
 .result-comment {
-    position: absolute;
-    top: -50px; /* もう少し上に */
-    left: 50%;
-    transform: translateX(-50%);
+    /* --- 形と色の設定 (ここが消えてた！) --- */
+    position: absolute; /* 絶対配置に戻す */
     background: #fff;
     color: #000;
     padding: 8px;
     border-radius: 10px;
     font-size: 0.75rem;
-    width: 150px; /* 少し広く */
+    width: 150px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    z-index: 100;
-    opacity: 1;
-    pointer-events: none;
-    transition: opacity 0.2s;
     line-height: 1.2;
+    pointer-events: none;
+    
+    /* --- 位置の設定 (下向き) --- */
+    top: 100%;       /* カードの底辺 */
+    left: 50%;       /* 左右中央 */
+    transform: translateX(-50%); /* 中央補正 */
+    margin-top: 12px; /* カードとの隙間 */
+    z-index: 2000;
+    
+    /* アニメーション */
+    opacity: 0;
+    animation: popIn 0.5s forwards 0.5s;
 }
 
-/* 吹き出しのしっぽ（下向き） */
+/* 吹き出しのしっぽ (上向き▲) */
 .result-comment::after {
     content: '';
     position: absolute;
-    bottom: -5px; /* 下に突き出す */
-    top: auto;
+    
+    /* しっぽの位置: 吹き出しの天井の上 */
+    top: -5px; 
     left: 50%;
     transform: translateX(-50%);
-    border-width: 5px 5px 0 5px; /* 下向き三角形 */
+    
+    /* 上向き三角形を作る */
+    border-width: 0 5px 5px 5px;
     border-style: solid;
-    border-color: #fff transparent transparent transparent;
+    border-color: transparent transparent #fff transparent;
+}
+
+/* アニメーション定義 (下からフワッと) */
+@keyframes popIn {
+    from { opacity: 0; transform: translate(-50%, -10px); }
+    to { opacity: 1; transform: translate(-50%, 0); }
 }
 
 /* 非表示用クラス */
-.result-comment.hidden-bubble {
-    opacity: 0;
+.hidden-bubble {
+    display: none !important;
 }
 
-@keyframes popIn {
-    from { opacity: 0; transform: translate(-50%, 10px); }
-    to { opacity: 1; transform: translate(-50%, 0); }
+/* グリッドの隙間確保 (吹き出しが被らないように) */
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    /* 縦の隙間を大きく取る！ */
+    gap: 80px 15px !important; 
+    
+    margin-top: 20px !important; 
+    padding-top: 20px !important; 
+    padding-bottom: 100px !important;
 }
+
 
 /* ★ NEW: 真ん中のスクロールエリア */
 .scroll-content {
