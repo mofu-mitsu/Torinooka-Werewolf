@@ -1,8 +1,8 @@
 // ==========================================
-// script.js - 観戦夜バグ修正 & 完全版
+// script.js - 全セリフ対応 & 戦略AI完全版
 // ==========================================
 
-// --- 0. ユーティリティ & ヘルパー関数 ---
+// --- 0. ユーティリティ & ヘルパー関数 (最優先定義) ---
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -14,44 +14,38 @@ function shuffleArray(array) {
 
 function sleep(ms) { return new Promise(r => setTimeout(r, isSkipping ? 0 : ms)); }
 
-// ★ メンバーリスト用（アイコン右上・絶対配置）
+// バッジ生成関数
 function getBadgeHTML(role) {
-    if (role === "人狼") return `<div class="wolf-mark mark-wolf">🐺</div>`;
-    if (role === "妖狐") return `<div class="wolf-mark mark-fox">🦊</div>`;
-    if (role === "占い師") return `<div class="wolf-mark" style="background:#8844ff">🔮</div>`;
-    if (role === "霊媒師") return `<div class="wolf-mark" style="background:#4400aa">👻</div>`;
-    if (role === "騎士") return `<div class="wolf-mark" style="background:#00aaff">🛡️</div>`;
-    if (role === "狂人") return `<div class="wolf-mark" style="background:#ff88aa">🤪</div>`;
-    if (role === "狂信者") return `<div class="wolf-mark mark-fanatic">信</div>`;
-    if (role === "背徳者") return `<div class="wolf-mark mark-fanatic">背</div>`;
-    if (role === "共有者") return `<div class="wolf-mark mark-mason">共</div>`;
-    if (role === "パン屋") return `<div class="wolf-mark" style="background:#ffaa44">🍞</div>`;
-    if (role === "てるてる坊主") return `<div class="wolf-mark" style="background:#ddd; color:#000;">☀</div>`;
-    if (role === "猫又") return `<div class="wolf-mark" style="background:#ffaaaa">🐱</div>`;
-    if (role === "番犬") return `<div class="wolf-mark" style="background:#aaaaaa">🐕</div>`;
-    if (role === "訪問者") return `<div class="wolf-mark" style="background:#00cc88">🚪</div>`;
-    if (role === "怪盗") return `<div class="wolf-mark" style="background:#333">🎩</div>`;
-    return ""; 
+    const colors = {
+        "人狼": "#ff0055", "妖狐": "#ffaa00", "占い師": "#8844ff", "霊媒師": "#4400aa",
+        "騎士": "#00aaff", "狂人": "#ff88aa", "狂信者": "#aa00ff", "背徳者": "#aa00ff",
+        "共有者": "#00aaff", "パン屋": "#ffaa44", "てるてる坊主": "#ddd", "猫又": "#ffaaaa",
+        "番犬": "#aaaaaa", "訪問者": "#00cc88", "怪盗": "#333"
+    };
+    const marks = {
+        "人狼": "🐺", "妖狐": "🦊", "占い師": "🔮", "霊媒師": "👻", "騎士": "🛡️",
+        "狂人": "🤪", "狂信者": "信", "背徳者": "背", "共有者": "共", "パン屋": "🍞",
+        "てるてる坊主": "☀", "猫又": "🐱", "番犬": "🐕", "訪問者": "🚪", "怪盗": "🎩"
+    };
+    if (!colors[role]) return "";
+    return `<div class="wolf-mark" style="background:${colors[role]}; border:1px solid #fff;">${marks[role]}</div>`;
 }
 
-// ★ チャットログ用（名前の横・インライン配置）
 function getChatBadgeHTML(role) {
-    if (role === "人狼") return `<span class="chat-role-mark mark-wolf">🐺</span>`;
-    if (role === "妖狐") return `<span class="chat-role-mark mark-fox">🦊</span>`;
-    if (role === "占い師") return `<span class="chat-role-mark" style="background:#8844ff">🔮</span>`;
-    if (role === "霊媒師") return `<span class="chat-role-mark" style="background:#4400aa">👻</span>`;
-    if (role === "騎士") return `<span class="chat-role-mark" style="background:#00aaff">🛡️</span>`;
-    if (role === "狂人") return `<span class="chat-role-mark" style="background:#ff88aa">🤪</span>`;
-    if (role === "狂信者") return `<span class="chat-role-mark mark-fanatic">信</span>`;
-    if (role === "背徳者") return `<span class="chat-role-mark mark-fanatic">背</span>`;
-    if (role === "共有者") return `<span class="chat-role-mark mark-mason">共</span>`;
-    if (role === "パン屋") return `<span class="chat-role-mark" style="background:#ffaa44">🍞</span>`;
-    if (role === "てるてる坊主") return `<span class="chat-role-mark" style="background:#ddd; color:#000;">☀</span>`;
-    if (role === "猫又") return `<span class="chat-role-mark" style="background:#ffaaaa">🐱</span>`;
-    if (role === "番犬") return `<span class="chat-role-mark" style="background:#aaaaaa">🐕</span>`;
-    if (role === "訪問者") return `<span class="chat-role-mark" style="background:#00cc88">🚪</span>`;
-    if (role === "怪盗") return `<span class="chat-role-mark" style="background:#333">🎩</span>`;
-    return ""; 
+    const colors = {
+        "人狼": "#ff0055", "妖狐": "#ffaa00", "占い師": "#8844ff", "霊媒師": "#4400aa",
+        "騎士": "#00aaff", "狂人": "#ff88aa", "狂信者": "#aa00ff", "背徳者": "#aa00ff",
+        "共有者": "#00aaff", "パン屋": "#ffaa44", "てるてる坊主": "#ddd", "猫又": "#ffaaaa",
+        "番犬": "#aaaaaa", "訪問者": "#00cc88", "怪盗": "#333"
+    };
+    const marks = {
+        "人狼": "🐺", "妖狐": "🦊", "占い師": "🔮", "霊媒師": "👻", "騎士": "🛡️",
+        "狂人": "🤪", "狂信者": "信", "背徳者": "背", "共有者": "共", "パン屋": "🍞",
+        "てるてる坊主": "☀", "猫又": "🐱", "番犬": "🐕", "訪問者": "🚪", "怪盗": "🎩"
+    };
+    if (!colors[role]) return "";
+    let textColor = role === "てるてる坊主" ? "#000" : "#fff";
+    return `<span class="chat-role-mark" style="background:${colors[role]}; color:${textColor};">${marks[role]}</span>`;
 }
 
 function getRoleDisplayInfo(roleName) {
@@ -86,6 +80,7 @@ let dayCount = 1;
 let lastExecutedId = null; 
 let remainingTurns = 20; 
 const MAX_TURNS = 20;
+let wasNightPeaceful = false; // 昨夜平和だったか（騎士GJ判定用）
 
 let isSpectator = false; 
 let isSkipping = false;
@@ -217,6 +212,7 @@ bgmTitle.volume = 0.3; bgmNoon.volume = 0.3; bgmNight.volume = 0.3;
 showRulesBtn.addEventListener("click", () => rulesModal.classList.remove("hidden"));
 closeRulesBtn.addEventListener("click", () => rulesModal.classList.add("hidden"));
 
+
 // ==========================================
 // 1. 画面遷移・初期設定
 // ==========================================
@@ -304,6 +300,7 @@ gameStartBtn.addEventListener("click", () => {
     lastExecutedId = null;
     remainingTurns = MAX_TURNS;
     playerStats = { coCount: 0, selfDefendCount: 0 };
+    wasNightPeaceful = false;
 
     setupParticipants();
     assignRoles();
@@ -440,7 +437,7 @@ function updateMembersList() {
         
         let marks = "";
         if (isSpectatorMode) {
-            marks = getBadgeHTML(p.role); // メンバーリスト用（absolute）
+            marks = getBadgeHTML(p.role); 
         } else {
             if (canSeeWolf && p.role === "人狼" && !p.isPlayer) marks = getBadgeHTML("人狼");
             if (isMason && p.role === "共有者" && !p.isPlayer) marks = getBadgeHTML("共有者");
@@ -495,7 +492,10 @@ startDayBtn.addEventListener("click", () => {
     addLog("system", `=== ${dayCount}日目の朝が来ました ===`);
     
     // 発言カウントリセット
-    participants.forEach(p => p.speechCount = 0);
+    participants.forEach(p => {
+        p.speechCount = 0;
+        p.agitation = 0; 
+    });
 
     const me = participants.find(p => p.isPlayer);
     if (isSpectator && me) checkMorningEvents(me); 
@@ -526,6 +526,17 @@ function checkMorningEvents(me) {
         addLog("system", "🍞 香ばしいパンの香りが漂ってきました…");
     } else {
         if (dayCount > 1) addLog("system", "今日はパンが届きませんでした…");
+    }
+
+    // 騎士GJ発言
+    if (wasNightPeaceful && dayCount > 1) {
+        const knights = participants.filter(p => p.role === "騎士" && p.isAlive && !p.isPlayer);
+        knights.forEach(k => {
+             // 確率でGJアピール
+             if(Math.random() < 0.7) {
+                 addLog(k.id, getRandomDialogue(k, "report_knight_success"), "normal");
+             }
+        });
     }
 
     if (isSpectator && lastExecutedId) {
@@ -644,6 +655,7 @@ executeActionBtn.addEventListener("click", () => {
             playerStats.selfDefendCount++;
             me.agitation += 5; 
             if (playerStats.selfDefendCount > 3) applySuspicionImpact(null, me, 10);
+            else applySuspicionImpact(null, me, -10);
         } else {
             text = `私は ${target.name} さんを信じたいです。`;
             applySuspicionImpact(me, target, -40); 
@@ -692,7 +704,7 @@ function consumeTurn() {
 }
 
 // ==========================================
-// 4. 思考エンジン (AI Logic)
+// 4. 思考エンジン (AI Logic - 全力強化版)
 // ==========================================
 function isAlly(p1, p2) {
     if (!p1 || !p2) return false;
@@ -705,7 +717,6 @@ function isAlly(p1, p2) {
 
 function applySuspicionImpact(source, target, amount) {
     if (source && isAlly(source, target) && amount > 0) return;
-    
     if (source && amount < 0) {
         if (!target.suspicionMeter) target.suspicionMeter = {};
         target.suspicionMeter[source.id] = (target.suspicionMeter[source.id] || 0) - 50; 
@@ -717,14 +728,12 @@ function applySuspicionImpact(source, target, amount) {
         
         let impact = amount;
         
+        // カウンター
         if (amount > 0 && !isAlly(p, source) && target.id === p.id) {
              p.suspicionMeter[source.id] = (p.suspicionMeter[source.id] || 0) + (amount * 0.5); 
         }
 
-        if (amount < 0) {
-            target.mental = Math.min(100, target.mental + 5);
-        }
-        
+        if (amount < 0) target.mental = Math.min(100, target.mental + 5);
         if (source && source.agitation > 30) {
             impact = impact * 0.5; 
             p.suspicionMeter[source.id] = (p.suspicionMeter[source.id] || 0) + 5;
@@ -739,11 +748,9 @@ function chooseTarget(observer, type) {
     const candidates = participants.filter(p => p.id !== observer.id && p.isAlive);
     if (candidates.length === 0) return null;
     
-    const knownFox = (observer.role === "背徳者") ? participants.find(p => p.role === "妖狐") : null;
-    const seerCOs = participants.filter(p => p.coRole === "占い師");
-    const livingSeers = seerCOs.filter(p => p.isAlive);
-    const bittenSeers = seerCOs.filter(p => !p.isAlive && p.id !== lastExecutedId); 
-
+    // 役職保護: 村人陣営は、対抗がいないCO役職を疑わない
+    const protectRoles = ["占い師", "霊媒師", "騎士"];
+    
     const scores = candidates.map(p => {
         let baseSuspicion = observer.params.suspicion_base || 10;
         let earnedSuspicion = observer.suspicionMeter[p.id] || 0;
@@ -754,14 +761,16 @@ function chooseTarget(observer, type) {
         }
         
         if (isAlly(observer, p)) suspicion -= 9999;
-        if (p.coRole === "占い師" && observer.role === "占い師") suspicion += 50; 
-        if (p.coRole === "人狼") suspicion += 999; 
-
-        if (p.agitation > 40) suspicion += 20;
-
-        if (livingSeers.length === 1 && bittenSeers.length >= 1 && p.id === livingSeers[0].id) {
-            suspicion += 100;
+        
+        // ★ 村人陣営による役職保護
+        if (!["人狼", "狂人"].includes(observer.role) && protectRoles.includes(p.coRole)) {
+             // 対抗がいるかチェック（簡易: 自分もCOしてたら敵）
+             if (p.coRole === observer.coRole) suspicion += 50;
+             else suspicion -= 50; // 基本守る
         }
+        
+        if (p.coRole === "人狼") suspicion += 999; 
+        if (p.agitation > 40) suspicion += 20;
 
         const randomFactor = (Math.random() - 0.5) * 15; 
         return { id: p.id, score: suspicion + randomFactor, data: p };
@@ -784,25 +793,33 @@ async function playDiscussionTurn() {
     if (speakers.length < 1) { if(!isSpectator) addLog("system", "発言できる人がいません..."); return; }
     const speaker = speakers[Math.floor(Math.random() * speakers.length)];
 
-    // COロジック
+    // 1. COロジック
     if (!speaker.coRole) {
+        // ... (前回と同じロジック、省略なしで記載)
         const LIARS = ["人狼", "狂人", "狂信者", "背徳者", "てるてる坊主", "怪盗"];
         let coTargetRole = null;
         const rand = Math.random();
         
-        if (["占い師", "霊媒師"].includes(speaker.role) && rand < 0.3) {
-            coTargetRole = speaker.role;
+        if (["占い師", "霊媒師", "騎士"].includes(speaker.role) && rand < 0.3) {
+             // 騎士はリスク管理（潜伏気味）
+             if(speaker.role === "騎士" && dayCount === 1) {/*pass*/}
+             else coTargetRole = speaker.role;
         } 
         else if (LIARS.includes(speaker.role) && rand < 0.15) {
             coTargetRole = Math.random() > 0.5 ? "占い師" : "霊媒師";
         }
-        if (speaker.role === "てるてる坊主" && rand < 0.3) {
-            coTargetRole = "占い師";
-        }
+        if (speaker.role === "てるてる坊主" && rand < 0.3) coTargetRole = "占い師";
+        // 苦し紛れの村人CO (ヘイトが高い時)
+        let myHate = participants.reduce((acc,p)=>acc+(p.suspicionMeter[speaker.id]||0), 0);
+        if (!coTargetRole && myHate > 80 && Math.random() < 0.3) coTargetRole = "村人";
 
         if (coTargetRole) {
             speaker.coRole = coTargetRole;
-            let dialKey = coTargetRole === "占い師" ? "co_seer" : "co_medium";
+            let dialKey = "co_villager"; // デフォルト
+            if (coTargetRole === "占い師") dialKey = "co_seer";
+            if (coTargetRole === "霊媒師") dialKey = "co_medium";
+            if (coTargetRole === "騎士") dialKey = "co_knight";
+            
             let text = getRandomDialogue(speaker, dialKey);
             addLog(speaker.id, text, "angry");
             speaker.speechCount++;
@@ -811,8 +828,9 @@ async function playDiscussionTurn() {
         }
     }
 
-    // 結果報告ロジック
+    // 2. 結果報告ロジック
     if (speaker.coRole && Math.random() < 0.4) {
+        // ... (前回と同じ) ...
         let reportType = null;
         let target = null;
         let result = "white"; 
@@ -846,12 +864,31 @@ async function playDiscussionTurn() {
             speaker.speechCount++;
             if (result === "black") applySuspicionImpact(speaker, target, 100);
             else applySuspicionImpact(speaker, target, -50);
-            
-            if (speaker.role === "てるてる坊主") speaker.agitation += 20;
             return;
         }
     }
 
+    // 3. 戦術 & 通常会話
+    // ... (戦術会話省略なし) ...
+    const seers = participants.filter(p => p.coRole === "占い師" && p.isAlive);
+    if (seers.length >= 2 && Math.random() < 0.2) {
+        const target = seers.find(p => p.id !== speaker.id) || seers[0];
+        let text = getSpecificDialogue(speaker, "suggest_roller", target);
+        if(!text) text = getRandomDialogue(speaker, "suggest_roller", target);
+        addLog(speaker.id, text, "angry");
+        speaker.speechCount++;
+        return;
+    }
+    
+    if (speaker.coRole && ["占い師", "霊媒師"].includes(speaker.coRole) && Math.random() < 0.1) {
+        let text = getSpecificDialogue(speaker, "request_guard", null);
+        if(!text) text = getRandomDialogue(speaker, "request_guard");
+        addLog(speaker.id, text, "normal");
+        speaker.speechCount++;
+        return;
+    }
+
+    // 行動決定
     const aggression = speaker.params.aggressiveness || 50;
     const isAccuseMode = Math.random() * 100 < (aggression + 10); 
     let baseAction = isAccuseMode ? "accuse" : "defend";
@@ -867,6 +904,13 @@ async function playDiscussionTurn() {
     // ★ 最終安全装置: 仲間への攻撃は絶対にかばうに変更
     if (isAlly(speaker, target) && (actionKey.includes("accuse") || actionKey.includes("fake"))) {
         actionKey = "defend_other";
+    }
+    
+    // ★ 自己弁護: ヘイトが高い時に発動
+    let myHate = participants.reduce((acc,p)=>acc+(p.suspicionMeter[speaker.id]||0), 0);
+    if (myHate > 60 && Math.random() < 0.3) {
+        actionKey = "defend_self";
+        target = null;
     }
 
     if (actionKey === "self_sacrifice") {
@@ -886,15 +930,25 @@ async function playDiscussionTurn() {
         const influence = speaker.params.influence || 10;
         applySuspicionImpact(speaker, target, influence / 2); 
         speaker.agitation += 10; 
+        
+        // カウンター(相手の疑い値を上げる)
+        if(target && !isAlly(speaker, target)) {
+             if (!target.suspicionMeter) target.suspicionMeter = {};
+             target.suspicionMeter[speaker.id] = (target.suspicionMeter[speaker.id] || 0) + 10; 
+        }
     } else {
         speaker.agitation = Math.max(0, speaker.agitation - 5); 
+        // 疑い値を下げる (defend_selfなど)
+        if (actionKey === "defend_self") {
+            applySuspicionImpact(null, speaker, -15);
+        }
     }
     speaker.speechCount++;
 }
 
 function decideAction(speaker, target) {
     const mental = speaker.mental || 100;
-    let weights = { "accuse_weak": 10, "accuse_strong": 5, "accuse_quiet": 5, "defend_other": 5, "fake_logic": 5, "defend_self": 0 };
+    let weights = { "accuse_weak": 10, "accuse_strong": 5, "accuse_quiet": 5, "defend_other": 5, "fake_logic": 5, "defend_self": 5, "counter": 0 };
 
     if (["狂人", "狂信者", "背徳者", "てるてる坊主"].includes(speaker.role)) {
         weights["fake_logic"] += 40;
@@ -933,7 +987,14 @@ function decideAction(speaker, target) {
              weights["accuse_quiet"] = 0; 
         }
 
-        if (currentSuspicion > 40) { weights["accuse_strong"] += 50; weights["defend_other"] = 0; } 
+        if (currentSuspicion > 40) { 
+            weights["accuse_strong"] += 50; 
+            weights["defend_other"] = 0; 
+            // 相手も自分を疑ってるならカウンター
+            if (target.suspicionMeter && target.suspicionMeter[speaker.id] > 30) {
+                weights["counter"] += 50;
+            }
+        } 
         else if (currentSuspicion < -10) { weights["defend_other"] += 100; weights["accuse_strong"] = 0; weights["accuse_weak"] = 0; }
     }
 
@@ -947,7 +1008,7 @@ function decideAction(speaker, target) {
     return "accuse_weak";
 }
 
-// ... (投票フェーズなどはそのまま) ...
+// ... (投票、夜フェーズなどは変更なし) ...
 function startVotingPhase() {
     nextTurnBtn.disabled = true;
     playerActBtn.disabled = true;
@@ -1005,6 +1066,7 @@ async function submitVote(playerVoteTargetId) {
             target = participants.find(p => p.id === voteTargetId);
         } else {
             target = chooseTarget(voter, "accuse");
+            // 自分投票 (てるてるなど)
             if (target && target.id === voter.id) {
                 voteTargetId = target.id;
                 let voteText = getSpecificDialogue(voter, "self_vote", null);
@@ -1174,11 +1236,9 @@ async function startNightPhase() {
          });
     }
     // ... (他の役職処理) ...
-    // ★ 修正: 観戦モード・死者・スキップ中は待つ
     else if (isSpectator || (me && !me.isAlive) || isSkipping) {
         await sleep(isSkipping ? 0 : 2000);
     } 
-    // ★ 修正: 生存プレイヤーの行動
     else if (me && ["人狼", "占い師", "騎士", "共有者", "番犬", "訪問者"].includes(me.role)) {
         if (me.role === "人狼" || me.role === "共有者") {
             const partnerRole = me.role;
@@ -1252,8 +1312,9 @@ async function startNightPhase() {
     else {
         const wolves = participants.filter(p => p.role === "人狼" && p.isAlive);
         if (wolves.length > 0) {
+            // ★ AI人狼ロジック強化: 役職COを優先
             let victims = participants.filter(p => p.role !== "人狼" && p.isAlive);
-            let priorityVictims = victims.filter(p => p.coRole === "占い師" || p.role === "占い師");
+            let priorityVictims = victims.filter(p => p.coRole === "占い師" || p.role === "占い師" || p.coRole === "騎士");
             if (priorityVictims.length > 0) victims = priorityVictims;
             
             if (victims.length > 0) nightActions.wolf = victims[Math.floor(Math.random() * victims.length)].id;
@@ -1417,7 +1478,7 @@ function getRandomDialogue(char, type, target = null) {
     const lines = char.dialogues[type];
     let text = lines[Math.floor(Math.random() * lines.length)];
     if (target) {
-        if (target.id === char.id) text = text.replace(/{target}/g, "私");
+        if (target.id === char.id) text = text.replace(/{target}/g, "自分");
         else text = text.replace(/{target}/g, target.name);
     } else {
         text = text.replace(/{target}/g, "みんな");
@@ -1477,6 +1538,7 @@ function addLog(charId, text, emotion = "normal") {
         if (me && me.role === "番犬" && me.watchdogTarget === char.id) {
             markHtml = `<span class="chat-role-mark mark-dog">🐕</span>`;
         }
+
         // プレイヤー画像反映
         if (char.isPlayer && playerCustomImg) {
             imgSrc = playerCustomImg;
