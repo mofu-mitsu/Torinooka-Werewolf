@@ -30,9 +30,10 @@
 </head>
 <body>
     <!-- BGM -->
-    <audio id="bgm-title" loop><source src="wolf_title.mp3" type="audio/mp3"></audio>
-    <audio id="bgm-noon" loop><source src="wolf_noon.mp3" type="audio/mp3"></audio>
-    <audio id="bgm-night" loop><source src="wolf_night.mp3" type="audio/mp3"></audio>
+    <!-- ★修正: パスを audio/ に変更 -->
+    <audio id="bgm-title" loop><source src="audio/wolf_title.mp3" type="audio/mp3"></audio>
+    <audio id="bgm-noon" loop><source src="audio/wolf_noon.mp3" type="audio/mp3"></audio>
+    <audio id="bgm-night" loop><source src="audio/wolf_night.mp3" type="audio/mp3"></audio>
     
     <button id="bgm-toggle" class="bgm-btn"><i class="fa-solid fa-volume-high"></i></button>
 
@@ -87,11 +88,13 @@
             </div>
             
             <button id="show-rules-btn" class="sub-btn">ルール・役職説明</button>
+            <a href="https://mofu-mitsu.github.io/" class="home-link"><i class="fa-solid fa-house"></i> ホームへ戻る</a>
         </section>
 
         <!-- 2. キャラ選択画面 -->
         <section id="selection-screen" class="screen hidden">
             <header class="selection-header">
+                <button id="back-to-title-btn" class="back-btn"><i class="fa-solid fa-arrow-left"></i> 戻る</button>
                 <h2><i class="fa-solid fa-users"></i> 参加メンバー選択</h2>
                 <p>現在選択中: <span id="selected-count">0</span> 人</p>
             </header>
@@ -165,15 +168,23 @@
     </div>
     <!-- ▲▲▲ スクロールエリア終了 ▲▲▲ -->
 
-    <!-- ▼ フッター（ボタンエリア・固定） -->
+<!-- ▼ フッター（ボタンエリア・固定） -->
     <div class="footer-action">
+        <!-- 初日の議論開始ボタン -->
         <button id="start-day-btn" class="main-btn">
             初日の議論へ <i class="fa-solid fa-comments"></i>
         </button>
+
+        <!-- ★追加: 中断ボタン（start-day-btnが消えた後も残るように工夫が必要だけど、一旦ここに置くね） -->
+        <!-- ※JSで start-day-btn を hidden にすると、隣のこのボタンも消えちゃうレイアウトだと困るから、独立させる -->
+        
+        <!-- 議論中・アクションボタン -->
         <div id="action-buttons" class="hidden" style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
             <button id="next-turn-btn" class="main-btn">議論を進める <i class="fa-solid fa-forward"></i></button>
             <button id="player-act-btn" class="main-btn" style="background:#22cc88;">発言する <i class="fa-solid fa-comment-dots"></i></button>
             <button id="skip-btn" class="main-btn hidden" style="background:#555;">結果までスキップ <i class="fa-solid fa-forward-fast"></i></button>
+            <!-- 中断ボタンをここにも入れておく（議論中用） -->
+            <button id="exit-game-btn-action" class="exit-btn" style="margin-left:10px;"><i class="fa-solid fa-right-from-bracket"></i> 中断</button>
         </div>
     </div>
 </section>
