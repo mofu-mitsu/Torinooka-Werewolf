@@ -22,7 +22,67 @@ body {
     overflow: hidden;
     position: relative;
 }
+/* --- ★修正: ホームリンクのデザイン --- */
+.home-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 5px 15px;
+    border-radius: 20px;
+    transition: all 0.3s;
+    display: inline-block;
+}
+.home-link:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+}
 
+/* --- ★修正: 選択画面ヘッダー（戻るボタン左寄せ） --- */
+.selection-header {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* タイトルを中央に */
+    position: relative; /* 戻るボタンを絶対配置にするため */
+    width: 100%;
+    margin-bottom: 10px;
+}
+/* --- ★修正: 選択画面のヘッダー隙間 --- */
+.selection-header h2 {
+    margin: 0 0 10px 0; /* 下に隙間 */
+}
+.selection-header p {
+    margin-top: 10px; /* 上に隙間 */
+}
+/* --- ★修正: フッターのボタン間隔 --- */
+.footer-action {
+    gap: 15px; /* ボタン同士の隙間 */
+}
+
+/* --- ★修正: 中断ボタンの位置（ヘッダー内） --- */
+.exit-btn {
+    margin-right: 15px; /* 右側に隙間を作る */
+    background: #444;
+    border: 1px solid #aaa;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.back-btn {
+    position: absolute;
+    left: 0; /* 左端に固定 */
+    background: transparent;
+    border: 1px solid #ff0055;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+.back-btn:hover { background: #ff0055; }
 /* 画面切り替え用 */
 .screen {
     width: 100%;
