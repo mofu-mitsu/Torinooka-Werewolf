@@ -144,6 +144,17 @@ turnCounterDiv.className = "turn-counter";
 if (!document.querySelector(".turn-counter")) { document.querySelector(".header-left").appendChild(turnCounterDiv); }
 const allyListDisplay = document.getElementById("ally-list-display") || document.createElement("div");
 if (!document.getElementById("ally-list-display")) { allyListDisplay.id = "ally-list-display"; allyListDisplay.className = "ally-list-display hidden"; document.querySelector(".header-left").appendChild(allyListDisplay); }
+// --- グローバル変数に追加 ---
+let isPaused = false; // 一時停止フラグ
+
+
+// ループ設定
+bgmTitle.loop = true;
+bgmNoon.loop = true;
+bgmNight.loop = true;
+bgmTitle.volume = 0.3; 
+bgmNoon.volume = 0.3; 
+bgmNight.volume = 0.3;
 
 // ... (BGM, 画像アップロード, 画面遷移は変更なし) ...
 // --- 画像アップロード ---
@@ -355,6 +366,10 @@ function assignRoles() {
     participants.forEach((p, index) => { p.role = roles[index]; });
 }
 
+// ==========================================
+// 修正版: renderGameScreen
+// 役職カードには「役職の絵」を表示する
+// ==========================================
 function renderGameScreen() {
     const me = participants.find(p => p.isPlayer);
     if (isSpectator) {
@@ -365,8 +380,12 @@ function renderGameScreen() {
         const roleInfo = getRoleDisplayInfo(me.role);
         gameScreen.setAttribute("data-my-role", me.role);
         myRoleCard.className = `role-card ${roleInfo.cssClass}`;
-        let myImgSrc = playerCustomImg ? playerCustomImg : roleInfo.img;
-        myRoleCard.innerHTML = `<img src="${myImgSrc}" style="width:80px; height:80px; margin-bottom:10px; object-fit:cover; border-radius:50%;" onerror="this.style.display='none'"><span>${me.role}</span>`;
+        
+        // ★修正: ここは playerCustomImg を使わず、強制的に roleInfo.img を使う
+        // （チャット欄では playerCustomImg が使われるままです）
+        let roleImgSrc = roleInfo.img; 
+        
+        myRoleCard.innerHTML = `<img src="${roleImgSrc}" style="width:80px; height:80px; margin-bottom:10px; object-fit:cover; border-radius:50%;" onerror="this.style.display='none'"><span>${me.role}</span>`;
     }
     updateMembersList();
     updateAllyList();
@@ -434,57 +453,110 @@ function updateMembersList() {
 }
 
 
-// ... (プレイヤー発言処理などはそのまま) ...
-startDayBtn.addEventListener("click", () => {
-    remainingTurns = MAX_TURNS; 
-    updateTurnDisplay();
-    playBgm("noon");
+// ==========================================
+// 修正版: startDayBtn
+// ボタンの重複登録を防ぎ、観戦モード制御を修正
+// ==========================================
+startDayBtn.addEventListener("click", async () => {
+    try {
+        remainingTurns = MAX_TURNS; 
+        updateTurnDisplay();
+        playBgm("noon");
 
-    startDayBtn.classList.add("hidden");
-    gameSetupArea.classList.add("hidden");
-    discussionHeader.classList.remove("hidden");
-    dialogueArea.classList.remove("hidden");
-    actionButtons.classList.remove("hidden");
+        startDayBtn.classList.add("hidden");
+        gameSetupArea.classList.add("hidden");
+        discussionHeader.classList.remove("hidden");
+        dialogueArea.classList.remove("hidden");
+        actionButtons.classList.remove("hidden");
 
-    if (isSpectator) {
-        miniRoleIcon.innerHTML = `<i class="fa-solid fa-tv"></i>`;
-        miniRoleText.innerText = `観戦中`;
-        playerActBtn.style.display = "none"; 
-        nextTurnBtn.innerText = "自動進行中...";
-        nextTurnBtn.disabled = true;
-    } else {
+        if (isSpectator) {
+            miniRoleIcon.innerHTML = `<i class="fa-solid fa-tv"></i>`;
+            miniRoleText.innerText = `観戦中`;
+            playerActBtn.style.display = "none"; 
+            
+            // ★観戦モード用のボタン挙動（上書き登録）
+            nextTurnBtn.disabled = false;
+            nextTurnBtn.innerText = "進行中 (一時停止)";
+            nextTurnBtn.onclick = () => {
+                isPaused = !isPaused; // フラグ反転
+                nextTurnBtn.innerText = isPaused ? "一時停止中 (再開)" : "進行中 (一時停止)";
+            };
+
+            isAutoPlaying = true;
+            isPaused = false; // 最初は動かす
+            autoProgressLoop(); 
+
+        } else {
+            // ★プレイヤーモード
+            const me = participants.find(p => p.isPlayer);
+            const roleInfo = getRoleDisplayInfo(me.role);
+            let myImgSrc = playerCustomImg ? playerCustomImg : roleInfo.img;
+            miniRoleIcon.innerHTML = `<img src="${myImgSrc}" style="width:100%; height:100%;">`;
+            miniRoleText.innerText = `${me.role}`;
+
+            // ★プレイヤー用のボタン挙動（上書き登録）
+            // これで「前の日のイベント」が消えて、新しく登録されるから2回喋らなくなる！
+            nextTurnBtn.onclick = async () => {
+                if (isSpectator) return;
+                nextTurnBtn.disabled = true; // 連打防止
+                await playDiscussionTurn();
+                consumeTurn();
+                nextTurnBtn.disabled = false;
+            };
+        }
+
+        addLog("system", `=== ${dayCount}日目の朝が来ました ===`);
+        
+        participants.forEach(p => {
+            p.speechCount = 0;
+            p.agitation = 0; 
+        });
+
         const me = participants.find(p => p.isPlayer);
-        const roleInfo = getRoleDisplayInfo(me.role);
-        let myImgSrc = playerCustomImg ? playerCustomImg : roleInfo.img;
-        miniRoleIcon.innerHTML = `<img src="${myImgSrc}" style="width:100%; height:100%;">`;
-        miniRoleText.innerText = `${me.role}`;
-    }
+        try {
+            if (isSpectator && me) checkMorningEvents(me); 
+            else if (me) checkMorningEvents(me);
+        } catch(e) { console.error(e); }
 
-    addLog("system", `=== ${dayCount}日目の朝が来ました ===`);
-    
-    // 発言カウントリセット
-    participants.forEach(p => {
-        p.speechCount = 0;
-        p.agitation = 0; 
-    });
-
-    const me = participants.find(p => p.isPlayer);
-    if (isSpectator && me) checkMorningEvents(me); 
-    else if (me) checkMorningEvents(me);
-
-    addLog("system", "議論を開始します。");
-    
-    if (isSpectator) {
-        isAutoPlaying = true;
-        autoProgressLoop(); 
-    } else {
-        if (dayCount === 1) playIntroPhase();
+        addLog("system", "議論を開始します。");
+        
+        if (!isSpectator) {
+            if (dayCount === 1) {
+                nextTurnBtn.disabled = true;
+                playerActBtn.disabled = true;
+                nextTurnBtn.innerText = "挨拶中...";
+                await playIntroPhase();
+                nextTurnBtn.disabled = false;
+                playerActBtn.disabled = false;
+                nextTurnBtn.innerText = "会話を進める";
+                addLog("system", "▼ 「会話を進める」ボタンで議論を始めてください！");
+            } else {
+                nextTurnBtn.disabled = false;
+                playerActBtn.disabled = false;
+                nextTurnBtn.innerText = "会話を進める";
+            }
+        }
+    } catch (err) {
+        console.error("開始エラー:", err);
     }
 });
 
+// ==========================================
+// 修正版: autoProgressLoop
+// スキップ中でも一時停止が効くように修正！
+// ==========================================
 async function autoProgressLoop() {
     if (dayCount === 1) await playIntroPhase();
+    
     while (remainingTurns > 0 && (isSkipping || isSpectator)) {
+        // ★一時停止中はここで完全に止める
+        while (isPaused) {
+            await new Promise(r => setTimeout(r, 500)); // 0.5秒待機
+            // ここでsleep関数を使わずsetTimeoutを使うのがポイント！
+            // (sleep関数はisSkipping=trueだと0になっちゃうから)
+        }
+
+        // 議論進行
         await sleep(isSkipping ? 0 : 800); 
         await playDiscussionTurn();
         consumeTurn();
@@ -493,25 +565,24 @@ async function autoProgressLoop() {
 
 // ==========================================
 // 修正版: checkMorningEvents
-// パン屋の存在判定を修正
+// 生存チェックを厳密にしてログを表示
 // ==========================================
 function checkMorningEvents(me) {
-    // そもそもこの村にパン屋という役職が含まれているかチェック
+    // この村にパン屋がいるか？（死んでてもOK）
     const bakerExists = participants.some(p => p.role === "パン屋");
-    // 今、パン屋が生きているかチェック
+    // 今、パン屋が生きているか？
     const bakerAlive = participants.some(p => p.role === "パン屋" && p.isAlive);
 
     if (bakerExists) {
         if (bakerAlive) {
             addLog("system", "🍞 香ばしいパンの香りが漂ってきました…");
         } else {
-            // パン屋がいたけど死んでしまった場合（2日目以降）
-            if (dayCount > 1) addLog("system", "今日はパンが届きませんでした…");
+            // パン屋がいたけど全滅している場合
+            addLog("system", "今日はパンが届きませんでした…");
         }
     }
-    // パン屋が最初からいない場合は何も表示しない
 
-    // 霊媒結果の表示
+    // 霊媒結果
     if (isSpectator && lastExecutedId) {
         const executed = participants.find(p => p.id === lastExecutedId);
         const result = executed.role === "人狼" ? "人狼" : "人間";
@@ -554,11 +625,17 @@ skipBtn.addEventListener("click", () => {
     skipModal.classList.remove("hidden");
 });
 
+// ==========================================
+// 修正版: スキップボタン
+// 死んだ後にちゃんと自動進行を開始させる
+// ==========================================
 skipYesBtn.addEventListener("click", () => {
     isSkipping = true;
     skipBtn.disabled = true;
     skipBtn.innerText = "スキップ中...";
     skipModal.classList.add("hidden");
+
+    // ★修正: プレイヤーが死んだ後、自動ループが回っていないなら強制始動！
     if (!isAutoPlaying) {
         isAutoPlaying = true;
         autoProgressLoop();
@@ -625,12 +702,6 @@ executeActionBtn.addEventListener("click", () => {
     consumeTurn(); 
 });
 
-nextTurnBtn.addEventListener("click", () => {
-    if (isSpectator) return;
-    playDiscussionTurn();
-    consumeTurn(); 
-});
-
 function consumeTurn() {
     remainingTurns--;
     updateTurnDisplay();
@@ -655,85 +726,70 @@ function isAlly(p1, p2) {
 
 // ==========================================
 // 修正版: applySuspicionImpact
-// 「ライン考察」導入で、庇い合いをリスクにする
+// 庇われたら疑いは減るが、庇った側が疑われるリスクあり
 // ==========================================
-function applySuspicionImpact(source, target, amount) {
-    // 仲間同士（人狼同士など）なら、内部的な疑惑値は上げない（演技は別として）
+function applySuspicionImpact(source, target, amount, isReport = false) {
+    // 仲間同士なら内部的な疑惑値は上げない
     if (source && isAlly(source, target) && amount > 0) return;
-
-    // 「defend（庇う）」行動（amountが負の値）の時
-    if (source && amount < 0) {
-        // ターゲット自身の疑惑を下げる
-        if (!target.suspicionMeter) target.suspicionMeter = {};
-        target.suspicionMeter[source.id] = (target.suspicionMeter[source.id] || 0) - 50;
-    }
 
     participants.forEach(observer => {
         if (!observer.suspicionMeter) observer.suspicionMeter = {};
-        
-        // 自分自身への影響計算はスキップ
         if (source && observer.id === source.id) return;
 
         let impact = amount;
         const currentTrustToSource = observer.suspicionMeter[source.id] || 0;
         const currentSuspicionToTarget = observer.suspicionMeter[target.id] || 0;
 
-        // ★★★ ここが新ロジック！「ライン考察」 ★★★
-        
-        // Case 1: 誰かが「庇った(defend)」時
-        if (amount < 0 && source) { // amount < 0 は庇っている
-            // 観察者が「ターゲットをめっちゃ怪しんでる(疑惑度が高い)」のに、
-            // ソースが「そいつを庇った」場合 → ソースも怪しく見える！
-            if (currentSuspicionToTarget > 50) {
-                // 「あんな怪しいやつを庇うなんて、お前もグルか？」
-                impact = 0; // 庇われた人の疑惑は下がらない（観察者の目には）
-                observer.suspicionMeter[source.id] = currentTrustToSource + 30; // 庇った人の疑惑UP
-                addLog(observer.id, `(心の声: ${target.name}を庇うなんて、${source.name}も怪しいな…)`, "hidden"); // デバッグ用（見えなくてOK）
+        // ★★★ ライン考察（報告 isReport=true ならスキップ！） ★★★
+        if (!isReport) {
+            // ▼ 誰かが「庇った」時 (amount < 0)
+            if (amount < 0 && source) {
+                // 基本的に、庇われた人(target)への疑惑は下がる（みつきの要望）
+                // ただし、ObserverがSourceを嫌ってたら「お前が言うなら逆に怪しい」となる
+                if (currentTrustToSource > 30) {
+                    impact = 0; // 信用してないやつの擁護は無視
+                } else {
+                    // 素直に疑惑ダウン
+                    impact = amount; 
+                }
+
+                // 【重要】ターゲットが「めっちゃ怪しい(黒っぽい)」のに庇った場合
+                // 庇った人(Source)への疑惑が爆上がりする（ライン疑惑）
+                if (currentSuspicionToTarget > 50) {
+                    observer.suspicionMeter[source.id] = currentTrustToSource + 25; 
+                    // ※targetへの疑惑は、上で下げているので「相殺」されて少し減るか現状維持になる
+                }
+            }
+
+            // ▼ 誰かが「疑った」時
+            if (amount > 0 && source) {
+                if (currentTrustToSource < -20) impact = amount * 1.5; // 便乗
+                else if (currentTrustToSource > 50) impact = amount * 0.2; // 聞き流す
             }
         }
 
-        // Case 2: 誰かが「疑った(accuse)」時
-        if (amount > 0 && source) {
-            // 観察者が「ソースを信頼している(疑惑度が低い)」なら、
-            // そのソースが疑っているターゲットへの疑惑を強める（便乗）
-            if (currentTrustToSource < -20) {
-                impact = amount * 1.5; // 信頼してる人の言葉は重い
-            }
-            // 逆に「ソースを怪しんでいる」なら、その言葉は聞き流す
-            else if (currentTrustToSource > 50) {
-                impact = amount * 0.2; // 「どうせお前が嘘ついてるんだろ？」
-            }
-        }
-
-        // ★★★ カウンター抑制 ★★★
-        // 自分がターゲットにされた時
+        // カウンター抑制
         if (target.id === observer.id && amount > 0) {
-            // 相手が信頼できる人なら、むやみに疑惑を上げすぎない（反省する）
-            if (currentTrustToSource < -30) {
-                impact = amount * 0.5;
-            }
+            if (currentTrustToSource < -30) impact = amount * 0.5;
         }
 
-        // 最終的な疑惑値を更新
-        // 庇われた場合(amount < 0)は target のメンタル回復
+        // メンタルケア（庇われた本人）
         if (amount < 0 && target.id === observer.id) {
              target.mental = Math.min(100, target.mental + 5);
         }
-
-        // ソースがパニック状態なら信憑性ダウン
+        
+        // パニック補正
         if (source && source.agitation > 30) {
             impact = impact * 0.5;
-            // パニックになってる人自体がちょっと怪しい
             observer.suspicionMeter[source.id] = (observer.suspicionMeter[source.id] || 0) + 5;
         }
 
-        // オブザーバーから見たターゲットへの疑惑を更新
-        // (自分がターゲットの場合は「自分への疑惑」ではなく「相手へのヘイト」として処理される部分もあるが、一旦suspicionMeterで管理)
+        // 最終計算
         if (target.id !== observer.id) {
             const current = observer.suspicionMeter[target.id] || 0;
             observer.suspicionMeter[target.id] = current + impact;
         } else {
-             // 自分がターゲットにされた場合、疑ってきた相手(source)への疑惑(ヘイト)を更新
+             // 自分へのヘイト管理
              if (source) {
                  const currentHate = observer.suspicionMeter[source.id] || 0;
                  observer.suspicionMeter[source.id] = currentHate + (impact * 0.8);
@@ -974,74 +1030,67 @@ async function playDiscussionTurn() {
     }
 }
 // ==========================================
-// 復活！: decideAction
-// これがないとAIがどのセリフを喋るか決められません！
+// 修正版: decideAction
+// 変数の定義順序を修正して、エラーで止まらないようにしました！
 // ==========================================
 function decideAction(speaker, target) {
     const mental = speaker.mental || 100;
     
-    // ★ data.js のキー名と完全一致させる重みリスト
     let weights = { 
-        "accuse_weak": 10, 
-        "accuse_strong": 5, 
-        "accuse_quiet": 5, 
-        "defend_other": 5, 
-        "fake_logic": 5, 
-        "defend_self": 0,
-        // counter, suggest_roller などは特殊条件で出すのでここには含めなくてOK
+        "accuse_weak": 10, "accuse_strong": 5, "accuse_quiet": 5, 
+        "defend_other": 5, "fake_logic": 5, "defend_self": 0,
     };
 
-    // 嘘つき役職はフェイク論理を使いがち
     if (["狂人", "狂信者", "背徳者", "てるてる坊主"].includes(speaker.role)) {
-        weights["fake_logic"] += 40; 
-        weights["accuse_strong"] += 20;
+        weights["fake_logic"] += 40; weights["accuse_strong"] += 20;
     }
-    // てるてるは更にめちゃくちゃ言う
-    if (speaker.role === "てるてる坊主") { 
-        weights["fake_logic"] += 60; 
-        weights["accuse_strong"] += 50; 
-    }
+    if (speaker.role === "てるてる坊主") { weights["fake_logic"] += 60; weights["accuse_strong"] += 50; }
 
     const logic = speaker.params.logic || 50;
-    // ロジカルな人は静かに詰める
-    if (logic > 70 && target && target.agitation > 50) {
-        weights["accuse_weak"] += 50;
-    }
-
-    // キャラクターMBTI補正
-    if (speaker.id === "noriomi") {
-        weights["accuse_weak"] += 20; 
-        weights["defend_other"] += 30; 
-        if (speaker.role === "人狼") weights["fake_logic"] = 0; 
-        if (speaker.role === "村人") return "self_sacrifice"; // のりおみ村人なら自己犠牲しがち
-    } else {
-        if (speaker.mbti === "ENTJ") { weights["accuse_strong"] += 30; weights["fake_logic"] += 10; }
-        else if (speaker.mbti === "ISFP") { weights["defend_other"] += 30; weights["fake_logic"] += 20; }
-        else if (speaker.mbti === "ESTP") { weights["fake_logic"] += 30; weights["accuse_strong"] += 20; }
-        else if (speaker.mbti === "ESFJ") { weights["defend_other"] += 40; }
-    }
-
-    // メンタル崩壊してたら
-    if (mental < 20) return "collapse";
-
-    // ターゲットへの感情による補正
+    
+    // ★修正ポイント: 先に疑惑値(currentSuspicion)を計算しておく！
+    let currentSuspicion = 0;
     if(target) {
-        let currentSuspicion = (speaker.suspicionMeter[target.id] || 0);
-        // 個人的な好感度バイアスも加味
+        currentSuspicion = (speaker.suspicionMeter[target.id] || 0);
         if (speaker.params.trust_bias && speaker.params.trust_bias[target.id]) {
             currentSuspicion += speaker.params.trust_bias[target.id];
         }
-        
-        // 寡黙な人を詰める
-        if (remainingTurns < MAX_TURNS/2 && target.speechCount < 2) weights["accuse_quiet"] += 50;
-        else weights["accuse_quiet"] = 0;
+    }
 
-        // めっちゃ疑ってるなら強く出る
+    // ★修正ポイント: 条件分岐の整理
+    if (target) {
+        // COしていない相手への処理
+        if (!target.coRole) {
+            // 論理的かつ相手がパニック、または時間がなくて無口な場合
+            if ((logic > 70 && target.agitation > 50) || 
+                (remainingTurns < MAX_TURNS/2 && target.speechCount < 2)) {
+                weights["accuse_quiet"] += 50;
+            } else {
+                weights["accuse_quiet"] = 0;
+            }
+        } else {
+            // COしてるなら「無口だから」という理由は使わない
+            weights["accuse_quiet"] = 0;
+
+            // ★ここで安全に currentSuspicion を使えるようになった！
+            // COしてるのに怪しい（対抗や黒出し）場合は強く出る
+            if (currentSuspicion > 40) { 
+                weights["accuse_strong"] += 50; 
+                weights["defend_other"] = 0; 
+            } 
+            // COしてて信頼できるなら庇う
+            else if (currentSuspicion < -10) { 
+                weights["defend_other"] += 100; 
+                weights["accuse_strong"] = 0; 
+                weights["accuse_weak"] = 0; 
+            }
+        }
+
+        // 通常の疑惑判定（CO有無に関わらず）
         if (currentSuspicion > 40) { 
             weights["accuse_strong"] += 50; 
             weights["defend_other"] = 0; 
         } 
-        // 信頼してるなら庇う
         else if (currentSuspicion < -10) { 
             weights["defend_other"] += 100; 
             weights["accuse_strong"] = 0; 
@@ -1049,16 +1098,25 @@ function decideAction(speaker, target) {
         }
     }
 
-    // 重みに従ってランダム抽選
+    // キャラ補正
+    if (speaker.id === "noriomi") {
+        weights["accuse_weak"] += 20; weights["defend_other"] += 30; 
+        if (speaker.role === "人狼") weights["fake_logic"] = 0; 
+        if (speaker.role === "村人") return "self_sacrifice";
+    } else {
+        if (speaker.mbti === "ENTJ") { weights["accuse_strong"] += 30; weights["fake_logic"] += 10; }
+        else if (speaker.mbti === "ISFP") { weights["defend_other"] += 30; weights["fake_logic"] += 20; }
+        else if (speaker.mbti === "ESTP") { weights["fake_logic"] += 30; weights["accuse_strong"] += 20; }
+        else if (speaker.mbti === "ESFJ") { weights["defend_other"] += 40; }
+    }
+
+    if (mental < 20) return "collapse";
+
     let total = 0;
     for (let key in weights) total += weights[key];
     let rand = Math.random() * total;
-    for (let key in weights) { 
-        if (rand < weights[key]) return key; 
-        rand -= weights[key]; 
-    }
+    for (let key in weights) { if (rand < weights[key]) return key; rand -= weights[key]; }
     
-    // 何も決まらなかったらとりあえず弱く疑う
     return "accuse_weak";
 }
 
@@ -1236,6 +1294,10 @@ function checkWinCondition() {
 }
 
 // ★ 全員発言リザルト
+// ==========================================
+// 修正版: showResultScreen
+// 勝敗に応じて表情（_good / _bad）を変える
+// ==========================================
 async function showResultScreen(winnerType) {
     playBgm("title"); 
     resultModal.classList.remove("hidden");
@@ -1252,23 +1314,33 @@ async function showResultScreen(winnerType) {
     resultGrid.innerHTML = "";
     
     for (const p of participants) {
+        // 勝敗判定
         let isWinner = false;
         if (winnerType === "human" && ["村人", "占い師", "霊媒師", "騎士", "共有者", "番犬", "猫又", "訪問者", "パン屋"].includes(p.role)) isWinner = true;
         if (winnerType === "wolf" && ["人狼", "狂人", "狂信者"].includes(p.role)) isWinner = true;
         if (winnerType === "fox" && ["妖狐", "背徳者"].includes(p.role)) isWinner = true;
         if (winnerType === "teru" && p.role === "てるてる坊主") isWinner = true;
 
-        let imgSrc = (p.isPlayer && playerCustomImg) ? playerCustomImg : `img/${p.img}.png`;
+        // ★画像のサフィックス決定
+        let suffix = isWinner ? "_good" : "_bad";
+        let imgSrc = (p.isPlayer && playerCustomImg) ? playerCustomImg : `img/${p.img}${suffix}.png`;
+        let fallbackSrc = `img/${p.img}.png`; // エラー時の保険
+
         const div = document.createElement("div");
         div.className = "result-card";
+        if (isWinner) div.classList.add("winner-card"); // CSSで装飾できるようにクラス追加
         
-        // ★ 強制的に全員喋らせる
         let type = isWinner ? "win" : "lose";
         let text = getRandomDialogue(p, type);
         let bubbleId = `bubble-${p.id}`;
         let commentHtml = `<div id="${bubbleId}" class="result-comment">${text}</div>`;
 
-        div.innerHTML = `<img src="${imgSrc}" onerror="this.src='https://via.placeholder.com/60'"><div>${p.name}</div><span class="role-badge">${p.role}</span>${commentHtml}`;
+        div.innerHTML = `
+            <img src="${imgSrc}" onerror="this.src='${fallbackSrc}'">
+            <div>${p.name}</div>
+            <span class="role-badge">${p.role}</span>
+            ${commentHtml}
+        `;
         
         div.onclick = () => {
             const bubble = document.getElementById(`bubble-${p.id}`);
@@ -1518,17 +1590,38 @@ function resolveNight(actions) {
             if (visitor) addLog(me.id, `(番犬通知: 飼い主の元に ${visitor.name} が訪れました)`, "normal");
         }
     }
+    // --- ここが重要修正ポイント！ ---
     updateMembersList();
     updateAllyList();
+    
     if (!checkWinCondition()) {
         dayCount++;
-        const me = participants.find(p => p.isPlayer);
-        if (!isSpectator && me) nextTurnBtn.disabled = false;
-        if (!isSpectator && me && me.isAlive) playerActBtn.disabled = false;
         addLog("system", `=== ${dayCount}日目の議論を開始します ===`);
-        if (isSpectator && me) checkMorningEvents(me); 
-        else if (me) checkMorningEvents(me);
-        if (isAutoPlaying || isSpectator) { autoProgressLoop(); }
+        
+        const me = participants.find(p => p.isPlayer);
+        try {
+            if (isSpectator && me) checkMorningEvents(me); 
+            else if (me) checkMorningEvents(me);
+        } catch(e) { console.error(e); }
+
+        // ★★★ 修正: 観戦モードならボタンを再設定してループ再開 ★★★
+        if (isSpectator) {
+            nextTurnBtn.disabled = false;
+            // ボタンの表示と機能をリセット（これが無いと2日目にボタンが死ぬ）
+            nextTurnBtn.innerText = isPaused ? "一時停止中 (再開)" : "進行中 (一時停止)";
+            nextTurnBtn.onclick = () => {
+                isPaused = !isPaused;
+                nextTurnBtn.innerText = isPaused ? "一時停止中 (再開)" : "進行中 (一時停止)";
+            };
+            
+            // ループ再開
+            autoProgressLoop();
+        } 
+        else if (me) {
+            // プレイヤーならボタン有効化
+            nextTurnBtn.disabled = false;
+            playerActBtn.disabled = false;
+        }
     }
 }
 
@@ -1675,4 +1768,24 @@ function addLog(charId, text, emotion = "normal") {
             scrollContainer.scrollTop = scrollContainer.scrollHeight;
         }, 50);
     }
+}
+
+// ==========================================
+// ★追加: 戻る・中断ボタンの制御
+// ==========================================
+// キャラ選択画面からタイトルへ
+document.getElementById("back-to-title-btn").addEventListener("click", () => {
+    selectionScreen.classList.add("hidden");
+    titleScreen.classList.remove("hidden");
+    playBgm("title");
+});
+
+// 中断ボタン（IDが exit-game-btn の場合）
+const exitBtn = document.getElementById("exit-game-btn-action");
+if (exitBtn) {
+    exitBtn.addEventListener("click", () => {
+        if(confirm("ゲームを中断してタイトルに戻りますか？")) {
+            location.reload(); 
+        }
+    });
 }
