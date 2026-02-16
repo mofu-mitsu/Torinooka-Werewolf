@@ -93,10 +93,15 @@
 
         <!-- 2. キャラ選択画面 -->
         <section id="selection-screen" class="screen hidden">
+            <!-- ▼ ヘッダー構造を変更 -->
             <header class="selection-header">
                 <button id="back-to-title-btn" class="back-btn"><i class="fa-solid fa-arrow-left"></i> 戻る</button>
-                <h2><i class="fa-solid fa-users"></i> 参加メンバー選択</h2>
-                <p>現在選択中: <span id="selected-count">0</span> 人</p>
+                <div class="header-center">
+                    <h2>参加メンバー選択</h2>
+                    <p>現在選択中: <span id="selected-count">0</span> 人</p>
+                </div>
+                <!-- レイアウトバランス用のダミー（必要なら） -->
+                <div style="width: 60px;"></div> 
             </header>
 
             <div class="options-area">
