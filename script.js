@@ -710,34 +710,23 @@ function updateTargetSelect() {
 
 // ==========================================
 // 【完全版】executeActionBtn
-// プレイヤー発言処理（エラーガード・報告修正済み）
+// プレイヤーのCO・報告の効果を劇的に強化！
 // ==========================================
 executeActionBtn.addEventListener("click", () => {
     try {
         const me = participants.find(p => p.isPlayer);
         let text = "";
         
-        // ★ターゲット取得と安全チェック
         let target = null;
         const targetId = targetSelect.value;
         
-        // CO以外のアクションでターゲットが選ばれてない場合は警告
         if (currentActionType !== "co") {
-            if (!targetId) {
-                alert("対象を選んでください！");
-                return;
-            }
+            if (!targetId) { alert("対象を選んでください！"); return; }
             target = participants.find(p => p.id === targetId);
-            if (!target) {
-                // 死んだ人がリストに出てない等の理由で取得できなかった場合
-                alert("対象が見つかりませんでした。リストを確認してください。");
-                return;
-            }
+            if (!target) { alert("対象が見つかりませんでした。"); return; }
         }
 
-        // --- 行動分岐 ---
-        
-        // 1. 疑う (Accuse)
+        // --- 1. 疑う ---
         if (currentActionType === "accuse") {
             if (target.id === me.id) { 
                 text = "私を疑ってください！ 私が人狼かもしれませんよ？"; 
@@ -748,7 +737,7 @@ executeActionBtn.addEventListener("click", () => {
                 me.agitation += 10; 
             }
         } 
-        // 2. 庇う (Defend)
+        // --- 2. 庇う ---
         else if (currentActionType === "defend") {
             if (target.id === me.id) { 
                 text = "私は信じてください！ 絶対に人間です！"; 
@@ -761,32 +750,62 @@ executeActionBtn.addEventListener("click", () => {
                 me.agitation -= 10; 
             }
         } 
-        // 3. 役職CO
+        // --- 3. 役職CO (ここを強化！) ---
         else if (currentActionType === "co") {
             const role = roleCoSelect.value; 
             text = `【CO】私は ${role} です！`; 
             playerStats.coCount++; 
+            
+            // 訂正なら怪しまれる
             if (playerStats.coCount > 1) { 
                 text += " (訂正します！)"; 
                 applySuspicionImpact(null, me, 30); 
-            } 
+            } else {
+                // ★初COなら、全員からの信頼を強制的に勝ち取る！
+                if (["占い師", "霊媒師", "騎士"].includes(role)) {
+                    participants.forEach(p => {
+                        if (!p.suspicionMeter) p.suspicionMeter = {};
+                        // 疑惑を一気にマイナス（信頼）へ！
+                        // 既存の疑いを上書きして-50にする
+                        p.suspicionMeter[me.id] = -50; 
+                    });
+                }
+            }
             me.coRole = role; 
             updateMembersList();
         } 
-        // 4. 結果報告 (Report)
+        // --- 4. 結果報告 (ここも強化！) ---
         else if (currentActionType === "report") {
-            const resultVal = resultSelect.value; // white / black
+            const resultVal = resultSelect.value; 
             const resultText = resultVal === "white" ? "人間" : "人狼"; 
             text = `結果報告です。${target.name} は 【${resultText}】 でした。`;
             
-            // 報告フラグ true で実行
-            if (resultVal === "black") applySuspicionImpact(me, target, 100, true); 
-            else applySuspicionImpact(me, target, -50, true);
+            // 自分の履歴にも保存（一貫性のため）
+            if (!me.reportHistory) me.reportHistory = {};
+            me.reportHistory[target.id] = resultVal;
+
+            if (resultVal === "black") {
+                // 黒出し：相手への疑惑をMAXに
+                applySuspicionImpact(me, target, 200, true); 
+            } else {
+                // 白出し：相手への疑惑を強制的に下げる
+                // applySuspicionImpactだと相殺される可能性があるので、直接操作も併用
+                participants.forEach(p => {
+                    // もしAI(p)が自分(me)を信頼している(-20以下)なら、ターゲット(target)も信頼させる
+                    const trustToMe = (p.suspicionMeter && p.suspicionMeter[me.id]) || 0;
+                    if (trustToMe < -20) {
+                        if (!p.suspicionMeter) p.suspicionMeter = {};
+                        // ターゲットへの疑惑を消す
+                        p.suspicionMeter[target.id] = -50;
+                    }
+                });
+                // 通常の計算も回す
+                applySuspicionImpact(me, target, -100, true);
+            }
             
-            applySuspicionImpact(null, me, -10); 
+            applySuspicionImpact(null, me, -20); // 報告したのでさらに信頼度アップ
         }
 
-        // ログ出力と感情設定
         let emo = "normal";
         if(currentActionType === "co" || (currentActionType === "report" && resultSelect.value === "white") || currentActionType === "defend") emo = "good";
         if((currentActionType === "report" && resultSelect.value === "black") || currentActionType === "accuse") emo = "bad";
@@ -794,7 +813,6 @@ executeActionBtn.addEventListener("click", () => {
         addLog(me.id, text, emo);
         me.speechCount++; 
         
-        // 成功したら閉じる
         actionModal.classList.add("hidden");
         consumeTurn();
 
@@ -928,18 +946,20 @@ function chooseTarget(observer, type) {
         // 仲間除外
         if (isAlly(observer, p)) suspicion -= 9999;
         
-        // --- ★CO役職への配慮 ---
+        // --- ★CO役職への配慮（ここを最強にする） ---
         if (p.coRole && ["占い師", "霊媒師", "騎士"].includes(p.coRole)) {
-            // 初日はCO役職を神聖視
+            // 初日は神
             if (dayCount === 1) {
-                suspicion -= 1000; 
+                suspicion -= 9999; // 絶対にターゲットにならない
             } 
             else {
-                // 2日目以降
                 let rivals = (p.coRole === "占い師") ? seerCOs : ((p.coRole === "霊媒師") ? mediumCOs : []);
-                // 対抗なしなら絶対信頼
+                // 対抗なしなら神
                 if (rivals.length <= 1 && p.coRole !== "騎士") { 
-                    suspicion -= 999; 
+                    suspicion -= 5000; 
+                } else {
+                    // 対抗がいても、とりあえず少しは敬意を払う（簡単には吊らない）
+                    suspicion -= 50;
                 }
             }
         }
@@ -1711,7 +1731,7 @@ async function startNightPhase() {
 
 // ==========================================
 // 【完全版】resolveNight
-// 夜の結果反映 & 観戦ボタンリセット
+// 夜の結果反映 & スキップ・観戦のループ継続処理
 // ==========================================
 function resolveNight(actions) {
     remainingTurns = MAX_TURNS; 
@@ -1719,7 +1739,7 @@ function resolveNight(actions) {
     playBgm("noon");
     addLog("system", "=== 朝が来ました ===");
     
-    // 1. 怪盗
+    // --- 1. 怪盗 ---
     if (actions.thief) {
         const thief = participants.find(p => p.role === "怪盗");
         const target = participants.find(p => p.id === actions.thief);
@@ -1731,7 +1751,7 @@ function resolveNight(actions) {
         }
     }
 
-    // 2. 占い呪殺（妖狐）
+    // --- 2. 占い呪殺 ---
     if (actions.divine) {
         const divined = participants.find(p => p.id === actions.divine);
         if (divined.role === "妖狐" && divined.isAlive) {
@@ -1742,7 +1762,7 @@ function resolveNight(actions) {
         }
     }
 
-    // 3. 襲撃・護衛処理
+    // --- 3. 襲撃・護衛 ---
     const kills = [];
     if (actions.wolf) kills.push({ id: actions.wolf, type: "wolf" });
     if (actions.dogAttack) kills.push({ id: actions.dogAttack, type: "dog" });
@@ -1755,10 +1775,10 @@ function resolveNight(actions) {
         let isProtected = false;
         if (actions.guard === victim.id) isProtected = true;
         if (actions.dog === victim.id) isProtected = true;
-        if (kill.type === "dog") isProtected = false; // 番犬アタックは防げない
+        if (kill.type === "dog") isProtected = false; 
         
         if (isProtected) {
-            // 護衛成功（ログは出さないのが一般的）
+            // 護衛成功
         } else if (victim.role === "妖狐" && kill.type === "wolf") {
             // 妖狐は噛まれても死なない
         } else {
@@ -1771,7 +1791,7 @@ function resolveNight(actions) {
     });
     if (peace) addLog("system", "昨夜は平和でした。");
 
-    // 4. 訪問者
+    // --- 4. 訪問者 ---
     if (actions.visit) {
         const target = participants.find(p => p.id === actions.visit);
         const visitor = participants.find(p => p.role === "訪問者" && p.isAlive);
@@ -1788,10 +1808,11 @@ function resolveNight(actions) {
         }
     }
 
-    // --- 状態更新 & 2日目以降の準備 ---
+    // --- 状態更新 ---
     updateMembersList();
     updateAllyList();
     
+    // --- 勝利判定 & 翌日の準備 ---
     if (!checkWinCondition()) {
         dayCount++;
         addLog("system", `=== ${dayCount}日目の議論を開始します ===`);
@@ -1802,8 +1823,12 @@ function resolveNight(actions) {
             else if (me) checkMorningEvents(me);
         } catch(e) { console.error(e); }
 
-        // ★観戦モードならボタン再設定
-        if (isSpectator) {
+        // ★★★ 修正ポイント: スキップ中なら強制的にループ再開！ ★★★
+        if (isSkipping) {
+            autoProgressLoop();
+        }
+        // 観戦モードの場合
+        else if (isSpectator) {
             nextTurnBtn.disabled = false;
             nextTurnBtn.innerText = isPaused ? "一時停止中 (再開)" : "進行中 (一時停止)";
             nextTurnBtn.onclick = () => {
@@ -1812,8 +1837,8 @@ function resolveNight(actions) {
             };
             autoProgressLoop();
         } 
+        // 生存プレイヤーの場合
         else if (me) {
-            // プレイヤーならボタン復活
             nextTurnBtn.disabled = false;
             playerActBtn.disabled = false;
         }
