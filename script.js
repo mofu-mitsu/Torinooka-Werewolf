@@ -646,60 +646,162 @@ skipNoBtn.addEventListener("click", () => {
     skipModal.classList.add("hidden");
 });
 
+// ==========================================
+// 修正版: actTypeBtns (行動種別ボタン)
+// ボタンを押すたびにターゲットリストを更新する！
+// ==========================================
 actTypeBtns.forEach(btn => {
     btn.addEventListener("click", () => {
         actTypeBtns.forEach(b => b.classList.remove("selected"));
         btn.classList.add("selected");
-        currentActionType = btn.dataset.type;
+        
+        currentActionType = btn.dataset.type; // ★先にタイプを更新
+
+        // ★★★ ここが重要！リストを再生成する！ ★★★
+        updateTargetSelect(); 
+
+        // 表示エリアの切り替え
         targetSelectorArea.classList.add("hidden");
         roleSelectorArea.classList.add("hidden");
         resultSelectorArea.classList.add("hidden");
-        if (currentActionType === "accuse" || currentActionType === "defend") targetSelectorArea.classList.remove("hidden");
-        else if (currentActionType === "co") roleSelectorArea.classList.remove("hidden");
-        else if (currentActionType === "report") { targetSelectorArea.classList.remove("hidden"); resultSelectorArea.classList.remove("hidden"); }
+
+        if (currentActionType === "accuse" || currentActionType === "defend") {
+            targetSelectorArea.classList.remove("hidden");
+        } else if (currentActionType === "co") {
+            roleSelectorArea.classList.remove("hidden");
+        } else if (currentActionType === "report") {
+            targetSelectorArea.classList.remove("hidden");
+            resultSelectorArea.classList.remove("hidden");
+        }
     });
 });
 
+// ==========================================
+// 修正版: updateTargetSelect
+// 報告(report)の時は死体もリストに含める！
+// ==========================================
 function updateTargetSelect() {
     targetSelect.innerHTML = "";
     const me = participants.find(p => p.isPlayer);
+    
+    // ★重要: currentActionType が "report" なら死者も含める
     const includeDead = (currentActionType === "report");
-    let list = includeDead ? participants : participants.filter(p => p.isAlive);
+    
+    let list = [];
+    if (includeDead) {
+        // 報告用: 全員（ただし自分は除くことが多いが、一応含める）
+        list = participants;
+    } else {
+        // 通常: 生きている人のみ
+        list = participants.filter(p => p.isAlive);
+    }
+
     list.forEach(p => {
         const option = document.createElement("option");
         option.value = p.id;
         let suffix = "";
-        if (!p.isAlive) suffix = "(死亡)";
-        if (me && p.id === me.id) suffix += "(自分)";
+        if (!p.isAlive) suffix = " (死亡)";
+        if (me && p.id === me.id) suffix += " (自分)";
+        
         option.innerText = p.name + suffix;
         targetSelect.appendChild(option);
     });
 }
 
+// ==========================================
+// 【完全版】executeActionBtn
+// プレイヤー発言処理（エラーガード・報告修正済み）
+// ==========================================
 executeActionBtn.addEventListener("click", () => {
-    const me = participants.find(p => p.isPlayer);
-    let text = "";
-    if (currentActionType === "accuse") {
+    try {
+        const me = participants.find(p => p.isPlayer);
+        let text = "";
+        
+        // ★ターゲット取得と安全チェック
+        let target = null;
         const targetId = targetSelect.value;
-        const target = participants.find(p => p.id === targetId);
-        if (targetId === me.id) { text = "私を疑ってください！ 私が人狼かもしれませんよ？"; me.agitation += 20; }
-        else { text = `私は ${target.name} さんが怪しいと思います。`; applySuspicionImpact(me, target, 20); me.agitation += 10; }
-    } else if (currentActionType === "defend") {
-        const targetId = targetSelect.value;
-        const target = participants.find(p => p.id === targetId);
-        if (targetId === me.id) { text = "私は信じてください！ 絶対に人間です！"; playerStats.selfDefendCount++; me.agitation += 5; if (playerStats.selfDefendCount > 3) applySuspicionImpact(null, me, 10); }
-        else { text = `私は ${target.name} さんを信じたいです。`; applySuspicionImpact(me, target, -40); me.agitation -= 10; }
-    } else if (currentActionType === "co") {
-        const role = roleCoSelect.value; text = `【CO】私は ${role} です！`; playerStats.coCount++; if (playerStats.coCount > 1) { text += " (訂正します！)"; applySuspicionImpact(null, me, 30); } me.coRole = role; updateMembersList();
-    } else if (currentActionType === "report") {
-        const targetId = targetSelect.value; const target = participants.find(p => p.id === targetId); const result = resultSelect.value === "white" ? "人間" : "人狼"; text = `結果報告です。${target.name} は 【${result}】 でした。`;
-        if (result === "人狼") applySuspicionImpact(me, target, 100); else applySuspicionImpact(me, target, -50);
-        applySuspicionImpact(null, me, -10);
+        
+        // CO以外のアクションでターゲットが選ばれてない場合は警告
+        if (currentActionType !== "co") {
+            if (!targetId) {
+                alert("対象を選んでください！");
+                return;
+            }
+            target = participants.find(p => p.id === targetId);
+            if (!target) {
+                // 死んだ人がリストに出てない等の理由で取得できなかった場合
+                alert("対象が見つかりませんでした。リストを確認してください。");
+                return;
+            }
+        }
+
+        // --- 行動分岐 ---
+        
+        // 1. 疑う (Accuse)
+        if (currentActionType === "accuse") {
+            if (target.id === me.id) { 
+                text = "私を疑ってください！ 私が人狼かもしれませんよ？"; 
+                me.agitation += 20; 
+            } else { 
+                text = `私は ${target.name} さんが怪しいと思います。`; 
+                applySuspicionImpact(me, target, 20); 
+                me.agitation += 10; 
+            }
+        } 
+        // 2. 庇う (Defend)
+        else if (currentActionType === "defend") {
+            if (target.id === me.id) { 
+                text = "私は信じてください！ 絶対に人間です！"; 
+                playerStats.selfDefendCount++; 
+                me.agitation += 5; 
+                if (playerStats.selfDefendCount > 3) applySuspicionImpact(null, me, 10); 
+            } else { 
+                text = `私は ${target.name} さんを信じたいです。`; 
+                applySuspicionImpact(me, target, -40); 
+                me.agitation -= 10; 
+            }
+        } 
+        // 3. 役職CO
+        else if (currentActionType === "co") {
+            const role = roleCoSelect.value; 
+            text = `【CO】私は ${role} です！`; 
+            playerStats.coCount++; 
+            if (playerStats.coCount > 1) { 
+                text += " (訂正します！)"; 
+                applySuspicionImpact(null, me, 30); 
+            } 
+            me.coRole = role; 
+            updateMembersList();
+        } 
+        // 4. 結果報告 (Report)
+        else if (currentActionType === "report") {
+            const resultVal = resultSelect.value; // white / black
+            const resultText = resultVal === "white" ? "人間" : "人狼"; 
+            text = `結果報告です。${target.name} は 【${resultText}】 でした。`;
+            
+            // 報告フラグ true で実行
+            if (resultVal === "black") applySuspicionImpact(me, target, 100, true); 
+            else applySuspicionImpact(me, target, -50, true);
+            
+            applySuspicionImpact(null, me, -10); 
+        }
+
+        // ログ出力と感情設定
+        let emo = "normal";
+        if(currentActionType === "co" || (currentActionType === "report" && resultSelect.value === "white") || currentActionType === "defend") emo = "good";
+        if((currentActionType === "report" && resultSelect.value === "black") || currentActionType === "accuse") emo = "bad";
+
+        addLog(me.id, text, emo);
+        me.speechCount++; 
+        
+        // 成功したら閉じる
+        actionModal.classList.add("hidden");
+        consumeTurn();
+
+    } catch(e) {
+        console.error("プレイヤー行動エラー:", e);
+        alert("エラーが発生しました。\n" + e.message);
     }
-    addLog(me.id, text, "normal");
-    me.speechCount++; 
-    actionModal.classList.add("hidden");
-    consumeTurn(); 
 });
 
 function consumeTurn() {
@@ -725,46 +827,44 @@ function isAlly(p1, p2) {
 }
 
 // ==========================================
-// 修正版: applySuspicionImpact
-// 庇われたら疑いは減るが、庇った側が疑われるリスクあり
+// 【修正完全版】applySuspicionImpact
+// sourceがnull（自己弁護など）の場合のエラーを回避
 // ==========================================
 function applySuspicionImpact(source, target, amount, isReport = false) {
     // 仲間同士なら内部的な疑惑値は上げない
     if (source && isAlly(source, target) && amount > 0) return;
 
+    // 行動者自身の感情更新（sourceがいる場合のみ）
+    if (source && target && source.id !== target.id) {
+        if (!source.suspicionMeter) source.suspicionMeter = {};
+        const currentSelf = source.suspicionMeter[target.id] || 0;
+        source.suspicionMeter[target.id] = currentSelf + (amount * 0.8);
+    }
+
     participants.forEach(observer => {
         if (!observer.suspicionMeter) observer.suspicionMeter = {};
+        
+        // 自分自身がSourceならスキップ
         if (source && observer.id === source.id) return;
 
         let impact = amount;
-        const currentTrustToSource = observer.suspicionMeter[source.id] || 0;
+        
+        // ★修正ポイント: source が null の場合は 0 として扱う（エラー回避）
+        const currentTrustToSource = source ? (observer.suspicionMeter[source.id] || 0) : 0;
         const currentSuspicionToTarget = observer.suspicionMeter[target.id] || 0;
 
-        // ★★★ ライン考察（報告 isReport=true ならスキップ！） ★★★
         if (!isReport) {
-            // ▼ 誰かが「庇った」時 (amount < 0)
+            // 庇い（ライン考察）- sourceがいる時のみ
             if (amount < 0 && source) {
-                // 基本的に、庇われた人(target)への疑惑は下がる（みつきの要望）
-                // ただし、ObserverがSourceを嫌ってたら「お前が言うなら逆に怪しい」となる
-                if (currentTrustToSource > 30) {
-                    impact = 0; // 信用してないやつの擁護は無視
-                } else {
-                    // 素直に疑惑ダウン
-                    impact = amount; 
-                }
-
-                // 【重要】ターゲットが「めっちゃ怪しい(黒っぽい)」のに庇った場合
-                // 庇った人(Source)への疑惑が爆上がりする（ライン疑惑）
+                if (currentTrustToSource > 30) impact = 0; 
                 if (currentSuspicionToTarget > 50) {
                     observer.suspicionMeter[source.id] = currentTrustToSource + 25; 
-                    // ※targetへの疑惑は、上で下げているので「相殺」されて少し減るか現状維持になる
                 }
             }
-
-            // ▼ 誰かが「疑った」時
+            // 疑い - sourceがいる時のみ
             if (amount > 0 && source) {
-                if (currentTrustToSource < -20) impact = amount * 1.5; // 便乗
-                else if (currentTrustToSource > 50) impact = amount * 0.2; // 聞き流す
+                if (currentTrustToSource < -20) impact = amount * 1.5; 
+                else if (currentTrustToSource > 50) impact = amount * 0.2; 
             }
         }
 
@@ -773,23 +873,28 @@ function applySuspicionImpact(source, target, amount, isReport = false) {
             if (currentTrustToSource < -30) impact = amount * 0.5;
         }
 
-        // メンタルケア（庇われた本人）
-        if (amount < 0 && target.id === observer.id) {
-             target.mental = Math.min(100, target.mental + 5);
+        // メンタル & パニック管理
+        if (target.id === observer.id) {
+            if (amount > 0) {
+                // 疑われたらメンタル減る
+                let damage = 5;
+                if (amount > 50) damage = 10;
+                target.mental = Math.max(0, target.mental - damage);
+                target.agitation += 15;
+            }
+            else {
+                // 庇われたら回復
+                target.mental = Math.min(100, target.mental + 5);
+                target.agitation = Math.max(0, target.agitation - 10);
+            }
         }
         
-        // パニック補正
-        if (source && source.agitation > 30) {
-            impact = impact * 0.5;
-            observer.suspicionMeter[source.id] = (observer.suspicionMeter[source.id] || 0) + 5;
-        }
-
-        // 最終計算
+        // 疑惑更新
         if (target.id !== observer.id) {
             const current = observer.suspicionMeter[target.id] || 0;
             observer.suspicionMeter[target.id] = current + impact;
         } else {
-             // 自分へのヘイト管理
+             // 自分へのヘイト管理（sourceがいる時のみ）
              if (source) {
                  const currentHate = observer.suspicionMeter[source.id] || 0;
                  observer.suspicionMeter[source.id] = currentHate + (impact * 0.8);
@@ -798,36 +903,80 @@ function applySuspicionImpact(source, target, amount, isReport = false) {
     });
 }
 
+// ==========================================
+// 【完全版】chooseTarget
+// ターゲット選定（エラー原因のゴミを除去！）
+// ==========================================
 function chooseTarget(observer, type) {
     const candidates = participants.filter(p => p.id !== observer.id && p.isAlive);
     if (candidates.length === 0) return null;
     
+    // 対抗チェック用
     const knownFox = (observer.role === "背徳者") ? participants.find(p => p.role === "妖狐") : null;
-    const seerCOs = participants.filter(p => p.coRole === "占い師");
-    const livingSeers = seerCOs.filter(p => p.isAlive);
-    const bittenSeers = seerCOs.filter(p => !p.isAlive && p.id !== lastExecutedId); 
+    const seerCOs = participants.filter(p => p.coRole === "占い師" && p.isAlive);
+    const mediumCOs = participants.filter(p => p.coRole === "霊媒師" && p.isAlive);
 
     const scores = candidates.map(p => {
         let baseSuspicion = observer.params.suspicion_base || 10;
         let earnedSuspicion = observer.suspicionMeter[p.id] || 0;
         let suspicion = baseSuspicion + earnedSuspicion;
         
-        if (observer.params.trust_bias && observer.params.trust_bias[p.id]) suspicion += observer.params.trust_bias[p.id];
+        if (observer.params.trust_bias && observer.params.trust_bias[p.id]) {
+            suspicion += observer.params.trust_bias[p.id];
+        }
         
         // 仲間除外
         if (isAlly(observer, p)) suspicion -= 9999;
         
-        if (p.coRole === "占い師" && observer.role === "占い師") suspicion += 50; 
-        if (p.coRole === "人狼") suspicion += 999; 
-        if (p.agitation > 40) suspicion += 20;
+        // --- ★CO役職への配慮 ---
+        if (p.coRole && ["占い師", "霊媒師", "騎士"].includes(p.coRole)) {
+            // 初日はCO役職を神聖視
+            if (dayCount === 1) {
+                suspicion -= 1000; 
+            } 
+            else {
+                // 2日目以降
+                let rivals = (p.coRole === "占い師") ? seerCOs : ((p.coRole === "霊媒師") ? mediumCOs : []);
+                // 対抗なしなら絶対信頼
+                if (rivals.length <= 1 && p.coRole !== "騎士") { 
+                    suspicion -= 999; 
+                }
+            }
+        }
 
-        if (livingSeers.length === 1 && bittenSeers.length >= 1 && p.id === livingSeers[0].id) suspicion += 100;
+        // --- ★確黒判定 ---
+        if (observer.role === "占い師" && observer.nightInfo && observer.nightInfo.targetId === p.id) {
+            if (observer.nightInfo.result === "black") suspicion += 1000;
+            else suspicion -= 500;
+        }
+
+        // --- ★てるてる・荒らし対策 ---
         
-        // ★ 村人陣営: COしている白役職を保護（対抗がいない場合）
-        if (!["人狼", "狂人", "狂信者"].includes(observer.role) && ["騎士", "霊媒師"].includes(p.coRole)) {
-             // 対抗チェック
-             const rivals = participants.filter(x => x.coRole === p.coRole && x.isAlive);
-             if (rivals.length === 1) suspicion -= 50; 
+        // 1. 人狼COへの反応
+        if (p.coRole === "人狼") {
+            if (["人狼", "狂人", "狂信者", "背徳者"].includes(observer.role)) {
+                suspicion -= 500; // 悪役は無視
+            }
+            else {
+                // 賢い村人はスルー、単純な村人は食いつく
+                if (observer.params.logic > 55) suspicion -= 300; 
+                else suspicion += 300; 
+            }
+        }
+
+        // 2. パニック（「私を疑って！」連呼など）への反応
+        if (p.agitation > 60) {
+            // かなり取り乱している場合
+            if (observer.params.logic > 60) {
+                // 賢いキャラ：「あからさますぎる。てるてるか？」→ 疑わない
+                suspicion -= 200;
+            } else {
+                // 単純なキャラ：「なんだこいつ怪しい！」→ 疑う
+                suspicion += 50;
+            }
+        } else if (p.agitation > 30) {
+            // 少し焦ってるくらいなら普通に怪しむ
+            suspicion += 20;
         }
 
         const randomFactor = (Math.random() - 0.5) * 15; 
@@ -837,6 +986,7 @@ function chooseTarget(observer, type) {
     if (type === "accuse") {
         scores.sort((a, b) => b.score - a.score); 
         if (scores.length > 0 && scores[0].score < -100) return null;
+        
         const top = scores.slice(0, 2);
         return top[Math.floor(Math.random() * top.length)].data;
     } else {
@@ -847,208 +997,237 @@ function chooseTarget(observer, type) {
 }
 
 // ==========================================
-// 修正版: playDiscussionTurn
-// 全セリフタイプを網羅するようにロジック強化
+// 【デバッグ・安全強化版】playDiscussionTurn
+// エラーの原因を特定し、かつ止まらないようにする
 // ==========================================
 async function playDiscussionTurn() {
-    const speakers = participants.filter(p => !p.isPlayer && p.isAlive);
-    if (speakers.length < 1) { if(!isSpectator) addLog("system", "発言できる人がいません..."); return; }
-    const speaker = speakers[Math.floor(Math.random() * speakers.length)];
-
-    // 1. COロジック（村人COを追加）
-    if (!speaker.coRole && Math.random() < 0.15) {
-        // ... (既存の役職COロジックはそのまま) ...
-        const LIARS = ["人狼", "狂人", "狂信者", "背徳者", "てるてる坊主", "怪盗"];
-        let coTargetRole = null;
-        const rand = Math.random();
-        
-        if (["占い師", "霊媒師", "騎士"].includes(speaker.role) && rand < 0.3) {
-            if(speaker.role === "騎士" && dayCount === 1) {} 
-            else coTargetRole = speaker.role;
-        } 
-        else if (LIARS.includes(speaker.role) && rand < 0.15) {
-            coTargetRole = Math.random() > 0.5 ? "占い師" : "霊媒師";
-        }
-        else if (speaker.role === "村人" && rand < 0.05) {
-             coTargetRole = "村人"; // ★村人CO追加
-        }
-
-        if (coTargetRole) {
-            speaker.coRole = coTargetRole;
-            // キーを分岐
-            let dialKey = "co_villager";
-            if (coTargetRole === "占い師") dialKey = "co_seer";
-            else if (coTargetRole === "霊媒師") dialKey = "co_medium";
-            else if (coTargetRole === "騎士") dialKey = "co_knight";
-
-            let text = getRandomDialogue(speaker, dialKey);
-            addLog(speaker.id, text, "normal");
-            speaker.speechCount++;
-            updateMembersList();
+    console.log("--- 議論ターン開始 ---");
+    try {
+        const speakers = participants.filter(p => !p.isPlayer && p.isAlive);
+        if (speakers.length < 1) { 
+            if(!isSpectator) addLog("system", "発言できる人がいません..."); 
             return; 
         }
-    }
+        
+        const speaker = speakers[Math.floor(Math.random() * speakers.length)];
+        console.log(`発言者: ${speaker.name}`);
 
-    // 2. 結果報告 & 騎士の護衛成功自慢
-    if (speaker.coRole && Math.random() < 0.4) {
-        // ★騎士の護衛成功レポート
-        if (speaker.role === "騎士" && speaker.coRole === "騎士" && !speaker.hasReportedSuccess) {
-             // ※resolveNightで護衛成功フラグを立てる処理が必要だけど、簡易的にランダムで喋らせる
-             if (Math.random() < 0.3) {
-                 let text = getRandomDialogue(speaker, "report_knight_success");
-                 addLog(speaker.id, text, "happy");
-                 speaker.speechCount++;
-                 speaker.hasReportedSuccess = true; // 同じ自慢を繰り返さない
-                 return;
-             }
-        }
-        
-        // ... (既存の占い・霊媒結果報告ロジック) ...
-        let reportType = null;
-        let target = null;
-        let result = "white"; 
-        
-        if (speaker.coRole === "占い師") {
-            if (speaker.role === "占い師" && speaker.nightInfo) {
-                target = participants.find(p => p.id === speaker.nightInfo.targetId);
-                result = speaker.nightInfo.result;
-            } else {
-                const targets = participants.filter(p => p.id !== speaker.id && p.isAlive);
-                target = targets[Math.floor(Math.random() * targets.length)];
-                if (isAlly(speaker, target)) result = "white";
-                else if (speaker.role === "てるてる坊主") result = "black"; 
-                else result = Math.random() > 0.7 ? "black" : "white"; 
+        // --- 1. COロジック ---
+        if (!speaker.coRole && Math.random() < 0.15) {
+            const LIARS = ["人狼", "狂人", "狂信者", "背徳者", "てるてる坊主", "怪盗"];
+            let coTargetRole = null;
+            const rand = Math.random();
+            
+            if (["占い師", "霊媒師", "騎士"].includes(speaker.role) && rand < 0.3) {
+                if(speaker.role === "騎士" && dayCount === 1) {} 
+                else coTargetRole = speaker.role;
+            } 
+            else if (LIARS.includes(speaker.role) && rand < 0.15) {
+                coTargetRole = Math.random() > 0.5 ? "占い師" : "霊媒師";
             }
-            reportType = result === "white" ? "report_seer_white" : "report_seer_black";
-        } else if (speaker.coRole === "霊媒師") {
-            if (lastExecutedId) {
-                target = participants.find(p => p.id === lastExecutedId);
-                if (speaker.role === "霊媒師") {
-                    result = target.role === "人狼" ? "black" : "white";
+            else if (speaker.role === "村人" && rand < 0.05) coTargetRole = "村人";
+
+            if (coTargetRole) {
+                console.log(`アクション: CO (${coTargetRole})`);
+                speaker.coRole = coTargetRole;
+                let dialKey = "co_villager";
+                if (coTargetRole === "占い師") dialKey = "co_seer";
+                else if (coTargetRole === "霊媒師") dialKey = "co_medium";
+                else if (coTargetRole === "騎士") dialKey = "co_knight";
+
+                let text = getRandomDialogue(speaker, dialKey);
+                addLog(speaker.id, text, "good");
+                speaker.speechCount++;
+                updateMembersList();
+                return; 
+            }
+        }
+
+        // --- 2. 結果報告 & 騎士自慢 ---
+        if (speaker.coRole && Math.random() < 0.4) {
+            // 騎士自慢
+            if (speaker.role === "騎士" && speaker.coRole === "騎士" && !speaker.hasReportedSuccess) {
+                 if (Math.random() < 0.3) {
+                     console.log("アクション: 騎士自慢");
+                     let text = getRandomDialogue(speaker, "report_knight_success");
+                     addLog(speaker.id, text, "happy");
+                     speaker.speechCount++;
+                     speaker.hasReportedSuccess = true;
+                     return;
+                 }
+            }
+            
+            // 占い・霊媒報告
+            let reportType = null;
+            let target = null;
+            let result = "white"; 
+            if (!speaker.reportHistory) speaker.reportHistory = {};
+
+            if (speaker.coRole === "占い師") {
+                if (speaker.role === "占い師" && speaker.nightInfo) {
+                    // ★安全策: targetIdから対象を探す際、見つからなければエラー回避
+                    if (speaker.nightInfo.targetId) {
+                        target = participants.find(p => p.id === speaker.nightInfo.targetId);
+                    }
+                    result = speaker.nightInfo.result;
                 } else {
-                    result = Math.random() > 0.5 ? "black" : "white";
+                    const targets = participants.filter(p => p.id !== speaker.id && p.isAlive);
+                    if(targets.length > 0) {
+                        target = targets[Math.floor(Math.random() * targets.length)];
+                        if (speaker.reportHistory[target.id]) {
+                            result = speaker.reportHistory[target.id];
+                        } else {
+                            if (isAlly(speaker, target)) result = "white";
+                            else if (speaker.role === "てるてる坊主") result = "black"; 
+                            else result = Math.random() > 0.7 ? "black" : "white";
+                        }
+                    }
                 }
-                reportType = result === "white" ? "report_medium_white" : "report_medium_black";
+                reportType = result === "white" ? "report_seer_white" : "report_seer_black";
+            } else if (speaker.coRole === "霊媒師") {
+                if (lastExecutedId) {
+                    target = participants.find(p => p.id === lastExecutedId);
+                    if(target) {
+                        if (speaker.role === "霊媒師") result = target.role === "人狼" ? "black" : "white";
+                        else {
+                            if (speaker.reportHistory[target.id]) {
+                                result = speaker.reportHistory[target.id];
+                            } else {
+                                result = Math.random() > 0.5 ? "black" : "white";
+                            }
+                        }
+                        reportType = result === "white" ? "report_medium_white" : "report_medium_black";
+                    }
+                }
+            }
+
+            if (reportType && target) {
+                console.log(`アクション: 結果報告 -> ${target.name} (${result})`);
+                speaker.reportHistory[target.id] = result;
+                let text = getRandomDialogue(speaker, reportType, target);
+                let emo = result === "white" ? "good" : "bad";
+                addLog(speaker.id, text, emo);
+                speaker.speechCount++;
+                if (result === "black") applySuspicionImpact(speaker, target, 100, true);
+                else applySuspicionImpact(speaker, target, -50, true);
+                return;
             }
         }
-        if (reportType && target) {
-            let text = getRandomDialogue(speaker, reportType, target);
-            addLog(speaker.id, text, "normal");
+
+        // --- 3. 通常アクション ---
+        const aggression = speaker.params.aggressiveness || 50;
+        const isAccuseMode = Math.random() * 100 < (aggression + 10); 
+        let baseAction = isAccuseMode ? "accuse" : "defend";
+        
+        let target = chooseTarget(speaker, baseAction);
+        
+        // ターゲットがいなければ逆のアクションを試す
+        if (baseAction === "accuse" && !target) {
+            baseAction = "defend";
+            target = chooseTarget(speaker, "defend");
+        }
+
+        // ターゲット決定ログ
+        console.log(`ターゲット候補: ${target ? target.name : "なし"} (Action: ${baseAction})`);
+
+        let actionKey = decideAction(speaker, target);
+        console.log(`決定アクション: ${actionKey}`);
+
+        // ★★★ 安全策: カウンター判定 ★★★
+        if (target) {
+            // suspicionMeter自体がない場合のガード
+            const suspicionObj = target.suspicionMeter || {};
+            const hateTowardsMe = suspicionObj[speaker.id] || 0;
+            
+            if (hateTowardsMe > 30 && Math.random() < 0.5) {
+                 actionKey = "counter";
+                 console.log("-> カウンターに変更");
+            }
+        }
+
+        if (isAlly(speaker, target) && (actionKey.includes("accuse") || actionKey.includes("fake"))) {
+            actionKey = "defend_other";
+        }
+        
+        // 自己犠牲
+        if (actionKey === "self_sacrifice") {
+            let text = getSpecificDialogue(speaker, "self_sacrifice", null);
+            if(!text) text = getRandomDialogue(speaker, "self_sacrifice");
+            addLog(speaker.id, text, "bad");
             speaker.speechCount++;
-            if (result === "black") applySuspicionImpact(speaker, target, 100);
-            else applySuspicionImpact(speaker, target, -50);
-            if (speaker.role === "てるてる坊主") speaker.agitation += 20;
             return;
         }
-    }
 
-    // ★ローラー提案 (COが多い場合)
-    const seers = participants.filter(p => p.coRole === "占い師").length;
-    const mediums = participants.filter(p => p.coRole === "霊媒師").length;
-    if ((seers >= 2 || mediums >= 2) && Math.random() < 0.1 && speaker.params.logic > 60) {
-        let text = getRandomDialogue(speaker, "suggest_roller");
-        addLog(speaker.id, text, "normal");
-        speaker.speechCount++;
-        return;
-    }
-
-    // 騎士護衛依頼
-    if (speaker.coRole && ["占い師", "霊媒師"].includes(speaker.coRole) && Math.random() < 0.15) {
-         // ... (既存の護衛依頼ロジック) ...
-         // 白確または信頼できる人を探す
-        let protectTarget = null;
-        if (speaker.role === "占い師" && speaker.nightInfo && speaker.nightInfo.result === "white") {
-             protectTarget = participants.find(p => p.id === speaker.nightInfo.targetId && p.isAlive);
-        }
-        if (!protectTarget) {
-             const trusted = participants.filter(p => p.id !== speaker.id && p.isAlive && (isAlly(speaker, p) || (speaker.suspicionMeter[p.id]||0) < -20));
-             if (trusted.length > 0) protectTarget = trusted[Math.floor(Math.random() * trusted.length)];
-        }
+        // 発言生成
+        let text = getSpecificDialogue(speaker, actionKey, target);
+        if (!text) text = getRandomDialogue(speaker, actionKey, target);
         
-        let text = getSpecificDialogue(speaker, "request_guard", protectTarget);
-        if(!text) text = getRandomDialogue(speaker, "request_guard", protectTarget);
-        addLog(speaker.id, text, "normal");
+        let emo = getEmotionFromAction(actionKey);
+        if (actionKey === "counter") emo = "bad";
+
+        addLog(speaker.id, text, emo);
         speaker.speechCount++;
-        return;
-    }
 
-    // 通常のアクション決定
-    const aggression = speaker.params.aggressiveness || 50;
-    const isAccuseMode = Math.random() * 100 < (aggression + 10); 
-    let baseAction = isAccuseMode ? "accuse" : "defend";
-    
-    let target = chooseTarget(speaker, baseAction);
-    if (baseAction === "accuse" && !target) {
-        baseAction = "defend";
-        target = chooseTarget(speaker, "defend");
-    }
-
-    // アクション決定ロジック
-    let actionKey = decideAction(speaker, target);
-
-    // ★カウンター発動判定
-    // ターゲットが自分を疑っている場合、反論(counter)に切り替える
-    if (target && (speaker.suspicionMeter[target.id] || 0) > 30 && Math.random() < 0.4) {
-         actionKey = "counter";
-    }
-
-    // 味方への攻撃防止
-    if (isAlly(speaker, target) && (actionKey.includes("accuse") || actionKey.includes("fake"))) {
-        actionKey = "defend_other";
-    }
-
-    // 自己犠牲
-    if (actionKey === "self_sacrifice") {
-        let text = getSpecificDialogue(speaker, "self_sacrifice", null);
-        if(!text) text = getRandomDialogue(speaker, "self_sacrifice");
-        addLog(speaker.id, text, "sad");
-        speaker.agitation += 10;
-        speaker.speechCount++;
-        return;
-    }
-
-    // 発言実行
-    let text = getSpecificDialogue(speaker, actionKey, target);
-    if (!text) text = getRandomDialogue(speaker, actionKey, target);
-    
-    // counterの場合の感情設定など
-    let emo = getEmotionFromAction(actionKey);
-    if (actionKey === "counter") emo = "angry";
-
-    addLog(speaker.id, text, emo);
-    speaker.speechCount++;
-
-    if (actionKey.includes("accuse") || actionKey === "counter") {
-        const influence = speaker.params.influence || 10;
-        if(target) {
-            applySuspicionImpact(speaker, target, influence / 2); 
-            speaker.agitation += 10;
+        // 疑惑値の更新
+        if (actionKey.includes("accuse") || actionKey === "counter") {
+            const influence = speaker.params.influence || 10;
+            if(target) {
+                console.log(`疑惑更新: ${speaker.name} -> ${target.name} (Accuse)`);
+                applySuspicionImpact(speaker, target, influence / 2); 
+                speaker.agitation += 10;
+            }
+        } else {
+            speaker.agitation = Math.max(0, speaker.agitation - 5); 
+            if (actionKey === "defend_self") {
+                console.log(`疑惑更新: ${speaker.name} (Defend Self)`);
+                // ★ここが原因だった可能性！targetはnullでも動くように
+                applySuspicionImpact(null, speaker, -15);
+            }
+            if (actionKey === "defend_other" && target) {
+                console.log(`疑惑更新: ${speaker.name} -> ${target.name} (Defend Other)`);
+                applySuspicionImpact(speaker, target, -40);
+            }
         }
-    } else {
-        speaker.agitation = Math.max(0, speaker.agitation - 5); 
-        if (actionKey === "defend_self") applySuspicionImpact(null, speaker, -15);
+
+    } catch(e) {
+        console.error("会話処理エラー発生！詳細:", e);
+        // 画面にエラーを出さないようにするが、開発者はF12で確認可能
+        // 万が一のためにスキップさせるなどの処理も可能だけど、まずはログで原因特定
     }
 }
+
 // ==========================================
-// 修正版: decideAction
-// 変数の定義順序を修正して、エラーで止まらないようにしました！
+// 【完全版】decideAction
+// 行動決定（エラー修正・CO済み寡黙保護・キャラ補正）
 // ==========================================
 function decideAction(speaker, target) {
     const mental = speaker.mental || 100;
     
+    // アクションの重み初期値
     let weights = { 
-        "accuse_weak": 10, "accuse_strong": 5, "accuse_quiet": 5, 
-        "defend_other": 5, "fake_logic": 5, "defend_self": 0,
+        "accuse_weak": 10, 
+        "accuse_strong": 5, 
+        "accuse_quiet": 5, 
+        "defend_other": 5, 
+        "fake_logic": 5, 
+        "defend_self": 0,
     };
 
+    // 役職ごとの傾向（嘘つきはフェイク多め）
     if (["狂人", "狂信者", "背徳者", "てるてる坊主"].includes(speaker.role)) {
-        weights["fake_logic"] += 40; weights["accuse_strong"] += 20;
+        weights["fake_logic"] += 40; 
+        weights["accuse_strong"] += 20;
     }
-    if (speaker.role === "てるてる坊主") { weights["fake_logic"] += 60; weights["accuse_strong"] += 50; }
+    if (speaker.role === "てるてる坊主") { 
+        weights["fake_logic"] += 50;      // 嘘をつく
+        weights["accuse_strong"] += 30;   // 暴れる
+        weights["self_sacrifice"] += 150; // ★超高確率で自爆したがる！
+        weights["defend_self"] = 0;       // 自己弁護はしない
+    }
 
     const logic = speaker.params.logic || 50;
     
-    // ★修正ポイント: 先に疑惑値(currentSuspicion)を計算しておく！
+    // ★先に疑惑値を計算（エラー回避）
     let currentSuspicion = 0;
     if(target) {
         currentSuspicion = (speaker.suspicionMeter[target.id] || 0);
@@ -1057,63 +1236,68 @@ function decideAction(speaker, target) {
         }
     }
 
-    // ★修正ポイント: 条件分岐の整理
     if (target) {
-        // COしていない相手への処理
+        // --- ★ここが修正ポイント！態度の明確化 ---
+        
+        // 疑惑値が 20以上なら「庇う」選択肢を消滅させる
+        if (currentSuspicion > 20) {
+            weights["defend_other"] = 0; 
+            
+            // さらに高ければ強い疑いを優先
+            if (currentSuspicion > 50) {
+                weights["accuse_strong"] += 100;
+                weights["accuse_weak"] += 20;
+            } else {
+                weights["accuse_weak"] += 50;
+            }
+        }
+        // 疑惑値が -10以下（信頼）なら「疑う」選択肢を消滅させる
+        else if (currentSuspicion < -10) {
+            weights["accuse_weak"] = 0;
+            weights["accuse_strong"] = 0;
+            weights["accuse_quiet"] = 0;
+            weights["defend_other"] += 100; // 全力で庇う
+        }
+        // どっちつかず(-10 〜 20)の場合は、弱い疑いか様子見になりやすいように調整
+        else {
+            weights["defend_other"] += 10;
+            weights["accuse_weak"] += 20;
+        }
+
+        // CO状態による補正（既存ロジック）
         if (!target.coRole) {
-            // 論理的かつ相手がパニック、または時間がなくて無口な場合
             if ((logic > 70 && target.agitation > 50) || 
                 (remainingTurns < MAX_TURNS/2 && target.speechCount < 2)) {
-                weights["accuse_quiet"] += 50;
+                if (weights["accuse_quiet"] !== 0) weights["accuse_quiet"] += 50; // 疑える状態なら追加
             } else {
                 weights["accuse_quiet"] = 0;
             }
         } else {
-            // COしてるなら「無口だから」という理由は使わない
             weights["accuse_quiet"] = 0;
-
-            // ★ここで安全に currentSuspicion を使えるようになった！
-            // COしてるのに怪しい（対抗や黒出し）場合は強く出る
-            if (currentSuspicion > 40) { 
-                weights["accuse_strong"] += 50; 
-                weights["defend_other"] = 0; 
-            } 
-            // COしてて信頼できるなら庇う
-            else if (currentSuspicion < -10) { 
-                weights["defend_other"] += 100; 
-                weights["accuse_strong"] = 0; 
-                weights["accuse_weak"] = 0; 
-            }
-        }
-
-        // 通常の疑惑判定（CO有無に関わらず）
-        if (currentSuspicion > 40) { 
-            weights["accuse_strong"] += 50; 
-            weights["defend_other"] = 0; 
-        } 
-        else if (currentSuspicion < -10) { 
-            weights["defend_other"] += 100; 
-            weights["accuse_strong"] = 0; 
-            weights["accuse_weak"] = 0; 
         }
     }
 
     // キャラ補正
     if (speaker.id === "noriomi") {
-        weights["accuse_weak"] += 20; weights["defend_other"] += 30; 
+        weights["accuse_weak"] += 20; 
+        if(weights["defend_other"] > 0) weights["defend_other"] += 30; // 庇える状態ならブースト
         if (speaker.role === "人狼") weights["fake_logic"] = 0; 
         if (speaker.role === "村人") return "self_sacrifice";
     } else {
         if (speaker.mbti === "ENTJ") { weights["accuse_strong"] += 30; weights["fake_logic"] += 10; }
-        else if (speaker.mbti === "ISFP") { weights["defend_other"] += 30; weights["fake_logic"] += 20; }
+        else if (speaker.mbti === "ISFP") { if(weights["defend_other"] > 0) weights["defend_other"] += 30; weights["fake_logic"] += 20; }
         else if (speaker.mbti === "ESTP") { weights["fake_logic"] += 30; weights["accuse_strong"] += 20; }
-        else if (speaker.mbti === "ESFJ") { weights["defend_other"] += 40; }
+        else if (speaker.mbti === "ESFJ") { if(weights["defend_other"] > 0) weights["defend_other"] += 40; }
     }
 
     if (mental < 20) return "collapse";
 
     let total = 0;
     for (let key in weights) total += weights[key];
+    
+    // 全部の重みが0になっちゃった場合の保険（とりあえず弱く疑う）
+    if (total === 0) return "accuse_weak";
+
     let rand = Math.random() * total;
     for (let key in weights) { if (rand < weights[key]) return key; rand -= weights[key]; }
     
@@ -1525,13 +1709,17 @@ async function startNightPhase() {
     resolveNight(nightActions);
 }
 
+// ==========================================
+// 【完全版】resolveNight
+// 夜の結果反映 & 観戦ボタンリセット
+// ==========================================
 function resolveNight(actions) {
     remainingTurns = MAX_TURNS; 
     updateTurnDisplay();
     playBgm("noon");
     addLog("system", "=== 朝が来ました ===");
     
-    // 怪盗
+    // 1. 怪盗
     if (actions.thief) {
         const thief = participants.find(p => p.role === "怪盗");
         const target = participants.find(p => p.id === actions.thief);
@@ -1543,6 +1731,7 @@ function resolveNight(actions) {
         }
     }
 
+    // 2. 占い呪殺（妖狐）
     if (actions.divine) {
         const divined = participants.find(p => p.id === actions.divine);
         if (divined.role === "妖狐" && divined.isAlive) {
@@ -1552,19 +1741,26 @@ function resolveNight(actions) {
             handleFoxDeath(); 
         }
     }
+
+    // 3. 襲撃・護衛処理
     const kills = [];
     if (actions.wolf) kills.push({ id: actions.wolf, type: "wolf" });
     if (actions.dogAttack) kills.push({ id: actions.dogAttack, type: "dog" });
+    
     let peace = true;
     kills.forEach(kill => {
         const victim = participants.find(p => p.id === kill.id);
         if (!victim || !victim.isAlive) return;
+        
         let isProtected = false;
         if (actions.guard === victim.id) isProtected = true;
         if (actions.dog === victim.id) isProtected = true;
-        if (kill.type === "dog") isProtected = false; 
+        if (kill.type === "dog") isProtected = false; // 番犬アタックは防げない
+        
         if (isProtected) {
+            // 護衛成功（ログは出さないのが一般的）
         } else if (victim.role === "妖狐" && kill.type === "wolf") {
+            // 妖狐は噛まれても死なない
         } else {
             victim.isAlive = false;
             victim.status = "dead";
@@ -1575,6 +1771,7 @@ function resolveNight(actions) {
     });
     if (peace) addLog("system", "昨夜は平和でした。");
 
+    // 4. 訪問者
     if (actions.visit) {
         const target = participants.find(p => p.id === actions.visit);
         const visitor = participants.find(p => p.role === "訪問者" && p.isAlive);
@@ -1590,7 +1787,8 @@ function resolveNight(actions) {
             if (visitor) addLog(me.id, `(番犬通知: 飼い主の元に ${visitor.name} が訪れました)`, "normal");
         }
     }
-    // --- ここが重要修正ポイント！ ---
+
+    // --- 状態更新 & 2日目以降の準備 ---
     updateMembersList();
     updateAllyList();
     
@@ -1604,21 +1802,18 @@ function resolveNight(actions) {
             else if (me) checkMorningEvents(me);
         } catch(e) { console.error(e); }
 
-        // ★★★ 修正: 観戦モードならボタンを再設定してループ再開 ★★★
+        // ★観戦モードならボタン再設定
         if (isSpectator) {
             nextTurnBtn.disabled = false;
-            // ボタンの表示と機能をリセット（これが無いと2日目にボタンが死ぬ）
             nextTurnBtn.innerText = isPaused ? "一時停止中 (再開)" : "進行中 (一時停止)";
             nextTurnBtn.onclick = () => {
                 isPaused = !isPaused;
                 nextTurnBtn.innerText = isPaused ? "一時停止中 (再開)" : "進行中 (一時停止)";
             };
-            
-            // ループ再開
             autoProgressLoop();
         } 
         else if (me) {
-            // プレイヤーならボタン有効化
+            // プレイヤーならボタン復活
             nextTurnBtn.disabled = false;
             playerActBtn.disabled = false;
         }
@@ -1637,11 +1832,28 @@ async function playIntroPhase() {
     addLog("system", "自己紹介終了。");
 }
 
+// ==========================================
+// 【確認用】getRandomDialogue
+// 通常セリフの取得（なければ "……" を返す）
+// ==========================================
 function getRandomDialogue(char, type, target = null) {
-    if (!char.dialogues || !char.dialogues[type] || char.dialogues[type].length === 0) return "……";
+    // データがない、またはそのカテゴリのセリフが空の場合
+    if (!char.dialogues || !char.dialogues[type] || char.dialogues[type].length === 0) {
+        // フォールバック（似た状況を探す）
+        if (type === "accuse_strong" || type === "accuse_quiet") {
+            // 強い疑い・静かな疑いがなければ「普通の疑い(accuse_weak)」で代用
+            if (char.dialogues["accuse_weak"] && char.dialogues["accuse_weak"].length > 0) {
+                return getRandomDialogue(char, "accuse_weak", target);
+            }
+        }
+        return "……"; 
+    }
+
     const lines = char.dialogues[type];
     let text = lines[Math.floor(Math.random() * lines.length)];
+    
     if (target) {
+        // 自分自身を指す場合（自投票など）
         if (target.id === char.id) text = text.replace(/{target}/g, "私");
         else text = text.replace(/{target}/g, target.name);
     } else {
@@ -1650,25 +1862,87 @@ function getRandomDialogue(char, type, target = null) {
     return text;
 }
 
+// ==========================================
+// 【完全版】getSpecificDialogue
+// 「その場にいるなら」特定セリフを発生させるロジック追加
+// ==========================================
 function getSpecificDialogue(char, situation, target) {
     if (!char.dialogues || !char.dialogues.specific) return null;
+    
     const targetId = target ? target.id : null; 
-    if (!Array.isArray(char.dialogues.specific)) return null;
 
-    const match = char.dialogues.specific.find(spec => {
-        const targetMatch = (spec.target === targetId);
-        const situationMatch = (spec.situation === situation) || situation.startsWith(spec.situation);
-        if (situation === "intro" && spec.target) return false; 
-        return targetMatch && situationMatch;
+    // 候補をフィルタリング
+    const matches = char.dialogues.specific.filter(spec => {
+        // 1. 状況チェック（完全一致 or 前方一致）
+        let isSituationMatch = false;
+        if (spec.situation === situation) isSituationMatch = true;
+        else if (situation.startsWith(spec.situation)) isSituationMatch = true;
+
+        if (!isSituationMatch) return false;
+
+        // 2. ターゲットチェック（ここを強化！）
+        let isTargetMatch = false;
+
+        // A. 特定の相手を指定していない（汎用セリフ）
+        if (!spec.target) {
+            isTargetMatch = true;
+        } 
+        // B. 特定の相手を指定している場合
+        else {
+            // Case B-1: アクションの直接のターゲットがその人である
+            if (targetId && spec.target === targetId) {
+                isTargetMatch = true;
+            }
+            // Case B-2: ★ここ追加！
+            // アクションは全体向け(targetなし)だが、指定キャラが「村に参加している」場合
+            else if (!targetId) {
+                // そのキャラが参加者リストにいるか？
+                const isPresent = participants.some(p => p.id === spec.target);
+                if (isPresent) {
+                    isTargetMatch = true; 
+                }
+            }
+        }
+
+        return isTargetMatch;
     });
 
-    if (match && match.texts && match.texts.length > 0) {
-        const lines = match.texts;
-        let text = lines[Math.floor(Math.random() * lines.length)];
-        if(target) text = text.replace(/{target}/g, target.name);
-        return text;
+    if (matches.length === 0) return null;
+
+    // 候補からランダムに選ぶ
+    // ※「特定の相手がいる」条件のセリフは、汎用セリフより優先度を上げたい場合は
+    //   ここで重み付け抽選をする手もあるけど、一旦完全ランダムで
+    const match = matches[Math.floor(Math.random() * matches.length)];
+
+    // テキスト取得（配列 or 文字列）
+    let finalKey = "";
+    if (Array.isArray(match.texts) && match.texts.length > 0) {
+        finalKey = match.texts[Math.floor(Math.random() * match.texts.length)];
+    } else if (typeof match.text === 'string') {
+        finalKey = match.text;
     }
-    return null;
+
+    if (!finalKey) return null;
+
+    // --- {target} の置換処理 ---
+    // もし intro などの全体チャットで、specificな相手が選ばれた場合、
+    // target変数は null だから、名前が取れない。
+    // なので、match.target から名前を引っ張ってくる必要がある。
+    
+    let targetName = "みんな"; // デフォルト
+
+    if (target) {
+        // 通常ターゲット
+        targetName = target.name;
+    } else if (match.target) {
+        // ★全体チャットだけど、特定の相手向けセリフが選ばれた場合
+        const specificTarget = participants.find(p => p.id === match.target);
+        if (specificTarget) {
+            targetName = specificTarget.name;
+        }
+    }
+
+    return finalKey.replace(/{target}/g, targetName);
 }
 
 // ==========================================
