@@ -1122,3 +1122,366 @@ select {
         max-height: 90vh;
     }
 }
+/* =========================================
+   ★ パンくずリスト（ナビゲーション）
+   ========================================= */
+.breadcrumbs {
+    font-size: 0.85rem;
+    color: #ccc;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.breadcrumbs a {
+    color: #00ccff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+    color: #fff;
+}
+
+.breadcrumbs i {
+    font-size: 0.7rem;
+}
+
+/* =========================================
+   ★ トースト通知（エラーメッセージ等）
+   ========================================= */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none; /* クリック邪魔しないように */
+}
+
+.toast {
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    border: 1px solid #ff0055;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    font-size: 1rem;
+    font-weight: bold;
+    animation: slideDown 0.3s ease-out, fadeOut 0.5s ease-in 2.5s forwards;
+}
+
+@keyframes slideDown {
+    from { transform: translate(-50%, -20px); opacity: 0; }
+    to { transform: translate(0, 0); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+}
+
+/* =========================================
+   全体のリセットと動く背景
+   ========================================= */
+body {
+    margin: 0;
+    padding: 0;
+    /* ★フォントをスマートに */
+    font-family: 'Zen Kaku Gothic New', "Helvetica Neue", Arial, sans-serif;
+    /* ★背景をミステリアスな深宇宙風グラデーションに */
+    background: radial-gradient(circle at 50% 0%, #301446 0%, #0a0510 100%);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ★動く星や光（パーティクル風） */
+.bg-particles {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 40px 70px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 50px 160px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0));
+    background-size: 200px 200px;
+    animation: stars 100s linear infinite;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+@keyframes stars {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-200px); }
+}
+
+/* =========================================
+   アプリのコンテナ（すりガラス効果！）
+   ========================================= */
+.app-container {
+    width: 90%;
+    max-width: 800px;
+    height: 90vh;
+    /* ★真っ黒ではなく、少し透明にして背景をぼかす */
+    background: rgba(20, 10, 30, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(255, 0, 85, 0.1);
+    border-radius: 20px;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 画面切り替え用 */
+.screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #ff0055 rgba(0,0,0,0.2);
+}
+.screen::-webkit-scrollbar { width: 6px; }
+.screen::-webkit-scrollbar-thumb { background: #ff0055; border-radius: 3px; }
+.hidden { display: none !important; }
+
+/* =========================================
+   タイトル画面のオシャレ化
+   ========================================= */
+.title-logo {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 5px;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+.game-title {
+    font-family: 'Orbitron', sans-serif; /* 英字をサイバー風に */
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin: 10px 0;
+    text-align: center;
+    background: linear-gradient(to right, #ff0055, #ff758c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(255, 0, 85, 0.3);
+    letter-spacing: 2px;
+}
+
+.sub-title {
+    font-size: 1.1rem;
+    color: #aaddff;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 5px rgba(0, 170, 255, 0.5);
+}
+
+/* 入力エリア */
+.input-area {
+    margin: 20px 0 40px;
+    text-align: center;
+    background: rgba(0,0,0,0.3);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+input[type="text"] {
+    padding: 12px 15px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+    outline: none;
+    transition: all 0.3s;
+}
+input[type="text"]:focus {
+    border-color: #00ccff;
+    box-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+}
+
+/* =========================================
+   ボタンのネオン＆リッチ化
+   ========================================= */
+.main-btn {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    /* ★グラデーションでリッチに */
+    background: linear-gradient(135deg, #ff0055 0%, #cc0044 100%);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    /* ★発光エフェクト */
+    box-shadow: 0 4px 15px rgba(255, 0, 85, 0.4), inset 0 2px 0 rgba(255,255,255,0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.main-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 85, 0.6), inset 0 2px 0 rgba(255,255,255,0.3);
+    background: linear-gradient(135deg, #ff1a66 0%, #e6004d 100%);
+}
+.main-btn:active {
+    transform: translateY(1px);
+}
+
+.spectator-btn {
+    background: linear-gradient(135deg, #00aaff 0%, #0077cc 100%);
+    box-shadow: 0 4px 15px rgba(0, 170, 255, 0.4), inset 0 2px 0 rgba(255,255,255,0.2);
+}
+.spectator-btn:hover {
+    box-shadow: 0 6px 20px rgba(0, 170, 255, 0.6), inset 0 2px 0 rgba(255,255,255,0.3);
+    background: linear-gradient(135deg, #1ab2ff 0%, #0088e6 100%);
+}
+
+.sub-btn {
+    background: rgba(255,255,255,0.1);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    backdrop-filter: blur(5px);
+    transition: all 0.2s;
+}
+.sub-btn:hover {
+    background: rgba(255,255,255,0.2);
+    border-color: #fff;
+}
+/* --- ★修正: 全解除ボタンのスタイル --- */
+.clear-btn {
+    position: absolute;
+    right: 0; /* 右端に固定 */
+    background: transparent;
+    border: 1px solid #888;
+    color: #ccc;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+.clear-btn:hover { background: #888; color: #fff; }
+
+/* --- ★修正: タブが増えたので横スクロール対応にする --- */
+.tabs-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: nowrap; /* ★折り返さずに横に並べる */
+    overflow-x: auto;  /* ★横スクロール可能に */
+    justify-content: flex-start;
+    padding-bottom: 10px; /* スクロールバー用の隙間 */
+    scrollbar-width: thin;
+    scrollbar-color: #ff0055 rgba(0,0,0,0.3);
+}
+.tabs-container::-webkit-scrollbar { height: 6px; }
+.tabs-container::-webkit-scrollbar-thumb { background: #ff0055; border-radius: 3px; }
+
+.tab-btn {
+    flex-shrink: 0; /* ★タブの文字が潰れないようにする */
+}
+
+
+/* --- ★修正: スマホ用レイアウト (レスポンシブ対応) --- */
+@media screen and (max-width: 600px) {
+    /* ヘッダーのボタンがタイトルに被るのを防ぐ */
+    .selection-header {
+        padding-top: 45px; /* 上にボタン用のスペースを確保 */
+    }
+    .back-btn { top: 0; left: 0; }
+    .clear-btn { top: 0; right: 0; }
+    
+    .header-center { width: 100%; margin-top: 5px; }
+    .selection-header h2 { font-size: 1.2rem; }
+
+    /* パンくずリストを少し小さく */
+    .breadcrumbs { font-size: 0.75rem; padding: 8px; }
+    
+    /* アフィリエイト広告が画面幅をはみ出さないように縮小 */
+    .affiliate-banner {
+        transform: scale(0.85);
+        transform-origin: top center;
+    }
+}
+/* --- ★修正: タブが増えたので横スクロール対応にする --- */
+.tabs-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 10px; 
+    padding-right: 20px; /* ★追加: 一番右までスクロールした時の余白 */
+    box-sizing: border-box; /* ★追加: はみ出し防止 */
+    scrollbar-width: thin;
+    scrollbar-color: #ff0055 rgba(0,0,0,0.3);
+}
+/* キャラ一覧グリッド（横スクロール版） */
+.char-grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap; /* 折り返さない */
+    overflow-x: auto;  /* 横スクロール有効 */
+    gap: 15px;
+    padding: 10px 20px 10px 10px; /* ★修正: 上10 右20 下10 左10（右に余白！） */
+    box-sizing: border-box; /* ★追加: はみ出し防止 */
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    scrollbar-width: thin;
+    scrollbar-color: #ff0055 rgba(0,0,0,0.3);
+}
+/* =========================================
+   ★ 横スクロールの右端見切れ防止（最強版）
+   ========================================= */
+
+/* タブの最後の要素の右側に強制的に隙間を作る */
+.tab-btn:last-child {
+    margin-right: 20px !important;
+}
+
+/* キャラ一覧の最後の要素の右側にも強制的に隙間を作る */
+.char-card:last-child {
+    margin-right: 20px !important;
+}
+
+/* コンテナ自体の幅がはみ出さないように念押し */
+.tabs-container, .char-grid {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}

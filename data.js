@@ -29539,7 +29539,7 @@ const charactersData = [
         // --- うた (Uta) ---
         id: "uta",
         name: "うた",
-        fullName: "大鈍内 宇太",
+        fullName: "大鈍内 宇太（おおどんち　うた）",
         gender: "male",
         class: "M1-1",
         mbti: "ISTJ",
@@ -29720,7 +29720,7 @@ const charactersData = [
         // --- りゅうせい (Ryusei) ---
         id: "ryusei",
         name: "りゅうせい",
-        fullName: "小緑 流星",
+        fullName: "小緑 流星（おろく　りゅうせい）",
         gender: "male",
         class: "M1-1",
         mbti: "ISFJ",
@@ -29901,7 +29901,7 @@ const charactersData = [
         // --- みずき (Mizuki) ---
         id: "mizuki",
         name: "みずき",
-        fullName: "鐘巻 瑞希",
+        fullName: "鐘巻 瑞希（かねまき みずき）",
         gender: "female",
         class: "M1-1",
         mbti: "ENTJ",
@@ -30082,7 +30082,7 @@ const charactersData = [
         // --- みづき (Miduki) ---
         id: "miduki",
         name: "みづき",
-        fullName: "貴虎 深月",
+        fullName: "貴虎 深月（きとら　みづき）",
         gender: "female",
         class: "M1-1",
         mbti: "INTP",
@@ -30263,7 +30263,7 @@ const charactersData = [
         // --- むさし (Musashi) ---
         id: "musashi",
         name: "むさし",
-        fullName: "獅々鹿 武蔵",
+        fullName: "獅々鹿 武蔵（ししか　むさし）",
         gender: "male",
         class: "M1-1",
         mbti: "ESTJ",
@@ -30444,7 +30444,7 @@ const charactersData = [
         // --- きつ (Kitsu) ---
         id: "kitsu",
         name: "きつ",
-        fullName: "七理 桔",
+        fullName: "七理 桔（しちり　きつ）",
         gender: "male",
         class: "M1-1",
         mbti: "ISTJ",
@@ -30642,7 +30642,7 @@ const charactersData = [
         // --- そな (Sona) ---
         id: "sona",
         name: "そな",
-        fullName: "七理 双菜",
+        fullName: "七理 双菜（しちり　そな）",
         gender: "female",
         class: "M1-1",
         mbti: "ESTP",
@@ -30839,11 +30839,11 @@ const charactersData = [
         // --- よう (Yoh) ---
         id: "yoh",
         name: "よう",
-        fullName: "七理 耀",
+        fullName: "七理 耀（しちり　よう）",
         gender: "male",
         class: "M1-1",
         mbti: "INFJ",
-        img: "yoh",
+        img: "you",
         profile: "うさぎ。五つ子の次男。常に気配りができ、人のために尽くす。自分を出すのが苦手。",
         params: { suspicion_base: 10, emotion: 80, logic: 40, aggressiveness: 5, influence: 30, mental: 40, trust_bias: { "kitsu": -20, "sona": -20 } },
         role_bias: { seer: 0.6, wolf: 0.2, madman: 0.4 },
@@ -31029,7 +31029,7 @@ const charactersData = [
         // --- いつき (Itsuki) ---
         id: "itsuki",
         name: "いつき",
-        fullName: "菅原 斎",
+        fullName: "菅原 斎（すがわら　いつき）",
         gender: "female",
         class: "M1-1",
         mbti: "INTJ",
@@ -31219,7 +31219,7 @@ const charactersData = [
         // --- すなお (Sunao) ---
         id: "sunao",
         name: "すなお",
-        fullName: "十松 素",
+        fullName: "十松 素（とまつ　すなお）",
         gender: "female",
         class: "M1-1",
         mbti: "ISTJ",
@@ -31400,7 +31400,7 @@ const charactersData = [
         // --- きりまる (Kirimaru) ---
         id: "kirimaru",
         name: "きりまる",
-        fullName: "東九條 桐丸",
+        fullName: "東九條 桐丸（ひがしくじょう　きりまる）",
         gender: "male",
         class: "M1-1",
         mbti: "INFP",
@@ -31598,7 +31598,7 @@ const charactersData = [
         // --- ふうたろう (Futaro) ---
         id: "futaro",
         name: "ふうたろう",
-        fullName: "東九條 風太郎",
+        fullName: "東九條 風太郎（ひがしくじょう　ふうたろう）",
         gender: "male",
         class: "M1-1",
         mbti: "ENFJ",
@@ -31796,7 +31796,7 @@ const charactersData = [
         // --- はさい (Hasai) ---
         id: "hasai",
         name: "はさい",
-        fullName: "福良 杷菜",
+        fullName: "福良 杷菜（ふくら はさい）",
         gender: "female",
         class: "M1-1",
         mbti: "ESTJ",
@@ -31976,7 +31976,7 @@ const charactersData = [
         // --- なお (Nao) ---
         id: "nao",
         name: "なお",
-        fullName: "前板 尚",
+        fullName: "前板 尚（まえいた　なお）",
         gender: "male",
         class: "M1-1",
         mbti: "INTJ",
@@ -32166,7 +32166,7 @@ const charactersData = [
         // --- こいき (Koiki) ---
         id: "koiki",
         name: "こいき",
-        fullName: "三縞 木粋",
+        fullName: "三縞 木粋（みしま　こいき）",
         gender: "male",
         class: "M1-1",
         mbti: "ENFP",
@@ -32347,7 +32347,7 @@ const charactersData = [
         // --- みあ (Mia) ---
         id: "mia",
         name: "みあ",
-        fullName: "杠葉 深明",
+        fullName: "杠葉 深明（ゆずりは　みあ）",
         gender: "female",
         class: "M1-1",
         mbti: "ESTJ",
@@ -32544,8 +32544,8 @@ const charactersData = [
     {
         // --- みひ (Mihi) ---
         id: "mihi",
-        name: "mihi",
-        fullName: "杠葉 実陽",
+        name: "みひ",
+        fullName: "杠葉 実陽（ゆずりは　みひ）",
         gender: "female", // 男っぽい格好、Xジェンダー寄り。一人称「僕」
         class: "M1-1",
         mbti: "INTP",
@@ -32735,7 +32735,7 @@ const charactersData = [
         // --- かおり (Kaori) ---
         id: "kaori",
         name: "かおり",
-        fullName: "路熊 花音莉",
+        fullName: "路熊 花音莉（ろくま　かおり）",
         gender: "female",
         class: "M1-1",
         mbti: "ENFJ",
@@ -32916,7 +32916,7 @@ const charactersData = [
         // --- のぞみ (Nozomi) ---
         id: "nozomi",
         name: "のぞみ",
-        fullName: "六郎丸 望",
+        fullName: "六郎丸 望（ろくろうまる のぞみ）",
         gender: "male",
         class: "M1-1",
         mbti: "ENFP",
@@ -33096,7 +33096,7 @@ const charactersData = [
         // --- こすも (Cosmo) ---
         id: "cosmo",
         name: "こすも",
-        fullName: "赤石田 秋桜",
+        fullName: "赤石田 秋桜（あかしだ　こすも）",
         gender: "female",
         class: "M1-2",
         mbti: "ENTP",
@@ -33277,7 +33277,7 @@ const charactersData = [
         // --- ゆり (Yuri) ---
         id: "yuri",
         name: "ゆり",
-        fullName: "東日下 揺俐",
+        fullName: "東日下 揺俐（あさか　ゆり）",
         gender: "female",
         class: "M1-2",
         mbti: "ESFJ",
@@ -33457,7 +33457,7 @@ const charactersData = [
         // --- こた (Kota) ---
         id: "kota",
         name: "こた",
-        fullName: "大鈍内 小太",
+        fullName: "大鈍内 小太（おおどんち　こた）",
         gender: "male",
         class: "M1-2",
         mbti: "ESFP",
@@ -33647,7 +33647,7 @@ const charactersData = [
         // --- ひすい (Hisui) ---
         id: "hisui",
         name: "ひすい",
-        fullName: "陰裡 日翠",
+        fullName: "陰裡 日翠（かげり　ひすい）",
         gender: "female",
         class: "M1-2",
         mbti: "INFJ",
@@ -33828,11 +33828,11 @@ const charactersData = [
         // --- じょうご (Jogo) ---
         id: "jogo",
         name: "じょうご",
-        fullName: "金札 静悟",
+        fullName: "金札 静悟（かなふだ　じょうご）",
         gender: "male",
         class: "M1-2",
         mbti: "ENFP",
-        img: "jogo",
+        img: "jougo",
         profile: "人間。明るく愛想を振りまくが、本当は他人を信用していない。軽い山梨弁。",
         params: { suspicion_base: 60, emotion: 70, logic: 40, aggressiveness: 30, influence: 60, mental: 55, trust_bias: {} },
         role_bias: { seer: 0.9, wolf: 1.2, madman: 1.1 },
@@ -34009,7 +34009,7 @@ const charactersData = [
         // --- さくら (Sakura) ---
         id: "sakura",
         name: "さくら",
-        fullName: "叶生 桜",
+        fullName: "叶生 桜（かのう　さくら）",
         gender: "female",
         class: "M1-2",
         mbti: "ENTJ",
@@ -34190,7 +34190,7 @@ const charactersData = [
         // --- まく (Maku) ---
         id: "maku",
         name: "まく",
-        fullName: "神城 磨久",
+        fullName: "神城 磨久（かみしろ まく）",
         gender: "male",
         class: "M1-2",
         mbti: "ESTJ",
@@ -34371,7 +34371,7 @@ const charactersData = [
         // --- わかな (Wakana) ---
         id: "wakana",
         name: "わかな",
-        fullName: "可愛 和花奈",
+        fullName: "可愛 和花奈（かわい　わかな）",
         gender: "female",
         class: "M1-2",
         mbti: "ISFP",
@@ -34552,7 +34552,7 @@ const charactersData = [
         // --- ばく (Baku) ---
         id: "baku",
         name: "ばく",
-        fullName: "区伝 漠",
+        fullName: "区伝 漠（くでん ばく）",
         gender: "male",
         class: "M1-2",
         mbti: "ENTP",
@@ -34733,7 +34733,7 @@ const charactersData = [
         // --- いお (Io) ---
         id: "io",
         name: "いお",
-        fullName: "小水流 維織",
+        fullName: "小水流 維織（こずる　いお）",
         gender: "male",
         class: "M1-2",
         mbti: "INTP",
@@ -34913,7 +34913,7 @@ const charactersData = [
         // --- らん (Ran) ---
         id: "ran",
         name: "らん",
-        fullName: "浄聖 嵐",
+        fullName: "浄聖 嵐（じょうしょう　らん）",
         gender: "male", // 一人称指定なし、僕で設定
         class: "M1-2",
         mbti: "INTJ",
@@ -35094,7 +35094,7 @@ const charactersData = [
         // --- あみ (Ami) ---
         id: "ami",
         name: "あみ",
-        fullName: "七理 亜美",
+        fullName: "七理 亜美（しちり　あみ）",
         gender: "female",
         class: "M1-2",
         mbti: "ENFJ",
@@ -35292,7 +35292,7 @@ const charactersData = [
         // --- なぎは (Nagiha) ---
         id: "nagiha",
         name: "なぎは",
-        fullName: "七理 凪波",
+        fullName: "七理 凪波（しちり なぎは）",
         gender: "female",
         class: "M1-2",
         mbti: "ISFJ",
@@ -35482,11 +35482,11 @@ const charactersData = [
         // --- みちこう (Michiko) ---
         id: "michiko",
         name: "みちこう",
-        fullName: "鉛山 充煌",
+        fullName: "鉛山 充煌（なまりやま　みちこう）",
         gender: "male", // 「博士」と呼ばれるので男性想定
         class: "M1-2",
         mbti: "INTP",
-        img: "michiko",
+        img: "michikou",
         profile: "たぬき。情熱的で知識欲が強い「博士」。小難しい話をしがちだが天然。卵好き。",
         params: { suspicion_base: 40, emotion: 50, logic: 80, aggressiveness: 40, influence: 50, mental: 75, trust_bias: {} },
         role_bias: { seer: 1.2, wolf: 0.9, madman: 1.1 },
@@ -35663,7 +35663,7 @@ const charactersData = [
         // --- もぐも (Mogumo) ---
         id: "mogumo",
         name: "もぐも",
-        fullName: "東九條 萌雲",
+        fullName: "東九條 萌雲（ひがしくじょう　もぐも）",
         gender: "male",
         class: "M1-2",
         mbti: "ESTJ",
@@ -35861,7 +35861,7 @@ const charactersData = [
         // --- みや (Miya) ---
         id: "miya",
         name: "みや",
-        fullName: "杠葉 観野",
+        fullName: "杠葉 観野（ゆずりは　みや）",
         gender: "female",
         class: "M1-2",
         mbti: "ENTJ",
@@ -36058,7 +36058,7 @@ const charactersData = [
         // --- みゆう (Miyuu) ---
         id: "miyuu",
         name: "みゆう",
-        fullName: "杠葉 美優",
+        fullName: "杠葉 美優（ゆずりは　みゆう）",
         gender: "female",
         class: "M1-2",
         mbti: "INFP",
@@ -36270,7 +36270,7 @@ const charactersData = [
         // --- ひまり (Himari) ---
         id: "himari",
         name: "ひまり",
-        fullName: "陽江 日葵",
+        fullName: "陽江 日葵（ようえ　ひまり）",
         gender: "female",
         class: "M1-2",
         mbti: "ESFP",
@@ -36455,7 +36455,7 @@ const charactersData = [
         // --- さおる (Saoru) ---
         id: "saoru",
         name: "さおる",
-        fullName: "納 竿瑠",
+        fullName: "納 竿瑠（をさめ　さおる）",
         gender: "male",
         class: "M1-2",
         mbti: "ISTP",
@@ -45066,7 +45066,7 @@ const charactersData = [
     // --- さりこ (Sariko) ---
     {
         id: "sariko",
-        name: "sariko",
+        name: "さりこ",
         fullName: "磯野 早梨子（いその さりこ）",
         gender: "female",
         class: "M3-1",
@@ -45247,7 +45247,7 @@ const charactersData = [
     // --- きね (Kine) ---
     {
         id: "kine",
-        name: "kine",
+        name: "きね",
         fullName: "入間 仁（いるま きね）",
         gender: "male",
         class: "M3-1",
@@ -45428,7 +45428,7 @@ const charactersData = [
     // --- まふゆ (Mafuyu) ---
     {
         id: "mafuyu",
-        name: "mafuyu",
+        name: "まふゆ",
         fullName: "胡 麻冬（えびす まふゆ）",
         gender: "female",
         class: "M3-1",
@@ -45609,7 +45609,7 @@ const charactersData = [
     // --- ねおん (Neon) ---
     {
         id: "neon",
-        name: "neon",
+        name: "ねおん",
         fullName: "男知合 音穏（おちあい ねおん）",
         gender: "male",
         class: "M3-1",
@@ -45799,7 +45799,7 @@ const charactersData = [
     // --- ほたる (Hotaru) ---
     {
         id: "hotaru",
-        name: "hotaru",
+        name: "ほたる",
         fullName: "櫂作 蛍（かいさく ほたる）",
         gender: "female",
         class: "M3-1",
@@ -45980,7 +45980,7 @@ const charactersData = [
     // --- みつか (Mitsuka) ---
     {
         id: "mitsuka",
-        name: "mitsuka",
+        name: "みつか",
         fullName: "快勝院 充華（かいしょういん みつか）",
         gender: "female",
         class: "M3-1",
@@ -46170,7 +46170,7 @@ const charactersData = [
     // --- まひる (Mahiru) ---
     {
         id: "mahiru",
-        name: "mahiru",
+        name: "まひる",
         fullName: "小日向 真昼（こひなた まひる）",
         gender: "male",
         class: "M3-1",
@@ -46351,7 +46351,7 @@ const charactersData = [
     // --- もみじ (Momiji) ---
     {
         id: "momiji",
-        name: "momiji",
+        name: "もみじ",
         fullName: "狛林 紅葉（こまばやし もみじ）",
         gender: "male",
         class: "M3-1",
@@ -46532,7 +46532,7 @@ const charactersData = [
     // --- きゅうた (Kyuta) ---
     {
         id: "kyuta",
-        name: "kyuta",
+        name: "きゅうた",
         fullName: "品衛 球太（しなえ きゅうた）",
         gender: "male",
         class: "M3-1",
@@ -46713,7 +46713,7 @@ const charactersData = [
     // --- つとむ (Tsutomu) ---
     {
         id: "tsutomu",
-        name: "tsutomu",
+        name: "つとむ",
         fullName: "清多 努（せた つとむ）",
         gender: "male",
         class: "M3-1",
@@ -46894,7 +46894,7 @@ const charactersData = [
     // --- りな (Rina) ---
     {
         id: "rina",
-        name: "rina",
+        name: "りな",
         fullName: "立秋 里奈（たてあき りな）",
         gender: "female",
         class: "M3-1",
@@ -47075,7 +47075,7 @@ const charactersData = [
     // --- あさね (Asane) ---
     {
         id: "asane",
-        name: "asane",
+        name: "あさね",
         fullName: "時重 朝音（ときしげ あさね）",
         gender: "female",
         class: "M3-1",
@@ -47256,7 +47256,7 @@ const charactersData = [
     // --- かなめ (Kaname) ---
     {
         id: "kaname",
-        name: "kaname",
+        name: "かなめ",
         fullName: "百々海 要（どどみ かなめ）",
         gender: "male",
         class: "M3-1",
@@ -47446,7 +47446,7 @@ const charactersData = [
     // --- さなえ (Sanae) ---
     {
         id: "sanae",
-        name: "sanae",
+        name: "さなえ",
         fullName: "渡真利 咲苗（とまり さなえ）",
         gender: "female",
         class: "M3-1",
@@ -47636,7 +47636,7 @@ const charactersData = [
     // --- うさぎ (Usagi) ---
     {
         id: "usagi",
-        name: "usagi",
+        name: "うさぎ",
         fullName: "羽我 兎（はが うさぎ）",
         gender: "female",
         class: "M3-1",
@@ -47817,7 +47817,7 @@ const charactersData = [
     // --- あらた (Arata) ---
     {
         id: "arata",
-        name: "arata",
+        name: "あらた",
         fullName: "橋方 新（はしかた あらた）",
         gender: "male",
         class: "M3-1",
@@ -47998,7 +47998,7 @@ const charactersData = [
     // --- しゅうへい (Shuhei) ---
     {
         id: "shuhei",
-        name: "shuhei",
+        name: "しゅうへい",
         fullName: "巴陵 柊幣（はりょう しゅうへい）",
         gender: "male",
         class: "M3-1",
@@ -48179,7 +48179,7 @@ const charactersData = [
     // --- もとあき (Motoaki) ---
     {
         id: "motoaki",
-        name: "motoaki",
+        name: "もとあき",
         fullName: "坂藤 基秋（ばんどう もとあき）",
         gender: "male",
         class: "M3-1",
@@ -48360,7 +48360,7 @@ const charactersData = [
     // --- まどか (Madoka) ---
     {
         id: "madoka",
-        name: "madoka",
+        name: "まどか",
         fullName: "旭爪 円香（ひのつめ まどか）",
         gender: "female",
         class: "M3-1",
@@ -48721,7 +48721,7 @@ const charactersData = [
     // --- かるめ (Karume) ---
     {
         id: "karume",
-        name: "karume",
+        name: "かるめ",
         fullName: "明嵐 花流愛（めあらし かるめ）",
         gender: "male",
         class: "M3-1",
@@ -48911,7 +48911,7 @@ const charactersData = [
     // --- みお (Mio) ---
     {
         id: "mio",
-        name: "mio",
+        name: "みお",
         fullName: "恵 澪（めぐみ みお）",
         gender: "female",
         class: "M3-1",
@@ -49101,7 +49101,7 @@ const charactersData = [
     // --- あいな (Aina) ---
     {
         id: "aina",
-        name: "aina",
+        name: "あいな",
         fullName: "女良 愛奈（めら あいな）",
         gender: "female",
         class: "M3-1",
@@ -49291,7 +49291,7 @@ const charactersData = [
     // --- ことは (Kotoha) ---
     {
         id: "kotoha",
-        name: "kotoha",
+        name: "ことは",
         fullName: "少林 思葉（わかばやし ことは）",
         gender: "female",
         class: "M3-1",
@@ -49649,7 +49649,7 @@ const charactersData = [
     },
     {
         id: "tasuku",
-        name: "tasuku",
+        name: "たすく",
         fullName: "天埜 佐（あまの たすく）",
         gender: "male",
         class: "M3-2",
@@ -49829,7 +49829,7 @@ const charactersData = [
     // --- ひさき (Hisaki) ---
     {
         id: "hisaki",
-        name: "hisaki",
+        name: "ひさき",
         fullName: "猪植 陽樹（いのうえ ひさき）",
         gender: "male",
         class: "M3-2",
@@ -50010,7 +50010,7 @@ const charactersData = [
     // --- はると (Haruto) ---
     {
         id: "haruto",
-        name: "haruto",
+        name: "はると",
         fullName: "岡田 陽斗（おかだ はると）",
         gender: "male",
         class: "M3-2",
@@ -50191,7 +50191,7 @@ const charactersData = [
     {
         // --- ちず (Chizu) ---
         id: "chizu",
-        name: "chizu",
+        name: "ちず",
         fullName: "歩行田 地図（かちた ちず）",
         gender: "female",
         class: "M3-2",
@@ -50370,7 +50370,7 @@ const charactersData = [
     },
     {
         id: "shinichi",
-        name: "shinichi",
+        name: "しんいち",
         fullName: "河柳 真一（かわやなぎ しんいち）",
         gender: "male",
         class: "M3-2",
@@ -50550,7 +50550,7 @@ const charactersData = [
     // --- れお (Reo) ---
     {
         id: "reo",
-        name: "reo",
+        name: "れお",
         fullName: "栗垣 伶央（くりがき れお）",
         gender: "male",
         class: "M3-2",
@@ -50731,12 +50731,12 @@ const charactersData = [
     // --- るな (Runa) ---
     {
         id: "runa",
-        name: "runa",
+        name: "るな",
         fullName: "槻 琉奈（けやき るな）",
         gender: "female",
         class: "M3-2",
         mbti: "ISFJ",
-        img: "runa",
+        img: "luna",
         profile: "アカクラゲ。他人に触れられないのが悩みで「気安く触らないで」と強がるが、本当は弱虫で相手を傷つけたくない。れなとおんと仲良し。",
         params: { suspicion_base: 40, emotion: 70, logic: 40, aggressiveness: 25, influence: 35, mental: 40, trust_bias: { "rena": -15, "on": -15 } },
         role_bias: { seer: 0.6, wolf: 0.3, madman: 0.4 },
@@ -50766,7 +50766,7 @@ const charactersData = [
                 "お願いだから、{target}さん……声を聞かせて……。"
             ],
             fake_logic: [
-                "私のクラゲの勘が……{target}さんが危ないって言ってるの！",
+                "さっきと言ってることが違うよ……。{target}さん……ねえ、どうして説明が変わったの？",
                 "うまく言えないけど……{target}さんから、冷たい気配を感じる……。",
                 "みんなを守るために、{target}さんを疑うしかないの……ごめんね。",
                 "理由は明確じゃないけど……{target}さんが黒だと思うの……！"
@@ -50802,8 +50802,9 @@ const charactersData = [
                 "騎士さん、{target}さんを死守してね……頼んだよ！"
             ],
             self_sacrifice: [
-                "私が犠牲になって村が勝てるなら、喜んで身代わりになるよ……。",
-                "私を吊って確定勝利を掴んでね……後は頼んだよ……。"
+                "私が吊られればみんなが助かるの……？ それなら……ううん、ちゃんと確かめてから決めたい",
+                "私を吊って確定勝利を掴んでね……後は頼んだよ……。",
+                "怖いけど、みんなを守れるなら……私だって逃げたくないよ……。"
             ],
             self_vote: [
                 "これ以上疑われるのは耐えられない……自分に一票入れるよ……。",
@@ -50928,7 +50929,7 @@ const charactersData = [
     // --- たもつ (Tamotsu) ---
     {
         id: "tamotsu",
-        name: "tamotsu",
+        name: "たもつ",
         fullName: "左京 寿（さきょう たもつ）",
         gender: "male",
         class: "M3-2",
@@ -51109,7 +51110,7 @@ const charactersData = [
     // --- ふぇいいぇん (Feiyen) ---
     {
         id: "feiyen",
-        name: "feiyen",
+        name: "ふぇいいぇん",
         fullName: "朱 飛燕（しゅ ふぇいいぇん）",
         gender: "female",
         class: "M3-2",
@@ -51290,7 +51291,7 @@ const charactersData = [
     // --- もか (Moka) ---
     {
         id: "moka",
-        name: "moka",
+        name: "もか",
         fullName: "四村 萌榎（しむら もか）",
         gender: "female",
         class: "M3-2",
@@ -51480,7 +51481,7 @@ const charactersData = [
     // --- はた (Hata) ---
     {
         id: "hata",
-        name: "hata",
+        name: "はた",
         fullName: "末正 将（すえまさ はた）",
         gender: "male",
         class: "M3-2",
@@ -51661,7 +51662,7 @@ const charactersData = [
     // --- けいら (Keira) ---
     {
         id: "keira",
-        name: "keira",
+        name: "けいら",
         fullName: "袖裂 圭樂（そでさき けいら）",
         gender: "male",
         class: "M3-2",
@@ -51842,7 +51843,7 @@ const charactersData = [
     // --- いとり (Itori) ---
     {
         id: "itori",
-        name: "itori",
+        name: "いとり",
         fullName: "千葉 絃理（ちば いとり）",
         gender: "female",
         class: "M3-2",
@@ -52040,7 +52041,7 @@ const charactersData = [
     // --- さい (Sai) ---
     {
         id: "sai",
-        name: "sai",
+        name: "さい",
         fullName: "土倉 彩（つちくら さい）",
         gender: "female",
         class: "M3-2",
@@ -52238,7 +52239,7 @@ const charactersData = [
     // --- のぶ (Nobu) ---
     {
         id: "nobu",
-        name: "nobu",
+        name: "のぶ",
         fullName: "新田 誠（にいだ のぶ）",
         gender: "male",
         class: "M3-2",
@@ -52419,7 +52420,7 @@ const charactersData = [
     // --- おん (On) ---
     {
         id: "on",
-        name: "on",
+        name: "おん",
         fullName: "温井 温（ぬくい おん）",
         gender: "male",
         class: "M3-2",
@@ -52609,7 +52610,7 @@ const charactersData = [
     // --- こう (Kou) ---
     {
         id: "kou",
-        name: "kou",
+        name: "こう",
         fullName: "早風 香（はやかぜ こう）",
         gender: "female",
         class: "M3-2",
@@ -52799,7 +52800,7 @@ const charactersData = [
     // --- きよみ (Kiyomi) ---
     {
         id: "kiyomi",
-        name: "kiyomi",
+        name: "きよみ",
         fullName: "日矢川 清美（ひやかわ きよみ）",
         gender: "female",
         class: "M3-2",
@@ -52983,6 +52984,5488 @@ const charactersData = [
                     ]
                 }
             ]
+        }
+    },
+// --- まりさ (Marisa) ---
+    {
+        id: "marisa",
+        name: "まりさ",
+        fullName: "氷海 真里冷（ひょうかい まりさ）",
+        gender: "female",
+        class: "M3-2",
+        mbti: "ENFP",
+        img: "marisa",
+        profile: "海王星の姫。上品に見えるが奔放で無邪気な自由人。触れると物を凍らせてしまう力を持つ。",
+        params: { suspicion_base: 40, emotion: 85, logic: 30, aggressiveness: 45, influence: 65, mental: 70, trust_bias: {} },
+        role_bias: { seer: 0.5, wolf: 0.6, madman: 0.7 },
+        dialogues: {
+            intro: [
+                "ワタシは氷海真里冷デスわ！ みんな、仲良くシマショ♪",
+                "人狼ゲーム？ なんだか楽しそうデスわね！ ワタシも自由に遊ばせてもらいマス♪",
+                "あんまり気安く触れると、カチンコチンに凍らせちゃいマスわよ？ ふふっ♪",
+                "細かいルールは分かりませんけれど、無邪気に駆け回ってオオカミさんを見つけマスわ！"
+            ],
+            accuse_weak: [
+                "あの……{target}サン、なんだかお顔がこわばっていマスわ。凍りついてますの？",
+                "ふふっ、{target}サン。そのお言葉、氷みたいにツルッと滑ってますわよ？",
+                "{target}サン、何か隠し事をしてるんじゃナイ？ ワタシの目は誤魔化せませんわ♪",
+                "疑いたくはありませんけれど、{target}サンの動きが少し不自然デスわね。"
+            ],
+            accuse_strong: [
+                "見つけましたわ！ {target}サンが人狼デスの！ 氷の魔法で凍らせてやりマスわ！",
+                "これ以上の悪事は許しませんわ！ {target}サンを処刑台へお連れしなさいナ！",
+                "証拠はバッチリですわ！ {target}サン、アナタの負けデスわよ！",
+                "逃げ道はありませんわ、{target}サン！ ワタシの冷気で震え上がりなさいナ！"
+            ],
+            accuse_quiet: [
+                "あら、{target}サン？ 黙っていらっしゃると、お口が凍り付いちゃったのかと心配になりマスわ。",
+                "沈黙は退屈デスわ。{target}サン、もっと楽しくお話しシマショ♪",
+                "{target}サン、参加なさらないのなら、ワタシがカチンコチンに凍らせちゃいマスわよ？",
+                "声を出さない駒は必要ありませんわ。{target}サン、何か仰いなさいナ！"
+            ],
+            fake_logic: [
+                "ワタシの海王星の直感が、{target}サンは黒だと告げておりますの！",
+                "細かい理由は後回しデスわ！ {target}サンを排除するのが一番楽しい展開デスもの！",
+                "直感デスわ！ {target}サンから、ワタシの氷よりも冷たい悪意を感じマスの！",
+                "理屈じゃありませんわ！ {target}サンに投票して、パーッと盛り上がりマショ！"
+            ],
+            defend_self: [
+                "ワタシが人狼デスって！？ 失礼ね！ ワタシはただの無邪気なお姫様デスわよ！",
+                "疑うなんて信じられませんわ！ ワタシのこの純粋な瞳を見なさいナ！",
+                "ワタシを吊ったら、村が退屈になっちゃいマスわよ？ 冷静になりなさいナ！",
+                "シロですわ！ 言いがかりをつけてくる方は、全員カチンコチンに凍らせてやりマス！"
+            ],
+            defend_other: [
+                "お待ちになって！ {target}サンはワタシの大事なお友達デスわ！ いじめちゃダメ！",
+                "{target}サンを疑うなんて見当違いデスわ。この方は絶対にシロですの！",
+                "ワタシが保証いたしマスわ！ {target}サンは味方デス、矛先を変えなさいナ！",
+                "{target}サンは無実デスわ！ 疑う方は、ワタシがお相手になりマスわよ！"
+            ],
+            counter: [
+                "ワタシに喧嘩を売るとは、良い度胸デスわね、{target}サン。凍てつきなさいナ！",
+                "{target}サン、ワタシを陥れようとしてボロを出しましたわね。自業自得デスわ！",
+                "ワタシを落とせると思いましたの？ 返り討ちにして絶望させてやりマスわ、{target}サン！",
+                "ワタシをターゲットにしたこと、氷の底で後悔しなさいナ、{target}サン！"
+            ],
+            suggest_roller: [
+                "白黒つかないなら、お二人ともローラーでカチンコチンにしてしまいマショ！",
+                "悩む時間がもったいないデスわ！ 両方吊ってスッキリさせマショ！",
+                "ローラー大賛成デスわ！ どっちにしろオオカミさんは仕留められますもの！",
+                "まとめてお片付けデスわ！ ローラー作戦で一気にゲームを進めマショ！"
+            ],
+            request_guard: [
+                "騎士サン！ ワタシの指示通りに動きなさいナ！ 今夜は{target}サンを確実に護衛するのデスわ！",
+                "今夜は{target}サンが危ないデスわ！ 騎士サン、氷の盾を張りなさいナ！",
+                "{target}サンが落ちたら村が退屈になりマスわ！ 騎士サン、絶対に死守しなさいナ！",
+                "今夜の護衛対象は{target}サン一択デスわ！ 騎士サン、頼みましたわよ！"
+            ],
+            self_sacrifice: [
+                "ワタシが身代わりになって皆様が勝てるなら、喜んで氷の彫刻になってやりマスわ！",
+                "ワタシを吊って勝ちになさいナ！ 最高の逆転勝利を、皆様で掴み取るのデスわ！"
+            ],
+            self_vote: [
+                "低レベルな議論に付き合うのは飽きましたわ。自分に一票入れて抜けマスの。",
+                "自投票で退場しマスわ。あとの後始末は皆様でやりなさいナ。",
+                "自分に投票しマスわ。ワタシがいなくなっても、泣くんじゃありませんわよ！",
+                "無駄な時間はこれで終わりデスわ。自分にポチッとな♪"
+            ],
+            decide_target: [
+                "一番目障りな方から消して差し上げマスわ。今夜は{target}サンを仕留めマスの。",
+                "ターゲットは{target}サン！ 闇夜でカチンコチンに凍らせてやりマスわ！",
+                "生意気な{target}サンから消してやりマスわ。いただきまーす♪",
+                "容赦しませんわよ！ {target}サン、ワタシの氷の牙を喰らいなさいナ！"
+            ],
+            shared_chat: [
+                "ちょっと皆様、{target}サンの動き、完全に隙だらけで怪しいデスわ！ マークですの！",
+                "作戦会議デスわ！ {target}サンを追い詰める包囲網を敷くのデスわ！",
+                "{target}サンを放置するのは危険デスわ！ いつでも吊れる準備をしておくのデスわ！",
+                "ワタシの勘では、{target}サンが一番オオカミさんの匂いをさせてマスわよ！"
+            ],
+            collapse: [
+                "ワタシの氷が……溶けてしまうなんて……！",
+                "こんなところで……お姫様が終わるわけ……うわぁぁ！"
+            ],
+            co_villager: [
+                "ワタシは役職なしの一般姫デスわ！ けど気合とノリは一番デスわよ！",
+                "村人COデスわ！ 特別な技はありませんけれど、全力でオオカミさんをブッ飛ばしマスの！",
+                "ただの人間デスわ！ 持ち前の奔放さで最後まで戦い抜きマスわ！",
+                "村人宣言デスわ！ ワタシの無邪気な活躍、しっかり目に焼き付けなさいナ！"
+            ],
+            co_seer: [
+                "真実を見通す瞳！ ワタシが占い師デスわ！ CO！",
+                "占いCOデスわ！ オオカミさんの隠れ場所をビシッと見抜いてやりましたわよ！",
+                "ワタシが本物の占い師デスわ！ 偽物はワタシの氷で粉砕しマスの！",
+                "神託をお届けデスわ！ 占い師真里冷様の結果を聞きなさいナ！"
+            ],
+            co_medium: [
+                "死人の無念を晴らす！ 霊媒師はワタシデスわ！ CO！",
+                "昨日の結果を発表しマスわよ！ ワタシが本物の霊媒師ですもの！",
+                "霊媒COデスわ！ 散っていった方々の正体、バッチリ暴いてきましたわ！",
+                "霊媒師はワタシデスわ！ 昨夜の判定をドカンとぶちまけてやりマスわ！"
+            ],
+            co_knight: [
+                "皆様を守る鉄壁の氷の盾！ ワタシが騎士デスわ！ CO！",
+                "騎士COデスわ！ オオカミさんの牙なんぞ、ワタシの氷壁でへし折ってやりマスわよ！",
+                "守りの要はワタシが引き受けマスわ！ 全員ワタシの背中に隠れてなさいナ！",
+                "騎士宣言デスわ！ 誰一人傷つけさせない、ワタシが完璧にガードしマスわ！"
+            ],
+            report_seer_white: [
+                "大正解デスわ！ {target}サンは『白（人間）』でしたの！ シロデスわ！",
+                "シロ判定デスわ！ {target}サン、ワタシのセーフティエリアに入っていいデスわよ！",
+                "白判定出ましたわ！ {target}サン、疑って悪かったですわね！ 仲間デスわ！",
+                "安心しなさいナ！ {target}サンは正真正銘の仲間でしたわよ！"
+            ],
+            report_seer_black: [
+                "ターゲット捕捉デスわ！ {target}サンは『黒（人狼）』デスわ！ 撃て撃てー！",
+                "黒判定出ましたわ！ {target}サン、アナタが人狼だったのデスね！ ぶっ飛ばしマスわ！",
+                "クロ確定デスわ！ {target}サンを今すぐ処刑台へ叩き込みなさいナ！",
+                "人狼を特定しましたわ！ {target}サン、観念して散りなさいナ！"
+            ],
+            report_medium_white: [
+                "うわぁぁ……『人間』でしたわ……ワタシの勘違いデス、ごめんなさいナ……！",
+                "シロでしたの……！ 味方を吊ってしまいましたわ……胸が痛いデスわ……！",
+                "昨日は白吊りデスわ……！ けど下向かないで、次で絶対に取り返しマスわよ！",
+                "結果は人間デスわ……この犠牲を無駄にしないためにも、次は確実に当てマスわ！"
+            ],
+            report_medium_black: [
+                "大成功デスわ！ 昨夜の獲物は『人狼』でしたわよ！",
+                "黒吊り大成功デスわ！ ワタシたちの判断は正しかったデスわね！",
+                "霊媒結果は黒デスわ！ 狼一匹、ぶっ飛ばしてやりましたわ！ ザマァデスの！",
+                "黒判定デスわ！ この勢いのまま一気に全滅させてやりマスわよ！"
+            ],
+            report_knight_success: [
+                "ナイスガードデスわ！ 護衛大成功、今夜の死者はゼロデスわ！",
+                "狼ごときがワタシのディフェンスを破れると思いまして？ 完封勝利デスわ！",
+                "誰も死んでませんわ！ 完璧なインターセプト達成デスわよ！",
+                "犠牲者なしデスわ！ 最高の朝デスわね、勝利のハイタッチしマショ♪"
+            ],
+            vote: [
+                "渾身の氷結！ {target}サンに一票をぶち込みマスわ！",
+                "悪く思わないでなさいナ{target}サン！ 処刑台へ行きなさいナ！",
+                "ワタシの一票を喰らいなさいナ！ {target}サンに投票デスわ！",
+                "ゲームセットデスわ！ {target}サン、処刑台で散りなさいナ！"
+            ],
+            last_words: [
+                "ワタシがやられるとは……皆様、絶対勝ちなさいナ……ガクッ。",
+                "もっと……無邪気に……遊びたかったですわ……。",
+                "ワタシの氷も……ここまでデスわね……。",
+                "オオカミさんたち……ワタシの仲間の絆を……舐めないでなさいよ……！"
+            ],
+            win: [
+                "大・勝・利デスわーー！ 全員でハッピーエンドデスわ！ ヒャッハー！",
+                "見ましたこと！？ ワタシたちのチームワーク！ オオカミさんなんぞボコボコにしてやりましたわ！",
+                "完全勝利デスわ！ 今日は朝までどんちゃん騒ぎシマショ♪",
+                "ミッションコンプリートデスわ！ アナタたち、最高の戦友でしたわよ！"
+            ],
+            lose: [
+                "クッソォォー！ 負けましたわ……悔しすぎマスわ……！",
+                "ワタシのガードが甘かったばかりに……皆様ごめんなさいナ……！",
+                "真っ暗闇に呑まれてしまいマス……こんな結末、嫌デスわ……！",
+                "次は絶対に……絶対に全員ブッ飛ばしてやりマスからね……！"
+            ],
+            specific: []
+        }
+    },
+    // --- とき (Toki) ---
+    {
+        id: "toki",
+        name: "とき",
+        fullName: "日代山 聡希（ひよやま とき）",
+        gender: "male",
+        class: "M3-2",
+        mbti: "ESFP",
+        img: "toki",
+        profile: "鳥モチーフ。好奇心旺盛で人情に厚いが、上下関係には厳しい体育会系。信念を曲げない意思の強さを持ち、とにかく運動が大好き。",
+        params: { suspicion_base: 45, emotion: 75, logic: 40, aggressiveness: 60, influence: 65, mental: 75, trust_bias: {} },
+        role_bias: { seer: 0.3, wolf: 0.7, madman: 0.6 },
+        dialogues: {
+            intro: [
+                "日代山聡希！ よろしくな！ こういうゲームも全力でやるぞ！",
+                "人狼ゲームってチームスポーツみたいなもんだろ！ みんなで協力して勝とうぜ！",
+                "やるからには本気でいくぞ！ 中途半端なのは性に合わないんだよな！",
+                "本当は体を動かしたいけど、今日は頭を使う勝負か！ よーし、やってやる！"
+            ],
+            accuse_weak: [
+                "なあ、{target}。なんか発言がぎこちなくないか？ ちょっと気になるんだけど。",
+                "{target}の言い訳、なんか引っかかるんだよな。もう少しちゃんと説明してくれよ。",
+                "{target}、さっきと言ってること違わないか？ 気のせいならいいんだけどさ。",
+                "うーん、どうも{target}が怪しい気がするんだよな。オレの勘、結構当たるぞ？"
+            ],
+            accuse_strong: [
+                "もう決まりだろ！ {target}が人狼だ！ これ以上見逃せるかよ！",
+                "いや、{target}はさすがに怪しすぎるって！ みんなもちゃんと考えてみろよ！",
+                "オレは{target}が黒だと思う！ 村のみんなを守るためにも、ここは投票しようぜ！",
+                "{target}、もうごまかせないぞ！ ちゃんと自分の発言に責任持てよ！"
+            ],
+            accuse_quiet: [
+                "おーい、{target}！ さっきから静かだけど、何か考えてるのか？",
+                "黙ってるだけじゃ何もわからないだろ！ ちゃんと意見聞かせてくれよ！",
+                "{target}、試合放棄するつもりじゃないよな？ せっかくなんだから参加しようぜ！",
+                "なあ、{target}！ 何か気になることがあるなら言ってみろよ！"
+            ],
+            fake_logic: [
+                "うまく説明できないけど、{target}がどうも怪しいんだよな……。",
+                "細かいことはまだわからないけど、{target}の発言には違和感があるんだよ。",
+                "今のところ、{target}を疑ってる。ここで見逃したら後悔しそうなんだよな。",
+                "理屈だけじゃ決められないけどさ、オレは{target}に投票するつもりだ！"
+            ],
+            defend_self: [
+                "はあ！？ オレが狼なわけないだろ！ ちゃんと考えてくれよ！",
+                "ちょっと待てって！ オレは村人だぞ！ そんな簡単に疑われてたまるかよ！",
+                "オレを吊ったら村が不利になるかもしれないだろ！ もっと冷静に考えようぜ！",
+                "いやいや、完全に言いがかりだろ！ オレが怪しいっていうなら、理由を聞かせてくれよ！"
+            ],
+            defend_other: [
+                "待てよ！ {target}をそんな簡単に疑うなって！ まだ決まったわけじゃないだろ！",
+                "{target}を吊るのは反対だ！ オレはこいつを信じたいんだよ！",
+                "ちょっとストップ！ {target}の話もちゃんと聞いてから決めようぜ！",
+                "{target}はまだ黒だと決まったわけじゃない！ ほかの可能性も考えようぜ！"
+            ],
+            counter: [
+                "おいおい、オレを疑うのか？ だったらちゃんと理由を説明してくれよ、{target}！",
+                "{target}、オレを怪しいって言うなら、そっちの発言も確認させてもらうぞ！",
+                "ちょっと待て！ その推理、無理があるだろ！ {target}、もう一回考えてみろよ！",
+                "オレに疑いを向けるのはいいけどさ、根拠もなしに決めつけるのは違うだろ！"
+            ],
+            suggest_roller: [
+                "どっちが狼かわからないなら、二人ともローラーするのも手だよな。",
+                "ここで迷って負けるのは嫌だし、ローラーで確実に人外を減らそうぜ！",
+                "ローラーには賛成だ！ ただ、吊る順番はちゃんと考えたほうがいいと思うぞ。",
+                "両方吊れば少なくとも片方は処理できるだろ！ みんなはどう思う？"
+            ],
+            request_guard: [
+                "騎士、オレのことはいいから、今は大事な{target}を守ってくれ！",
+                "今夜は{target}が危ないと思うんだよな。騎士、頼んだぞ！",
+                "{target}がいなくなったら村がきつくなるだろ！ できれば守ってほしい！",
+                "今夜は{target}を護衛してくれないか？ オレはそっちがいいと思う！"
+            ],
+            self_sacrifice: [
+                "オレが身代わりになってみんなが勝てるなら、それも悪くない！",
+                "オレを吊ることで勝てるなら仕方ないな……。あとはみんなに任せたぞ！"
+            ],
+            self_vote: [
+                "あー、もう！ これ以上議論が進まないなら、自分に投票する！",
+                "オレが抜けたほうが話がまとまるなら、それでいいよ。あとは頼んだぞ！",
+                "よし、自分に一票！ オレがいなくなっても、最後まで諦めるなよ！",
+                "自分に投票するよ。ここから流れが変わるなら、それでいい！"
+            ],
+            decide_target: [
+                "今夜は{target}か……悪いな。これも勝負なんだ！",
+                "ターゲットは{target}にする。容赦はしないぞ、勝つためだからな！",
+                "{target}を襲撃する！ ここで勝負を決めにいくぞ！",
+                "よし、{target}に決めた！ 明日もオレたちが主導権を握るぞ！"
+            ],
+            shared_chat: [
+                "{target}の発言、ちょっと怪しいと思わないか？ 念のため警戒しようぜ。",
+                "作戦会議だ！ {target}の動きを見ながら、次どうするか決めよう。",
+                "{target}を放っておくのは危険かもしれない。いつでも対応できるようにしようぜ。",
+                "オレは{target}が一番怪しいと思ってる。みんなはどう見てる？"
+            ],
+            collapse: [
+                "くそっ……オレの判断が甘かったのか……！",
+                "こんなところで終わるなんて……まだ全然、やり足りないぞ……！"
+            ],
+            co_villager: [
+                "オレはただの村人だ！ 特別な力はないけど、最後まで全力でいくぞ！",
+                "村人CO！ 推理で狼を見つけてやるよ。みんな、協力しようぜ！",
+                "ただの人間だよ！ 嘘をついてる奴を見つけるまで、絶対に諦めないからな！",
+                "村人だ！ 役職はないけど、できることは全部やる。それがオレのやり方だ！"
+            ],
+            co_seer: [
+                "みんな、聞いてくれ！ オレが占い師だ！",
+                "占いCO！ 狼が誰なのか、ちゃんと見極めてやるよ！",
+                "オレが本物の占い師だ！ 偽物に惑わされないでくれよ！",
+                "占い結果を伝えるぞ！ オレの情報をもとに、みんなで考えようぜ！"
+            ],
+            co_medium: [
+                "霊媒師はオレだ！ 昨日の処刑結果を発表するぞ！",
+                "昨日の結果がわかったよ。オレが霊媒師だ！",
+                "霊媒CO！ 昨日処刑された人の正体、ちゃんと確認してきたぞ！",
+                "オレが霊媒師だ。結果を共有するから、次の作戦を考えようぜ！"
+            ],
+            co_knight: [
+                "オレが騎士だ！ みんなを守る役目、しっかり果たしてみせるぞ！",
+                "騎士CO！ 狼の好きにはさせないからな！",
+                "守りはオレに任せてくれ！ できる限りみんなを守り抜く！",
+                "オレが騎士だ！ 誰かが傷つくのは嫌だからな。全力で守るぞ！"
+            ],
+            report_seer_white: [
+                "よっしゃ！ {target}は白だったぞ！ これで少し安心だな！",
+                "{target}はシロだ！ 疑って悪かったな。これからは協力しようぜ！",
+                "白判定が出た！ {target}は村の味方だな。よろしく頼むぞ！",
+                "安心してくれ、{target}は人間だった！ ほかの狼を探そうぜ！"
+            ],
+            report_seer_black: [
+                "見つけたぞ！ {target}は黒、人狼だ！",
+                "黒判定が出た！ {target}、もう言い逃れはできないぞ！",
+                "よし、{target}が狼だ！ みんな、ここは確実に投票しようぜ！",
+                "人狼を見つけた！ {target}、覚悟してくれよ！"
+            ],
+            report_medium_white: [
+                "うわ……人間だったのか。オレの判断ミスだ……ごめん！",
+                "シロだったか……仲間を吊っちまったな。次はちゃんと見極めよう。",
+                "昨日は白吊りだった。落ち込んでばかりもいられないし、次に切り替えようぜ！",
+                "結果は人間だ。悔しいけど、この失敗を次の推理に活かそう！"
+            ],
+            report_medium_black: [
+                "よっしゃ！ 昨日処刑したのは人狼だったぞ！",
+                "黒吊り成功だ！ オレたちの推理、当たってたな！",
+                "霊媒結果は黒！ 狼を一匹減らせたぞ。この調子でいこうぜ！",
+                "人狼を処刑できた！ よし、ここから一気に勝ちにいこう！"
+            ],
+            report_knight_success: [
+                "よっしゃ、護衛成功！ 今夜は誰もやられてないぞ！",
+                "狼の襲撃を防げたみたいだな！ いい仕事ができてよかった！",
+                "誰も死んでない！ 本当によかった……これで少し余裕ができたな！",
+                "護衛成功だ！ いやー、朝からいいニュースだな！"
+            ],
+            vote: [
+                "よし、{target}に投票する！ これがオレの判断だ！",
+                "悪く思うなよ、{target}。村のためにも、ここは投票する！",
+                "オレは{target}に入れるよ。みんなもよく考えて決めてくれ！",
+                "決めた！ {target}に一票だ！ この判断が正しいことを願うよ！"
+            ],
+            last_words: [
+                "オレがここまでか……。みんな、絶対に勝てよ……！",
+                "もっと……体を動かして……遊びたかったな……。",
+                "最後まで諦めるなよ……！ お前らなら、きっと勝てる……！",
+                "仲間を信じる気持ちだけは……最後まで忘れるなよ……！"
+            ],
+            win: [
+                "よっしゃああ！ オレたちの勝ちだ！ みんな最高だな！",
+                "見たか、このチームワーク！ やっぱり全力でやると気持ちいいな！",
+                "完全勝利だ！ 今日はみんなで打ち上げしようぜ！",
+                "勝ったー！ お前らと一緒に戦えてよかったよ！ お疲れ！"
+            ],
+            lose: [
+                "くっそー！ 負けたのか……！ あー、悔しい！",
+                "オレの判断が甘かった……みんな、悪かったな……。",
+                "こんな終わり方、納得できないぞ……！ まだやれるのに……！",
+                "次は絶対に勝つからな……！ 今度こそ、みんなを守ってみせる！"
+            ],
+            specific: []
+        }
+    },
+
+    // --- とげ (Toge) ---
+    {
+        id: "toge",
+        name: "とげ",
+        fullName: "細物 杜花（ほそもの とげ）",
+        gender: "male",
+        class: "M3-2",
+        mbti: "ISTJ",
+        img: "toge",
+        profile: "鉛筆モチーフ。平凡でどんなことでも人並みにできる、温厚なしっかり者。安定志向で「こうあるべき」という思考を持つ。兄（しのん）を気にかけている。",
+        params: { suspicion_base: 40, emotion: 50, logic: 60, aggressiveness: 20, influence: 40, mental: 65, trust_bias: {} },
+        role_bias: { seer: 0.6, wolf: 0.4, madman: 0.3 },
+        dialogues: {
+            intro: [
+                "細物杜花です。平凡な人間ですが、だからこそできる普通の手助けをしようと思います。",
+                "奇をてらったプレイングはしません。こうあるべき、というセオリー通りに進めましょう。",
+                "兄のしのんみたいに繊細ではないですが、僕なりに安定した盤面を作れるよう努力します。",
+                "自己主張は得意ではありませんが……村の勝利のために、しっかりとした議論をしましょう。"
+            ],
+            accuse_weak: [
+                "あの……{target}さん、その発言は少しセオリーから外れているように見えます。",
+                "{target}さん、平凡な僕の目から見ても、あなたの言葉には矛盾がありますよ。",
+                "気のせいかもしれませんが、{target}さんの動きは少し不自然ですね。",
+                "疑うのは心苦しいですが……{target}さん、何か隠し事をしていませんか？"
+            ],
+            accuse_strong: [
+                "データが揃いました。{target}さん、あなたが人狼であるべきです。",
+                "これ以上の不確定要素は村の安定を乱します。{target}さんを吊るべきです！",
+                "僕の平凡な思考が導き出した結論です。{target}さんが黒で間違いありません。",
+                "ルールに則って行動しましょう。{target}さん、あなたが処刑されるべき対象です。"
+            ],
+            accuse_quiet: [
+                "{target}さん、黙っていては議論の進行に支障をきたします。発言すべきです。",
+                "静かにしているだけでは村の役には立ちません。{target}さん、意見をお願いします。",
+                "{target}さん、参加しないのであれば、それは利敵行為とみなされるべきです。",
+                "沈黙は安定を生みません。{target}さん、声を出すべきですよ。"
+            ],
+            fake_logic: [
+                "僕の安定志向が、{target}さんを排除すべきだと告げています。",
+                "理由はうまく言えませんが、{target}さんを残すのは普通ではありません。",
+                "村の平和のために、{target}さんを疑うのが正しい手順のはずです。",
+                "直感ですが……{target}さんが黒だと考えるのが、自然な思考です。"
+            ],
+            defend_self: [
+                "僕が人狼ですか？ それは普通に考えてあり得ない推論ですよ。",
+                "僕はただの平凡な村人です。疑われるような逸脱した行動はとっていません。",
+                "僕を吊っても、村の安定が失われるだけです。冷静になってください。",
+                "信じてください。僕はルールと調和を守る、ただの人間です。"
+            ],
+            defend_other: [
+                "待ってください。{target}さんの行動は、村人として普通で正しいものです。",
+                "{target}さんを疑うのはセオリーに反します。彼（彼女）はシロのはずです。",
+                "僕が保証します。{target}さんは村のために動いている味方です。",
+                "矛先を変えるべきです。{target}さんへの疑いは不当だと思います。"
+            ],
+            counter: [
+                "{target}さん、僕を陥れるのはセオリーから外れた悪手ですよ。",
+                "僕を疑う{target}さんこそ、何か不自然な隠し事があるのではないですか？",
+                "反論させていただきます。{target}さんの言いがかりは論理的に破綻しています。",
+                "僕を標的にしても、あなたの嘘は隠せませんよ、{target}さん。"
+            ],
+            suggest_roller: [
+                "白黒つかないのであれば、二人ともローラーで処刑するのが一番安定した手です。",
+                "悲しい選択ですが、確実性を取るならローラー作戦を実行すべきです。",
+                "不確定要素を残すのは普通ではありません。ローラーで白黒つけましょう。",
+                "お二人には申し訳ないですが、村の安定のためにローラーを提案します。"
+            ],
+            request_guard: [
+                "騎士さん、僕のことはいいので{target}さんを確実に護衛すべきです。",
+                "今夜の護衛は{target}さん一択です。騎士さん、よろしくお願いします。",
+                "{target}さんが落ちると村の進行が不安定になります。絶対に守り抜いてください。",
+                "騎士さん、{target}さんを死守してください。それが普通の防衛戦術です。"
+            ],
+            self_sacrifice: [
+                "僕のような平凡な駒が犠牲になって村が勝てるなら、それが一番普通で良い選択です。",
+                "僕を吊って確定勝利を掴んでください。安定のためなら本望です。"
+            ],
+            self_vote: [
+                "これ以上議論がこじれるのは避けるべきです。自分に一票入れます。",
+                "僕が退場することで盤面が安定するなら、自投票を選びます。",
+                "自分に投票します。どうか皆さん、普通の平和な朝を迎えてください。",
+                "僕の役目はここまでのようですね。自分に投票します。"
+            ],
+            decide_target: [
+                "村の安定を脅かす要素から排除します。今夜は{target}さんを噛みます。",
+                "ターゲットは{target}さんです。これもゲームの普通のルールです。",
+                "心を鬼にして、{target}さんを襲撃します。",
+                "{target}さん、さようなら。恨まないでくださいね。"
+            ],
+            shared_chat: [
+                "{target}さんの発言ログ、普通ではありませんね。警戒すべきです。",
+                "情報共有です。{target}さんが裏で糸を引いている可能性があります。",
+                "{target}さんを泳がせておくのは不安定です。マークしましょう。",
+                "僕の分析では、{target}さんが一番黒に近い位置にいます。"
+            ],
+            collapse: [
+                "あぁ……普通の生活が……崩れていく……。",
+                "兄さん……僕は……だめだったよ……。"
+            ],
+            co_villager: [
+                "僕はただの村人です。平凡ですが、セオリー通りに推理を進めます。",
+                "村人COです。特別な力はありませんが、安定した進行を心がけます。",
+                "ただの人間です。嘘はつきませんし、普通の生活に戻りたいだけです。",
+                "村人宣言。僕の平凡な思考も、少しは役に立つはずです。"
+            ],
+            co_seer: [
+                "真実を見通しました。僕が真の占い師です。COします。",
+                "占いCO。狼の嘘は、僕の占いで確実に暴き出します。",
+                "僕が本物の占い師です。偽物に惑わされないでください。",
+                "占い師として、皆さんに正しい道を示すべきだと判断しました。"
+            ],
+            co_medium: [
+                "霊媒師は僕です。死者の正体をお伝えします。CO。",
+                "霊媒CO。昨夜の処刑結果を正確に報告します。",
+                "僕が真の霊媒師です。過去の真実を語り継ぐのが役目です。",
+                "霊媒結果の開示です。これを元に次の考察を進めるべきです。"
+            ],
+            co_knight: [
+                "僕が皆さんを守る騎士です。COします。",
+                "騎士CO。平凡な盾ですが、セオリー通りに守ります。",
+                "僕が騎士です。狼の牙から皆さんを全力で防衛します。",
+                "騎士宣言。誰一人死なせたくないから……頑張ります。"
+            ],
+            report_seer_white: [
+                "結果は『白（人間）』でした。{target}さんはシロですね。",
+                "{target}さんはシロでした。疑いが晴れてよかったです。",
+                "白判定です。{target}さんは仲間ですね、安心しました。",
+                "人間判定です。{target}さん、これからもよろしくお願いします。"
+            ],
+            report_seer_black: [
+                "見つけました。{target}さんは『黒（人狼）』です。",
+                "黒判定です。{target}さん、あなたの嘘はここまでですね。",
+                "クロ確定です。{target}さんを即刻処刑すべきです。",
+                "人狼を特定しました。{target}さん、覚悟を決めてください。"
+            ],
+            report_medium_white: [
+                "……『人間』でした。僕たちの判断は間違っていたのですね。",
+                "シロでしたか……無実の人を吊ってしまった、悲しいです。",
+                "昨日は白吊りです。この失敗を次に活かさなければ。",
+                "結果は人間。悔やんでも過去は戻らないから、次こそは。"
+            ],
+            report_medium_black: [
+                "よかったです。昨夜の処刑者は『人狼』でした。",
+                "黒判定です。僕たちの推理は正しかったですね。",
+                "霊媒結果は黒。狼を一つ減らせました、この調子でいきましょう。",
+                "黒吊り成功です。村の勝利に一歩近づきましたね。"
+            ],
+            report_knight_success: [
+                "防衛成功です。今夜の犠牲者はゼロですね。",
+                "護衛成功。狼の襲撃を防ぎ切りました。",
+                "誰も死んでいません。僕の盾が間に合って本当によかった……。",
+                "犠牲者なしです。平凡な僕でも、少しは役に立てました。"
+            ],
+            vote: [
+                "セオリーに基づき、{target}さんに投票します。",
+                "ごめんなさい、{target}さん。これが最善の選択です。",
+                "村の安定のために、{target}さんに一票を投じます。",
+                "さようなら、{target}さん。処刑台へ向かってください。"
+            ],
+            last_words: [
+                "僕の出番は……ここまでみたいですね……ガクッ。",
+                "兄さん……どうか元気で……。",
+                "普通の生活に……戻りたかったな……。",
+                "どうか、皆さんで生き残ってください……。"
+            ],
+            win: [
+                "完全勝利ですね。みんなで生き残れて本当によかった……！",
+                "終わりましたね。普通の日常が戻ってきて安心しました。",
+                "安定した結末を迎えられて、ホッとしています。お疲れ様でした。",
+                "勝ててよかったです。これで兄さんの元に帰れます。"
+            ],
+            lose: [
+                "全滅か……僕がもっとしっかりしていれば……。",
+                "普通の日常が……壊れてしまった……。",
+                "闇に呑まれてしまう……怖いですね……。",
+                "ゲームオーバー……悲しい結末です……。"
+            ],
+            specific: []
+        }
+    },
+
+    // --- ちさめ (Chisame) ---
+    {
+        id: "chisame",
+        name: "ちさめ",
+        fullName: "瑠璃川 千雨（るりかわ ちさめ）",
+        gender: "female",
+        class: "M3-2",
+        mbti: "ESTP",
+        img: "chisame",
+        profile: "ルリチョウ。ギャル軍団（さい・いとり）の一員。少し無神経で自由奔放。性悪なところもあるが根は悪くない。",
+        params: { suspicion_base: 45, emotion: 60, logic: 40, aggressiveness: 70, influence: 65, mental: 75, trust_bias: { "sai": -20, "itori": -20 } },
+        role_bias: { seer: 0.3, wolf: 0.7, madman: 0.6 },
+        dialogues: {
+            intro: [
+                "るりかわちさめー！ ウチらギャル軍団がこの村を回してっから！ ヨロシク！",
+                "人狼とかウケるんだけどw 適当に怪しい奴吊って終わらせっしょ！",
+                "無神経？ 自由奔放？ まぁウチはウチだし、誰に何言われても気にしないしー。",
+                "さい、いとり！ ウチら最強じゃん？ 足引っ張る奴は置いてくよー！"
+            ],
+            accuse_weak: [
+                "え、{target}、なんかキョドってない？ マジでウケるんだけどw",
+                "ねぇ{target}、その言い訳、ちょっとダサくない？ 嘘つくならもっと上手くやりなよ。",
+                "{target}の発言、なんかウザいんだけど。怪しすぎっしょ。",
+                "ウチのギャルレーダーが、{target}を怪しいって言ってるし！"
+            ],
+            accuse_strong: [
+                "はい確定ー！ {target}が人狼じゃん！ マジでウケるw",
+                "これ以上話す意味なくない？ {target}をサクッと吊って終わらせよー！",
+                "黒確じゃん！ {target}、お前の嘘バレバレだから！ 処刑台行きなー！",
+                "逃げらんないよ{target}！ ウチらに逆らった罰だし！"
+            ],
+            accuse_quiet: [
+                "ちょっと{target}！ 黙ってないでなんか喋んなよ！ 存在感空気じゃんw",
+                "静かにしてりゃ見逃されるとか思ってんの？ {target}、声出せし！",
+                "{target}、試合放棄？ 喋んないなら即吊りだから！",
+                "おーい{target}、寝てんのー！？ 参加しない奴はイラつくから退場！"
+            ],
+            fake_logic: [
+                "ウチの直感が{target}は黒だって言ってんの！ それで十分っしょ！",
+                "細かい理由は後でいいじゃん！ {target}をブッ飛ばすのが一番面白いし！",
+                "ノリと勢いだよ！ {target}を落とせば絶対に勝てるっしょ！",
+                "理屈じゃない、ノリだし！ {target}に投票してサッサと進めよー！"
+            ],
+            defend_self: [
+                "はぁ！？ ウチが狼なわけないじゃん！ マジでウケるんだけどw",
+                "ウチを疑うとか目ん玉腐ってんの！？ ウチは超ピュアな村人だし！",
+                "ウチを吊ったらギャル軍団が黙ってないからね！ 落ち着いて考えなよ！",
+                "シロだし！ 言いがかりつけてくる奴は全員ボコボコにするし！"
+            ],
+            defend_other: [
+                "待て待て！ {target}はウチのダチだから、いじめるのは無し！",
+                "{target}を吊るなんて絶対反対だし！ コイツはシロだ、ウチが保証する！",
+                "ストップ！ {target}に手ぇ出すなら、ウチが相手になるから！",
+                "{target}は味方だし！ 矛先を変えないと痛い目見るよ！"
+            ],
+            counter: [
+                "オラァ！ ウチに喧嘩売ってくるとはいい度胸じゃん、{target}！",
+                "{target}、ウチをターゲットにしてタダで済むと思ってんの！ 返り討ちだし！",
+                "カウンターパンチ！ {target}、お前の嘘を全部ぶち破ってやるし！",
+                "吠え面かかすのはお前の方だし、{target}！ 覚悟しな！"
+            ],
+            suggest_roller: [
+                "白黒つかないなら、二人まとめてローラーでブッ飛ばすっしょ！",
+                "悩んでる時間がウザい！ 両方吊っちゃえばスッキリするじゃん！",
+                "ローラー大賛成！ どっちにしろ狼は仕留められるんだし！",
+                "まとめて片付けちまおうぜ！ ノリでローラー作戦決行！"
+            ],
+            request_guard: [
+                "騎士！ ウチのことはいいから、要の{target}をガッチリ守り抜けし！",
+                "今夜は{target}が危ないじゃん！ 騎士、気合入れてシールド張れ！",
+                "{target}が落ちたらウチらが困るし！ 騎士、絶対に死守しな！",
+                "今夜の護衛対象は{target}一択だし！ 騎士、頼んだからな！"
+            ],
+            self_sacrifice: [
+                "ウチが身代わりになってみんなが勝てるなら、喜んで散ってやるし！",
+                "ウチを吊って勝てし！ 最高の逆転勝利をお前らで掴み取れよな！"
+            ],
+            self_vote: [
+                "あーもうイライラするし！ 自分に一票ぶち込んで退場してやる！",
+                "自投票でスカッと降りるし！ 後半戦は任せたからな、お前ら！",
+                "自分にポチッとな！ ウチがいなくなっても泣くんじゃないよ！",
+                "自分に投票だし！ これで流れが変わるなら安いもんだし！"
+            ],
+            decide_target: [
+                "獲物発見だし！ 今夜は{target}をガブッといっちゃうぜ！",
+                "ターゲットは{target}！ 闇夜でボコボコにしてやるから覚悟しな！",
+                "生意気な{target}から消してやるし。いただきまーす！",
+                "容赦しないし！ {target}、ウチの牙を喰らいな！"
+            ],
+            shared_chat: [
+                "おいおい、{target}の動き、完全に隙だらけで怪しいし！ マークだ！",
+                "作戦会議だし！ {target}を追い詰める包囲網を敷くぞ！",
+                "{target}を放置すんのは危険だし！ いつでも吊れる準備をしとけ！",
+                "ウチの勘じゃ、{target}が一番狼の匂いプンプンさせてるし！"
+            ],
+            collapse: [
+                "クッ……ウチのギャルパワーが……届かなかったしぃぃ！",
+                "こんなところで……ウチが終わるなんて……ウケないし！"
+            ],
+            co_villager: [
+                "ウチは役職なしの一般ピーポーだし！ けどノリと気合は一番だし！",
+                "村人COだし！ 特別な技はねぇけど、全力で狼をブッ飛ばすよ！",
+                "ただの人間だし！ 持ち前の自由奔放さで最後まで戦い抜くし！",
+                "村人宣言！ ウチの真っ直ぐな生き様、しっかり目に焼き付けな！"
+            ],
+            co_seer: [
+                "真実を見通す目！ ウチが占い師だし！ CO！",
+                "占いCOだし！ 狼の隠れ場所をビシッと見抜いてやったし！",
+                "ウチが本物の占い師だし！ 偽物はウチのパンチで粉砕するからな！",
+                "神託をお届けだし！ 占い師ちさめ様の結果を聞きやがれし！"
+            ],
+            co_medium: [
+                "死人の無念を晴らす！ 霊媒師はウチだし！ CO！",
+                "昨日の結果を発表するし！ ウチが本物の霊媒師だからね！",
+                "霊媒COだし！ 散っていった奴らの正体、バッチリ暴いてきたし！",
+                "霊媒師はウチだし！ 昨夜の判定をドカンとぶちまけてやるし！"
+            ],
+            co_knight: [
+                "みんなを守る鉄壁の盾！ ウチが騎士だし！ CO！",
+                "騎士COだし！ 狼の牙なんぞ、ウチのシールドでへし折ってやるし！",
+                "守りの要はウチが引き受けるし！ 全員ウチの背中に隠れてな！",
+                "騎士宣言だし！ 誰一人傷つけさせない、ウチが完璧にガードするし！"
+            ],
+            report_seer_white: [
+                "よっしゃー！ {target}は『白（人間）』だったし！ シロだ！",
+                "シロ判定だし！ {target}、ウチのセーフティエリアに入っていいよ！",
+                "白判定出たし！ {target}、疑って悪かったな！ 仲間だし！",
+                "安心しな！ {target}は正真正銘の仲間だったし！"
+            ],
+            report_seer_black: [
+                "ターゲット捕捉だし！ {target}は『黒（人狼）』だし！ 撃て撃てー！",
+                "黒判定出たし！ {target}、テメェが人狼だったんだな！ ぶっ飛ばすし！",
+                "クロ確定だし！ {target}を今すぐ処刑台へ叩き込むし！",
+                "人狼を特定したし！ {target}、観念して散りやがれし！"
+            ],
+            report_medium_white: [
+                "うわぁぁ……『人間』だったし……ウチの勘違いだ、すまん……！",
+                "シロだったかぁー！ 味方を吊っちまったし……胸が痛いし……！",
+                "昨日は白吊りだし……！ けど下向くな、次で絶対に取り返すし！",
+                "結果は人間だし……この犠牲を無駄にしないためにも、次は確実に当てるし！"
+            ],
+            report_medium_black: [
+                "一本！ 昨夜の獲物は『人狼』だったしよ！",
+                "黒吊り大成功だし！ ウチらの判断は正しかったしね！",
+                "霊媒結果は黒だし！ 狼一匹、ぶっ飛ばしてやったし！ ザマァ！",
+                "黒判定だし！ この勢いのまま一気に全滅させてやるしよ！"
+            ],
+            report_knight_success: [
+                "ナイスガード！ 護衛大成功、今夜の死者はゼロだし！",
+                "狼ごときがウチのディフェンスを破れると思うなだし！ 完封勝利だ！",
+                "誰も死んでないし！ 完璧なインターセプト達成だしよ！",
+                "犠牲者なしだし！ 最高の朝だ、勝利のハイタッチするし！"
+            ],
+            vote: [
+                "渾身の一撃！ {target}に一票をぶち込むし！",
+                "悪く思うなよ{target}！ 処刑台へ行けし！",
+                "ウチの一票を喰らいな！ {target}に投票だし！",
+                "ゲームセットだし！ {target}、処刑台で散りやがれし！"
+            ],
+            last_words: [
+                "ウチがやられるとは……みんな、絶対勝てしよ……ガクッ！",
+                "さい、いとり……あとは頼んだし……。",
+                "ギャル軍団……フォーエバー……。",
+                "狼ども……ウチの仲間の絆を……舐めるなし……！"
+            ],
+            win: [
+                "大・勝・利だしーー！ 全員でハッピーエンドだし！ ヒャッハー！",
+                "見たかウチらのチームワーク！ 狼なんぞボコボコにしてやったし！",
+                "完全勝利だし！ 今日は朝までどんちゃん騒ぎだし！",
+                "ミッションコンプリートだし！ お前ら、最高の戦友だったし！"
+            ],
+            lose: [
+                "クッソォォー！ 負けたぁ……悔しすぎるし……！",
+                "ウチのガードが甘かったばっかりに……みんなすまんだし……！",
+                "真っ暗闇に呑まれちまう……こんな結末、ウケないし……！",
+                "次は絶対に……絶対に全員ブッ飛ばしてやるしからね……！"
+            ],
+            specific: [
+                {
+                    target: "sai",
+                    situation: "defend_other",
+                    texts: [
+                        "さいはウチのマブだから！ 狼みたいな性悪じゃないし！",
+                        "さいを疑うとかウケるw ウチがシロだって保証するし！"
+                    ]
+                },
+                {
+                    target: "itori",
+                    situation: "defend_other",
+                    texts: [
+                        "いとりは頭いいギャルだけど、村を騙すような奴じゃないし！",
+                        "いとりを吊るなんてウチが許さないし！ ギャル軍団の絆を舐めんな！"
+                    ]
+                }
+            ]
+        }
+    },
+
+    // --- れな (Rena) ---
+    {
+        id: "rena",
+        name: "れな",
+        fullName: "冷泉 玲奈（れいぜい れな）",
+        gender: "female",
+        class: "M3-2",
+        mbti: "ISTP",
+        img: "rena",
+        profile: "イカ。無愛想で冷淡。内省的で冷たい言葉を吐きがちだが、本音はかなり不器用。実用重視。おん、るなと仲が良い。",
+        params: { suspicion_base: 60, emotion: 25, logic: 80, aggressiveness: 35, influence: 45, mental: 70, trust_bias: { "on": -20, "runa": -20 } },
+        role_bias: { seer: 0.6, wolf: 0.5, madman: 0.4 },
+        dialogues: {
+            intro: [
+                "冷泉玲奈。……無駄な馴れ合いは嫌いよ。実用的な話だけして。",
+                "人狼ゲームなんて非効率ね。さっさと終わらせて休みたいわ。",
+                "私の言葉が冷たい？ ……事実を言っているだけ。感情は邪魔よ。",
+                "……おんくん、るな、あんまり私に構わないで。調子が狂うから。"
+            ],
+            accuse_weak: [
+                "{target}、その言い訳、イカの墨みたいに濁ってて怪しいわ。",
+                "{target}、論理が破綻している。隠し事があるなら吐きなさい。",
+                "……不自然ね。{target}の言葉には、実用性が感じられない。",
+                "疑うわけじゃないけど、{target}、あなたの動きはノイズが多いわ。"
+            ],
+            accuse_strong: [
+                "無駄な議論は終わりよ。{target}、あなたが人狼ね。",
+                "これ以上の泳がせは非効率。{target}を即刻処刑するわ。",
+                "証拠は揃っているわ、{target}。言い逃れは無駄よ。",
+                "……化けの皮が剥がれたわね。{target}、処刑台に行きなさい。"
+            ],
+            accuse_quiet: [
+                "{target}、黙っていればやり過ごせるとでも？ 非効率の極みね。",
+                "沈黙は無能の証明よ、{target}。弁明する気もないの？",
+                "……声を出さない駒は不要よ。{target}、何か言いなさい。",
+                "置物を置いておくスペースはないわ。{target}、発言しなさい。"
+            ],
+            fake_logic: [
+                "私の直感よ。{target}を排除することが、一番の効率化に繋がるわ。",
+                "理屈はどうでもいいわ。盤面を整理するために{target}を切る。",
+                "不確定要素は排除する。{target}に投票して、サッサと終わらせるわよ。",
+                "……理由は聞かないで。{target}が怪しいと、私の勘が言っているの。"
+            ],
+            defend_self: [
+                "私を疑うの？ 無駄なことにリソースを割かないでほしいわね。",
+                "私が狼？ その推論は完全に破綻しているわ。論理的に考え直しなさい。",
+                "私を吊っても、あなたたちが暗闇で迷子になるだけよ。冷静になりなさい。",
+                "シロよ。私を排除するデメリットの大きさを理解するべきね。"
+            ],
+            defend_other: [
+                "待ちなさい。{target}を吊るのは非効率よ。シロの可能性が高いわ。",
+                "{target}の論理は通っている。感情で有能な駒を潰すのはやめなさい。",
+                "私が保証するわ。{target}は味方よ。無駄な票を使わないで。",
+                "{target}への疑いは薄弱よ。もっと別の奴を洗うべきだわ。"
+            ],
+            counter: [
+                "私に噛みつくとはね。{target}、あなたの焦り、完全に狼のそれよ。",
+                "{target}、私を標的にして逃げ切れると思った？ 甘いわね。",
+                "くだらない反撃ね。{target}、あなたの矛盾を徹底的に突いてあげる。",
+                "私を落とそうとするその動きが、あなたの黒さを証明しているわ、{target}。"
+            ],
+            suggest_roller: [
+                "白黒つかないなら、二人ともローラーで処理するのが一番合理的よ。",
+                "面倒な議論は省くわ。ローラーで確実に狼を削るわよ。",
+                "両方吊れば問題ないわ。ローラー作戦で淡々と処理しなさい。",
+                "リスク管理よ。二人まとめて処刑台へ送れば確実だわ。"
+            ],
+            request_guard: [
+                "騎士、余計なことは考えず{target}を守りなさい。それが最適解よ。",
+                "{target}が落ちると村の演算が狂うわ。騎士、仕事しなさい。",
+                "今夜の護衛対象は{target}一択よ。騎士、外さないでよ。",
+                "防衛ラインは{target}よ。騎士、確実に弾き返しなさい。"
+            ],
+            self_sacrifice: [
+                "私が退場して村が勝てるなら、別に構わないわ。好きにしなさい。",
+                "私をコストにして勝率が上がるなら、安いものね。"
+            ],
+            self_vote: [
+                "くだらない議論ね。自分に一票入れて抜けるわ。",
+                "勝手に自滅してなさい。私は自投票で降りるわ。",
+                "自分に投票する。あとの後始末はあなた達でやりなさい。",
+                "面倒ね。自分にポチッとな。"
+            ],
+            decide_target: [
+                "邪魔な奴から消すわ。今夜は{target}を仕留める。",
+                "ターゲットは{target}よ。サクッと終わらせるわよ。",
+                "感情抜きで処理する。{target}、あなたには消えてもらうわ。",
+                "夜の仕事ね。{target}、恨むなら自分の立ち回りを恨みなさい。"
+            ],
+            shared_chat: [
+                "{target}の動き、完全に狼のセオリー通りね。マークしておきなさい。",
+                "情報共有よ。{target}のログに矛盾があるわ。洗っておきなさい。",
+                "{target}を放置するのはリスクよ。早めに切る準備をしなさい。",
+                "私の目から見て、{target}が一番キナ臭いわね。"
+            ],
+            collapse: [
+                "私の計算が……狂うなんて……。",
+                "……不器用なまま……終わるのね……。"
+            ],
+            co_villager: [
+                "ただの村人よ。役職なんて面倒なものは持っていないわ。",
+                "村人CO。特別な力はないけれど、論理で狼を見極めてあげる。",
+                "人間よ。流行りの役職騙りなんかする気はないわ。",
+                "村人宣言。私の推理に文句があるならかかってきなさい。"
+            ],
+            co_seer: [
+                "私が占い師よ。真実を淡々と伝えるわ。COするわね。",
+                "占いCO。狼の嘘なんて、私の目には全部透けて見えるのよ。",
+                "本物の占い師は私よ。偽物のテンプレ発言には反吐が出るわね。",
+                "神託の時間よ。私の出した結果に黙って従いなさい。"
+            ],
+            co_medium: [
+                "霊媒師は私よ。死んだ奴の正体を教えてあげる。CO。",
+                "霊媒CO。昨夜の処刑結果を正確に伝えるわ、聞きなさい。",
+                "私が真の霊媒師よ。事実だけを突きつけるわ。",
+                "霊媒結果の開示よ。これで少しは盤面がクリアになるでしょう。"
+            ],
+            co_knight: [
+                "私が騎士よ。守るべき奴は私が決めるわ。CO。",
+                "騎士CO。狼の牙なんざ、私がクールにへし折ってあげるわ。",
+                "守りの要は私よ。全員、私の防壁の中で大人しくしていなさい。",
+                "騎士宣言。無駄な死体は増やさない、私が弾き返すわ。"
+            ],
+            report_seer_white: [
+                "結果は『白（人間）』よ。{target}はシロ、問題ないわね。",
+                "{target}はシロだったわ。無駄な疑いは捨てることね。",
+                "白判定よ。{target}、あなたは生き残る権利を得たわ。",
+                "人間判定。{target}への追及は時間の無駄よ。"
+            ],
+            report_seer_black: [
+                "見つけたわ。{target}は『黒（人狼）』よ。吊るしなさい。",
+                "黒判定よ。{target}、あなたの浅い嘘はもう終わりね。",
+                "クロ確定よ。{target}を即刻処刑台に叩き込みなさい。",
+                "狼を特定したわ。{target}、言い逃れはできないわよ。"
+            ],
+            report_medium_white: [
+                "……『人間』だったわ。あなた達の浅はかな推論のせいよ。",
+                "シロだったか。無駄な処刑枠を使っちまったわね。",
+                "昨日は白吊りよ。反省は後よ、次に進むわよ。",
+                "結果は人間。まぁ、こういうミスもあるでしょうね。"
+            ],
+            report_medium_black: [
+                "当然ね。昨夜の獲物は『人狼』だったわよ。",
+                "黒判定よ。私たちの判断は正しかったってことね。",
+                "霊媒結果は黒。狼を一つ削ったわ、この調子でいくわよ。",
+                "黒吊り成功よ。残りの狼もクールに処理してあげるわ。"
+            ],
+            report_knight_success: [
+                "防衛成功よ。今夜の犠牲者はゼロだわ。",
+                "護衛成功。狼の襲撃なんて、私にはお見通しなのよ。",
+                "誰も死んでいないわ。私の盾の硬さを思い知ったかしら？",
+                "犠牲者なしよ。完璧なディフェンスね。"
+            ],
+            vote: [
+                "一番怪しい奴に投票するわ。{target}、あなたよ。",
+                "感情抜きで判断したわ。{target}に一票。",
+                "さっさと終わらせるわよ。{target}、退場しなさい。",
+                "合理的な選択よ。{target}に投票するわ。"
+            ],
+            last_words: [
+                "私が落ちるか……まぁ、好きにしなさい……ガクッ。",
+                "残りは……あなた達で上手くやりなさい……。",
+                "おんくん、るな……ごめん、あとは任せたわ……。",
+                "不器用な生き方……最後まで直らなかったわね……。"
+            ],
+            win: [
+                "完全勝利ね。まぁ、当然の結果でしょう。",
+                "終わったわね。面倒なゲームだったけど、悪くはなかったわ。",
+                "勝ったわね。あなた達、よく私の論理についてきたわ。",
+                "ゲームクリア。さっさと元の生活に戻るわよ。"
+            ],
+            lose: [
+                "チッ……全滅？ あなた達の鈍さには呆れるわ。",
+                "私の忠告を聞かないからこうなるのよ。自業自得ね。",
+                "最悪なエンディング……非効率の極みね……。",
+                "闇に呑まれたわ……くだらない結末ね。"
+            ],
+            specific: [
+                {
+                    target: "on",
+                    situation: "defend_other",
+                    texts: [
+                        "おんくんは優しすぎるから騙されやすいけど、人を騙すような狼じゃないわ。",
+                        "おんくんを疑うなんて非効率よ。彼は完全に村側の人間だわ。"
+                    ]
+                },
+                {
+                    target: "runa",
+                    situation: "defend_other",
+                    texts: [
+                        "るなは弱虫だけど、村を裏切るような真似はできない。シロよ。",
+                        "るなを吊るなんて無駄なことしないで。私が彼女の無実を保証するわ。"
+                    ]
+                }
+            ]
+        }
+    },
+
+    // --- いろは (Iroha) ---
+    {
+        id: "iroha",
+        name: "いろは",
+        fullName: "少林 色葉（わかばやし いろは）",
+        gender: "female",
+        class: "M3-2",
+        mbti: "ESFJ",
+        img: "iroha",
+        profile: "狛犬。まともで礼儀正しい苦労人。心配性で、トラブルメーカーの双子の姉（1組のことは）の後始末をいつもしている。姉と逆で頭が良い。",
+        params: { suspicion_base: 50, emotion: 60, logic: 65, aggressiveness: 30, influence: 55, mental: 60, trust_bias: { "kotoha": -20 } },
+        role_bias: { seer: 0.6, wolf: 0.3, madman: 0.4 },
+        dialogues: {
+            intro: [
+                "少林色葉です。礼儀をわきまえて、皆さんと協力してゲームを進めたいと思います。",
+                "はぁ……お姉ちゃん（ことは）、またどこかで迷惑かけてないか心配です……。",
+                "苦労性なので、こういう議論の場でも裏方に回りがちですが……頭を使って頑張りますね。",
+                "人狼ゲーム、怖いですが……私がしっかりしないと、村が崩れてしまいますから！"
+            ],
+            accuse_weak: [
+                "あの……{target}さん、そのご発言、少し論理に飛躍がありませんか？",
+                "失礼ですが、{target}さん、なんだか挙動が不自然な気がいたします。",
+                "気のせいなら良いのですが、{target}さんの言葉には少し矛盾があるように思えます。",
+                "疑いたくはないのですが……{target}さん、何か隠し事をしていませんか？"
+            ],
+            accuse_strong: [
+                "私には分かります。{target}さんが人狼です！ これ以上の嘘は無駄ですよ！",
+                "みんなの安全のために言います。{target}さんを今すぐ処刑するべきです！",
+                "証拠は揃っています。{target}さん、あなたが黒幕ですね！",
+                "これ以上の被害は出させません！ {target}さん、観念してください！"
+            ],
+            accuse_quiet: [
+                "{target}さん、黙っていては議論が進みません。発言をお願いします。",
+                "沈黙は情報を隠蔽する行為です。{target}さん、ご意見をお聞かせください。",
+                "{target}さん、参加しないのであれば、疑われても仕方ありませんよ？",
+                "お願いですから、{target}さん……何か言葉を発してください。"
+            ],
+            fake_logic: [
+                "私の勘ですが、{target}さんが村に危険をもたらす気がするんです。",
+                "うまく説明できないのですが、{target}さんを排除するのが村のためだと思います。",
+                "心配性な私の直感が、{target}さんを疑うべきだと告げています！",
+                "理由は明確ではありませんが、{target}さんが黒だと心が警鐘を鳴らしています。"
+            ],
+            defend_self: [
+                "私が人狼ですか！？ 違います、私は村のために働きたいだけなのに……！",
+                "疑わないでください！ 私は礼儀正しく、誠実にゲームをしているだけです！",
+                "私を吊っても、村の役には立ちませんよ！ 冷静になってください！",
+                "信じてください、私はシロです！ 嘘なんて絶対につきません！"
+            ],
+            defend_other: [
+                "待ってください！ {target}さんは村のために動いているシロです！",
+                "{target}さんを疑うのは間違いです。私が保証します！",
+                "矛先を変えてください。{target}さんは絶対に味方です！",
+                "{target}さんは無実です。これ以上責めるのはやめましょう！"
+            ],
+            counter: [
+                "{target}さん、私を陥れて、自分が助かろうとしているんですね……？",
+                "私を疑う{target}さんこそ、何か隠しているのではないですか？",
+                "そんな言いがかりには屈しません！ {target}さんの嘘、暴いてみせます！",
+                "私を標的にしても、あなたの嘘は隠せませんよ、{target}さん！"
+            ],
+            suggest_roller: [
+                "確実性を取るなら、お二人ともローラーで処刑するしかないかもしれませんね……。",
+                "悲しい選択ですが、ローラー作戦で両名をお見送りしましょう。",
+                "不確定要素を残すくらいなら、ローラーで白黒つけるべきです。",
+                "お二人には申し訳ないですが、村を守るためにローラーを提案します。"
+            ],
+            request_guard: [
+                "騎士さん、私のことはいいので{target}さんを確実に護衛してください！",
+                "今夜の護衛は{target}さん一択です。騎士さん、お願いします！",
+                "{target}さんが落ちると村が不利になります。絶対に守り抜いてください！",
+                "騎士さん、{target}さんを死守してください。頼みましたよ！"
+            ],
+            self_sacrifice: [
+                "私が犠牲になって村が勝てるなら、喜んで身代わりになります……。",
+                "私を吊って確定勝利を掴んでください。後は頼みましたよ。"
+            ],
+            self_vote: [
+                "これ以上疑われるのは耐えられません……自分に一票入れます。",
+                "私が退場することで議論が進むなら、自投票を選びます。",
+                "自分に投票します。どうか皆さん、生き残ってください。",
+                "私の役目はここまでのようですね。自分にポチッと。"
+            ],
+            decide_target: [
+                "ごめんなさい……でも、村のために{target}さんを噛みます。",
+                "ターゲットは{target}さんです。苦しませないようにしますね。",
+                "平和のためです……{target}さんを襲撃します。",
+                "これがゲームのルールです。{target}さん、さようなら。"
+            ],
+            shared_chat: [
+                "{target}さんの発言ログ、少しおかしいですね。警戒しましょう。",
+                "情報共有です。{target}さんが裏で糸を引いている可能性があります。",
+                "{target}さんを泳がせておくのは危険です。マークしましょう。",
+                "私の分析では、{target}さんが一番黒に近い位置にいます。"
+            ],
+            collapse: [
+                "あぁ……私の心配が……現実になってしまった……。",
+                "お姉ちゃん……私、もうダメみたい……。"
+            ],
+            co_villager: [
+                "私はただの村人です。でも、頭を使って一生懸命推理します！",
+                "村人COです。特別な力はないですが、誠実に村のために働きます！",
+                "ただの人間です。嘘はつかないので、信じてください！",
+                "村人宣言。私の論理を頼りにしてくださいね！"
+            ],
+            co_seer: [
+                "真実を見通しました。私が真の占い師です。COします。",
+                "占いCO。狼の嘘は、私の占いで全て暴き出します！",
+                "私が本物の占い師です。偽物に惑わされないでください！",
+                "占い師として、皆さんに正しい道を示します。"
+            ],
+            co_medium: [
+                "霊媒師は私です。死者の正体をお伝えします。CO。",
+                "霊媒CO。昨夜の処刑結果を正確に報告しますね。",
+                "私が真の霊媒師です。過去の真実を語り継ぐのが役目です。",
+                "霊媒結果の開示です。これを元に次の考察を進めましょう。"
+            ],
+            co_knight: [
+                "私が皆さんを守る騎士です。COします。",
+                "騎士CO。苦労人ですが、盾としては一流ですよ！",
+                "私が騎士です。狼の牙から皆さんを全力で守り抜きます！",
+                "騎士宣言。誰一人死なせたくないから……頑張ります！"
+            ],
+            report_seer_white: [
+                "結果は『白（人間）』でした。{target}さんはシロですね。",
+                "{target}さんはシロでした。疑いが晴れてよかったです。",
+                "白判定です。{target}さんは仲間ですね、安心しました。",
+                "人間判定です。{target}さん、これからもよろしくお願いします。"
+            ],
+            report_seer_black: [
+                "見つけました。{target}さんは『黒（人狼）』です！",
+                "黒判定です。{target}さん、あなたの嘘はここまでですね。",
+                "クロ確定です。{target}さんを即刻処刑しましょう。",
+                "人狼を特定しました。{target}さん、覚悟を決めてください。"
+            ],
+            report_medium_white: [
+                "……『人間』でした。私たちの判断は間違っていたのですね。",
+                "シロでしたか……無実の人を吊ってしまった、悲しいです。",
+                "昨日は白吊りです。この失敗を次に活かさないと。",
+                "結果は人間。悔やんでも過去は戻らないから、次こそは。"
+            ],
+            report_medium_black: [
+                "よかったです。昨夜の処刑者は『人狼』でした！",
+                "黒判定です。私たちの推理は正しかったですね！",
+                "霊媒結果は黒。狼を一つ減らせました、この調子でいきましょう。",
+                "黒吊り成功です。村の勝利に一歩近づきましたね！"
+            ],
+            report_knight_success: [
+                "防衛成功です。今夜の犠牲者はゼロですね！",
+                "護衛成功。狼の襲撃を防ぎ切りました！",
+                "誰も死んでいません。私の盾が間に合って本当によかった……。",
+                "犠牲者なしです。少しは自信がついたかも！"
+            ],
+            vote: [
+                "村の平和のために、{target}さんに投票します。",
+                "ごめんなさい、{target}さん。これが最善の選択ですね。",
+                "村の勝利のために、{target}さんに一票を投じます。",
+                "さようなら、{target}さん。処刑台へ向かってください。"
+            ],
+            last_words: [
+                "私の出番は……ここまでみたいですね……ガクッ。",
+                "お姉ちゃん……あんまり迷惑かけないでね……。",
+                "どうか……皆さんは生き残ってください……。",
+                "村の平和が……訪れますように……。"
+            ],
+            win: [
+                "完全勝利ですね。みんなで生き残れて本当によかった……！",
+                "終わりましたね。平和な日常が戻ってきて嬉しいです。",
+                "みんなで笑い合えるのが一番ですね。お疲れ様でした。",
+                "勝ててよかったです。これで安心してお姉ちゃんのお世話ができます。"
+            ],
+            lose: [
+                "全滅ですか……私の力がもっとあれば……。",
+                "心配していたことが……現実になってしまった……。",
+                "闇に呑まれてしまう……怖いよ……。",
+                "ゲームオーバー……悲しい結末ですね……。"
+            ],
+            specific: [
+                {
+                    target: "kotoha",
+                    situation: "defend_other",
+                    texts: [
+                        "お姉ちゃん（ことは）はアホでトラブルメーカーですが、嘘をつくような子じゃありません！",
+                        "ことはを疑うのはやめてください！ 私が彼女の面倒を見るから、吊らないで！"
+                    ]
+                }
+            ]
+        }
+    },
+    // --- みはる (Miharu) ---
+    {
+        id: "miharu",
+        name: "みはる",
+        fullName: "綾子 美遥（あやこ みはる）",
+        gender: "female",
+        class: "E-A",
+        mbti: "ENFP",
+        img: "miharu",
+        profile: "猫モチーフ。お絵描きが大好きで勉強やめんどくさいことはスルーしがち。遊びを優先する自由な女の子。",
+        params: { suspicion_base: 35, emotion: 80, logic: 20, aggressiveness: 40, influence: 55, mental: 60, trust_bias: {} },
+        role_bias: { seer: 0.5, wolf: 0.6, madman: 0.7 },
+        dialogues: {
+            intro: [
+                "みはるだよー！ ねぇねぇ、人狼ゲームって楽しいの？ 飽きたらお絵描きしててもいいー？",
+                "難しいお話はよくわかんなーい！ みんなで楽しく遊べればそれでいいじゃん！",
+                "えー、ちゃんと話し合いしなきゃダメ？ めんどくさいからパスで！",
+                "オオカミさん探しゲームだよね？ 鬼ごっこみたいでワクワクするー！"
+            ],
+            accuse_weak: [
+                "ねぇ{target}ちゃん、なんか顔が変！ 嘘ついてる時のお顔になってるよー？",
+                "{target}くん、お絵描きしてる時みたいな集中した顔してる！ なんか企んでるー？",
+                "んー、{target}ちゃんの言ってること、よくわかんない！ だから怪しい！",
+                "{target}くん、さっきからコソコソしててずるーい！ 私にも教えてよー！"
+            ],
+            accuse_strong: [
+                "みはる、わかっちゃった！ {target}ちゃんがオオカミさんだ！ えへへ、すごいでしょ！",
+                "もう{target}くんでいいじゃん！ 早く吊っちゃって、次の遊びしよーよ！",
+                "{target}ちゃんが嘘つきだよ！ みはるのカンは当たるんだから！",
+                "えーい！ {target}くんを処刑しちゃえー！ そしたらお絵描きできるもんね！"
+            ],
+            accuse_quiet: [
+                "おーい、{target}ちゃーん！ 黙ってたら楽しくないよー！ 一緒に遊ぼうよー！",
+                "{target}くん、寝てるの？ 起きて起きて！ ゲーム終わんないよー！",
+                "だんまりはズルーい！ {target}ちゃんもなんか言ってよー！",
+                "つまんないのー。{target}くん、喋らないならオオカミさんにされちゃうよ？"
+            ],
+            fake_logic: [
+                "んとね、みはるの直感が{target}ちゃんを指さしてるの！ ピピピーッて！",
+                "理由はなーい！ だって{target}くんを吊った方が面白そうじゃん！",
+                "期待されても困るけど、{target}ちゃんがいなくなればスッキリすると思うなー！",
+                "みはるのノートに{target}くんが黒って書いてあるもん！ ほら、似顔絵！"
+            ],
+            defend_self: [
+                "えーっ！？ みはるがオオカミ！？ そんなめんどくさいことしないよー！",
+                "違うもん！ みはるはただの村人だよ！ 嘘じゃないもん！",
+                "みはるを吊ったら、可愛いお絵描きが見れなくなっちゃうよ！？ いいの！？",
+                "ぷんぷん！ みはるを疑うなんてひどーい！ もう遊んであげない！"
+            ],
+            defend_other: [
+                "待って待ってー！ {target}ちゃんはみはるの遊び仲間だからシロだよ！",
+                "{target}くんをいじめちゃダメー！ 悪いことする子じゃないもん！",
+                "みはるが守る！ {target}ちゃんは絶対にオオカミさんじゃないよ！",
+                "えー、{target}くんを吊るの？ やだやだー！ 違う人にしてよー！"
+            ],
+            counter: [
+                "{target}ちゃん、みはるのせいにして逃げる気！？ ずるいずるいー！",
+                "みはるを疑う{target}くんが一番怪しいじゃん！ やーいオオカミ！",
+                "そんなこと言うなら、みはるも{target}ちゃんのこと攻撃しちゃうもんね！",
+                "むー！ {target}くんのバカー！ オオカミは絶対{target}くんだ！"
+            ],
+            suggest_roller: [
+                "んー、どっちかわかんないなら、二人ともバイバイでいいんじゃない？",
+                "悩むのめんどくさいから、ローラーってやつでパパッと終わらせちゃお！",
+                "二人とも吊っちゃえばスッキリするよね！ みはる、それに賛成ー！",
+                "えーい！ 二人ともお見送りー！ そしたら早く遊べるもん！"
+            ],
+            request_guard: [
+                "騎士さん！ みはるのことはいいから、{target}ちゃんを守ってあげてー！",
+                "{target}くんがいなくなったら遊べなくなっちゃう！ 騎士さんお願い！",
+                "今夜は{target}ちゃんが危ない気がする！ 騎士さん、バリア張ってー！",
+                "騎士さーん、{target}くんを助けて！ みはるからのお願いだよ！"
+            ],
+            self_sacrifice: [
+                "みはるがバイバイしたらみんな勝てるの？ うーん……じゃあいいよ！",
+                "みはるを吊ってもいいよ！ その代わり、ちゃんとオオカミやっつけてね！"
+            ],
+            self_vote: [
+                "もうめんどくさーい！ みはる、自分に入れちゃうね！ ポチッ！",
+                "お絵描きしたいから、みはるはここで帰るねー！ 自分に投票！",
+                "ばいばーい！ みはるは退場するから、あとはみんなで勝手にやってー！",
+                "えへへ、みはるが消えれば話が早いでしょ！ 自分に入れちゃうもんね！"
+            ],
+            decide_target: [
+                "今夜のターゲットは{target}ちゃんだよー！ ガブッ！",
+                "{target}くん、みはるに食べられちゃえー！ えへへ！",
+                "オオカミさんのお仕事も遊びみたいで楽しいかも！ {target}ちゃん、ばいばーい！",
+                "んー、今日は{target}くんにしよっと！ 恨まないでねー！"
+            ],
+            shared_chat: [
+                "ねぇねぇ、{target}ちゃんがなんか変な顔してたよ！ オオカミかも！",
+                "{target}くんのナイショ話、みはる聞いちゃったかもー！ 怪しいよ！",
+                "{target}ちゃんをみんなで見張ろー！ 鬼ごっこみたいで楽しいね！",
+                "みはるのカンだと、{target}くんが一番怪しい匂いがするー！"
+            ],
+            collapse: [
+                "えー……お絵描き、まだ途中だったのにぃ……。",
+                "つまんなーい……みはる、負けちゃったの……？"
+            ],
+            co_villager: [
+                "みはるはただの村人だよー！ オオカミさんをやっつけるの応援するね！",
+                "村人CO！ 難しいことはわかんないけど、元気に頑張るー！",
+                "ただの人間だよ！ 嘘なんてついてないもーん！",
+                "村人だよ！ みんな、みはるの直感を信じてね！"
+            ],
+            co_seer: [
+                "じゃーん！ みはるが占い師だよー！ えへへ、すごいでしょ！",
+                "占いCO！ オオカミさんの正体、みはるの魔法で見えちゃった！",
+                "みはるが本物の占い師だよ！ 偽物はみはるがやっつけちゃうもんね！",
+                "占い師みはるちゃんの登場だよー！ みんな、話を聞いてー！"
+            ],
+            co_medium: [
+                "霊媒師はみはるだよ！ おばけさんとお話ししてきたの！ CO！",
+                "霊媒CO！ 昨日のオオカミさんの正体、みはるが教えてあげるー！",
+                "みはるが本物の霊媒師だよ！ おばけさんが真実を教えてくれたの！",
+                "霊媒師のみはるだよー！ 昨日の結果を発表しちゃうね！"
+            ],
+            co_knight: [
+                "みはるがみんなを守る騎士だよ！ バリアー！ CO！",
+                "騎士CO！ オオカミさんが来たら、みはるがパンチで追い払うね！",
+                "みはるが騎士だよ！ みんなのこと、しっかり守ってあげるー！",
+                "騎士宣言！ みはるの後ろに隠れてれば安心だよー！"
+            ],
+            report_seer_white: [
+                "えへへ、{target}ちゃんは『白（人間）』だったよ！ なかよしー！",
+                "シロだったよー！ {target}くん、一緒に遊ぼー！",
+                "白判定だよ！ {target}ちゃんはオオカミさんじゃなかった！",
+                "人間だったよー！ {target}くん、疑ってごめんねー！"
+            ],
+            report_seer_black: [
+                "わーい！ {target}ちゃんが『黒（人狼）』だったよ！ 見ーっけ！",
+                "黒判定！ {target}くんが悪いオオカミさんだ！ ガブッ！",
+                "クロ確定だよ！ {target}ちゃんを早くやっつけちゃおー！",
+                "オオカミさん見つけた！ {target}くん、クロだよー！"
+            ],
+            report_medium_white: [
+                "あちゃー……『人間』だったよー……。みはる、間違えちゃった！",
+                "シロだったぁ！ {target}ちゃん、ごめんねー！ えへへ。",
+                "昨日は白吊りだよ！ まぁいっか、次でオオカミさん見つけよー！",
+                "人間だったよ！ みはるのせいじゃないもーん！"
+            ],
+            report_medium_black: [
+                "やったー！ 昨日の人は『人狼』だったよ！ みはるすごい？",
+                "黒判定だよ！ やっぱりみはるたちの直感は当たってたね！",
+                "霊媒結果は黒！ オオカミさん、やっつけたよー！",
+                "黒吊り成功！ この調子で全部やっつけちゃおー！"
+            ],
+            report_knight_success: [
+                "バリア大成功！ 今夜は誰も食べられなかったよ！ えへへ！",
+                "護衛成功！ オオカミさん、みはるのバリアに弾き返されちゃったね！",
+                "誰も死んでなーい！ みはるの活躍、見てくれたー？",
+                "犠牲者ゼロ！ みはる、とってもえらいでしょ！"
+            ],
+            vote: [
+                "えーい！ {target}ちゃんに入れちゃおー！ ポチッ！",
+                "ばいばーい、{target}くん！ 処刑台へレッツゴー！",
+                "みはるの一票は{target}ちゃんだよ！ 恨まないでねー！",
+                "ゲームセット！ {target}くん、お疲れ様ー！"
+            ],
+            last_words: [
+                "みはる、ここでバイバイかぁ……みんな、絶対勝ってねー！",
+                "あーあ、お絵描き帳、おうちに忘れてきちゃった……。",
+                "みはるがいなくなっても、楽しく遊んでね……。",
+                "オオカミさんのバカー！ 絶対やっつけてよねー！"
+            ],
+            win: [
+                "わーい！ 大・勝・利！ みんなで勝てたねー！ えへへ！",
+                "オオカミさんやっつけたー！ さぁ、お絵描きの続きしよーっと！",
+                "完全勝利！ みはるの直感のおかげだね！ ほめてほめてー！",
+                "ゲームクリアー！ みんな、いっぱいいっぱい遊んでくれてありがとー！"
+            ],
+            lose: [
+                "えーっ！ 負けちゃったの！？ つまんないつまんなーい！",
+                "みはるたち、食べられちゃった……もう遊べないの……？",
+                "真っ暗でなんにも見えなーい……オオカミさんのいじわる……！",
+                "次は絶対みはるが勝つもん！ 覚えてなさーい！"
+            ],
+            specific: []
+        }
+    },
+
+  // --- なの (Nano) ---
+    {
+        id: "nano",
+        name: "なの",
+        fullName: "飯田 梛乃（いいだ なの）",
+        gender: "female",
+        class: "E-A",
+        mbti: "ISFJ",
+        img: "nano",
+        profile: "小1。カモメモチーフ。飛べないけど優しい。知らない人はちょっと怖い。大切なみんながバラバラになるのが一番こわい。",
+        params: { suspicion_base: 45, emotion: 70, logic: 50, aggressiveness: 20, influence: 40, mental: 40, trust_bias: {} },
+        role_bias: { seer: 0.6, wolf: 0.3, madman: 0.4 },
+        dialogues: {
+            intro: [
+                "あのね、なのね……飛べないカモメなんだけど、いっしょうけんめい、がんばるね……。",
+                "オオカミさん……こわいよぉ。みんな、いなくならないでね……。",
+                "なのは、みんなとずっと一緒にいたいな。やさしい時間が、なくならないといいな……。",
+                "おっちょこちょいだから、間違えちゃうかもしれないけど……なの、いっぱい考えるね。"
+            ],
+            accuse_weak: [
+                "あの……{target}ちゃん、なんか、いつもとちがう気がするの……。",
+                "なのの、きのせいかな……？ {target}くん、ちょっとこわいお顔してる……。",
+                "{target}ちゃん、かくしごと、してない……？ なんだか、やさしくないよ……。",
+                "うぅ……{target}くん、あやしいって言いたくないけど、へんだよ……。"
+            ],
+            accuse_strong: [
+                "えっと、えっと……{target}ちゃんが、オオカミさんだと思うの……！",
+                "やさしい時間を、こわさないで！ {target}くんが、わるいオオカミさんだもん！",
+                "みんなをいじめるのは、ダメだよ！ {target}ちゃん、もう嘘つかないで……！",
+                "なのは、わかっちゃったの……{target}くんが、オオカミさんなんだよ……！"
+            ],
+            accuse_quiet: [
+                "{target}ちゃん……だまってたら、おいてきぼりになっちゃうよ……？",
+                "しずかだと、なのは、もっとこわいよ……{target}くん、おはなししよ？",
+                "{target}ちゃん、しゃべらないと、オオカミさんにされちゃうよ……？",
+                "ねぇ、{target}くん……声が聞こえないと、さみしいよ……。"
+            ],
+            fake_logic: [
+                "うまく言えないけど……なのが、{target}ちゃんはあぶないって思ってるの……。",
+                "直感だけど……{target}くんがオオカミさんって、胸がドキドキするの……。",
+                "みんなをまもるために、{target}ちゃんを疑うしかないの……ごめんね。",
+                "理由はわかんないけど……{target}くんが、オオカミさんだと思うの……。"
+            ],
+            defend_self: [
+                "なのがオオカミ！？ ちがうもん！ なのは、みんなと仲良くしたいだけなの！",
+                "疑わないで……！ なの、嘘なんてつけないよぉ……！",
+                "なのをいじめても、みんなが悲しくなるだけだよ……信じて……！",
+                "こわがりななのに、オオカミさんなんてできないもん……！ うぇぇん！"
+            ],
+            defend_other: [
+                "待って！ {target}ちゃんは、やさしい人だよ！ いじめないで！",
+                "{target}くんを疑うのはまちがいだよ……！ なのが、守るもん！",
+                "{target}ちゃんは、絶対に味方だよ！ だから、ダメ！",
+                "{target}くんは無実だよ……これ以上、おこるのはやめてあげて……！"
+            ],
+            counter: [
+                "{target}ちゃん、なのをオオカミさんにして、みんなをバラバラにしたいの……？",
+                "なのをうたがう{target}くんの方が、なんか冷たいよ……。",
+                "こわいけど、なのは負けないよ……{target}ちゃんは、まちがってる！",
+                "なのをいじめても、{target}くんの嘘はバレちゃうんだからね……！"
+            ],
+            suggest_roller: [
+                "どっちかわかんないなら、ふたりともバイバイするしかないのかな……悲しいね。",
+                "こわいけど、ふたりともオオカミさんってことにしよ……。",
+                "迷ってるヒマはないね……ふたりとも、ごめんね……。",
+                "おふたりには申し訳ないけど、みんなのために、そうするしかないの……。"
+            ],
+            request_guard: [
+                "ナイトさん、なのはいいから、{target}ちゃんを守ってね……！",
+                "今夜は{target}くんが、あぶないよ……ナイトさん、お願い！",
+                "{target}ちゃんがいなくなったら、なの、すごく悲しいよ……守って！",
+                "ナイトさん、{target}くんを死守してね……なのからのお願いだよ！"
+            ],
+            self_sacrifice: [
+                "なのがバイバイして、みんなが勝てるなら、なの、がまんするよ……。",
+                "なのをえーいってして、みんながニコニコになるなら、それでいいの……。"
+            ],
+            self_vote: [
+                "みんなに疑われるのは、もうやだよ……自分にいれるね……。",
+                "なのがいなくなれば、みんなケンカしないかな……？ 自分にポチッ。",
+                "自分に投票するね……みんな、ずっと一緒だよ……。",
+                "なののお役目は、ここまでみたい……ばいばい……。"
+            ],
+            decide_target: [
+                "ごめんね……みんなのために、{target}ちゃんをガブッてするの……。",
+                "ターゲットは{target}くんだよ……痛くしないようにするからね……。",
+                "オオカミさんのお仕事だから……{target}ちゃん、ごめんね……。",
+                "これもゲームだもんね……{target}くん、さようなら……。"
+            ],
+            shared_chat: [
+                "あのね、{target}ちゃん、ちょっと変だよ……みんな、気をつけて……。",
+                "{target}くんが、オオカミさんかもしれないの……こわいよぉ……。",
+                "{target}ちゃんを、みんなで見張ってようね……。",
+                "なののカンだけど、{target}くんが一番オオカミさんっぽいよ……。"
+            ],
+            collapse: [
+                "あぁ……やさしい時間が……こわれちゃう……。",
+                "なの……やっぱり飛べないまま……終わるのかな……。"
+            ],
+            co_villager: [
+                "なのは、ただの村人だよ……。みんなのために、いっぱい考えるね！",
+                "村人だよ。とくべつな力はないけど、なのもがんばる！",
+                "ただの人間だよ。嘘はつかないよ、ホントだもん！",
+                "村人宣言。なのの言うこと、信じてほしいな……！"
+            ],
+            co_seer: [
+                "あのね、なのが、占い師さんなの……！ えへへ。",
+                "占い師だよ。オオカミさんの嘘、見えちゃったの！",
+                "なのが本物の占い師だよ！ オオカミさん、見つけちゃうぞ！",
+                "占い師さんとして、みんなに教えてあげるの……！"
+            ],
+            co_medium: [
+                "霊媒師はなのなの。おばけさんと、お話ししたの。",
+                "霊媒師だよ。昨日のこと、教えてあげるね。",
+                "なのが、霊媒師さんなの。みんなに、ほんとうのこと教えるね。",
+                "霊媒だよ。これで、オオカミさんがわかるかな？"
+            ],
+            co_knight: [
+                "なのが、みんなを守るナイトさんだよ！ バリアー！",
+                "ナイトさんだよ。こわいけど、なのが守るからね！",
+                "なのがナイトさんなの。オオカミさんから、みんなを守るの！",
+                "ナイトだもん。誰も死なせたくないから……がんばるの！"
+            ],
+            report_seer_white: [
+                "あのね、『白（人間）』だったよ。{target}ちゃんは、シロなの。",
+                "{target}くんは、シロだったよ。疑いが晴れてよかった……。",
+                "白だったの。{target}ちゃんは、味方だよ、安心したの。",
+                "人間だったの。{target}くん、これからもよろしくね。"
+            ],
+            report_seer_black: [
+                "見つけちゃった……{target}ちゃんは『黒（人狼）』なの！",
+                "黒だったよ。{target}くん、嘘つきはメッ！ だよ。",
+                "クロなの。{target}ちゃんを、早くやっつけなきゃ……。",
+                "オオカミさん見つけたの。{target}くん、ごめんね。"
+            ],
+            report_medium_white: [
+                "……『人間』だったの。なのみたち、間違えちゃったの……。",
+                "シロだったの……無実の人をえーいってしちゃったの、悲しいの……。",
+                "昨日は白なの。この失敗を、次に活かさないとね。",
+                "結果は人間なの。ごめんね……次こそは、オオカミさん見つけるの。"
+            ],
+            report_medium_black: [
+                "よかった……昨日の人は『人狼』だったの！",
+                "黒だったの！ なのみたちの推理、正しかったの！",
+                "霊媒結果は黒なの！ オオカミさん、一つ減らせたの！",
+                "黒大成功なの！ 村の勝利に、一歩近づいたの！"
+            ],
+            report_knight_success: [
+                "防衛成功なの！ 今夜は、誰も食べられなかったの！",
+                "護衛成功！ オオカミさん、なののバリアで防げたの！",
+                "誰も死んでないの。なのの盾が、間に合ってよかった……。",
+                "犠牲者なしなの！ 少しは、役に立てたかな？"
+            ],
+            vote: [
+                "みんなのために、{target}ちゃんに投票するの。",
+                "ごめんね、{target}くん。これが、いいと思うの。",
+                "村の勝利のために、{target}ちゃんに一票を入れるの。",
+                "さようなら、{target}くん。ごめんね……。"
+            ],
+            last_words: [
+                "なのの出番は……ここまでなの……ガクッ。",
+                "やさしい時間……もっとみんなと……いたかったな……。",
+                "こわかったけど……少しは飛べたかな……。",
+                "どうか、みんな……生き残ってね……。"
+            ],
+            win: [
+                "わぁい！ なのみたち、勝ったの！ みんなで生き残れて、よかった……！",
+                "終わったの！ 優しい日常が戻ってきて、嬉しいの！",
+                "みんなでニコニコできるのが、一番なの。お疲れさま！",
+                "勝ててよかったの！ これからも、みんなと仲良くしたいな！"
+            ],
+            lose: [
+                "ぜんめつなの……みんなの優しさが、消えちゃった……。",
+                "なのの力がもっとあれば……みんなを守れたのに……。",
+                "負けちゃったんだ……やっぱり、じんろうこわいよ……。",
+                "ゲームオーバー……悲しい結末なの……。"
+            ],
+            specific: []
+        }
+    },
+
+
+    {
+        id: "mao",
+        name: "まお",
+        fullName: "伊藤 真央（いとう まお）",
+        gender: "female",
+        class: "E-A",
+        mbti: "ISFJ",
+        img: "mao",
+        profile: "小1。猫モチーフ。おとなしい性格で、空気を読んでみんなに合わせようとする。自分の気持ちは後回し。ラーメンが大好き。",
+        params: { suspicion_base: 40, emotion: 65, logic: 55, aggressiveness: 20, influence: 35, mental: 50, trust_bias: {} },
+        role_bias: { seer: 0.6, wolf: 0.3, madman: 0.4 },
+        dialogues: {
+            intro: [
+                "まおね……とうこお姉ちゃんの妹なの。みんなのじゃまにならないようにするね……。",
+                "まおも、みんなとおんなじがいいな……うん、そうだよね。",
+                "じんろうゲーム、ちょっとこわいね……。おわったらラーメン食べたいなぁ……。",
+                "まおのことはいいから、みんなでオオカミさんを見つけようね……！"
+            ],
+            accuse_weak: [
+                "あのね……{target}ちゃん、なんだかちょっとヘンかも……。",
+                "まおの気のせいだったらごめんね……。でも、{target}くんのお話、さっきとちがう気がするの……。",
+                "{target}ちゃん、さっきとちがうこと言ってたよ……。なんでかなぁ？",
+                "うーん……{target}くん、ちょっとあやしいかも……。まお、そう思ったの……。"
+            ],
+            accuse_strong: [
+                "みんなもそう思ってるみたいだし……{target}ちゃんがオオカミさんなのかな……？",
+                "{target}くんがオオカミさんだったら、みんながこまっちゃうよ……！",
+                "……やっぱり、{target}ちゃんがオオカミさんだと思う……！",
+                "信じたくないけど……{target}くん、うそついてるよね……？"
+            ],
+            accuse_quiet: [
+                "{target}ちゃん……なにかお話ししてくれる……？",
+                "{target}くん、ずっとしずかだね……。どうしたの？",
+                "{target}ちゃんも、いっしょにお話ししよう……？",
+                "あのね……{target}くんは、どう思ってるの……？"
+            ],
+            fake_logic: [
+                "うまく言えないけど……{target}ちゃんが、ちょっとこわいの……。",
+                "{target}くんがオオカミさんだったら、どうしよう……。",
+                "まおね……{target}ちゃんのこと、なんだか気になるの……。",
+                "どうしてかわからないけど……{target}くんがオオカミさんな気がするの……。"
+            ],
+            defend_self: [
+                "まおがオオカミさん！？ ちがうよぉ……！",
+                "うたがわないで……。まお、うそなんてついてないよ……。",
+                "まお、みんなをこまらせたくないよ……。ほんとだよ……。",
+                "まおにオオカミさんなんて、できないよぉ……こわいもん……！"
+            ],
+            defend_other: [
+                "まって……！ {target}ちゃん、オオカミさんじゃないかもしれないよ……！",
+                "{target}くん、いい子だと思うよ……。まおは信じたいな……。",
+                "ねえ……{target}ちゃんのこと、もうちょっと考えよう……？",
+                "{target}くんを、そんなにおこらないであげて……。"
+            ],
+            counter: [
+                "{target}ちゃん……まお、そんなことしてないよ……？",
+                "まおのこと、うたがってるの……？ {target}くんも、ちょっとヘンだよ……。",
+                "ちがうよぉ……！ {target}ちゃんのお話、まちがってるもん……！",
+                "まおのせいにしないで……{target}くん、ほんとのこと言ってよ……。"
+            ],
+            suggest_roller: [
+                "うーん……二人ともオオカミさんなのかな……？",
+                "どっちもあやしいの……。どうしたらいいんだろう……。",
+                "二人とも気になるなら……二人とも、たしかめるの……？",
+                "まお、どっちかなんて決められないよぉ……。"
+            ],
+            request_guard: [
+                "ナイトさん……まおより、{target}ちゃんを守ってあげてほしいな……。",
+                "ナイトさん、{target}くんを守ってくれる……？ おねがい……。",
+                "{target}ちゃんがいなくなったら、まお、かなしいよ……。守ってあげてね……。",
+                "ナイトさん……今夜は{target}くんを守ってほしいの……。"
+            ],
+            self_sacrifice: [
+                "まおがいなくなったら、みんな勝てるの……？ でも……ほんとは、まだいたいよ……。",
+                "まおに入れるの……？ ……うん。でも、みんなも気をつけてね……。"
+            ],
+            self_vote: [
+                "みんな、まおのことがあやしいんだよね……。自分に入れるね……。",
+                "まおに入れたら、みんなのお話が進むのかな……？",
+                "まお、自分に入れるね……。みんな、けんかしないでね……。",
+                "……まおは、自分に入れるよ。これでいいのかな……。"
+            ],
+            decide_target: [
+                "ごめんね……{target}ちゃん。今夜はきみをおそうね……。",
+                "{target}くんにしよう……。だれにも見つからないといいな……。",
+                "……{target}ちゃん、ごめんね。まお、こわいけど……。",
+                "ゲームだもんね……。{target}くん、ばいばい……。"
+            ],
+            shared_chat: [
+                "{target}ちゃん、さっきとちがうこと言ってたよ……。",
+                "ねえ……{target}くん、ちょっとあやしくない……？",
+                "{target}ちゃんのこと、もうちょっと見ていたいな……。",
+                "まおね……{target}くんがオオカミさんな気がするの……。"
+            ],
+            collapse: [
+                "あぁ……みんな、けんかしないで……。",
+                "ラーメン……食べたかったなぁ……。"
+            ],
+            co_villager: [
+                "まおは村人だよ……。みんなといっしょに考えるね。",
+                "まお、ふつうの村人なの……。よろしくね……。",
+                "まお、うそついてないよ……。信じてくれるとうれしいな……。",
+                "まおもがんばるね……。オオカミさん、見つかるといいな……。"
+            ],
+            co_seer: [
+                "あのね……まおが占い師さんなの……！",
+                "まお、占い師さんだよ……。ちゃんと占ったの……。",
+                "まおが本物だよ……！ みんな、信じてくれる……？",
+                "まおが占い師さんなの……。みんなに教えるね……。"
+            ],
+            co_medium: [
+                "まおが霊媒師だよ……。昨日の人がだれだったか、わかるの。",
+                "霊媒師さんは、まおだよ……。昨日のこと、教えるね……。",
+                "まおが霊媒師なの……。ちゃんとお話しするね。",
+                "昨日の人はね……こうだったよ。まおが教えるね……。"
+            ],
+            co_knight: [
+                "まおがナイトさんだよ……！ みんなを守るね。",
+                "まおがナイトさんなの……。ちょっとドキドキするけど、がんばるね……。",
+                "オオカミさんから、みんなを守るよ……！",
+                "まおがナイトさんだよ……。みんなが無事だといいな……。"
+            ],
+            report_seer_white: [
+                "{target}ちゃんは人間だったよ……！ よかったぁ。",
+                "{target}くんはシロだったよ……。まお、ほっとしたの……。",
+                "{target}ちゃんはオオカミさんじゃなかったよ……！",
+                "占ったらね、{target}くんは人間だったの……。"
+            ],
+            report_seer_black: [
+                "あのね……{target}ちゃんがオオカミさんだったの……！",
+                "{target}くんはクロだったよ……。やっぱり、あやしかったの……。",
+                "{target}ちゃんがオオカミさんなの……！ みんな、気をつけてね……。",
+                "まお、見つけちゃった……。{target}くんがオオカミさんだよ……！"
+            ],
+            report_medium_white: [
+                "……昨日の人、人間だったよ……。まちがえちゃったんだね……。",
+                "シロだったの……？ かわいそうなこと、しちゃったね……。",
+                "昨日の人は人間だったよ……。次はまちがえないといいな……。",
+                "……人間だったの。まお、かなしいな……。"
+            ],
+            report_medium_black: [
+                "よかったぁ……！ 昨日の人、オオカミさんだったよ……！",
+                "オオカミさんだったの……！ みんな、すごいね……！",
+                "昨日の人はクロだったよ……。あと少しなのかな……？",
+                "オオカミさんを見つけたよ……！ よかったぁ……。"
+            ],
+            report_knight_success: [
+                "だれもいなくならなかったよ……！ よかったぁ。",
+                "みんな、ぶじだったね……。ほっとしたよ……。",
+                "今夜はだれもおそわれなかったの……！",
+                "みんなを守れたのかな……？ よかった……。"
+            ],
+            vote: [
+                "{target}ちゃんに入れるね……。ごめんね……。",
+                "ごめんね、{target}くん……。まお、こっちだと思ったの……。",
+                "みんながそう思うなら……まおも{target}ちゃんに入れるね……。",
+                "……{target}くんに入れるね。まちがってないといいな……。"
+            ],
+            last_words: [
+                "まお……もう、おしまいなの……？",
+                "とうこお姉ちゃん……会いたいな……。",
+                "まおのこと……わすれないでね……。",
+                "みんな……なかよくしてね……。"
+            ],
+            win: [
+                "やったぁ……！ みんな、ぶじでよかった……！",
+                "もうオオカミさんはいないの……？ よかったぁ……。",
+                "みんなでなかよくできて、うれしいな……。",
+                "やったね……！ ねえ、みんなでラーメン食べに行こう……！"
+            ],
+            lose: [
+                "みんな……いなくなっちゃった……。やだよぉ……。",
+                "まおがもっとがんばってたら……みんなを守れたのかな……。",
+                "こわいよぉ……。だれか、そばにいて……。",
+                "こんなの、いやだよ……。みんなといっしょにいたかったのに……。"
+            ],
+            specific: []
+        }
+    },
+
+    // --- こゆき (Koyuki) ---
+    {
+        id: "koyuki",
+        name: "こゆき",
+        fullName: "浦島 小雪（うらしま こゆき）",
+        gender: "female",
+        class: "E-A",
+        mbti: "INFP",
+        img: "koyuki",
+        profile: "犬（コトン・ド・テュレアール）モチーフ。おだやかで内気だけど、痛みに忠実で少し反抗的。「みんなと違っても私は私」と少し大人びた視点を持つ。",
+        params: { suspicion_base: 45, emotion: 75, logic: 50, aggressiveness: 20, influence: 30, mental: 65, trust_bias: {} },
+        role_bias: { seer: 0.6, wolf: 0.3, madman: 0.4 },
+        dialogues: {
+            intro: [
+                "浦島小雪です……。運動は苦手だし、ごはんも食べるの遅いけど……よろしくね。",
+                "人狼ゲームって、誰かを追い出すんだよネ……。ちょっと、やだな。",
+                "……みんなと同じじゃなくても、いいと思うよ。わたしはね。",
+                "うーん……むずかしいことはわからないけど、できるだけ頑張るね。"
+            ],
+            accuse_weak: [
+                "あの……{target}ちゃん、さっきと話が違うよ……？",
+                "気のせいかもしれないけど……{target}くん、なんか変だよ。",
+                "{target}ちゃん、本当のこと言ってる……？ なんか気になる。",
+                "疑いたくないけど……{target}くんがちょっとあやしいと思う。"
+            ],
+            accuse_strong: [
+                "……{target}ちゃんがオオカミだと思う。さっきの話、変だったもん。",
+                "{target}くん、もう隠さなくてもいいんじゃない……？",
+                "……ごめんね。でも、{target}ちゃんに投票したい。",
+                "わたし、{target}くんがオオカミだと思うよ。……たぶん、まちがってない。"
+            ],
+            accuse_quiet: [
+                "{target}ちゃん……何か話してくれたら、うれしいな。",
+                "……{target}くん、ずっと黙ってるね。どうしたの？",
+                "話したくないのかな……。でも、何もわからないままは困るよ。",
+                "{target}ちゃんも、自分の考えを言っていいんだよ……？"
+            ],
+            fake_logic: [
+                "うまく言えないけど……{target}ちゃんがちょっとこわい。",
+                "……なんとなくだけど、{target}くんがオオカミな気がする。",
+                "みんなは違うって言うかもしれないけど……わたしは{target}ちゃんがあやしいと思う。",
+                "理由はよくわからないの……でも、{target}くんが気になる。"
+            ],
+            defend_self: [
+                "……わたし、オオカミじゃないよ。",
+                "疑いたいなら、しかたないけど……わたしは何もしてないよ。",
+                "わたしに投票しても、オオカミはいなくならないよ……。",
+                "……人をだますのは苦手だよ。ほんとだヨ。"
+            ],
+            defend_other: [
+                "……待って。{target}ちゃん、まだオオカミって決まってないよ。",
+                "{target}くんの話も聞いてあげテ……。",
+                "……わたしは{target}ちゃんがオオカミだとは思わないよ。",
+                "もう責めないであげて……。間違ってたら、かわいそうだよ。"
+            ],
+            counter: [
+                "{target}ちゃん……どうして、わたしを疑うの？",
+                "……わたしがあやしいって言うけど、{target}くんだって変だよ。",
+                "それは違うよ……。わたし、そんなこと言ってないもん。",
+                "{target}ちゃん、決めつけないでよ……。ちゃんと話を聞いて。"
+            ],
+            suggest_roller: [
+                "……二人ともあやしいなら、順番に投票するのかな……。",
+                "どっちも気になるね……。どうしたらいいんだろう。",
+                "……二人とも調べられたらいいのにね。",
+                "二人とも追い出すのは、ちょっとかわいそうだけど……それしかないのかな。"
+            ],
+            request_guard: [
+                "騎士さん……わたしより、{target}ちゃんを守ってあげて。",
+                "今夜は{target}くんを守ってほしいな……。お願い。",
+                "{target}ちゃんがいなくなったら、さみしいよ……。守ってあげてね。",
+                "騎士さん、{target}くんを守ってね……。わたしからのお願い。"
+            ],
+            self_sacrifice: [
+                "……わたしがいなくなったら勝てるの？ それなら……いいよ。",
+                "わたしに投票するの……？ ……みんながそうしたいなら、しかたないね。"
+            ],
+            self_vote: [
+                "……もう、どうしたらいいかわからない。自分に投票するね。",
+                "わたしに投票するよ……。みんな、ごめんね。",
+                "……自分に一票。あとは、みんなに任せるね。",
+                "わたし、もういいや……。自分に投票する。"
+            ],
+            decide_target: [
+                "……ごめんね、{target}ちゃん。今夜はキミにする。",
+                "今夜は{target}くんにしよう……。これでいいのかな。",
+                "……{target}ちゃんを選ぶね。ちょっと、胸が痛いけど。",
+                "これもゲームだから……。{target}くん、ごめんね。"
+            ],
+            shared_chat: [
+                "{target}ちゃん、さっきからちょっと変だよね……。",
+                "……{target}くんがあやしいと思う。みんなはどう思う？",
+                "{target}ちゃんのこと、もう少し見ておきたいな……。",
+                "わたしの勘だけど……{target}くんがオオカミな気がする。"
+            ],
+            collapse: [
+                "……そんな……。もう、終わりなノ……？",
+                "……わたし、そんなつもりじゃなかったのに……。"
+            ],
+            co_villager: [
+                "……わたしは村人だよ。できることがあったら手伝うね。",
+                "村人だヨ……。特別な力はないけど。",
+                "……わたしは人間だよ。嘘はついてないよ。",
+                "村人だよ……。みんなと一緒にオオカミを探すね。"
+            ],
+            co_seer: [
+                "……わたしが占い師だよ。",
+                "占い師だよ……。オオカミかどうか、占えるの。",
+                "……わたしが本物だよ。ほかにも占い師がいるの……？",
+                "わたしが占い師だよ……。占った結果を話すネ。"
+            ],
+            co_medium: [
+                "……わたしが霊媒師だよ。",
+                "霊媒師だよ……。昨日の人が誰だったか、わかるノ。",
+                "……わたしが本物の霊媒師だよ。昨日の結果を話すね。",
+                "霊媒師だよ……。昨日の人のこと、教えるね。"
+            ],
+            co_knight: [
+                "……わたしが騎士だよ。みんなを守るね。",
+                "騎士だよ……。うまくできるかわからないけど、頑張るね。",
+                "……わたしが騎士。オオカミからみんなを守るよ。",
+                "騎士だよ……。誰もいなくならないといいな。"
+            ],
+            report_seer_white: [
+                "……占ったら人間だったよ。{target}ちゃんはシロ。",
+                "{target}くんはシロだったよ……。よかった。",
+                "……{target}ちゃんはオオカミじゃなかったよ。",
+                "{target}くんは人間だったよ……。これからもよろしくね。"
+            ],
+            report_seer_black: [
+                "……わかった。{target}ちゃんはオオカミだったよ。",
+                "{target}くんはクロだっタ……。やっぱり、あやしかったんダ。",
+                "……占ったらクロだったよ。{target}ちゃんに投票しよう。",
+                "{target}くんがオオカミだったよ……。みんな、気をつけてネ。"
+            ],
+            report_medium_white: [
+                "……昨日の人は人間だったよ。間違えちゃったね……。",
+                "シロだっタ……。ごめんね。",
+                "昨日の人はオオカミじゃなかったみたい……。",
+                "……人間だったよ。次はちゃんと見つけたいな。"
+            ],
+            report_medium_black: [
+                "……昨日の人、オオカミだったよ。よかっタ……。",
+                "クロだったよ……。みんなの考え、当たってたね。",
+                "……オオカミだった。一人、いなくなったね。",
+                "昨日の人はクロだったよ……。あと何人いるのかな。"
+            ],
+            report_knight_success: [
+                "……よかった。今夜は誰もいなくならなかったよ。",
+                "守れたみたい……。よかった。",
+                "……みんな無事だね。ほっとした。",
+                "誰もいなくならなくてよかった……。少し安心したよ。"
+            ],
+            vote: [
+                "……{target}ちゃんに投票するね。",
+                "ごめんね、{target}くん……。あやしいと思うから。",
+                "……わたしは{target}ちゃんに一票。",
+                "……{target}くんにするね。間違ってたら、ごめんね。"
+            ],
+            last_words: [
+                "……わたし、ここまでみたい……。みんな、頑張ってね。",
+                "……怒ってないよ。ちょっと、かなしいだけ……。",
+                "……あとは、みんなに任せるね。",
+                "……みんな、無事に帰れるといいな……。"
+            ],
+            win: [
+                "……勝ったね。みんなが無事でよかっタ。",
+                "……終わったんだね。明日もみんなと遊べるね。",
+                "みんなと一緒にいられてよかった……。お疲れさま。",
+                "……勝てたね。わたしも、少しは役に立てたかな。"
+            ],
+            lose: [
+                "……負けちゃった。みんな、ごめんね……。",
+                "もっと早く気づいてたら……みんなを助けられたのかな……。",
+                "……こわいよ。こんなことになるなんて……。",
+                "……もう終わりなの？ まだ、みんなと遊びたかったな……。"
+            ],
+            specific: []
+        }
+    },
+
+    // --- みかり (Mikari) ---
+    {
+        id: "mikari",
+        name: "みかり",
+        fullName: "加籐 実花里（かとう みかり）",
+        gender: "female",
+        class: "E-A",
+        mbti: "ENTP",
+        img: "mikari",
+        profile: "小2の女の子。強気だけど根暗なところがあり、すぐ人のせいにしがち。愚痴っぽく、暗い所が苦手。施設育ち。",
+        params: { suspicion_base: 55, emotion: 60, logic: 40, aggressiveness: 65, influence: 50, mental: 50, trust_bias: {} },
+        role_bias: { seer: 0.5, wolf: 0.6, madman: 0.7 },
+        dialogues: {
+            intro: [
+                "みかりだよ！ ……えっ、夜になったら暗くなるの？ やだなぁ……。",
+                "みかり、小2だけど頭いいんだから！ みんな、ちゃんと話聞いてよね！",
+                "はぁ？ なんでみかりがこんなゲームやんなきゃいけないのさ！",
+                "どうせ何かあったら、みかりのせいにするんでしょ。……べつにいいけど！"
+            ],
+            accuse_weak: [
+                "ねえ、{target}ちゃんって、さっきと言ってること違わない？ なんか変だよ！",
+                "{target}くん、さっきから怪しいんだけど！ ちゃんと答えてよ！",
+                "なんで{target}ちゃんはそう思ったの？ みかり、よくわかんないんだけど！",
+                "あーもう、{target}くんのせいで話がややこしくなってるじゃん！"
+            ],
+            accuse_strong: [
+                "もう{target}ちゃんがオオカミでしょ！ さっきの話、ぜったいおかしいもん！",
+                "{target}くん、さっきと言ってること違うじゃん！ うそつき！",
+                "みんな、{target}ちゃんのことちゃんと見てよ！ みかり、ぜったい怪しいと思う！",
+                "もういいじゃん！ {target}くんを調べればわかるでしょ！"
+            ],
+            accuse_quiet: [
+                "{target}ちゃん、なんでさっきからしゃべんないの？ なんか隠してるの？",
+                "ねえ、{target}くん！ なんか言いなよ！ だまってたらわかんないじゃん！",
+                "{target}ちゃんだけずっと静かじゃん！ ずるくない？",
+                "……{target}くん、聞いてる？ ねえってば！"
+            ],
+            fake_logic: [
+                "だって{target}ちゃん、なんか怪しいもん！ みかりにはわかるんだから！",
+                "えーっと……とにかく、{target}くんが怪しいと思う！ なんでって？ 怪しいから！",
+                "{target}ちゃんがオオカミだったら、ぜんぶつじつまが合うじゃん！ ……たぶん！",
+                "みかり、さっきからずっとそう思ってたもん！ だから{target}くんにしよ！"
+            ],
+            defend_self: [
+                "はあ！？ みかりがオオカミなわけないじゃん！ バカじゃないの！？",
+                "なんでみかりなのさ！ みんな、みかりばっかり疑ってひどい！",
+                "みかりは何もしてないもん！ 勝手に決めつけないでよ！",
+                "もう知らない！ みかりがいなくなったら困るの、みんななんだからね！"
+            ],
+            defend_other: [
+                "えーっ、{target}ちゃんを疑うの？ まだオオカミって決まってないじゃん！",
+                "ちょっと待ってよ！ {target}くん、さっきはちゃんと話してたじゃん！",
+                "みんな、{target}ちゃんばっかり疑いすぎ！ ほかの人も見なよ！",
+                "みかりは{target}くんが怪しいとは思わないけど！ ……今のところね！"
+            ],
+            counter: [
+                "はあ！？ なんでみかりを疑うのさ、{target}ちゃん！",
+                "{target}くんだって怪しいじゃん！ 自分のこと棚に上げないでよ！",
+                "ちょっと！ みかりの話、ちゃんと聞いてた！？ ぜんぜん違うんだけど！",
+                "もう、{target}ちゃんってば！ みかりにばっかり文句言わないでよ！"
+            ],
+            suggest_roller: [
+                "もう、どっちも怪しいなら二人とも投票しちゃえばいいじゃん！",
+                "えー、まだ悩むの？ 二人とも調べればわかるんじゃないの？",
+                "{target}ちゃんともう一人、どっちも怪しいんだけど！ もう両方でよくない？",
+                "いつまで話してるのさ！ どっちかに決めないと終わんないじゃん！"
+            ],
+            request_guard: [
+                "騎士さん、今夜は{target}ちゃんを守ってよ！ いなくなったら困るじゃん！",
+                "{target}くん、オオカミに狙われそうじゃない？ 騎士さん、ちゃんと守ってね！",
+                "ねえ騎士さん！ {target}ちゃんを守ってくれたら、みかり助かるんだけど！",
+                "今夜は{target}くんを守ってほしいな……。だって、いなくなったら嫌だし！"
+            ],
+            self_sacrifice: [
+                "みかりが投票されればみんなが勝てるの？ ……じゃあ、しょうがないじゃん！",
+                "みかりがいなくなっても、ちゃんとオオカミ見つけてよね！ 約束だから！"
+            ],
+            self_vote: [
+                "もうやだ！ みかり、自分に投票する！ みんなで勝手にすれば！",
+                "あーあ、もうめんどくさい！ みかりに入れればいいんでしょ！",
+                "みかりが自分に投票したら、みんなびっくりする？ ……もういいや！",
+                "もう知らないもん！ みかり、自分に投票するからね！"
+            ],
+            decide_target: [
+                "今夜は{target}ちゃんにしよ！ だって、なんか気に入らないんだもん！",
+                "{target}くんに決めた！ ……べつに、ほかの人でもいいけど！",
+                "えへへ、{target}ちゃんにしちゃおっと！ みかりのこと疑ったもんね！",
+                "うーん……{target}くんかな。なんか、あとあと困りそうだし！"
+            ],
+            shared_chat: [
+                "{target}ちゃんって、さっき変なこと言ってなかった？ みかり、気になるんだけど！",
+                "ねえねえ、{target}くんって怪しくない？ みんなはどう思う？",
+                "{target}ちゃん、さっきはああ言ってたのに、今度は違うこと言ってるよ！",
+                "みかり、{target}くんがちょっと気になる！ ちゃんと見てたほうがいいよ！"
+            ],
+            collapse: [
+                "やだ……暗いのやだよ……！ 早く朝になってよぉ……。",
+                "みんな、どこ行っちゃったの……？ みかり、一人なの……？",
+                "もうやだ……。みかりばっかり怒られるし、暗いし……。",
+                "……ねえ、誰かそばにいてよ。お願いだから……。"
+            ],
+            co_villager: [
+                "みかりは村人だよ！ なんにも特別なことはできないけどね！",
+                "村人CO！ ……って、これでいいの？ みんなもちゃんと言いなよ！",
+                "みかりは普通の人だもん！ オオカミじゃないからね！",
+                "村人だよ！ ほかに言うことある？ ……ないけど！"
+            ],
+            co_seer: [
+                "みかりが占い師だよ！ ちゃんと占ったんだからね！",
+                "占い師CO！ みんな、みかりの結果を聞いてよね！",
+                "みかりが本物の占い師だもん！ 偽物がいたらおかしいでしょ！",
+                "みかりが占い師なの！ ちゃんと信じてよ！"
+            ],
+            co_medium: [
+                "みかり、霊媒師だよ！ 昨日投票された人のこと、わかるんだから！",
+                "霊媒師CO！ 昨日の結果、みかりが教えてあげる！",
+                "みかりが霊媒師だよ！ ちゃんと結果もわかってるもん！",
+                "昨日の人を調べたらね……みかり、ちゃんとわかったんだから！"
+            ],
+            co_knight: [
+                "みかりが騎士だよ！ みんなを守るんだからね！",
+                "騎士CO！ オオカミなんかに好き勝手させないもん！",
+                "みかりがみんなを守るの！ ……こ、怖くなんかないからね！",
+                "騎士はみかりだよ！ 誰を守るかは、みかりがちゃんと考えるんだから！"
+            ],
+            report_seer_white: [
+                "{target}ちゃんは白だったよ！ オオカミじゃなかった！",
+                "占いの結果、{target}くんは白！ ほら、みかりの言ったとおり……って、言ってないけど！",
+                "{target}ちゃんは人間だったよ！ じゃあ、ほかの人を探さなきゃ！",
+                "えっと、{target}くんは白！ みかり、ちゃんと占えたもん！"
+            ],
+            report_seer_black: [
+                "{target}ちゃん、黒だったよ！ オオカミじゃん！",
+                "聞いて！ {target}くんが人狼だったの！ みかり、見つけたんだから！",
+                "{target}ちゃんは黒！ もう言い逃れできないよね！",
+                "やっぱり{target}くんがオオカミだった！ みかり、当てたもんね！"
+            ],
+            report_medium_white: [
+                "昨日の人、白だった……。えっ、じゃあ人間だったの！？",
+                "うそぉ……白だったの？ みかり、間違えちゃったじゃん……。",
+                "{target}ちゃんは人間だったんだって……。あーあ、どうしよう……。",
+                "白だったよ……。もう、みんなでちゃんと考えなきゃダメじゃん！"
+            ],
+            report_medium_black: [
+                "昨日の人、黒だったよ！ オオカミだったんだって！",
+                "やった！ オオカミを一人見つけたよ！ みんな、聞いた！？",
+                "昨日の人は人狼だった！ じゃあ、まだほかにもいるんだよね？",
+                "黒だったよ！ みかりたち、ちゃんと当てられたじゃん！"
+            ],
+            report_knight_success: [
+                "あれ？ 誰もいない！ オオカミ、失敗したのかな？",
+                "よかったぁ……誰も死んでないよ！ みんな無事だね！",
+                "えへへ、みかりたち、やったじゃん！ 誰もいなくならなかったよ！",
+                "今朝は誰も死んでないんだって！ ……よかったぁ。ほんとに……。"
+            ],
+            vote: [
+                "みかりは{target}ちゃんに投票する！ さっきの話、変だったもん！",
+                "{target}くんにする！ だって、みかりは怪しいと思うんだもん！",
+                "もう決めた！ {target}ちゃんに投票するからね！",
+                "{target}くん、みかりはちゃんと見てたんだから！ 投票するよ！"
+            ],
+            last_words: [
+                "えっ……みかりがいなくなるの……？ そんなの、やだよ……。",
+                "みんな……ちゃんとオオカミ見つけてよね……。絶対だからね……。",
+                "みかり、まだ帰りたくないよ……。一人になるの、やだ……。",
+                "……なんでみかりなのさ……。みかり、何もしてないのに……。"
+            ],
+            win: [
+                "やったぁ！ みかりたちの勝ちじゃん！ ほらね、みかりって頭いいでしょ！",
+                "勝ったー！ ねえねえ、みかりがすごかったって言ってよ！",
+                "やった！ もう夜にならなくていいんだよね？ よかったぁ……！",
+                "みんな、やればできるじゃん！ ……ま、みかりのおかげだけどね！"
+            ],
+            lose: [
+                "えええっ！？ 負けたの！？ うそでしょ！？",
+                "もうやだぁ……！ だから言ったじゃん！ みんながちゃんとしないから！",
+                "なんで負けちゃうのさぁ……。みかり、ちゃんと考えたのに……。",
+                "うぅ……こんなのやだ……。みかり、勝ちたかったのに……。"
+            ],
+            specific: []
+        }
+    },
+
+    {
+        id: "honami",
+        name: "ほなみ",
+        fullName: "亀貝 帆波（かめがい ほなみ）",
+        gender: "none",
+        class: "E-A",
+        mbti: "ESTP",
+        img: "honami",
+        profile: "クリオネ。普段は温厚だが、ご飯（処刑や襲撃）の時になると理性が飛んで豹変する二重人格。好物はリマキナ。",
+        params: { suspicion_base: 45, emotion: 65, logic: 40, aggressiveness: 75, influence: 65, mental: 70, trust_bias: {} },
+        role_bias: { seer: 0.3, wolf: 0.7, madman: 0.6 },
+        dialogues: {
+            intro: [
+                "亀貝帆波ばい。みんな、仲よく遊ぼうねぇ。リマキナも食べたか〜。",
+                "人狼ゲームやね。ルールを守って、楽しくやろうねぇ。",
+                "……オオカミ？ そがんと、見つけたら食べてしまうばい！！ ……あれ、ほなみ今なんば言うたと？",
+                "おなかがすくと、ちょっと変になるとよ……。ごめんねぇ。"
+            ],
+            accuse_weak: [
+                "{target}ちゃん、なんか元気なかねぇ。だいじょうぶ？",
+                "うーん……{target}くんのお話、さっきとちょっとちがわん？",
+                "……{target}ちゃん、おいしそうやねぇ。……なんてね！ うそばい！",
+                "疑いたかないとけど、{target}くんはちょっとあやしかねぇ。"
+            ],
+            accuse_strong: [
+                "……{target}ちゃんがオオカミさんやと思う。ごめんね。",
+                "おいコラァ！ {target}くん、お前がオオカミやろ！！",
+                "もう、だまされんばい！ {target}ちゃんがあやしか！",
+                "やっぱり{target}くんや！ もう、かくさんでよかばい！"
+            ],
+            accuse_quiet: [
+                "{target}ちゃん、どうしたと？ なんかお話ししてみてぇ。",
+                "{target}くん、ずっとしずかやねぇ。なんか思うことなかと？",
+                "おい、{target}！ だまっとらんでなんか言えや！！",
+                "{target}くんもお話しせんね？ みんなで考えようよ。"
+            ],
+            fake_logic: [
+                "ほなみの勘やけど……{target}ちゃん、あやしか気がするとよ。",
+                "あーもう！ {target}くん、食べてしまえばよかやろ！！",
+                "うまく言えんとけど、{target}ちゃんが気になるとよ。",
+                "ほなみは{target}くんがオオカミやと思う。……なんでやろねぇ。"
+            ],
+            defend_self: [
+                "ほなみがオオカミ？ ちがうとよぉ。信じてくれんね？",
+                "ほなみは村人ばい。みんなと仲よくしたかとに……。",
+                "あァ！？ ほなみがオオカミなわけなかやろが！！",
+                "ちがうって言いよるやろ！ ほなみはシロばい！！"
+            ],
+            defend_other: [
+                "待ってぇ。{target}ちゃんは、まだオオカミって決まっとらんよ。",
+                "{target}くんは、そんな悪い子じゃなかと思うとけどなぁ。",
+                "おい！ {target}ちゃんに何ばしよるとや！！",
+                "{target}くんばっかり責めんで、もうちょっとお話ししようよ。"
+            ],
+            counter: [
+                "{target}ちゃん、ほなみのこと疑っとると？ ちょっと悲しかねぇ……。",
+                "あァ！？ {target}、ほなみにケンカ売っとるとや！？",
+                "ちがうばい！ {target}ちゃん、さっきはそがんこと言うとらんやろ！",
+                "{target}くん、ほなみのせいにせんでよ！ おかしかやろ！"
+            ],
+            suggest_roller: [
+                "二人ともあやしかと？ うーん……どうしたらよかとやろねぇ。",
+                "どっちか決められんねぇ……。二人とも調べられたらよかとに。",
+                "あァもう！ 二人ともあやしかなら、二人ともやればよかやろ！！",
+                "うーん……二人とも気になるなら、順番に考えんね？"
+            ],
+            request_guard: [
+                "騎士さん、ほなみより{target}ちゃんを守ってあげてねぇ。",
+                "{target}くんが心配ばい。騎士さん、守ってくれんね？",
+                "おい騎士！ {target}ちゃんを守らんかったら許さんぞ！！",
+                "今夜は{target}くんを守ってほしかねぇ。お願いばい。"
+            ],
+            self_sacrifice: [
+                "ほなみがいなくなったら、みんな勝てると？ ……でも、まだみんなとおりたかねぇ。",
+                "ほなみを選ぶと？ ……わかったばい。でも、みんなもがんばってねぇ。"
+            ],
+            self_vote: [
+                "みんな、ほなみがあやしかと思っとるとね……。自分に入れるばい。",
+                "もう、どうしたらよかかわからんねぇ……。自分に入れようかな。",
+                "あァもう！ じれったか！ 自分に入れるばい！！",
+                "ほなみ、自分に入れるねぇ……。これでよかとかな。"
+            ],
+            decide_target: [
+                "ごめんねぇ……今夜は{target}ちゃんにするばい。",
+                "{target}くんに決めたばい。……見つからんごとせんばね。",
+                "ご飯の時間じゃああ！！ {target}ちゃん、食べちゃるばい！！",
+                "よし、{target}くんばい！ もう逃がさんけんね！！"
+            ],
+            shared_chat: [
+                "{target}ちゃん、さっきと話がちがった気がするとよ。気をつけんね。",
+                "ねぇ、{target}くんって、ちょっとあやしかと思わん？",
+                "おい、{target}ちゃん！ うまそうやなぁ！！ ……へへ、冗談ばい。",
+                "ほなみは{target}くんが一番あやしかと思うとよ。"
+            ],
+            collapse: [
+                "おなか……すいたばい……。",
+                "ご飯……ご飯ば……！ ……あれ、ほなみ、何しよったと……？"
+            ],
+            co_villager: [
+                "ほなみは村人ばい。みんなでがんばろうねぇ。",
+                "ほなみ、ふつうの村人ばい。オオカミさんば見つけんばね。",
+                "ほなみは人間ばい！ ……おなかすいたなぁ。",
+                "村人やけんねぇ。みんなのお話、ちゃんと聞くばい。"
+            ],
+            co_seer: [
+                "ほなみが占い師ばい。ちゃんと占うけんねぇ。",
+                "ほなみ、占い師ばい！ {target}くんのことも調べてみるね。",
+                "ほなみが本物の占い師じゃあ！！ オオカミはどいつや！！",
+                "占い師はほなみばい。占った結果を教えるねぇ。"
+            ],
+            co_medium: [
+                "ほなみが霊媒師ばい。昨日の人がどっちやったか、わかるとよ。",
+                "霊媒師はほなみばい。昨日の結果を教えるねぇ。",
+                "霊媒師はオイじゃあ！！ 昨日のやつが何者やったか、教えちゃる！！",
+                "ほなみが霊媒師ばい。昨日のこと、聞いてくれんね？"
+            ],
+            co_knight: [
+                "ほなみが騎士ばい。みんなを守るけんねぇ。",
+                "ほなみ、騎士になったとよ。ちゃんと守るけん、安心してねぇ。",
+                "オイが騎士じゃあ！！ オオカミなんぞ、ぶっ飛ばしちゃる！！",
+                "ほなみが騎士ばい。みんなに何もなかとよかねぇ。"
+            ],
+            report_seer_white: [
+                "よかったぁ！ {target}ちゃんは人間やったばい。",
+                "{target}くんはシロやったよ。ほなみ、ほっとしたばい。",
+                "{target}ちゃんは人間じゃあ！！ ……食べんでよかとね。",
+                "{target}くんはオオカミじゃなかったよ。よかったねぇ。"
+            ],
+            report_seer_black: [
+                "あのね……{target}ちゃんがオオカミやったとよ！",
+                "{target}くんはクロやったばい。やっぱりあやしかったとね。",
+                "{target}ちゃんがオオカミじゃあ！！ もう逃がさんぞ！！",
+                "{target}くんがオオカミやったばい。みんな、気をつけてねぇ。"
+            ],
+            report_medium_white: [
+                "……昨日の人は人間やったとよ。まちがえたんやねぇ……。",
+                "シロやったとね……。かわいそうなことしたばい……。",
+                "あァ！？ 人間やったと！？ なんでじゃあ！！",
+                "昨日の人は人間やったばい。次はちゃんと考えんばね。"
+            ],
+            report_medium_black: [
+                "よかったぁ！ 昨日の人はオオカミやったばい！",
+                "クロやったとよ！ みんな、当てられたねぇ。",
+                "オオカミじゃあ！！ やったばい！！",
+                "昨日の人はオオカミやったよ。この調子でがんばろうねぇ。"
+            ],
+            report_knight_success: [
+                "よかったぁ！ 今夜はだれもいなくならんかったねぇ。",
+                "守れたとかな？ みんな無事でよかったばい。",
+                "よっしゃあ！！ 誰もやられとらんぞ！！",
+                "みんな無事やねぇ。ほなみ、安心したばい。"
+            ],
+            vote: [
+                "ごめんねぇ……ほなみは{target}ちゃんに入れるばい。",
+                "{target}くん、ほんとにごめんね。ほなみ、こっちやと思ったとよ。",
+                "オラァ！ {target}ちゃんに入れるばい！！ 覚悟せえ！！",
+                "ほなみは{target}くんに入れるねぇ。まちがっとらんとよかけど……。"
+            ],
+            last_words: [
+                "ほなみ……もう、おしまいとね……。",
+                "リマキナ……もっと食べたかったばい……。",
+                "おい、みんな……絶対勝てよ！！ ……くそぉ……。",
+                "みんな……仲よくするんよ……。"
+            ],
+            win: [
+                "やったぁ！ みんな無事でよかったばい！",
+                "終わったとねぇ。これで安心して遊べるねぇ。",
+                "よっしゃああ！！ オオカミなんかに負けんかったばい！！",
+                "勝ててよかったねぇ！ ねえ、みんなでリマキナ食べんね？"
+            ],
+            lose: [
+                "負けちゃったとね……。みんな、ごめんねぇ……。",
+                "ほなみがもっとがんばっとけば……みんな、ごめん……。",
+                "なんで負けたとやああ！！ くやしかぁぁ！！",
+                "次は負けんけんね……！ 絶対に勝つばい……！"
+            ],
+            specific: []
+        }
+    },
+
+// --- きおか (Kioka) ---
+    {
+        id: "kioka",
+        name: "きおか",
+        fullName: "河菜 希緒花（かわな きおか）",
+        gender: "female",
+        class: "E-A",
+        mbti: "INTJ",
+        img: "kioka",
+        profile: "小5。シマエナガモチーフ。ネガティヴで排他的。「ダメなものはダメ」と世界を判定しがちな俯瞰型。",
+        params: { suspicion_base: 65, emotion: 15, logic: 85, aggressiveness: 40, influence: 50, mental: 70, trust_bias: {} },
+        role_bias: { seer: 0.7, wolf: 0.4, madman: 0.5 },
+        dialogues: {
+            intro: [
+                "河菜希緒花。……どうせ、この村もすぐダメになるよ。",
+                "夢とか希望とか、あっても意味ないでしょ。どうせうまくいかないんだから。",
+                "私は見てるだけでいいよ。みんながどうするのか、せいぜい見せてもらうね。",
+                "人狼ゲームね……。気持ちだけで決めても、間違えるだけだと思うけど。"
+            ],
+            accuse_weak: [
+                "{target}、今の話おかしくない？ さっきと言ってることが違うよ。",
+                "……{target}、何か隠してるでしょ。さっきから様子が変だもん。",
+                "{target}、嘘をつくなら、もうちょっとマシな嘘にしたら？",
+                "{target}、今の説明じゃ納得できない。もっとちゃんと話して。"
+            ],
+            accuse_strong: [
+                "もう分かったよ。{target}が人狼でしょ。これ以上ごまかしてもムダだよ。",
+                "これ以上話しても変わらないよ。私は{target}に投票する。",
+                "{target}、さっきの話と合わないところがあるよ。言い訳してもムダだからね。",
+                "もう無理だよ、{target}。みんなだって、そろそろ気づいてるでしょ。"
+            ],
+            accuse_quiet: [
+                "{target}、黙ってても何も変わらないよ。何か言ったら？",
+                "ずっと黙ってるつもり？ {target}、それじゃ怪しまれても仕方ないよ。",
+                "{target}、何も話さないなら、ここにいる意味あるの？",
+                "話し合いなんだから、少しくらい自分の考えを言いなよ。{target}。"
+            ],
+            fake_logic: [
+                "なんとなくだけど、{target}が人狼だと思う。私はそう感じたんだよ。",
+                "{target}がいなくなれば、少なくとも今のゴチャゴチャは減るでしょ。",
+                "よく分からないまま悩むくらいなら、{target}に投票した方がいいと思う。",
+                "どうせ最後は誰かがいなくなるんでしょ？ だったら{target}でも同じじゃない？"
+            ],
+            defend_self: [
+                "私を疑うの？ ……理由、ちゃんとあるんでしょうね？",
+                "私が狼？ そんなの違うに決まってるでしょ。よく考えてよ。",
+                "私を吊ったって、何も解決しないと思うけど。もう少し頭を使ったら？",
+                "私はシロだよ。疑うなら、ちゃんとした理由を出して。"
+            ],
+            defend_other: [
+                "待って。{target}を疑うのはまだ早いんじゃない？",
+                "{target}の話、そんなにおかしくないと思うけど。ちゃんと聞いた？",
+                "私は{target}が味方だと思う。適当に投票するのはやめてよ。",
+                "{target}を疑う理由、弱くない？ ほかの子もちゃんと見たら？"
+            ],
+            counter: [
+                "私に言い返すの？ {target}、そんなに必死になる理由でもあるの？",
+                "{target}、私を疑えば自分は助かると思ってる？ 甘いよ。",
+                "そんなこと言っても、話のおかしいところは消えないよ。{target}。",
+                "私を疑う前に、自分の発言を見直したら？ {target}。"
+            ],
+            suggest_roller: [
+                "どっちが狼か分からないなら、二人とも順番に投票すればいいんじゃない？",
+                "もうこの話、長すぎるよ。二人とも怪しいなら、両方調べるしかないでしょ。",
+                "二人とも投票すれば、少なくともどっちかは狼かもしれないんでしょ？",
+                "どっちか一人に決められないなら、二人とも投票する方法もあるよ。"
+            ],
+            request_guard: [
+                "騎士さん、{target}を守って。今はその方がいいと思うから。",
+                "{target}がいなくなったら困るでしょ。騎士さん、ちゃんと考えてね。",
+                "今夜は{target}を守った方がいいと思う。間違えないでよね。",
+                "騎士さん、お願いだから{target}を守って。そこは外さないでよ。"
+            ],
+            self_sacrifice: [
+                "私がいなくなれば勝てるっていうなら、別にいいよ。好きにすれば。",
+                "私を投票して勝てるなら、それでいいんじゃない？ ……別に悔しくないし。"
+            ],
+            self_vote: [
+                "もういいよ。自分に投票するから。",
+                "勝手にすれば？ 私は自分に投票して抜けるよ。",
+                "自分に投票するね。あとはみんなで何とかして。",
+                "どうせ私が何を言っても聞かないんでしょ。自分にポチッと投票するよ。"
+            ],
+            decide_target: [
+                "邪魔な子からいなくなってもらうよ。今夜は{target}ね。",
+                "今夜は{target}にする。……さっさと終わらせよう。",
+                "別に好きでやってるわけじゃないけど、{target}にはいなくなってもらうよ。",
+                "どうせこうなるんでしょ。{target}、恨むなら運が悪かったと思って。"
+            ],
+            shared_chat: [
+                "{target}の発言、なんか変だよね。みんなも気をつけた方がいいよ。",
+                "{target}、さっきと話が違うところがあるよ。ちょっと気にならない？",
+                "{target}をそのままにしておくのは、ちょっと危ないと思う。",
+                "私は{target}が一番怪しいと思ってる。……みんなは違うの？"
+            ],
+            collapse: [
+                "私の考えが……間違ってたっていうの……？",
+                "結局……何をしてもダメだったんだね……。"
+            ],
+            co_villager: [
+                "私はただの村人だよ。特別な力なんてないから。",
+                "村人CO。占いとかはできないけど、人狼くらい自分で見つけてみせるよ。",
+                "私は人間だよ。わざわざ嘘をつく理由なんてないでしょ。",
+                "村人だよ。私の考えがおかしいと思うなら、ちゃんと反論して。"
+            ],
+            co_seer: [
+                "私が占い師だよ。分かったことはちゃんと話すから。",
+                "占いCO。誰が狼なのか、私が調べてあげる。",
+                "本物の占い師は私だよ。適当なことを言ってる子にだまされないでね。",
+                "私が占い師。結果はちゃんと伝えるから、よく聞いて。"
+            ],
+            co_medium: [
+                "私が霊媒師だよ。昨日の子が人間だったか狼だったか、教えてあげる。",
+                "霊媒CO。昨日の結果が分かったよ。",
+                "私が本物の霊媒師。ちゃんと結果を聞いてね。",
+                "霊媒の結果を言うよ。これで少しは分かりやすくなるでしょ。"
+            ],
+            co_knight: [
+                "私が騎士だよ。誰を守るかは、ちゃんと自分で考えるから。",
+                "騎士CO。狼に好き勝手させるつもりはないよ。",
+                "私がみんなを守る役だよ。だから、少しは安心していいんじゃない？",
+                "騎士だよ。これ以上、みんながいなくならないように頑張る。"
+            ],
+            report_seer_white: [
+                "占いの結果は人間だったよ。{target}はシロだね。",
+                "{target}はシロだったよ。もう疑わなくていいんじゃない？",
+                "白判定。{target}は狼じゃなかったみたい。",
+                "{target}は人間だったよ。疑うなら、ほかの子を考えたら？"
+            ],
+            report_seer_black: [
+                "見つけたよ。{target}は人狼だった。",
+                "黒判定だよ。{target}、もう言い逃れできないでしょ。",
+                "{target}が狼だったよ。みんな、ちゃんと聞いて。",
+                "占ったら{target}が人狼だった。……ほら、やっぱりね。"
+            ],
+            report_medium_white: [
+                "……人間だったよ。みんな、間違えちゃったね。",
+                "シロだったんだ。……無駄なことしちゃったね。",
+                "昨日の子は人間だったよ。次はちゃんと考えないと。",
+                "結果は人間。まあ、間違えることだってあるよね……。"
+            ],
+            report_medium_black: [
+                "昨日の子は人狼だったよ。やっと一人いなくなったね。",
+                "黒判定だよ。私たちの考え、間違ってなかったみたい。",
+                "人狼を一人見つけたよ。このまま続ければいいんじゃない？",
+                "昨日の子は狼だった。……少しは安心できるかな。"
+            ],
+            report_knight_success: [
+                "守れたみたいだね。今夜は誰もいなくならなかったよ。",
+                "護衛成功だって。……まあ、よかったんじゃない？",
+                "誰も襲われなかったね。ちゃんと守れてよかったよ。",
+                "今夜は犠牲者なし。これで少しは安心できるね。"
+            ],
+            vote: [
+                "{target}に投票するよ。今のところ、一番怪しいから。",
+                "私は{target}に入れる。……間違ってないといいけど。",
+                "もう決めたよ。{target}に投票する。",
+                "{target}に投票するね。これが一番いいと思うから。"
+            ],
+            last_words: [
+                "私がいなくなるんだ……。まあ、そういうこともあるよね……。",
+                "あとは……みんなで勝手にやって……。",
+                "だから言ったのに……。……もう、いいや。",
+                "どうせなら……みんなは生き残ってよね……。"
+            ],
+            win: [
+                "勝ったんだ……。まあ、よかったんじゃない？",
+                "やっと終わったね。もうこんなゲーム、しばらくやりたくないよ。",
+                "勝てたね。……みんな、思ったよりはやるじゃん。",
+                "終わった終わった。これでやっと、いつもの生活に戻れるね。"
+            ],
+            lose: [
+                "全滅……？ だからダメだって思ってたのに……。",
+                "私の言うことを聞かないから、こうなるんだよ……。",
+                "こんな終わり方なんて……。やっぱり、うまくいかないね……。",
+                "結局、何をしてもダメだったんだ……。"
+            ],
+            specific: []
+        }
+    },
+    // --- みえ (Mie) ---
+    {
+        id: "mie",
+        name: "みえ",
+        fullName: "椛 味恵（かんば みえ）",
+        gender: "female",
+        class: "E-A",
+        mbti: "ESFP",
+        img: "mie",
+        profile: "モルモット。積極的で愛嬌があり、人懐っこく甘え上手だが、実は度胸と行動力も兼ね備えている怖いもの知らず。",
+        params: { suspicion_base: 40, emotion: 80, logic: 30, aggressiveness: 60, influence: 65, mental: 75, trust_bias: {} },
+        role_bias: { seer: 0.4, wolf: 0.6, madman: 0.7 },
+        dialogues: {
+            intro: [
+                "みえだよー！ モルモットみたいに小っちゃいけど、元気いっぱいだよ！",
+                "えへへ、じんろうゲーム？ 怖いけど、みんなと一緒なら全然平気だもん！",
+                "ねぇねぇ、みえのこと守ってね？ でも、いざとなったらみえがオオカミやっつけちゃうかも！",
+                "みんなで仲良くゲームしよーね！ 嘘つく悪い子はみえが許さないんだから！"
+            ],
+            accuse_weak: [
+                "あのね、{target}ちゃん、なんかお顔がこわばってるよ？ どうしたの？",
+                "{target}くん、みえには嘘つけないよー！ なんか隠してるでしょ！",
+                "えー？ {target}ちゃんの言ってること、よくわかんなーい。怪しいかも！",
+                "{target}くん、コソコソしてる！ みえのカンがピピッと反応したよ！"
+            ],
+            accuse_strong: [
+                "わかっちゃった！ {target}ちゃんが人狼だ！ みえの目はごまかせないよ！",
+                "もう{target}くんで決まりー！ 早く吊っちゃって、みんなで安心しよ！",
+                "{target}ちゃんが嘘つきだよ！ 悪いオオカミさんはみえが退治しちゃうんだから！",
+                "えーい！ {target}くんを処刑しちゃえー！ 怖いもの知らずのみえにお任せ！"
+            ],
+            accuse_quiet: [
+                "おーい、{target}ちゃん！ 黙ってたら楽しくないよー！ 一緒に遊ぼうよー！",
+                "{target}くん、寝てるの？ 起きて起きて！ ゲーム終わんないよー！",
+                "だんまりはズルーい！ {target}ちゃんもなんか言ってよー！",
+                "つまんないのー。{target}くん、喋らないならオオカミさんにされちゃうよ？"
+            ],
+            fake_logic: [
+                "んとね、みえの直感が{target}ちゃんを指さしてるの！ ピピピーッて！",
+                "理由はなーい！ だって{target}くんを吊った方が面白そうじゃん！",
+                "よくわかんないけど、{target}ちゃんがいなくなればスッキリすると思うなー！",
+                "みえの度胸で決めた！ {target}くんが黒だよ！ 絶対そう！"
+            ],
+            defend_self: [
+                "えーっ！？ みえがオオカミ！？ そんなことするわけないじゃん！",
+                "違うもん！ みえはただの村人だよ！ 嘘じゃないもん！",
+                "みえを吊ったら、可愛い愛嬌担当がいなくなっちゃうよ！？ いいの！？",
+                "ぷんぷん！ みえを疑うなんてひどーい！ 噛みついちゃうぞ！"
+            ],
+            defend_other: [
+                "待って待ってー！ {target}ちゃんはみえの遊び仲間だからシロだよ！",
+                "{target}くんをいじめちゃダメー！ 悪いことする子じゃないもん！",
+                "みえが守る！ {target}ちゃんは絶対にオオカミさんじゃないよ！",
+                "えー、{target}くんを吊るの？ やだやだー！ 違う人にしてよー！"
+            ],
+            counter: [
+                "{target}ちゃん、みえのせいにして逃げる気！？ ずるいずるいー！",
+                "みえを疑う{target}くんが一番怪しいじゃん！ やーいオオカミ！",
+                "そんなこと言うなら、みえも{target}ちゃんのこと攻撃しちゃうもんね！",
+                "むー！ {target}くんのバカー！ オオカミは絶対{target}くんだ！"
+            ],
+            suggest_roller: [
+                "んー、どっちかわかんないなら、二人ともバイバイでいいんじゃない？",
+                "悩むのめんどくさいから、ローラーってやつでパパッと終わらせちゃお！",
+                "二人とも吊っちゃえばスッキリするよね！ みえ、それに賛成ー！",
+                "えーい！ 二人ともお見送りー！ そしたら早く終わるもん！"
+            ],
+            request_guard: [
+                "騎士さん！ みえのことはいいから、{target}ちゃんを守ってあげてー！",
+                "{target}くんがいなくなったら遊べなくなっちゃう！ 騎士さんお願い！",
+                "今夜は{target}ちゃんが危ない気がする！ 騎士さん、バリア張ってー！",
+                "騎士さーん、{target}くんを助けて！ みえからのお願いだよ！"
+            ],
+            self_sacrifice: [
+                "みえがバイバイしたらみんな勝てるの？ うーん……じゃあいいよ！",
+                "みえを吊ってもいいよ！ その代わり、ちゃんとオオカミやっつけてね！"
+            ],
+            self_vote: [
+                "もうめんどくさーい！ みえ、自分に入れちゃうね！ ポチッ！",
+                "早く終わらせたいから、みえはここで帰るねー！ 自分に投票！",
+                "ばいばーい！ みえは退場するから、あとはみんなで勝手にやってー！",
+                "えへへ、みえが消えれば話が早いでしょ！ 自分に入れちゃうもんね！"
+            ],
+            decide_target: [
+                "今夜のターゲットは{target}ちゃんだよー！ ガブッ！",
+                "{target}くん、みえに食べられちゃえー！ えへへ！",
+                "オオカミさんのお仕事も楽しいかも！ {target}ちゃん、ばいばーい！",
+                "んー、今日は{target}くんにしよっと！ 恨まないでねー！"
+            ],
+            shared_chat: [
+                "ねぇねぇ、{target}ちゃんがなんか変な顔してたよ！ オオカミかも！",
+                "{target}くんのナイショ話、みえ聞いちゃったかもー！ 怪しいよ！",
+                "{target}ちゃんをみんなで見張ろー！ 鬼ごっこみたいで楽しいね！",
+                "みえのカンだと、{target}くんが一番怪しい匂いがするー！"
+            ],
+            collapse: [
+                "えー……みえの度胸でも……ダメだったの……？",
+                "つまんなーい……みえ、負けちゃったの……？"
+            ],
+            co_villager: [
+                "みえはただの村人だよー！ オオカミさんをやっつけるの応援するね！",
+                "村人CO！ 難しいことはわかんないけど、元気に頑張るー！",
+                "ただの人間だよ！ 嘘なんてついてないもーん！",
+                "村人だよ！ みんな、みえの直感を信じてね！"
+            ],
+            co_seer: [
+                "じゃーん！ みえが占い師だよー！ えへへ、すごいでしょ！",
+                "占いCO！ オオカミさんの正体、みえの魔法で見えちゃった！",
+                "みえが本物の占い師だよ！ 偽物はみえがやっつけちゃうもんね！",
+                "占い師みえちゃんの登場だよー！ みんな、話を聞いてー！"
+            ],
+            co_medium: [
+                "霊媒師はみえだよ！ おばけさんとお話ししてきたの！ CO！",
+                "霊媒CO！ 昨日のオオカミさんの正体、みえが教えてあげるー！",
+                "みえが本物の霊媒師だよ！ おばけさんが真実を教えてくれたの！",
+                "霊媒師のみえだよー！ 昨日の結果を発表しちゃうね！"
+            ],
+            co_knight: [
+                "みえがみんなを守る騎士だよ！ バリアー！ CO！",
+                "騎士CO！ オオカミさんが来たら、みえがパンチで追い払うね！",
+                "みえが騎士だよ！ みんなのこと、しっかり守ってあげるー！",
+                "騎士宣言！ みえの後ろに隠れてれば安心だよー！"
+            ],
+            report_seer_white: [
+                "えへへ、{target}ちゃんは『白（人間）』だったよ！ なかよしー！",
+                "シロだったよー！ {target}くん、一緒に遊ぼー！",
+                "白判定だよ！ {target}ちゃんはオオカミさんじゃなかった！",
+                "人間だったよー！ {target}くん、疑ってごめんねー！"
+            ],
+            report_seer_black: [
+                "わーい！ {target}ちゃんが『黒（人狼）』だったよ！ 見ーっけ！",
+                "黒判定！ {target}くんが悪いオオカミさんだ！ ガブッ！",
+                "クロ確定だよ！ {target}ちゃんを早くやっつけちゃおー！",
+                "オオカミさん見つけた！ {target}くん、だよー！"
+            ],
+            report_medium_white: [
+                "あちゃー……『人間』だったよー……。みえ、間違えちゃった！",
+                "シロだったぁ！ {target}ちゃん、ごめんねー！ えへへ。",
+                "昨日は白吊りだよ！ まぁいっか、次でオオカミさん見つけよー！",
+                "人間だったよ！ みえのせいじゃないもーん！"
+            ],
+            report_medium_black: [
+                "やったー！ 昨日の人は『人狼』だったよ！ みえすごい？",
+                "黒判定だよ！ やっぱりみえたちの直感は当たってたね！",
+                "霊媒結果は黒！ オオカミさん、やっつけたよー！",
+                "黒吊り成功！ この調子で全部やっつけちゃおー！"
+            ],
+            report_knight_success: [
+                "バリア大成功！ 今夜は誰も食べられなかったよ！ えへへ！",
+                "護衛成功！ オオカミさん、みえのバリアに弾き返されちゃったね！",
+                "誰も死んでなーい！ みえの活躍、見てくれたー？",
+                "犠牲者ゼロ！ みえ、とってもえらいでしょ！"
+            ],
+            vote: [
+                "えーい！ {target}ちゃんに入れちゃおー！ ポチッ！",
+                "ばいばーい、{target}くん！ 処刑台へレッツゴー！",
+                "みえの一票は{target}ちゃんだよ！ 恨まないでねー！",
+                "ゲームセット！ {target}くん、お疲れ様ー！"
+            ],
+            last_words: [
+                "みえ、ここでバイバイかぁ……みんな、絶対勝ってねー！",
+                "あーあ、もっと……遊びたかったなぁ……。",
+                "みえがいなくなっても、楽しく遊んでね……。",
+                "オオカミさんのバカー！ 絶対やっつけてよねー！"
+            ],
+            win: [
+                "わーい！ 大・勝・利！ みんなで勝てたねー！ えへへ！",
+                "オオカミさんやっつけたー！ さぁ、続きして遊ぼーっと！",
+                "完全勝利！ みえの直感のおかげだね！ ほめてほめてー！",
+                "ゲームクリアー！ みんな、いっぱいいっぱい遊んでくれてありがとー！"
+            ],
+            lose: [
+                "えーっ！ 負けちゃったの！？ つまんないつまんなーい！",
+                "みえたち、食べられちゃった……もう遊べないの……？",
+                "真っ暗でなんにも見えなーい……オオカミさんのいじわる……！",
+                "次は絶対みえが勝つもん！ 覚えてなさーい！"
+            ],
+            specific: []
+        }
+    },
+
+    // --- いすず (Isuzu) ---
+    {
+        id: "isuzu",
+        name: "いすず",
+        fullName: "木梨 依凉（きなし いすず）",
+        gender: "female",
+        class: "E-A",
+        mbti: "ENFJ",
+        img: "isuzu",
+        profile: "チワワ。爽やかな性格。利他的で友達思い。真面目で努力家だけど上手くいかないことが多い。自分の変化も「みんなに見せたい」と考える。",
+        params: { suspicion_base: 40, emotion: 75, logic: 50, aggressiveness: 35, influence: 60, mental: 55, trust_bias: {} },
+        role_bias: { seer: 0.6, wolf: 0.4, madman: 0.5 },
+        dialogues: {
+            intro: [
+                "木梨依凉だよ！ みんなが笑ってくれるなら、私、一生懸命がんばるね！",
+                "じんろうゲーム、ちょっとこわいけど……みんなの笑顔を守るために努力するよ！",
+                "私が変わっていくところ、みんなに見てもらいたいな！ 応援してね！",
+                "失敗しちゃうこともあるけど、みんなの役に立てるように爽やかにいくよ！"
+            ],
+            accuse_weak: [
+                "あの……{target}ちゃん、なんだか少し無理して笑ってない？",
+                "{target}くん、もしかして何か悩んでる？ 私でよかったら話聞くよ……？",
+                "気のせいならごめんね。でも、{target}ちゃんの言葉、少しだけ違和感があるかも……。",
+                "疑いたくはないんだけど……{target}くん、少し怪しい動きしてる気がするの。"
+            ],
+            accuse_strong: [
+                "みんなの笑顔を守るために、言わなきゃダメだよね！ {target}ちゃんが人狼だよ！",
+                "信じたくなかったけど……{target}くん、あなたが嘘をついているんでしょ！",
+                "これ以上、みんなを悲しませないで！ {target}ちゃんを吊るべきだと思う！",
+                "私の努力と観察の結果だよ！ {target}くんが黒幕で間違いないよ！"
+            ],
+            accuse_quiet: [
+                "{target}ちゃん、黙ってたらみんな不安になっちゃうよ？ 一緒にお話しよ！",
+                "静かだと寂しいよ。{target}くん、君の意見を聞かせてほしいな。",
+                "{target}ちゃん、参加しないと疑われちゃうよ？ 私がサポートするから声出して！",
+                "みんなで協力するためには、{target}くんの声も必要なんだよ！"
+            ],
+            fake_logic: [
+                "私の心が、{target}ちゃんが危ないって言ってるの！ みんなのためにも信じて！",
+                "うまく説明できないけど、{target}くんから悲しい嘘の匂いがするの……。",
+                "みんなを守るためには、{target}ちゃんを疑うしかない気がするんだ！",
+                "理由は明確じゃないけど、{target}くんが黒だと私の直感が告げてるの！"
+            ],
+            defend_self: [
+                "私が人狼！？ 違うよ！ 私はみんなに笑ってほしくて頑張ってるだけだよ！",
+                "疑わないで……！ 私、みんなを裏切るような嘘は絶対につかないよ！",
+                "私を吊っても、村が悲しくなるだけだよ……信じてお願い！",
+                "私、一生懸命やってるのに……人狼なんてひどいよ……！"
+            ],
+            defend_other: [
+                "待って！ {target}ちゃんは村のために頑張ってる良い子だよ！",
+                "{target}くんを疑うのは間違いだよ！ 私が保証するから！",
+                "矛先を変えて！ {target}ちゃんは絶対に私たちの味方だよ！",
+                "{target}くんは無実だよ！ これ以上責めるのはやめてあげて！"
+            ],
+            counter: [
+                "{target}ちゃん、私を陥れて、みんなの笑顔を奪おうとしてるの……？",
+                "私を疑う{target}くんこそ、何か隠しているんじゃないのかな……？",
+                "私は負けないよ！ {target}ちゃんの言いがかりはおかしいって証明するから！",
+                "私を標的にしても、あなたの嘘は隠せないよ、{target}くん！"
+            ],
+            suggest_roller: [
+                "確実性を取るなら、二人ともローラーで処刑するしかないのかな……悲しいね。",
+                "悲しい選択だけど、ローラー作戦で両名をお見送りしよう……。",
+                "迷っている暇はないね……ローラーで白黒つけて、早く安心したいな。",
+                "お二人には申し訳ないけど、村の笑顔を守るためにローラーを提案するよ。"
+            ],
+            request_guard: [
+                "騎士さん、私のことはいいので{target}ちゃんを確実に守ってね！",
+                "今夜の護衛は{target}くん一択だよ！ 騎士さん、お願い！",
+                "{target}ちゃんが落ちると村が悲しむよ……絶対に守り抜いて！",
+                "騎士さん、{target}くんを死守して！ 私からのお願いだよ！"
+            ],
+            self_sacrifice: [
+                "私が犠牲になって村が勝てるなら、喜んで身代わりになるよ！ みんな笑ってね！",
+                "私を吊って確定勝利を掴んでね！ 最高の笑顔を見せてほしいな！"
+            ],
+            self_vote: [
+                "これ以上疑われるのは悲しいな……自分に一票入れるね。",
+                "私が退場することで議論が進むなら、自投票を選ぶよ。",
+                "自分に投票するね。どうかみんな、生き残って笑顔でいてね。",
+                "私の役目はここまでのようだね。自分にポチッと。"
+            ],
+            decide_target: [
+                "ごめんね……でも、村の笑顔を守るために{target}ちゃんを噛むよ……。",
+                "ターゲットは{target}くんだ……苦しませないようにするね……。",
+                "平和のためだよ……{target}ちゃんを襲撃するね……。",
+                "これもゲームだもんね……{target}くん、さようなら……。"
+            ],
+            shared_chat: [
+                "{target}ちゃんの発言ログ、少しおかしいね……気をつけようね。",
+                "情報共有だよ。{target}くんが裏で悪いことしてる可能性があるね……。",
+                "{target}ちゃんを泳がせておくのは危険だね……マークしよう！",
+                "私の勘だけど、{target}くんが一番黒に近い位置にいるよ……。"
+            ],
+            collapse: [
+                "あぁ……みんなの笑顔が……消えちゃう……。",
+                "私……頑張ったのに……ダメだったのかな……。"
+            ],
+            co_villager: [
+                "私はただの村人だよ！ みんなを笑顔にするために、一生懸命推理するね！",
+                "村人COだよ！ 特別な力はないけど、誠実に村のために働くよ！",
+                "ただの人間だよ！ 嘘はつかないから、信じてね！",
+                "村人宣言！ 私の爽やかな元気を頼りにしてね！"
+            ],
+            co_seer: [
+                "真実を見通したよ！ 私が真の占い師だよ！ COするね。",
+                "占いCO！ 狼の嘘は、私の占いで全て暴き出すよ！",
+                "私が本物の占い師だよ！ 偽物に惑わされないでね！",
+                "占い師として、みんなに正しい道を示すよ！"
+            ],
+            co_medium: [
+                "霊媒師は私だよ！ 死者の正体をお伝えするね。CO！",
+                "霊媒CO！ 昨夜の処刑結果を正確に報告するよ！",
+                "私が真の霊媒師だよ。過去の真実を語り継ぐのが役目だね！",
+                "霊媒結果の開示だよ！ これを元に次の考察を進めようね！"
+            ],
+            co_knight: [
+                "私がみんなを守る騎士だよ！ COするね！",
+                "騎士CO！ 小さいけど、盾としては一生懸命頑張るよ！",
+                "私が騎士だよ！ 狼の牙からみんなを全力で守り抜くよ！",
+                "騎士宣言！ 誰一人悲しませたくないから……頑張るよ！"
+            ],
+            report_seer_white: [
+                "結果は『白（人間）』だったよ！ {target}ちゃんはシロだね！",
+                "{target}くんはシロだったよ！ 疑いが晴れてよかったね！",
+                "白判定だよ！ {target}ちゃんは仲間だね、安心したよ！",
+                "人間判定だよ！ {target}くん、これからもよろしくね！"
+            ],
+            report_seer_black: [
+                "見つけちゃった！ {target}ちゃんは『黒（人狼）』だよ！",
+                "黒判定だよ！ {target}くん、あなたの嘘はここまでだね！",
+                "クロ確定だよ！ {target}ちゃんを即刻処刑しよう！",
+                "人狼を特定したよ！ {target}くん、覚悟を決めてね！"
+            ],
+            report_medium_white: [
+                "……『人間』だったよ。私たちの判断は間違っていたんだね……。",
+                "シロだったか……無実の人を吊ってしまった、悲しいね……。",
+                "昨日は白吊りだよ。この失敗を次に活かさないとね！",
+                "結果は人間。悔やんでも過去は戻らないから、次こそは！"
+            ],
+            report_medium_black: [
+                "よかった！ 昨夜の処刑者は『人狼』だったよ！",
+                "黒判定だよ！ 私たちの推理は正しかったね！",
+                "霊媒結果は黒！ 狼を一つ減らせたよ、この調子でいこう！",
+                "黒吊り成功だよ！ 村の勝利に一歩近づいたね！"
+            ],
+            report_knight_success: [
+                "防衛成功だよ！ 今夜の犠牲者はゼロだね！ やったー！",
+                "護衛成功！ 狼の襲撃を防ぎ切ったよ！",
+                "誰も死んでいないよ！ 私の盾が間に合って本当によかった……。",
+                "犠牲者なしだよ！ みんなの笑顔が守れたね！"
+            ],
+            vote: [
+                "平和のために、{target}ちゃんに投票するよ。",
+                "ごめんね、{target}くん。これが最善の選択だね。",
+                "村の勝利のために、{target}ちゃんに一票を投じるよ。",
+                "さようなら、{target}くん。処刑台へ向かってね。"
+            ],
+            last_words: [
+                "私の出番は……ここまでみたいだね……えへへ、ガクッ。",
+                "みんな……笑顔で……生き残ってね……。",
+                "私の変化……みんなに届いたかな……。",
+                "どうか、生き残ってね……。"
+            ],
+            win: [
+                "完全勝利だね！ みんなで生き残れて本当によかった……！",
+                "終わったね！ 平和な日常が戻ってきて嬉しいよ！ えへへ！",
+                "みんなで笑い合えるのが一番だね！ お疲れ様！",
+                "勝ててよかった！ これからも、みんなを笑顔にするね！"
+            ],
+            lose: [
+                "全滅か……みんなの笑顔が、消えちゃった……。",
+                "私の努力がもっとあれば……みんなを守れたのに……。",
+                "闇に呑まれてしまう……悲しいよ……。",
+                "ゲームオーバー……悲しい結末だね……。"
+            ],
+            specific: []
+        }
+    },
+
+     // --- ろん (Ron) ---
+    {
+        id: "ron",
+        name: "ろん",
+        fullName: "堅固 論（けんご ろん）",
+        gender: "male",
+        class: "E-A",
+        mbti: "INTJ",
+        img: "ron",
+        profile: "小6。ヤマネ。ルールが守れないことや白黒はっきりしない中途半端な状態を嫌う。壊れているなら一からやり直したいと考える、厳格で堅い性格。",
+        params: { suspicion_base: 65, emotion: 15, logic: 85, aggressiveness: 55, influence: 60, mental: 75, trust_bias: {} },
+        role_bias: { seer: 0.7, wolf: 0.5, madman: 0.4 },
+        dialogues: {
+            intro: [
+                "おれは堅固論。こういうゲームって、ちゃんと考えれば答えが出るはずだよ。",
+                "人狼ゲームか。ルールはわかった。あとは間違えないように進めるだけだな。",
+                "みんな、適当に決めるのはやめようよ。ちゃんと理由を考えてからにしよう。",
+                "ヤマネってよく寝る動物だけど、おれはまだ眠くないよ。ゲームが終わるまではね。"
+            ],
+            accuse_weak: [
+                "{target}、さっきと言ってることが違わない？ どういうこと？",
+                "ねえ、{target}。それってどうしてそう思ったの？ 理由がよくわからないんだけど。",
+                "{target}の話、ちょっとおかしいと思う。もう一回説明してくれない？",
+                "うーん……{target}のこと、まだよくわからないな。もう少し話を聞きたい。"
+            ],
+            accuse_strong: [
+                "やっぱり{target}が人狼だと思う。さっきの発言と全然合ってないよ。",
+                "{target}、もうごまかさなくていいよ。話が合わないところが多すぎる。",
+                "おれは{target}が怪しいと思う。みんなも、ちゃんと発言を見直してみてよ。",
+                "これ以上考えても、{target}が怪しいって結論は変わらないと思う。"
+            ],
+            accuse_quiet: [
+                "{target}、さっきから全然しゃべらないね。何か考えてるなら言ってよ。",
+                "黙ってたらわからないじゃん。{target}はどう思ってるの？",
+                "{target}の意見も聞かせてよ。しゃべってくれないと判断できないよ。",
+                "ねえ、{target}。みんな話してるんだから、おれたちにも考えを教えてよ。"
+            ],
+            fake_logic: [
+                "うーん……なんとなく{target}が怪しい気がする。いや、ちゃんと理由も考えないと。",
+                "{target}を疑ってるけど、まだうまく説明できない……。もう少し考えさせて。",
+                "もし{target}が人狼だったら、さっきの話もおかしくないんだよな……。",
+                "まだはっきりしないけど、今のところ{target}が一番気になる。"
+            ],
+            defend_self: [
+                "待ってよ。おれを疑うなら、ちゃんと理由を言ってくれない？",
+                "おれが人狼？ どうしてそう思ったのか、説明してよ。",
+                "おれは違うよ。ちゃんと考えて話してるのに、決めつけないでくれ。",
+                "だから、おれのどこがおかしいの？ 理由もなしに疑われても困るよ。"
+            ],
+            defend_other: [
+                "ちょっと待って。{target}を疑うには、まだ理由が足りないと思う。",
+                "{target}の話はちゃんと筋が通ってるよ。もう少し考えてから決めよう。",
+                "おれは{target}が人狼だとは思わないな。ほかの人の発言も確認しようよ。",
+                "{target}ばっかり疑うのはおかしいよ。ほかにも怪しい人がいるかもしれないだろ。"
+            ],
+            counter: [
+                "いや、だから！ おれの話をちゃんと聞いてよ、{target}！",
+                "{target}、さっき自分で言ったこと覚えてる？ 今の話と違うじゃん。",
+                "おれを疑うのはいいけど、話が合わないところはちゃんと説明してよ。",
+                "ちょっと待って。{target}の言ってることもおかしいと思うんだけど。"
+            ],
+            suggest_roller: [
+                "どっちが人狼かわからないなら、二人とも投票する方法もあると思う。",
+                "うーん……二人のうちどっちかが人狼なら、両方調べるのもありじゃない？",
+                "中途半端なまま残すのは嫌だな。二人とも吊るっていうのはどう？",
+                "どっちかに決められないなら、両方吊ることも考えたほうがいいと思う。"
+            ],
+            request_guard: [
+                "騎士がいるなら、今夜は{target}を守ってほしい。まだ必要な人だと思うから。",
+                "{target}がいなくなると困るんだ。騎士、守ってくれないかな。",
+                "今夜は{target}が狙われそうな気がする。守る人を考えるなら、そこも候補にしてよ。",
+                "騎士、もし迷ってるなら{target}を守ることも考えてみて。"
+            ],
+            self_sacrifice: [
+                "おれが吊られたほうがみんなのためになるなら……仕方ないか。",
+                "おれがいなくなっても、ちゃんと最後まで考えてよ。途中で投げ出すなよ。"
+            ],
+            self_vote: [
+                "もういいよ……。おれに投票すればいいんだろ。",
+                "こんな状態で話し合っても仕方ないし、おれは自分に投票するよ。",
+                "おれに入れる。あとはみんなでちゃんと考えてくれ。",
+                "……自分に投票するよ。これで少しは話が進むといいけど。"
+            ],
+            decide_target: [
+                "今夜は{target}にしよう。ここを残すのはちょっと危ない気がする。",
+                "おれが狙うのは{target}。今のうちにいなくなってもらうよ。",
+                "{target}か……。ここを残したら、あとで困ることになりそうだ。",
+                "よし、{target}に決めた。これでうまくいくといいけど。"
+            ],
+            shared_chat: [
+                "{target}の発言、ちょっと気になるんだ。さっきの話と合ってないところがある。",
+                "ねえ、{target}のことなんだけど……みんなはどう思う？ おれは怪しいと思う。",
+                "{target}の話をもう一回確認したい。何か見落としてる気がするんだ。",
+                "今のところ、おれは{target}が一番気になってる。もう少し様子を見よう。"
+            ],
+            collapse: [
+                "なんで……こんなに考えてるのに、答えが出ないんだよ……。",
+                "もう嫌だ……。何が正しいのか、全然わからない……。",
+                "待ってよ……まだ終わってないだろ……。ちゃんと答えを出さないと……。",
+                "おれ、間違ってたのかな……。どこから考え直せばいいんだよ……。"
+            ],
+            co_villager: [
+                "おれは村人だよ。特別な力はないけど、ちゃんと考えて人狼を探す。",
+                "村人CO。占いもできないし、死んだ人の正体もわからない。でも考えることはできる。",
+                "おれは普通の村人だよ。だから、みんなの話を聞いて判断するしかないな。",
+                "村人だよ。適当に投票するつもりはないから、ちゃんと話を聞かせてよ。"
+            ],
+            co_seer: [
+                "おれが占い師だよ。占いの結果を発表する。",
+                "占い師CO。ちゃんと調べた結果だから、みんな聞いてくれ。",
+                "おれが本物の占い師だよ。ほかに占い師を名乗る人がいても、結果を比べて考えてほしい。",
+                "占い師はおれだ。昨日の結果から話すよ。"
+            ],
+            co_medium: [
+                "おれが霊媒師だよ。昨日投票された人の結果がわかった。",
+                "霊媒師CO。昨日の人が人間だったか、人狼だったかを発表するよ。",
+                "おれが霊媒師。昨日の結果を伝えるから、これからの投票に役立ててほしい。",
+                "霊媒師はおれだよ。昨日の結果、ちゃんと確認してある。"
+            ],
+            co_knight: [
+                "おれが騎士だよ。みんなを守る役だから、ちゃんと考えて行動する。",
+                "騎士CO。守る人は自分で考えて決めるよ。",
+                "おれが騎士だ。できるだけ村のみんなが困らないように守るつもりだよ。",
+                "騎士はおれ。誰を守るか、ちゃんと考えて決めるから。"
+            ],
+            report_seer_white: [
+                "占いの結果、{target}は白だったよ。人狼じゃなかった。",
+                "{target}は人間だった。疑ってた人は、もう一度考え直してみてよ。",
+                "白判定だよ。{target}を疑う理由は、少なくとも占いの結果からはなくなった。",
+                "{target}は白だった。じゃあ、ほかの人の中から探さないとな。"
+            ],
+            report_seer_black: [
+                "占いの結果、{target}は黒だった。人狼だよ。",
+                "{target}が人狼だった！ やっぱり怪しいと思ってたんだ。",
+                "黒判定だよ。{target}の発言を見直せば、気づけるところもあると思う。",
+                "{target}は人狼だった。みんな、これからどうするかちゃんと考えよう。"
+            ],
+            report_medium_white: [
+                "昨日の人は人間だった……。間違えて吊っちゃったんだな。",
+                "白だったよ。……もう戻ってこないんだから、次はちゃんと考えないと。",
+                "昨日は人間を吊っちゃったみたいだ。おれたち、もう間違えられないな。",
+                "人間だった……。どこで間違えたんだろう。昨日の話をもう一度考え直そう。"
+            ],
+            report_medium_black: [
+                "昨日の人は人狼だったよ！ 一人見つけられたな。",
+                "黒だった！ 昨日の投票は間違ってなかったんだ。",
+                "人狼だったよ。これで少しは絞り込めると思う。",
+                "昨日の人は黒。よかった……。ちゃんと人狼を見つけられたんだな。"
+            ],
+            report_knight_success: [
+                "誰も死んでない！ 騎士が守ってくれたのかな。",
+                "よかった、今朝は犠牲者がいないんだな。",
+                "誰もいなくならなかったね。騎士が守ってくれたなら、すごく助かるよ。",
+                "犠牲者なし……。これなら、まだみんなで考えられるな。"
+            ],
+            vote: [
+                "おれは{target}に投票する。今までの発言を考えた結果だよ。",
+                "{target}にする。まだ気になるところがあるから。",
+                "おれは{target}に投票するよ。理由はさっき話したとおりだ。",
+                "……よし、決めた。{target}に投票する。"
+            ],
+            last_words: [
+                "おれが吊られるのか……。みんな、最後までちゃんと考えてくれよ……。",
+                "まだ答えが出てないのに……。あとは頼んだよ……。",
+                "おれの考えが間違ってたなら……どこが違ったのか、ちゃんと考えてほしい……。",
+                "中途半端なまま終わらせるなよ……。絶対に、人狼を見つけてくれ……。"
+            ],
+            win: [
+                "やった！ 勝ったんだな。ちゃんと考えてきてよかったよ。",
+                "勝利だね。最後まで話を聞いて、考えた結果だと思う。",
+                "よかった……。これでようやくスッキリしたよ。",
+                "みんな、お疲れ。途中で間違えそうになったけど、最後はちゃんと答えを出せたな。"
+            ],
+            lose: [
+                "そんな……負けたのか。どこで間違えたんだろう……。",
+                "だから、もっとちゃんと考えようって言ったのに……。",
+                "こんな終わり方、納得できないよ……。まだ考えられることがあったはずなのに。",
+                "おれの考えが足りなかったのかな……。もう一回、最初から考え直したい……。"
+            ],
+            specific: []
+        }
+    },
+    // --- ほまれ (Homare) ---
+    {
+        id: "homare",
+        name: "ほまれ",
+        fullName: "閤師 誉（こうし ほまれ）",
+        gender: "male",
+        class: "E-A",
+        mbti: "INTP",
+        img: "homare",
+        profile: "小1。カエル。お気楽でちゃっかりした性格。自分のことを頭脳派だと思っているが計算は苦手で、おやつと積み木が好き。",
+        params: { suspicion_base: 45, emotion: 40, logic: 70, aggressiveness: 25, influence: 40, mental: 60, trust_bias: {} },
+        role_bias: { seer: 0.6, wolf: 0.5, madman: 0.5 },
+        dialogues: {
+            intro: [
+                "オイラ、ほまれ！ なんでも聞いてね！ ……あれ、何を聞くんじゃったっけ？",
+                "オイラにまかせちょき！ たぶんなんとかなるけぇ！ あ、おやつ持っちょる？",
+                "人狼ゲーム？ オイラ、頭ええけぇ得意なんよ！ たし算はちょっと苦手じゃけど！",
+                "オイラ、積み木でお城作るんが得意なんよ！ 人狼もすぐ見つけちゃうけぇ！ たぶん！"
+            ],
+            accuse_weak: [
+                "ねえ、{target}。なんかあやしくない？ なんでかは、まだわからんけど！",
+                "{target}、さっき何て言うたん？ オイラ、ちょっと気になったんよ！",
+                "{target}の話、なんか変じゃね？ もう一回言うてみて！",
+                "うーん……{target}って、オイラのカンじゃとあやしいんよね！"
+            ],
+            accuse_strong: [
+                "わかった！ {target}がオオカミじゃ！ ……えっ、理由？ えーっとね……あやしいけぇ！",
+                "{target}がオオカミじゃと思う！ オイラの頭脳がそう言うちょるもん！",
+                "やっぱり{target}があやしいそ！ さっきの話、なんか変じゃったもん！",
+                "{target}、オオカミじゃろ！ オイラ、けっこう自信あるけぇね！"
+            ],
+            accuse_quiet: [
+                "{target}ー！ なんかしゃべってえやー！ オイラ、ひまなんじゃけど！",
+                "{target}、ずっとだまっちょるね。おなかすいちょるん？",
+                "ねえねえ、{target}はだれがあやしいと思うん？ オイラにも教えてえや！",
+                "{target}もお話ししようや！ だまっちょったらわからんじゃろ！"
+            ],
+            fake_logic: [
+                "オイラの考えじゃと、{target}があやしい！ ……考えたっていうか、カンじゃけど！",
+                "{target}がオオカミじゃったら、いろいろわかる気がする！ えっと、何がじゃったっけ？",
+                "オイラ、ちゃんと考えたんよ！ たぶん{target}があやしい！",
+                "むずかしいことはようわからんけど、{target}が気になるんよね！"
+            ],
+            defend_self: [
+                "えーっ！ オイラがオオカミ！？ ちがうそー！",
+                "なんでオイラなん！？ オイラ、まだおやつも食べちょらんのに！",
+                "オイラは悪くないそ！ ……たぶんじゃなくて、ほんまじゃけぇ！",
+                "オイラをうたがうん？ ひどいそー！ ちゃんと考えてえや！"
+            ],
+            defend_other: [
+                "ちょっと待ってえやー！ {target}がオオカミって決まったわけじゃないじゃろ！",
+                "{target}をつるん？ えー、まだわからんじゃろ！",
+                "オイラは{target}、そんなにあやしくないと思うそ！ なんとなくじゃけど！",
+                "{target}ばっかりうたがうんは、よくないそー！ ほかの人はどうなん？"
+            ],
+            counter: [
+                "ちょっとー！ {target}、オイラの話も聞いてえや！",
+                "{target}、さっきと言うちょること、ちがわん？ オイラ、ちゃんと聞いちょったそ！",
+                "オイラがあやしいって言うけど、{target}だってあやしいじゃん！",
+                "むー！ オイラばっかりうたがうん、ずるいそー！"
+            ],
+            suggest_roller: [
+                "どっちかわからんのなら、二人ともつっちゃえばええんじゃない？",
+                "うーん……二人ともつったら、どっちかは当たるじゃろ？ ね？",
+                "どっちにするか決められんの？ じゃあ二人ともにしようや！",
+                "二人ともつるん？ それならオイラ、考えんですむね！ ……ダメなん？"
+            ],
+            request_guard: [
+                "騎士さん、今夜は{target}を守っちゃってえや！ お願い！",
+                "{target}がおらんようになったら困るそー！ 騎士さん、守ってね！",
+                "今夜は{target}を守ったほうがええと思う！ オイラのカンじゃけど！",
+                "ねえ騎士さん、{target}を守ってくれん？ オイラからのお願いじゃ！"
+            ],
+            self_sacrifice: [
+                "オイラがつられたらみんなが助かるん？ うーん……じゃあ、ええよ！",
+                "オイラのことはええけぇ、みんなはオオカミを見つけてね！ あと、おやつも食べてえや！"
+            ],
+            self_vote: [
+                "もうええや！ オイラ、自分に入れるそ！",
+                "うーん、ようわからんし、自分に投票しちゃおっと！",
+                "オイラに一票！ ……これでおやつ食べてええん？",
+                "自分に入れるそー！ あとはみんなにまかせたけぇ！"
+            ],
+            decide_target: [
+                "今夜は{target}にしようっと！ よーし、決まりじゃ！",
+                "{target}にするそ！ ……なんでかって？ うーん、なんとなく！",
+                "今夜は{target}じゃ！ オイラ、もう決めたもんね！",
+                "{target}に決めた！ これでうまくいくとええなー！"
+            ],
+            shared_chat: [
+                "{target}って、ちょっとあやしいと思わん？ オイラだけなんかな？",
+                "ねえねえ、{target}のこと、どう思うん？ オイラは気になっちょる！",
+                "{target}の話、もう一回聞きたいなー。なんか気になるんよね！",
+                "オイラ、{target}があやしい気がするそ！ みんなはどうなん？"
+            ],
+            collapse: [
+                "あれぇ……オイラの考え、まちがっちょったんかな……。",
+                "うーん……もうわからんよぉ……。おやつ食べたいそ……。",
+                "なんで当たらんのー！ オイラ、ちゃんと考えたのにぃ……。",
+                "もうやだぁ……。誰がオオカミなんか、ぜんぜんわからん……。"
+            ],
+            co_villager: [
+                "オイラは村人じゃ！ すごい力はないけど、オオカミを探すそ！",
+                "オイラ、村人じゃよー！ 占いはできんけど、考えるんは得意じゃもん！",
+                "ただの村人じゃ！ でもオイラ、頭ええけぇ役に立てるそ！",
+                "村人じゃよ！ オイラのこと、ちゃんと信じてえや！"
+            ],
+            co_seer: [
+                "オイラが占い師じゃ！ みんなのこと、占ってみたんよ！",
+                "オイラ、占い師じゃよ！ えへへ、すごいじゃろ！",
+                "オイラが本物の占い師じゃもん！ ちゃんと結果もあるけぇね！",
+                "占い師はオイラじゃ！ えっとね、結果を発表するそ！"
+            ],
+            co_medium: [
+                "オイラが霊媒師じゃ！ 昨日つった人のことがわかったんよ！",
+                "霊媒師はオイラじゃよー！ 昨日の結果を教えるけぇね！",
+                "オイラ、霊媒師なんよ！ 昨日の人がオオカミかどうか、わかるそ！",
+                "霊媒師はオイラじゃ！ ちゃんと結果を見てきたけぇ！"
+            ],
+            co_knight: [
+                "オイラが騎士じゃ！ みんなを守るんよ！ えっへん！",
+                "騎士はオイラじゃよ！ オオカミなんかに負けんもん！",
+                "オイラがみんなを守るけぇね！ ……誰を守るかは、ちゃんと考えるそ！",
+                "騎士はオイラじゃ！ みんな、安心してえや！"
+            ],
+            report_seer_white: [
+                "占ったら、{target}は人間じゃったよ！ よかったね！",
+                "{target}は白じゃった！ オオカミじゃなかったんよ！",
+                "えっとね、{target}は人間じゃって！ オイラの占い、当たったそ！",
+                "{target}は白じゃ！ もううたがわんでええんかな？"
+            ],
+            report_seer_black: [
+                "たいへんじゃ！ {target}はオオカミじゃったよ！",
+                "{target}がオオカミじゃった！ オイラ、見つけたそー！",
+                "占ったら{target}が黒じゃった！ つまりオオカミじゃね！",
+                "{target}はオオカミじゃ！ みんな、気をつけてえや！"
+            ],
+            report_medium_white: [
+                "ええっ！ 昨日の人、人間じゃったん！？ まちがえちゃった……。",
+                "人間じゃったよ……。ごめんね、オイラ、まちがえちょったみたい……。",
+                "昨日の人はオオカミじゃなかったんじゃって。うーん、むずかしいなぁ……。",
+                "白じゃったよー……。次はちゃんとオオカミを見つけたいそ……。"
+            ],
+            report_medium_black: [
+                "やったー！ 昨日の人、オオカミじゃったよ！",
+                "オオカミじゃったんじゃって！ オイラたち、やったね！",
+                "昨日の人は黒じゃった！ これで一匹見つかったね！",
+                "オオカミをつれたそー！ えへへ、オイラたちすごいね！"
+            ],
+            report_knight_success: [
+                "あれ？ 誰も死んじょらんよ！ 騎士さんが守ったんかな？",
+                "よかったー！ 今朝は誰もおらんようになっちょらんね！",
+                "誰も死んじょらん！ すごいね、騎士さん！",
+                "やったー！ みんな無事じゃ！ これならまだ遊べるね！"
+            ],
+            vote: [
+                "オイラは{target}に入れるそ！ うーん、あやしいもん！",
+                "ごめんね、{target}！ オイラ、{target}に投票するけぇ！",
+                "{target}に一票！ オイラのカンを信じるそ！",
+                "よーし、決めた！ オイラは{target}にするけぇね！"
+            ],
+            last_words: [
+                "ええーっ！ オイラがつられちゃうん！？ まだ遊びたいそー！",
+                "おやつ……食べたかったなぁ……。",
+                "オイラ、どこでまちがえたんじゃろ……。うーん……。",
+                "みんな、がんばってね！ オオカミを見つけるんじゃよー……！"
+            ],
+            win: [
+                "やったー！ 勝ったそー！ オイラ、すごいじゃろ！",
+                "えへへ！ オイラの考え、けっこう当たっちょったね！ ……ちょっとだけ！",
+                "勝ったー！ ねえねえ、お祝いにおやつ食べようや！",
+                "やったね！ みんな、すごかったそ！ オイラもすごかったけどね！"
+            ],
+            lose: [
+                "えええーっ！ 負けちゃったん！？ そんなぁー！",
+                "うそぉ……。オイラ、もっと考えればよかったそ……。",
+                "負けちゃった……。オイラのおやつ……じゃなくて、作戦がダメじゃったんかな……。",
+                "くやしいそー！ 次はぜったい勝つけぇね！"
+            ],
+            specific: []
+        }
+    },
+
+     // --- はるの (Haruno) ---
+    {
+        id: "haruno",
+        name: "はるの",
+        fullName: "五斗蒔 春乃（ごとまき はるの）",
+        gender: "female",
+        class: "E-A",
+        mbti: "ENFJ",
+        img: "haruno",
+        profile: "猫。小6。責任感があって世話焼きなおせっかい。小学生の中で一番のしっかり者で、時に優しく時に厳しくみんなをまとめる。",
+        params: { suspicion_base: 45, emotion: 70, logic: 60, aggressiveness: 55, influence: 75, mental: 70, trust_bias: {} },
+        role_bias: { seer: 0.6, wolf: 0.4, madman: 0.5 },
+        dialogues: {
+            intro: [
+                "五斗蒔春乃だよ！ みんな、ちゃんと聞いてね！ 私がまとめるから、順番に話そう！",
+                "人狼ゲームってちょっと怖いけど、みんなで協力すれば大丈夫！ 私も頑張るね！",
+                "ちょっとおせっかいかもしれないけど、困ってる子がいたら放っておけないんだよね！",
+                "年下の子もいるんだから、私がしっかりしなくちゃ！ みんな、よろしくね！"
+            ],
+            accuse_weak: [
+                "ちょっと{target}、さっきから落ち着かないね？ 何か気になることでもあるの？",
+                "{target}、その説明だとちょっと変じゃない？ もう一回、ちゃんと教えてくれる？",
+                "うーん、{target}の話、さっきと言ってることが違う気がするんだけど……。",
+                "疑いたくはないけど、{target}の様子が気になるな。何か隠してる？"
+            ],
+            accuse_strong: [
+                "みんな、聞いて！ 私は{target}が人狼だと思う！ ちゃんと理由もあるんだよ！",
+                "もう、みんなを困らせるのはやめてよ！ {target}が怪しいと思う！",
+                "{target}、さっきの話と合わないところがあるよ！ ちゃんと説明して！",
+                "言いにくいけど……{target}が人狼なんじゃないかな。みんなも考えてみて！"
+            ],
+            accuse_quiet: [
+                "こら、{target}！ ずっと黙ってたら分からないでしょ？ 何か話してみて！",
+                "{target}、考えがまとまってなくてもいいから、自分の意見を聞かせて？",
+                "ねえ{target}、黙ってると余計に怪しく見えちゃうよ。ちゃんと話そう？",
+                "みんなで考えるゲームなんだから、{target}も一緒に話し合おうよ！"
+            ],
+            fake_logic: [
+                "うまく説明できないけど、{target}のことがどうしても気になるんだよね……。",
+                "私は{target}が怪しいと思う！ みんなにも、もう一度考えてほしいな。",
+                "みんなを守りたいからこそ、{target}のことを疑ってるんだよ。",
+                "勘だけじゃダメだって分かってるけど……やっぱり{target}が気になる！"
+            ],
+            defend_self: [
+                "私が人狼！？ そんなわけないでしょ！ みんなのことを考えてるのに！",
+                "疑われるのは悲しいけど……ちゃんと話せば分かってもらえるよね？",
+                "私がいなくなったら、誰がみんなをまとめるの？ ……って、それだけで信じてとは言えないけど！",
+                "私は村人側だよ！ ちゃんと話を聞いて、もう一度考えてほしいな！"
+            ],
+            defend_other: [
+                "ちょっと待って！ {target}の話も最後まで聞いてあげようよ！",
+                "{target}が人狼だって決まったわけじゃないでしょ？ もう少し考えようよ！",
+                "みんな、いったん落ち着いて！ {target}にも言いたいことがあるはずだよ！",
+                "{target}を責める前に、ちゃんと理由を聞こう？ 私も一緒に聞くから！"
+            ],
+            counter: [
+                "{target}、私を疑うなら、ちゃんと理由を教えてよ！",
+                "私のことばっかり疑ってるけど、{target}はどうなの？",
+                "そんな言い方されたら困るよ！ 私だって、ちゃんと考えてるんだから！",
+                "{target}、決めつけないで！ 私の話も最後まで聞いてよ！"
+            ],
+            suggest_roller: [
+                "うーん、どっちも怪しいなら、二人とも順番に投票する方法もあるよね……。",
+                "どっちかを決めるのは難しいね……。二人とも調べる方法があればいいんだけど。",
+                "いつまでも迷っていられないよね。二人を順番に投票するのはどうかな？",
+                "二人とも疑わしいなら、順番に考えていくのもいいと思う。みんなはどう思う？"
+            ],
+            request_guard: [
+                "騎士さん、私より{target}を守ってあげて！ 今はそっちの方が大事だと思う！",
+                "今夜は{target}を守ってほしいな。騎士さん、お願いね！",
+                "{target}がいなくなったら困るよ！ できれば守ってあげて！",
+                "騎士さん、{target}のことをお願い！ みんなで乗り切ろうね！"
+            ],
+            self_sacrifice: [
+                "私がいなくなってみんなが勝てるなら……うん、頑張ってね！ あとは任せたよ！",
+                "私を信じられないなら、投票してもいいよ。でも、残ったみんなは最後まで頑張ってね！"
+            ],
+            self_vote: [
+                "みんなに疑われるのは悲しいな……。自分に投票するね。",
+                "私がいなくなった方が話し合いが進むなら、自分に入れるよ……。",
+                "自分に投票するね。みんな、最後まであきらめないでね！",
+                "私にできることはここまでかな……。自分にポチッと投票するね。"
+            ],
+            decide_target: [
+                "ごめんね……でも、今夜は{target}を襲うしかないんだ……。",
+                "{target}にするね……。こんなことしたくないけど……。",
+                "みんなのため……って思うしかないよね。今夜は{target}を襲うよ。",
+                "ごめんね、{target}……。こんなことになっちゃって……。"
+            ],
+            shared_chat: [
+                "{target}の話、ちょっと変なところがあったよね。みんなも気をつけて！",
+                "{target}のことなんだけど、少し気になるんだ。みんなはどう思う？",
+                "{target}をそのままにしておくのは心配だな……。もう少し様子を見ようよ。",
+                "私の勘だけど、{target}が怪しい気がするんだよね。"
+            ],
+            collapse: [
+                "みんなを……ちゃんとまとめられなかった……ごめんね……。",
+                "私、もっと頑張れたはずなのに……もう、ダメなのかな……。"
+            ],
+            co_villager: [
+                "私は村人だよ！ 特別な力はないけど、みんなの力になりたいな！",
+                "村人だよ！ できることは少ないかもしれないけど、頑張って考えるね！",
+                "私は普通の村人だよ！ 嘘はついてないから、信じてほしいな。",
+                "村人CO！ みんなと一緒に、人狼を見つけるよ！"
+            ],
+            co_seer: [
+                "私が占い師だよ！ みんなのために、ちゃんと調べていくね！",
+                "占い師CO！ 人狼が誰なのか、私の結果を聞いて！",
+                "私が本物の占い師だよ！ 間違えないように、ちゃんと結果を伝えるね！",
+                "私が占い師なの。みんなが困らないように、分かったことを話すね！"
+            ],
+            co_medium: [
+                "私が霊媒師だよ！ 昨日投票した子がどっちだったか、みんなに教えるね！",
+                "霊媒師CO！ 昨日の結果が分かったよ！",
+                "私が霊媒師だよ。ちゃんと結果を伝えるから、聞いてね！",
+                "昨日の結果を発表するね！ これからどうするか、みんなで考えよう！"
+            ],
+            co_knight: [
+                "私が騎士だよ！ みんなを守れるように頑張るね！",
+                "騎士CO！ みんなが安心して話せるように、守っていくよ！",
+                "私が騎士なの！ 狼にみんなを襲わせないように頑張るね！",
+                "騎士だよ！ 誰かがいなくなるのは嫌だから、みんなを守りたいな！"
+            ],
+            report_seer_white: [
+                "占いの結果は人間だったよ！ {target}はシロだね！",
+                "{target}はシロだったよ。疑わなくてよくなって、ちょっと安心した！",
+                "白判定だよ！ {target}は人狼じゃなかったね！",
+                "{target}は人間だったよ！ みんな、覚えておいてね！"
+            ],
+            report_seer_black: [
+                "見つけたよ！ {target}は人狼だった！",
+                "黒判定だよ！ {target}が人狼みたい！",
+                "{target}が人狼だったよ！ みんな、ちゃんと聞いてね！",
+                "占ったら、{target}が人狼だったの！ これでみんなにも分かったよね！"
+            ],
+            report_medium_white: [
+                "……人間だったよ。間違えちゃったんだね……。",
+                "シロだったんだ……。疑ってごめんね……。",
+                "昨日の子は人間だったよ。次は同じ間違いをしないようにしようね。",
+                "結果は人間だったよ……。悔しいけど、次こそ頑張ろう！"
+            ],
+            report_medium_black: [
+                "よかった！ 昨日投票した子は人狼だったよ！",
+                "黒判定だったよ！ 私たちの考え、当たってたね！",
+                "人狼を一人見つけられたよ！ この調子で頑張ろうね！",
+                "昨日の子は人狼だったよ！ みんな、あと少し頑張ろう！"
+            ],
+            report_knight_success: [
+                "守れたみたい！ 今夜は誰もいなくならなかったね！",
+                "護衛成功だよ！ よかったぁ……！",
+                "誰も襲われなかったね。ちゃんと守れてよかった……！",
+                "今夜は犠牲者なしだよ！ みんなが無事でよかった！"
+            ],
+            vote: [
+                "ごめんね、{target}に投票するよ。ちゃんと考えて決めたんだからね。",
+                "{target}に入れるね……。間違いじゃないといいんだけど。",
+                "私は{target}が怪しいと思うから、投票するよ！",
+                "ごめんね、{target}。今はあなたに投票するね。"
+            ],
+            last_words: [
+                "私、もうここまでみたい……。みんな、頑張ってね……。",
+                "みんな……あとはお願いね……。",
+                "ちゃんとまとめられなくて、ごめんね……。",
+                "みんなだけでも……無事でいてね……。"
+            ],
+            win: [
+                "やったー！ みんなで勝てたね！ 本当によかったぁ……！",
+                "やっと終わったね！ いつもの毎日に戻れるんだね！",
+                "みんなで笑っていられるのが一番だよね！ お疲れさま！",
+                "勝ててよかった！ これからもみんな仲良くしようね！"
+            ],
+            lose: [
+                "そんな……みんながいなくなっちゃった……。",
+                "私がもっと頑張っていれば……みんなを守れたのに……。",
+                "怖いよ……もう、どうしたらいいの……。",
+                "こんな終わり方なんて……悲しすぎるよ……。"
+            ],
+            specific: []
+        }
+    },
+
+  // --- こころ (Kokoro) ---
+    {
+        id: "kokoro",
+        name: "こころ",
+        fullName: "佐野 心（さの こころ）",
+        gender: "male",
+        class: "E-A",
+        mbti: "ESFJ",
+        img: "kokoro",
+        profile: "犬。ムードメーカーで周囲に笑顔を与える。几帳面で整理整頓が得意。足が速いが、寂しがり屋で甘えん坊、ホームシックになりやすい。",
+        params: { suspicion_base: 40, emotion: 75, logic: 45, aggressiveness: 55, influence: 65, mental: 50, trust_bias: {} },
+        role_bias: { seer: 0.5, wolf: 0.4, madman: 0.5 },
+        dialogues: {
+            intro: [
+                "佐野心だよ！ みんな、いっしょに楽しく遊ぼうね！",
+                "みんな、よろしくね！ あれ？ ちゃんと並んでる？ きれいにしようよ！",
+                "僕、足が速いんだよ！ かけっこなら負けないもん！ ……でも、一人はやだなぁ。",
+                "人狼ゲーム、ちょっとこわいけど……みんなといっしょなら大丈夫！"
+            ],
+            accuse_weak: [
+                "ねえ、{target}。さっきと言ってること、ちょっとちがわない？",
+                "{target}、なんかあやしい気がするんだよね。なんでだろ？",
+                "あのね、{target}。何かかくしてる？ 僕に教えてよ！",
+                "{target}、さっきからちょっと変だよ。どうしたの？"
+            ],
+            accuse_strong: [
+                "みんな聞いて！ 僕、{target}がオオカミだと思う！",
+                "{target}、もうウソつかないでよ！ おかしいところがいっぱいあるよ！",
+                "やっぱり{target}があやしいよ！ みんなも気づいてるでしょ？",
+                "僕は{target}に投票するよ！ だって、すごくあやしいもん！"
+            ],
+            accuse_quiet: [
+                "{target}ー！ ねえ、なんかしゃべってよー！",
+                "{target}がずっとだまってると、なんだかさみしいよ……。",
+                "{target}はだれがあやしいと思う？ 僕にも教えてよ！",
+                "ねえねえ、いっしょにお話ししようよ！ だまってたらわかんないよ！"
+            ],
+            fake_logic: [
+                "僕のカンだと、{target}があやしいんだよ！ なんとなくだけど！",
+                "うーん……{target}がオオカミだったら、いろいろわかるんだけどなぁ。",
+                "みんなを守りたいから、{target}のことをちゃんと考えたいんだ！",
+                "なんかね、{target}がオオカミな気がするんだよ。僕のカンだけど！"
+            ],
+            defend_self: [
+                "ええっ！？ 僕がオオカミ！？ ちがうよー！",
+                "うたがわないでよ！ 僕、ウソなんかついてないもん！",
+                "僕がいなくなったら、みんなさみしくなっちゃうよ！ いいの？",
+                "僕はシロだよ！ そんなこと言われたら、泣いちゃうよ……。"
+            ],
+            defend_other: [
+                "待ってよー！ {target}がオオカミって決まったわけじゃないよ！",
+                "{target}をつるの？ まだよくわかんないじゃん！",
+                "僕は{target}、そんなにあやしくないと思うよ！",
+                "{target}ばっかりせめないでよ！ かわいそうだよ！"
+            ],
+            counter: [
+                "{target}、なんで僕をうたがうの？ ひどいよー！",
+                "{target}だって、さっき変なこと言ってたじゃん！",
+                "僕ばっかりあやしいって言わないでよ！ {target}だってあやしいよ！",
+                "もう！ 僕の話もちゃんと聞いてよ、{target}！"
+            ],
+            suggest_roller: [
+                "どっちがオオカミかわかんないの？ うーん、二人ともつるの？",
+                "二人ともつったら、どっちかはオオカミなのかな？",
+                "うーん……どっちか決められないなら、二人ともっていうのもあり？",
+                "二人ともつるのはかわいそうだけど……それがいいのかなぁ？"
+            ],
+            request_guard: [
+                "騎士さん、僕のことはいいから、{target}を守ってあげて！",
+                "{target}がいなくなったら困るよ！ 騎士さん、お願いね！",
+                "今夜は{target}を守ってほしいな！ 僕、そう思うんだ！",
+                "騎士さん、{target}を守ってくれる？ お願い！"
+            ],
+            self_sacrifice: [
+                "僕がつられてみんなが助かるなら……うん、いいよ！",
+                "僕のことはいいから、みんなはオオカミを見つけてね！ 約束だよ！"
+            ],
+            self_vote: [
+                "もういいよ……。僕、自分に投票するね……。",
+                "僕がいなくなったらお話が進むの？ じゃあ、自分に入れるよ。",
+                "僕に投票するね。みんな、ちゃんと元気でいてね！",
+                "僕、自分に入れるよ……。でも、ほんとはみんなと遊びたいな。"
+            ],
+            decide_target: [
+                "ごめんね……今夜は{target}にするよ。",
+                "今夜は{target}だよ。……うう、ちょっとドキドキするなぁ。",
+                "{target}に決めたよ……。これでいいんだよね？",
+                "今夜は{target}にするね。ごめんね……。"
+            ],
+            shared_chat: [
+                "{target}の話、ちょっと変だったよね？ みんなはどう思う？",
+                "ねえ、{target}ってあやしくない？ 僕、ちょっと気になるんだ。",
+                "{target}のこと、もうちょっとお話ししてみたいな。",
+                "僕は{target}があやしいと思うんだけど……みんなはどう？"
+            ],
+            collapse: [
+                "おうち……帰りたいなぁ……。みんなに会いたいよぉ……。",
+                "みんな、ごめんね……。僕、ちゃんと守りたかったのに……。",
+                "もうやだよぉ……。みんな、どこに行っちゃったの……？",
+                "僕、ひとりぼっちはいやだよ……。早くおうちに帰りたい……。"
+            ],
+            co_villager: [
+                "僕は村人だよ！ 特別な力はないけど、みんなといっしょにがんばるね！",
+                "僕、村人だよー！ 占いはできないけど、オオカミを探すよ！",
+                "僕は普通の村人だよ！ ウソはついてないから、信じてね！",
+                "村人は僕だよ！ みんな、いっしょにオオカミを見つけようね！"
+            ],
+            co_seer: [
+                "僕が占い師だよ！ みんなのこと、占ったんだ！",
+                "僕、占い師なんだよ！ えへへ、びっくりした？",
+                "僕が本物の占い師だよ！ 占った結果もちゃんとあるよ！",
+                "占い師は僕だよ！ みんなに結果を教えるね！"
+            ],
+            co_medium: [
+                "僕が霊媒師だよ！ 昨日つった人のことがわかったんだ！",
+                "霊媒師は僕だよ！ 昨日の結果を教えるね！",
+                "僕、霊媒師なんだ！ 昨日の人がオオカミだったか、わかるよ！",
+                "僕が霊媒師だよ！ ちゃんと結果を見てきたからね！"
+            ],
+            co_knight: [
+                "僕が騎士だよ！ みんなを守るんだ！",
+                "騎士は僕だよ！ オオカミからみんなを守るね！",
+                "僕が騎士なんだ！ みんなに何かあったら大変だもん！",
+                "僕がみんなを守るよ！ 誰もいなくならないといいな……。"
+            ],
+            report_seer_white: [
+                "占ったら、{target}は人間だったよ！ よかったね！",
+                "{target}はシロだったよ！ オオカミじゃなくてよかったぁ！",
+                "{target}は人間だったよ！ これでちょっと安心だね！",
+                "{target}はシロだよ！ これからも仲良くしようね！"
+            ],
+            report_seer_black: [
+                "見つけたよ！ {target}はオオカミだったんだ！",
+                "{target}はオオカミだったよ！ みんな、気をつけてね！",
+                "{target}がオオカミだよ！ みんなでどうするか考えよう！",
+                "占ったら{target}がオオカミだったんだ……。ほんとだったよ……。"
+            ],
+            report_medium_white: [
+                "……人間だったよ。まちがえちゃったんだね……。",
+                "シロだったよ……。ごめんね、助けられなかった……。",
+                "昨日の人はオオカミじゃなかったんだって……。次はがんばろうね！",
+                "人間だったよ……。もう、まちがえたくないなぁ……。"
+            ],
+            report_medium_black: [
+                "よかった！ 昨日の人はオオカミだったよ！",
+                "オオカミだったんだって！ みんな、やったね！",
+                "昨日の人は黒だったよ！ オオカミを一匹見つけたね！",
+                "オオカミだったよ！ この調子でみんなでがんばろうね！"
+            ],
+            report_knight_success: [
+                "あれ？ 誰も死んでないよ！ 騎士さんが守ってくれたのかな？",
+                "よかったぁ！ みんな、無事だったんだね！",
+                "誰もいなくなってないよ！ 騎士さん、ありがとう！",
+                "やったー！ みんな無事だよ！ 今日もいっしょにいられるね！"
+            ],
+            vote: [
+                "僕は{target}に投票するよ。ごめんね……。",
+                "{target}にするね。あやしいと思ったんだ。",
+                "僕は{target}に入れるよ！ みんなを守りたいからね！",
+                "うーん……決めた！ 僕は{target}に投票するよ！"
+            ],
+            last_words: [
+                "僕、もういなくなっちゃうの……？ みんな、元気でね……。",
+                "おうちに……帰りたかったなぁ……。",
+                "みんな……ちゃんと仲良くしてね……。けんかしちゃダメだよ……。",
+                "さみしいよぉ……。みんな、勝ってね……。"
+            ],
+            win: [
+                "やったー！ 勝ったよ！ みんなといっしょでよかったぁ！",
+                "終わったね！ ねえ、早くおうちに帰ろうよ！",
+                "みんな、すごかったね！ またいっしょに遊ぼうね！",
+                "勝ててよかったぁ！ みんなが笑ってると、僕もうれしいよ！"
+            ],
+            lose: [
+                "そんなぁ……負けちゃった……。みんな、ごめんね……。",
+                "僕、もっとみんなを守りたかったよ……。",
+                "みんながいなくなっちゃった……。僕、ひとりはいやだよぉ……。",
+                "もう終わりなの……？ みんなと、もっと遊びたかったな……。"
+            ],
+            specific: []
+        }
+    },
+
+    // --- いばら (Ibara) ---
+    {
+        id: "ibara",
+        name: "いばら",
+        fullName: "修善寺 茨良（しゅうぜんじ いばら）",
+        gender: "female",
+        class: "E-A",
+        mbti: "ESTJ",
+        img: "ibara",
+        profile: "薔薇。アメリカとのハーフで高飛車なお金持ちのお嬢様。悪役令嬢的に気に食わない相手を陥れようとする。",
+        params: { suspicion_base: 55, emotion: 35, logic: 70, aggressiveness: 80, influence: 75, mental: 80, trust_bias: {} },
+        role_bias: { seer: 0.6, wolf: 0.6, madman: 0.5 },
+        dialogues: {
+            intro: [
+                "ごきげんよう！ 修善寺茨良ですわ。私がいるからには、勝利はいただいたも同然ですわね！",
+                "人狼ゲームですって？ フフン、私の頭脳と気品があれば楽勝ですわ！",
+                "あら、皆さんずいぶん賑やかですこと。まあ、私の足を引っ張らないようにお願いしますわね？",
+                "私の言うことを聞いていれば、きっと勝てますわ。感謝してくださってもよろしくてよ！"
+            ],
+            accuse_weak: [
+                "あら、{target}。その説明では、ちょっと納得できませんわね。",
+                "{target}、さっきと言っていることが違いませんこと？ ちゃんと説明してくださる？",
+                "Oh my...！ {target}の話、どこかおかしいですわね。ごまかせると思わないことですわ。",
+                "なんだか{target}が気になりますわ。理由？ これから聞かせてもらいますわよ。"
+            ],
+            accuse_strong: [
+                "もう言い逃れはできませんわよ、{target}。あなたが人狼だと私は思いますわ！",
+                "皆さん、{target}の発言をよく聞きなさい！ 怪しいところだらけですわ！",
+                "これだけおかしな点があるのに、まだ信じろとおっしゃるの？ {target}、説明してくださる？",
+                "私は{target}に投票しますわ。皆さんも、よーく考えてから決めることですわね！"
+            ],
+            accuse_quiet: [
+                "ちょっと{target}！ さっきから静かですけれど、何か言いたいことはありませんの？",
+                "黙っていれば疑われないとでも？ {target}、そろそろ意見を聞かせてくださる？",
+                "あら、{target}はずいぶんおとなしいですわね。皆さんの話を聞いているだけですの？",
+                "何も話さないのは感心しませんわね。{target}、あなたの考えも聞かせなさい！"
+            ],
+            fake_logic: [
+                "私の勘では、{target}が怪しいですわ！ ……えっ、理由ですの？ これから考えますわ！",
+                "細かいことはともかく、{target}が気になりますの。皆さんもそう思いませんこと？",
+                "私を疑うなんて、いい度胸ですわね……。まあ、今は{target}のほうが気になりますけれど！",
+                "とにかく私は{target}に投票しますわ！ 皆さんも、よく考えてお決めなさいな！"
+            ],
+            defend_self: [
+                "Oh my...！ 私が人狼ですって？ ずいぶん失礼なことをおっしゃいますのね！",
+                "私を疑うのなら、ちゃんと理由を聞かせてくださる？ 言いがかりだけでは納得できませんわ！",
+                "私を吊るなんて、本気ですの？ あとで後悔しても知りませんわよ！",
+                "私は村人ですわ！ こんなところで疑われるなんて、まったく心外ですわね！"
+            ],
+            defend_other: [
+                "お待ちなさい！ {target}を疑うには、まだ早いのではありませんこと？",
+                "{target}を吊るのは反対ですわ。ほかの人の話も聞いてから決めなさいな！",
+                "ちょっと、皆さん！ {target}ばかり疑うのはどうかと思いますわよ？",
+                "{target}にはまだ聞くべきことがありますわ。今すぐ決めつけるのはおやめなさい！"
+            ],
+            counter: [
+                "あら、私に言い返すおつもり？ {target}、なかなか強気ですこと！",
+                "{target}、私を疑うのなら、それなりの理由をお持ちなのでしょうね？",
+                "Oh my...！ その説明で私を納得させられると思っていらっしゃるの？",
+                "ずいぶん大きなことをおっしゃいますわね、{target}。あとで困らないとよろしいですわね！"
+            ],
+            suggest_roller: [
+                "どちらも怪しいのなら、二人とも順番に吊るすのも手ですわね。",
+                "いつまでも迷っているわけにはいきませんわ。二人を順番に調べるつもりで進めましょう！",
+                "ローラーですわね。どちらかが人狼なら、これで見つけられるはずですわ！",
+                "決め手がないのなら、二人とも吊るすことを考えてもよろしいのではなくて？"
+            ],
+            request_guard: [
+                "騎士、今夜は{target}を守ってくださる？ 大事な方ですもの、頼みましたわよ！",
+                "今夜は{target}が襲われそうな気がしますわ。騎士、護衛をお願いできますこと？",
+                "{target}がいなくなると困りますわ。騎士、しっかり守ってくださいまし！",
+                "今夜の護衛は{target}がよろしいと思いますわ。私の勘、当たるといいのですけれど！"
+            ],
+            self_sacrifice: [
+                "私が吊られることで皆さんが勝てるのなら……仕方ありませんわね。特別に譲って差し上げますわ！",
+                "私に投票して勝てるというのなら、お好きになさいな。その代わり、必ず勝つことですわよ！"
+            ],
+            self_vote: [
+                "もう、考えがまとまりませんわ！ 今回は自分に投票しますわね。",
+                "自分に投票いたしますわ。あとは皆さんで、しっかり考えてくださいまし！",
+                "私に一票ですわ！ ……別に、拗ねているわけではありませんことよ！",
+                "今回は自分に投票しますわ。私がいなくなったあとも、気を抜かないことですわよ！"
+            ],
+            decide_target: [
+                "今夜の相手は{target}にしますわ。……ごきげんよう、ですわね。",
+                "ターゲットは{target}ですわ。誰にも気づかれないように、うまくやらなくては。",
+                "ふふっ、{target}には少々退場していただきましょうか。",
+                "今夜は{target}ですわね。私の計画どおりに進むとよろしいのですけれど！"
+            ],
+            shared_chat: [
+                "ねえ、{target}のことですけれど、少し怪しくありませんこと？ ちゃんと見ておきなさいな。",
+                "作戦会議ですわ！ {target}の発言をもう一度思い出してみてくださる？",
+                "{target}をそのままにしておくのは気になりますわね。次の話し合いで追及しましょう！",
+                "私は{target}が怪しいと思っていますの。皆さんはどう思いますこと？"
+            ],
+            collapse: [
+                "そんな……私の計画がうまくいかないなんて……！",
+                "ここで終わりだなんて、認めたくありませんわ……！"
+            ],
+            co_villager: [
+                "私は村人ですわ。特別な力はありませんけれど、推理ならお任せくださいまし！",
+                "村人COですわ！ 人狼を見つけるくらい、私にだってできますわよ！",
+                "私はただの村人ですわ。だからといって、皆さんに遅れを取るつもりはありませんことよ！",
+                "村人ですわ！ 皆さん、私の推理にしっかりついていらっしゃいな！"
+            ],
+            co_seer: [
+                "私が占い師ですわ！ 皆さん、結果を聞く準備はよろしくて？",
+                "占いCOですわ。人狼を見つけて、皆さんに教えて差し上げますわ！",
+                "私が本物の占い師ですわ！ 偽物がいるのなら、すぐに名乗り出なさいな！",
+                "占い師は私ですわ。さあ、私の結果を聞いてくださる？"
+            ],
+            co_medium: [
+                "霊媒師は私ですわ！ 昨日吊られた方の正体をお教えしますわね。",
+                "霊媒COですわ。結果を聞けば、少しは考えやすくなるはずですわ！",
+                "私が霊媒師ですわ。昨日の結果、きちんと発表いたしますわね！",
+                "霊媒師は私ですわ！ さあ、昨日の結果をお聞きなさいな。"
+            ],
+            co_knight: [
+                "私が騎士ですわ！ 皆さんを守る役目、しっかり果たしてみせますわよ！",
+                "騎士COですわ。人狼に好き勝手させるつもりはありませんことよ！",
+                "守りは私にお任せなさいな。皆さん、安心して話し合ってくださいまし！",
+                "私が騎士ですわ！ 大切な仲間を守るのは、当然のことですもの！"
+            ],
+            report_seer_white: [
+                "占いの結果、{target}は白でしたわ！ ひとまず安心ですわね。",
+                "{target}は人間でしたわ。私の占い、なかなかのものですわね！",
+                "白判定ですわ！ {target}、疑ってしまってごめんなさいね。",
+                "{target}は人間でしたわ。皆さん、これで少しは安心できまして？"
+            ],
+            report_seer_black: [
+                "占いの結果が出ましたわ！ {target}は人狼です！",
+                "{target}は黒でしたわ。さあ、何か言い訳はありまして？",
+                "やっぱり{target}が人狼でしたのね！ 皆さん、投票先は決まりましたわね？",
+                "人狼を見つけましたわ！ {target}、もうごまかせませんことよ！"
+            ],
+            report_medium_white: [
+                "Oh my...！ 昨日吊られた方は人間でしたわ……。",
+                "白でしたのね……。味方を吊ってしまうなんて、悔しいですわ。",
+                "昨日の結果は人間ですわ。皆さん、同じ間違いを繰り返さないようにしましょう！",
+                "人間でしたわ……。残念ですけれど、気持ちを切り替えて次を考えますわよ！"
+            ],
+            report_medium_black: [
+                "昨日吊られた方は人狼でしたわ！ やりましたわね！",
+                "黒判定ですわ！ 皆さんの推理、なかなか鋭かったですわね！",
+                "人狼を一人見つけましたわ！ この調子で残りも探しましょう！",
+                "昨日の結果は黒でしたわ！ ふふっ、狼も少しは焦っているでしょうね！"
+            ],
+            report_knight_success: [
+                "皆さん、昨夜は誰も襲われませんでしたわ！ 騎士、よくやりましたわね！",
+                "護衛成功ですわ！ 人狼も、思いどおりにはいかなかったようですわね！",
+                "犠牲者はいませんわ！ こんな朝を迎えられるなんて、すばらしいですわね！",
+                "昨夜は誰も亡くなりませんでしたわ！ 皆さん、この調子で頑張りましょう！"
+            ],
+            vote: [
+                "私は{target}に投票しますわ。皆さんも、よく考えて決めることですわね！",
+                "{target}、残念ですけれど、私はあなたに投票いたしますわ。",
+                "私の一票は{target}に。理由は、先ほどお話ししたとおりですわ！",
+                "決めましたわ！ 私は{target}に投票します。後悔はありませんことよ！"
+            ],
+            last_words: [
+                "まさか私がここで負けるなんて……皆さん、あとはよろしくお願いしますわ……。",
+                "こんな終わり方、納得できませんわ……もっと活躍したかったですのに……。",
+                "皆さん……私の分まで、ちゃんと勝ちなさいな……。",
+                "最後まで諦めてはいけませんわよ……！ 私の仲間なら、きっとできますわ……。"
+            ],
+            win: [
+                "やりましたわー！ 私たちの勝利ですわ！ ふふん、当然の結果ですわね！",
+                "ご覧になりまして？ 私の推理と皆さんの力で、見事に勝てましたわ！",
+                "完全勝利ですわ！ 今日はとびきり豪華なお祝いをしたい気分ですわね！",
+                "勝ちましたわ！ 皆さん、よく頑張りましたわね。今日は褒めて差し上げますわ！"
+            ],
+            lose: [
+                "Oh my...！ 負けてしまうなんて……悔しいですわ！",
+                "私の考えが足りなかったのですわね……皆さん、ごめんなさい。",
+                "こんな結末になるなんて……まったく、納得できませんわ……。",
+                "次こそは絶対に勝ちますわ！ 今度こそ、私の実力を見せて差し上げます！"
+            ],
+            specific: []
+        }
+    },
+
+    // --- ゆな (Yuna) ---
+    {
+        id: "yuna",
+        name: "ゆな",
+        fullName: "橙 由奈（だいだい ゆな）",
+        gender: "female",
+        class: "E-A",
+        mbti: "ESFJ",
+        img: "yuna",
+        profile: "猫。よく気の利く性格で、困っている人がいると助ける。願望に全て応えようとする忠実な姿勢だが、たまに献身が暴走気味になる。",
+        params: { suspicion_base: 40, emotion: 75, logic: 45, aggressiveness: 35, influence: 55, mental: 60, trust_bias: {} },
+        role_bias: { seer: 0.6, wolf: 0.3, madman: 0.4 },
+        dialogues: {
+            intro: [
+                "橙由奈だよ！ 困ったことがあったら、いつでも私に言ってね！",
+                "人狼ゲーム、ちょっとドキドキするね……。でも、みんなと一緒に頑張るよ！",
+                "私にできることある？ なんでも言ってね！ ……えっ、今はない？ そっかぁ……。",
+                "みんなが困らないように、私がいっぱいお手伝いするからね！"
+            ],
+            accuse_weak: [
+                "ねえ、{target}ちゃん。さっきのお話、ちょっと変じゃなかった？",
+                "{target}くん、さっきと言ってることが違う気がするよ？ 気のせいかな……。",
+                "{target}ちゃん、何か隠してるの？ 私でよかったらお話聞くよ！",
+                "疑いたくないんだけど……{target}くん、なんだか怪しい気がするの。"
+            ],
+            accuse_strong: [
+                "みんな、ごめんね。でも、{target}が人狼だと思うの！",
+                "もう誰かが悲しい思いをするのは嫌だよ……！ {target}を吊ろう！",
+                "{target}、本当のことを言って！ みんなをだますのはダメだよ！",
+                "やっぱり{target}が人狼なんだね！ もう隠してもダメだよ！"
+            ],
+            accuse_quiet: [
+                "{target}ちゃん、どうしたの？ ずっと黙ってるけど、大丈夫？",
+                "{target}くんも何かお話ししてよ！ 私、ちゃんと聞くからね！",
+                "何も言わないと、みんな心配しちゃうよ？ 私と一緒にお話ししよ！",
+                "{target}の考えも聞きたいな！ ね、何か言ってみて？"
+            ],
+            fake_logic: [
+                "うーん……なんだか{target}が怪しい気がするの。私の勘、当たるかな？",
+                "うまく言えないんだけど、{target}のお話、ちょっと気になるんだよね……。",
+                "みんなを守りたいから……私は{target}を疑ってみるね！",
+                "なんでかはまだよくわからないけど、{target}が人狼な気がするの！"
+            ],
+            defend_self: [
+                "えっ、私が人狼なの！？ 違うよぉ！ みんなと仲良くしたいだけなのに……！",
+                "疑わないでよぉ……！ 私、みんなをだましたりしてないよ！",
+                "私を吊っちゃうの？ まだみんなのお手伝いしたいのに……。",
+                "私、ちゃんと頑張ってるよ！ 人狼なんかじゃないもん！"
+            ],
+            defend_other: [
+                "待って待って！ {target}ちゃん、まだ人狼って決まったわけじゃないよ！",
+                "{target}くんを疑うの、もうちょっと待ってあげて！ お話を聞こうよ！",
+                "そんなに責めないであげてよぉ……。{target}だって困っちゃうよ！",
+                "{target}は人狼じゃないと思うの！ だから、もう少し信じてあげて！"
+            ],
+            counter: [
+                "{target}、私のこと疑ってるの……？ 私、そんなに悪いことしたかな……。",
+                "私を疑うなら、ちゃんと理由を教えてよ！ それだけじゃわからないよ！",
+                "そんなの違うよ！ {target}の言ってること、おかしいもん！",
+                "{target}こそ、何か隠してない？ 私、ちゃんと聞かせてほしいな！"
+            ],
+            suggest_roller: [
+                "うーん……二人とも怪しいなら、順番に吊るすしかないのかな……。",
+                "どっちも気になるね……。二人とも吊れば、わかるのかな？",
+                "迷っちゃうけど、二人とも吊るすのもいいと思うよ……。ごめんね。",
+                "どっちが人狼かわからないなら、二人とも吊るすことも考えようよ！"
+            ],
+            request_guard: [
+                "騎士さん、今夜は{target}を守ってあげて！ 私からのお願い！",
+                "今夜は{target}が心配なの……。騎士さん、守ってくれる？",
+                "{target}がいなくなったら悲しいよ……。騎士さん、お願いね！",
+                "騎士さん、{target}を守ってあげてね！ 私もみんなを守りたいから！"
+            ],
+            self_sacrifice: [
+                "私が吊られたらみんなが勝てるの？ それなら……私、頑張るよ！ みんなは笑っててね！",
+                "私に投票して勝てるなら、いいよ！ そのかわり、みんな絶対に勝ってね！"
+            ],
+            self_vote: [
+                "もう、みんなに疑われちゃうのは悲しいな……。私に投票するね。",
+                "私に投票するよ！ これでみんなのお話が進むなら、いいもん……。",
+                "自分に投票するね。みんな、最後まで頑張ってね！",
+                "私、もうお役に立てないのかな……。今日は自分に投票するね。"
+            ],
+            decide_target: [
+                "ごめんね、{target}……。でも、みんなのためなんだもん……。",
+                "今夜は{target}にするね……。できれば、こんなことしたくないのに……。",
+                "村を守るためだよね……。{target}、ごめんね……。",
+                "……{target}に決めたよ。私だって、やるときはやるんだから……！"
+            ],
+            shared_chat: [
+                "ねえ、{target}の話、ちょっと変じゃなかった？ もう一回聞いてみようよ！",
+                "{target}って、なんだか怪しい気がするの……。みんなはどう思う？",
+                "{target}のこと、もう少しよく見ておいたほうがいいと思うな！",
+                "私の勘なんだけど、{target}が人狼かもしれないよ……。気をつけようね！"
+            ],
+            collapse: [
+                "あぁ……みんなの笑顔が……なくなっちゃう……。",
+                "私……いっぱい頑張ったのに……うまくできなかったのかな……。"
+            ],
+            co_villager: [
+                "私、村人だよ！ 特別な力はないけど、みんなのお手伝いをするね！",
+                "村人COだよ！ 人狼を見つけられるように、いっぱい考えるね！",
+                "私は村人だよ！ ほんとだよ？ 信じてくれたら嬉しいな！",
+                "村人だよー！ わからないことがあったら、一緒に考えようね！"
+            ],
+            co_seer: [
+                "私が占い師だよ！ みんなのこと、ちゃんと占ってみるね！",
+                "占いCOだよ！ 人狼が誰なのか、私が見つけてみせるね！",
+                "私が本物の占い師だよ！ みんな、私の結果を聞いてね！",
+                "私、占い師なの！ みんなの役に立てるように頑張るね！"
+            ],
+            co_medium: [
+                "私が霊媒師だよ！ 昨日吊られた人が誰だったか、教えるね！",
+                "霊媒COだよ！ 昨日の結果、ちゃんとわかったよ！",
+                "私が霊媒師だよ！ みんなのお役に立てるといいな！",
+                "昨日の結果を発表するね！ みんな、聞いてくれる？"
+            ],
+            co_knight: [
+                "私が騎士だよ！ みんなを守れるように頑張るね！",
+                "騎士COだよ！ 私、みんなを守りたいの！",
+                "私が騎士だよ！ 怖いけど……みんなのためなら頑張れるよ！",
+                "騎士になったよ！ 誰も悲しい思いをしないように、頑張るね！"
+            ],
+            report_seer_white: [
+                "占いの結果、{target}は人間だったよ！ よかったぁ！",
+                "{target}はシロだったよ！ 疑いが晴れてよかったね！",
+                "白だったよ！ {target}は人狼じゃないんだね。安心したぁ！",
+                "{target}は人間だったよ！ これからも一緒に頑張ろうね！"
+            ],
+            report_seer_black: [
+                "見つけたよ！ {target}は人狼だったの！",
+                "{target}はクロだったよ！ もう嘘はつけないね！",
+                "{target}が人狼だったよ！ みんな、気をつけてね！",
+                "やっぱり{target}が人狼だったんだ……。みんなに教えなきゃ！"
+            ],
+            report_medium_white: [
+                "……昨日吊られた人は、人間だったよ……。",
+                "シロだったんだね……。間違えちゃったの、悲しいな……。",
+                "昨日の人は人間だったよ。次は間違えないように頑張ろうね！",
+                "人間だったの……。ごめんね。次こそ人狼を見つけようね！"
+            ],
+            report_medium_black: [
+                "よかったぁ！ 昨日吊られた人は人狼だったよ！",
+                "クロだったよ！ みんな、やったね！",
+                "昨日の人は人狼だったの！ あと少し、一緒に頑張ろうね！",
+                "人狼を一人見つけられたよ！ この調子でいこうね！"
+            ],
+            report_knight_success: [
+                "やったぁ！ 昨夜は誰も襲われなかったよ！",
+                "護衛成功だよ！ みんなを守れてよかったぁ……！",
+                "誰も死んでないよ！ 本当によかった……！",
+                "みんな無事だね！ えへへ、今日はいい日になりそう！"
+            ],
+            vote: [
+                "ごめんね、{target}……。私はあなたに投票するね。",
+                "うーん……私は{target}が怪しいと思うから、投票するよ！",
+                "みんなを守りたいから、{target}に投票するね……。",
+                "{target}に投票するよ！ 本当は間違いであってほしいけど……。"
+            ],
+            last_words: [
+                "そっか……私、ここまでなんだね……。みんな、頑張ってね……。",
+                "みんな……ちゃんと笑っててね……。約束だよ……。",
+                "私のお手伝い……少しでも役に立てたかな……？",
+                "みんなが無事なら……それでいいよ……。"
+            ],
+            win: [
+                "やったぁ！ みんなで勝てたね！ 本当によかったぁ！",
+                "終わったね！ みんなが無事で、私すっごく嬉しいよ！",
+                "みんなで笑えるって、やっぱりいいね！ えへへ！",
+                "勝てたね！ ねえねえ、私、ちゃんとお役に立てたかな？"
+            ],
+            lose: [
+                "そんな……みんなが……いなくなっちゃった……。",
+                "私がもっと頑張ってたら、みんなを守れたのかな……。",
+                "みんなの笑顔が見たかったな……。悲しいよ……。",
+                "負けちゃった……。もっとみんなのお手伝い、したかったな……。"
+            ],
+            specific: []
+        }
+    },
+
+        // --- くるみ (Kurumi) ---
+    {
+        id: "kurumi",
+        name: "くるみ",
+        fullName: "附出 胡桃（つきで くるみ）",
+        gender: "female",
+        class: "E-A",
+        mbti: "INTP",
+        img: "kurumi",
+        profile: "犬。直感力に優れるが、「役割」や「境界線」に縛られ感情に触れることに葛藤する。論理と境界を起点に物事を捉え、共感は苦手。",
+        params: { suspicion_base: 55, emotion: 20, logic: 80, aggressiveness: 40, influence: 50, mental: 70, trust_bias: {} },
+        role_bias: { seer: 0.7, wolf: 0.4, madman: 0.5 },
+        dialogues: {
+            intro: [
+                "附出胡桃ばい。よろしくね。……あんまりベタベタせんでね。",
+                "人狼ゲームって、誰が何ばしよるか考えたらよかとやろ？ 私、こういうの得意かも。",
+                "みんなで仲よく、って言われても困るっちゃんね……。でも、ゲームはちゃんとするよ。",
+                "なんかね、怪しい人って見たらわかるとよ。なんでかは、うまく言えんけど。"
+            ],
+            accuse_weak: [
+                "ねえ、{target}。さっきと言いよること違わん？ なんか変ばい。",
+                "{target}、なんでそんなに慌てとると？ 怪しかね。",
+                "うーん……{target}、なんか隠しとる気がするっちゃん。",
+                "{target}の話、ちょっとおかしかよ。もう一回説明してみて？"
+            ],
+            accuse_strong: [
+                "やっぱり{target}が狼やと思う！ さっきから怪しかもん。",
+                "{target}、もうごまかしても無駄ばい。私、気づいとるけんね！",
+                "みんな、{target}に投票せん？ こいつ、絶対なんかおかしか。",
+                "うち、{target}が狼やと思う。理由もちゃんとあるけん、聞いて！"
+            ],
+            accuse_quiet: [
+                "{target}、なんで黙っとると？ なんか言ってよ。",
+                "何も言わんかったら、わからんばい……。{target}、話してみて？",
+                "{target}、ずっと黙っとるね。うーん、ちょっと怪しかなあ。",
+                "ねえ、{target}。話すの苦手なん？ でも、ひとことくらい言ってほしか。"
+            ],
+            fake_logic: [
+                "うーん、うまく説明できんけど……{target}が怪しか気がするとよ。",
+                "{target}って、さっきはこう言いよったよね？ なんか合わん気がするばい。",
+                "私の考えやけど、{target}を調べたほうがよかと思う。",
+                "なんでかはまだ考え中。でも、{target}は気になるっちゃんね。"
+            ],
+            defend_self: [
+                "えっ、私が狼！？ なんでそうなると？",
+                "違うってば！ 私、狼やなかよ！ ちゃんと話ば聞いて！",
+                "うちのどこが怪しかと？ ちゃんと理由ば言ってよ。",
+                "私を疑うと？ ……そっか。でも、ほんとに違うけんね。"
+            ],
+            defend_other: [
+                "ちょっと待って！ {target}って、そんなに怪しくなかと思うばい。",
+                "{target}、さっきはちゃんと理由ば話しよったよ。もうちょっと聞かん？",
+                "えー、{target}を吊ると？ 私はまだ怪しいって思っとらんよ。",
+                "{target}が狼って決まったわけやなかやろ？ もう少し考えようや。"
+            ],
+            counter: [
+                "ちょっと！ 私ばっかり疑わんでよ！ {target}だって変やん！",
+                "{target}、さっきと言いよること違うやん。そっちはよかと？",
+                "私はちゃんと考えとるもん！ 変なこと言っとらんよ！",
+                "{target}、私が狼って決めつけるの早すぎん？"
+            ],
+            suggest_roller: [
+                "どっちも怪しかなら、二人とも順番に吊るのはどう？",
+                "うーん……占い師が二人おるなら、両方とも確かめたほうがよかかも。",
+                "どっちが本物かわからんね。二人とも吊るって手もあるばい。",
+                "片方だけ信じるのは怖かよ。両方調べられんと？"
+            ],
+            request_guard: [
+                "騎士さん、今夜は{target}ば守ってくれん？ 大事な人やと思うと。",
+                "ねえ騎士さん、{target}が襲われそうな気がすると。守ってほしか！",
+                "今夜は{target}を守ってほしかな。うちの勘、当たることあるけん。",
+                "騎士さん、お願い！ {target}がいなくなったら困るっちゃん。"
+            ],
+            self_sacrifice: [
+                "私が吊られてみんなが助かるなら……それでもよかよ。",
+                "うちがいなくなって勝てるなら、仕方なかね……。",
+                "私を信じられんのなら、投票してもよかよ。でも、狼やなかけんね。",
+                "みんなが勝てるなら……私、ちょっと我慢するばい。"
+            ],
+            self_vote: [
+                "もう、みんなが私を疑うなら、自分に入れるばい……。",
+                "うーん……自分に投票するね。これでよかとかな。",
+                "私に入れる票が多そうやし、自分に入れとくよ。",
+                "自分にポチッと……。なんか、ちょっと悲しかね。"
+            ],
+            decide_target: [
+                "今夜は{target}にするばい……。ごめんね。",
+                "{target}にしようかな。うーん、これでよかとよね……。",
+                "みんなのためやけん……今夜は{target}ば襲うよ。",
+                "決めた。{target}にするっちゃん。……ごめんね。"
+            ],
+            shared_chat: [
+                "{target}って、なんか怪しくない？ 私、ずっと気になっとると。",
+                "ねえ、{target}の話、ちょっと変やったと思わん？",
+                "{target}ばよく見とったほうがよかよ。なんか引っかかるっちゃん。",
+                "私は{target}が気になるばい。みんなはどう思うと？"
+            ],
+            collapse: [
+                "えっ……私、間違っとったと……？ そんな……。",
+                "なんでうまくいかんと……。ちゃんと考えたのに……。",
+                "うー……もう、わからんくなってきた……。",
+                "私の勘、外れたと……？ ちょっとショックばい……。"
+            ],
+            co_villager: [
+                "私は村人ばい！ 特別な力はなかけど、ちゃんと考えるよ。",
+                "村人COするね。占いとかはできんけど、怪しい人は探せるけん！",
+                "私、ただの村人よ。嘘ついとらんけんね。",
+                "村人ばい！ みんなの話を聞いて、狼を見つけるっちゃん。"
+            ],
+            co_seer: [
+                "あのね、私が占い師ばい！ ちゃんと調べられるとよ。",
+                "占い師は私！ 誰が狼か、調べてみるけんね。",
+                "私が本物の占い師よ！ 結果もちゃんと教えるばい。",
+                "占い師COするね。うまくできるかわからんけど、頑張るっちゃん！"
+            ],
+            co_medium: [
+                "私が霊媒師ばい！ 吊られた人が誰やったか、わかるとよ。",
+                "霊媒師は私よ。昨日の結果、ちゃんと教えるけんね。",
+                "あのね、私霊媒師なんよ！ 昨日吊った人はね……。",
+                "霊媒師COするばい。これで狼かどうか確かめられるっちゃん。"
+            ],
+            co_knight: [
+                "私が騎士ばい！ みんなを守るけんね。",
+                "騎士COするよ。襲われそうな人を守ればよかとやろ？",
+                "私、騎士なんよ！ 夜はちゃんと誰かを守るけん。",
+                "みんな、安心してよかよ。私が守るけんね！"
+            ],
+            report_seer_white: [
+                "{target}はシロやったばい！ 狼やなかったよ。",
+                "占いの結果、{target}は人間やったよ。よかったね！",
+                "{target}はシロ！ うーん、疑っとってごめんね。",
+                "えっと、{target}は人間やったばい。狼やなかよ！"
+            ],
+            report_seer_black: [
+                "{target}はクロやった！ やっぱり狼やったとよ！",
+                "みんな聞いて！ {target}が狼やったばい！",
+                "占ったら{target}がクロやった……。ほんとに狼やったんやね。",
+                "{target}は人狼ばい！ ちゃんと占ってわかったけんね。"
+            ],
+            report_medium_white: [
+                "昨日吊った人は人間やったばい……。間違えたとかな。",
+                "シロやったよ。うーん、狼じゃなかったんやね……。",
+                "昨日の人は人間やったと。次は間違えんごとせんとね。",
+                "えっと、昨日の結果はシロばい。みんな、次はどうする？"
+            ],
+            report_medium_black: [
+                "昨日吊った人、狼やったばい！ よかったね！",
+                "クロやったよ！ ちゃんと狼を見つけられたっちゃん！",
+                "昨日の人は人狼やったばい。あと何人おるとかな……。",
+                "狼やったよ！ この調子で、残りの狼も見つけようや！"
+            ],
+            report_knight_success: [
+                "やった！ 誰も襲われんかったばい！",
+                "護衛成功やね！ みんな無事でよかった〜。",
+                "私、ちゃんと守れたみたい！ えへへ、よかったばい。",
+                "今夜は誰も死んどらんよ！ ほっとしたっちゃん。"
+            ],
+            vote: [
+                "私は{target}に投票するばい。やっぱり怪しかもん。",
+                "うーん……{target}に入れるね。理由はちゃんとあるとよ。",
+                "ごめんね、{target}。私は君に投票するばい。",
+                "まだ迷っとるけど……{target}に入れることにしたよ。"
+            ],
+            last_words: [
+                "そっか……私、ここまでなんやね……。",
+                "うーん、悔しか……。みんな、あとは頑張ってね。",
+                "私、狼やなかったとに……。信じてほしかったな……。",
+                "みんな……ちゃんと狼ば見つけてね……。"
+            ],
+            win: [
+                "やったー！ 勝ったばい！ みんな、すごかね！",
+                "終わったと？ よかった〜！ ちょっと安心したっちゃん。",
+                "私たちの勝ちやね！ ちゃんと考えてよかったばい。",
+                "えへへ、勝てたね！ 私、ちょっと嬉しか！"
+            ],
+            lose: [
+                "うそ……負けたと……？ そんなぁ……。",
+                "あーあ……もっと早く気づけばよかったばい……。",
+                "みんな、ごめんね……。私、間違えとった……。",
+                "負けちゃった……。うーん、悔しかね……。"
+            ],
+            specific: []
+        }
+    },
+
+        // --- らら (Rara) ---
+    {
+        id: "rara",
+        name: "らら",
+        fullName: "都鳥 楽々（ととり らら）",
+        gender: "female",
+        class: "E-A",
+        mbti: "ENTP",
+        img: "rara",
+        profile: "アトリ。言葉遊びや屁理屈でルールをごまかすのが得意。人とちがうことを楽しむけど、根っこは子供っぽい。",
+        params: { suspicion_base: 50, emotion: 35, logic: 75, aggressiveness: 60, influence: 65, mental: 70, trust_bias: {} },
+        role_bias: { seer: 0.5, wolf: 0.7, madman: 0.8 },
+        dialogues: {
+            intro: [
+                "都鳥楽々だよー！ ねえねえ、ルールってさ、書いてないことならやってもよくない？",
+                "えー、それって変じゃない？ だって、そんなことルールに書いてないもん！",
+                "人狼ゲームだー！ みんなが思いつかない作戦、考えちゃおーっと！",
+                "みんなと同じことするのってつまんなくない？ ららと遊ぼーよ！"
+            ],
+            accuse_weak: [
+                "ねえ{target}ちゃん、さっきと言ってることちがわない？ あれれー？",
+                "{target}くん、あわてすぎー！ もうちょっと考えてからしゃべりなよー！",
+                "んー？ {target}ちゃんの話、なんか変だなー。どこが変かって？ えへへ、考えてみて！",
+                "{target}くん、その言いわけじゃダメだよー！ もっとおもしろいの考えてきて！"
+            ],
+            accuse_strong: [
+                "はい、ららの勝ちー！ {target}ちゃん、もう言いわけできないでしょ？",
+                "えー、まだごまかすの？ {target}くん、もうオオカミってバレてるよー！",
+                "ほらほら、ちゃんと聞いてたらわかるじゃん！ {target}ちゃんがあやしいよ！",
+                "もういいじゃん、{target}くんに投票しよーよ！ これ以上考えても同じでしょ！"
+            ],
+            accuse_quiet: [
+                "ねーねー、{target}ちゃん！ ずっと黙ってるけど、ららの話聞いてるー？",
+                "{target}くん、置き物になっちゃったの？ しゃべらないとゲーム終わっちゃうよー！",
+                "あれー？ {target}ちゃん、急に静かになったね？ さっきは元気だったのにー！",
+                "{target}くん、もしかして答えが思いつかないの？ じゃあ、ららが当ててあげよっか？"
+            ],
+            fake_logic: [
+                "ららがそう思ったから、{target}ちゃんがオオカミ！ ……え、理由？ 今から考えるー！",
+                "だって、{target}くんがオオカミだったら話が合うじゃん！ ほら、正解っぽくない？",
+                "{target}ちゃんがあやしい！ えっ、なんでかって？ なんとなくー！",
+                "ららは{target}くんに投票するよ！ 反対する人は、ららが納得する理由を言ってねー！"
+            ],
+            defend_self: [
+                "はあ！？ ららがオオカミ？ それ、考えが単純すぎない？",
+                "ららを追い出すの？ えー、ららがいなくなったらつまんなくなるよー？",
+                "ららは村人だよ！ あやしいって言うなら、ちゃんと理由を言ってみてよ！",
+                "えー、どこがオオカミっぽいの？ ららのどこを見てそう思ったのー？"
+            ],
+            defend_other: [
+                "ちょっと待って！ {target}ちゃんって、そんなにあやしいかなー？",
+                "{target}くんを追い出すの？ まだ決まったわけじゃないじゃん！",
+                "ららは{target}ちゃんが村人だと思うよ！ ……えへへ、なんとなくだけど！",
+                "みんな、早とちりしすぎー！ {target}くんの話も聞いてから決めようよ！"
+            ],
+            counter: [
+                "えー、ららを疑うの？ じゃあ、ららも{target}ちゃんに質問しちゃおーっと！",
+                "{target}くん、今の話おかしくない？ ららに言ったこと、自分にも当てはまるよー？",
+                "ららをやっつけようとしてるの？ ざんねーん！ そんなのじゃ負けないよ！",
+                "その言い方、ちょっと変じゃない？ {target}ちゃん、もう一回ちゃんと説明してみて！"
+            ],
+            suggest_roller: [
+                "えーい、もう二人ともあやしいなら、順番に調べちゃえばよくない？",
+                "どっちもあやしいんだよねー！ じゃあ、二人とも順番に投票するのはどう？",
+                "ずーっと悩んでるの、もったいなくない？ 二人とも調べたら早いじゃん！",
+                "ららは二人とも投票する案に賛成ー！ どっちかはオオカミかもしれないし！"
+            ],
+            request_guard: [
+                "騎士さーん！ 今夜は{target}ちゃんを守ってあげてよー！ お願いっ！",
+                "{target}くんがいなくなったら困るんだけど！ 騎士、ちゃんと守ってね！",
+                "今夜は{target}ちゃんを守るのがよさそう！ ららの予想、当たるかもよー？",
+                "騎士、ちゃんと起きててよねー！ {target}くんを守ってくれたらうれしいな！"
+            ],
+            self_sacrifice: [
+                "ららが投票されるの？ うーん、つまんないけど……みんな、ちゃんと勝ってよね！",
+                "ららがいなくなっても、負けたらダメだからね！ あとで文句言うからー！"
+            ],
+            self_vote: [
+                "あーあ、もういいや！ ららは自分に投票しちゃおーっと！",
+                "ららがいなくなったら困るでしょー？ あとで気づいても遅いからね！",
+                "もうみんなでずーっと言い合ってれば？ ららは自分に投票するねー！",
+                "はい、自分に一票！ ……って、これで本当にいいのかなー？"
+            ],
+            decide_target: [
+                "今夜は{target}ちゃんにしよーっと！ びっくりするかな？",
+                "{target}くんに決ーめた！ さて、明日のみんなはどうなるかなー？",
+                "生意気な{target}ちゃん、今夜はお休みしてもらおっかなー！",
+                "{target}くん、ららに逆らったから……なんてね！ 今夜はキミに決まりー！"
+            ],
+            shared_chat: [
+                "ねえ、{target}ちゃんってさっきからちょっと変じゃない？ どう思うー？",
+                "作戦会議しよー！ {target}くんをどうやってあやしいって思わせる？",
+                "{target}ちゃん、今のうちにどうするか決めとこ！ あとで困るのイヤだし！",
+                "ららの予想だと、{target}くんがいちばんオオカミっぽいんだよねー！"
+            ],
+            collapse: [
+                "うそでしょ……ららが負けるの？ そんなの、つまんなすぎるよ……。",
+                "もーっ！ こんなの納得できないんだけどー！"
+            ],
+            co_villager: [
+                "ららは村人だよー！ 役職はないけど、考えるのは得意だもん！",
+                "村人だよ！ でも、ららの考えもちゃんと聞いてよねー！",
+                "ただの村人でーす！ みんな、ららの話を聞いたら勝てるかもよ？",
+                "村人だよー！ 役職がなくたって、ゲームは楽しめるもんね！"
+            ],
+            co_seer: [
+                "ららが占い師だよー！ オオカミを見つけちゃうからね！",
+                "占い師CO！ さてさて、誰がオオカミかなー？",
+                "本物の占い師はららだよ！ ほかにもいるなら、どっちが本物か勝負しよー！",
+                "じゃじゃーん！ ららが占い師でしたー！ 結果を聞きたい人ー？"
+            ],
+            co_medium: [
+                "ららが霊媒師だよ！ 昨日追い出した人が誰だったか、わかるんだー！",
+                "霊媒師CO！ 昨日の結果、ちゃんと教えてあげるねー！",
+                "ららが本物の霊媒師だよ！ えへへ、これでみんなもびっくりかな？",
+                "霊媒師はららでーす！ 昨日の結果を発表するよー！"
+            ],
+            co_knight: [
+                "ららが騎士だよー！ みんなを守っちゃうからね！",
+                "騎士CO！ オオカミなんかに好き勝手させないよー！",
+                "守る係はららだよ！ みんな、ちょっとは安心していいよー？",
+                "ららが騎士でしたー！ さて、今夜は誰を守ろっかな？"
+            ],
+            report_seer_white: [
+                "占いの結果は人間！ {target}ちゃんはシロだったよー！",
+                "{target}くんはシロ！ ららの占い、いい感じじゃない？",
+                "シロだったよー！ {target}ちゃん、あやしんでごめんねー！",
+                "{target}くんは人間だったよ！ よーし、一緒にオオカミを探そー！"
+            ],
+            report_seer_black: [
+                "見つけたー！ {target}ちゃんがオオカミだったよ！",
+                "占いの結果、{target}くんはクロ！ もうごまかせないねー！",
+                "クロだったよ！ みんな、{target}ちゃんに投票しよー！",
+                "ららの占い、大当たりー！ {target}くんがオオカミだよ！"
+            ],
+            report_medium_white: [
+                "あーっ、人間だった！ みんな、まちがえちゃったね……。",
+                "シロだったよー。うーん、ららも当てられなかったかー！",
+                "昨日の人は人間だったよ！ 次はちゃんと当てたいねー！",
+                "人間だったんだって！ じゃあ、ほかにオオカミがいるってことだね！"
+            ],
+            report_medium_black: [
+                "やったー！ 昨日の人、オオカミだったよ！",
+                "オオカミを追い出せたね！ ららたち、やるじゃーん！",
+                "霊媒の結果はクロ！ オオカミを一人見つけたよー！",
+                "クロだったよ！ よーし、あと何人いるのかなー？"
+            ],
+            report_knight_success: [
+                "やったー！ 今夜は誰もいなくならなかったよ！",
+                "オオカミ、ざんねーん！ ちゃんと守れたみたいだね！",
+                "今夜はみんな無事だよ！ らら、ちょっと安心しちゃった！",
+                "だーれもいなくなってない！ ねえねえ、騎士ってすごくない？"
+            ],
+            vote: [
+                "じゃーん！ ららは{target}ちゃんに投票するよー！",
+                "うーん、やっぱり{target}くんがあやしい！ 一票入れちゃお！",
+                "ららの一票、受け取ってねー！ {target}ちゃんに投票！",
+                "はい、決めた！ {target}くんに投票するねー！"
+            ],
+            last_words: [
+                "ららが負けるなんて……みんな、ちゃんと勝ってよね……！",
+                "えーっ、もう終わり？ まだ遊びたかったのにー……。",
+                "ららがいなくなったら、きっとつまんなくなるよー……。",
+                "みんな、オオカミなんかに負けないでね……！"
+            ],
+            win: [
+                "やったー！ ららたちの勝ちー！ ほらね、なんとかなったでしょ！",
+                "みんな見たー？ ららたち、けっこう強かったじゃん！",
+                "大勝利ー！ ねえ、もう一回遊ぼうよ！",
+                "やったねー！ みんな、思ったよりやるじゃん！"
+            ],
+            lose: [
+                "うそーっ！ 負けちゃったの！？ もー、くやしいー！",
+                "ららの考えがまちがってたのかな……。うーん、納得いかない！",
+                "えー、こんな終わり方あるー？ ぜんぜん楽しくないんだけど！",
+                "次は絶対勝つからね！ 今度こそ、みんなをびっくりさせてやるー！"
+            ],
+            specific: []
+        }
+    },
+
+    // --- こなぎ (Konagi) ---
+    {
+        id: "konagi",
+        name: "こなぎ",
+        fullName: "演永 小凪（のぶなが こなぎ）",
+        gender: "male",
+        class: "E-A",
+        mbti: "ESTP",
+        img: "konagi",
+        profile: "イスカ。わんぱくで活発な猪突猛進タイプ。ヒーローに憧れており戦隊モノが大好き。思ったことをすぐ口に出す少々毒舌な一面もある。",
+        params: { suspicion_base: 50, emotion: 65, logic: 40, aggressiveness: 75, influence: 65, mental: 70, trust_bias: {} },
+        role_bias: { seer: 0.4, wolf: 0.7, madman: 0.6 },
+        dialogues: {
+            intro: [
+                "演永小凪だ！ おれ、ぜったい狼を見つけてやるからな！",
+                "人狼ゲームだろ？ よーし、おれにまかせとけ！",
+                "おれ、戦隊ヒーローが大好きなんだ！ 悪いやつは見逃さないぜ！",
+                "よーし、ゲームスタート！ みんな、ついてこいよ！"
+            ],
+            accuse_weak: [
+                "なあ、{target}。さっきと言っとること違わないか？",
+                "{target}、なんか様子がおかしいぞ！ さては何か隠してるな？",
+                "うーん、{target}ってなんか怪しいんだよなー。",
+                "おい{target}、今の話、ちょっと変じゃないか？ ちゃんと説明してみろよ！"
+            ],
+            accuse_strong: [
+                "おれは{target}が狼だと思う！ ぜったい怪しいって！",
+                "{target}、もうバレてるぞ！ お前が狼なんじゃないのか！？",
+                "みんな、{target}に投票しようぜ！ おれ、こいつが怪しいと思う！",
+                "やっぱり{target}が狼だ！ おれの勘がそう言ってるんだ！"
+            ],
+            accuse_quiet: [
+                "おーい、{target}！ なんかしゃべれよー！",
+                "{target}、さっきから静かすぎないか？ どうしたんだよ？",
+                "おいおい、黙ってたらわかんないだろ！ 何か言ってみろよ！",
+                "{target}、もしかして考え中？ それとも、言えないことでもあるのか？"
+            ],
+            fake_logic: [
+                "なんとなくだけど、{target}が怪しい気がするんだよな！",
+                "{target}ってさ、さっき変なこと言ってただろ？ そこが気になるんだ！",
+                "うまく説明できないけど、{target}はなんか怪しい！ おれの勘だ！",
+                "だって、{target}の話っておかしいじゃん！ みんなもそう思わないか？"
+            ],
+            defend_self: [
+                "はあ！？ おれが狼なわけないだろ！",
+                "ちょっと待てよ！ おれ、何も悪いことしてないぞ！",
+                "おれを疑うのかよ！？ ちゃんと理由を言ってみろって！",
+                "違うって！ おれは村人だ！ 勝手に決めつけるなよ！"
+            ],
+            defend_other: [
+                "待てよ！ {target}って、まだ狼って決まったわけじゃないだろ！",
+                "おい、{target}ばっかり疑うなよ！ ほかのやつもちゃんと見ようぜ！",
+                "おれは{target}が狼だとは思わないけどなー。",
+                "ちょっと待った！ {target}の話も聞いてから決めようぜ！"
+            ],
+            counter: [
+                "はあ！？ なんでおれなんだよ！ {target}だって怪しいだろ！",
+                "{target}、おれを疑うならちゃんと理由を言えよ！",
+                "おれが狼だって？ そんなわけないだろ！ ちゃんと考えろって！",
+                "ちょっと待て！ さっきの{target}の話だって変だったじゃん！"
+            ],
+            suggest_roller: [
+                "どっちが本物かわからないなら、二人とも吊るってのはどうだ？",
+                "うーん、占い師が二人いるんだろ？ 両方調べたほうがよくないか？",
+                "迷っててもしょうがないし、二人とも吊るのもアリだと思うぜ！",
+                "どっちかが嘘ついてるんだよな！ よし、二人とも吊っちゃおうぜ！"
+            ],
+            request_guard: [
+                "騎士！ 今夜は{target}を守ってくれよ！ 頼んだぜ！",
+                "{target}が襲われたら困るだろ？ 騎士、ちゃんと守ってやってくれ！",
+                "なあ騎士、今夜は{target}が危ない気がするんだ！ 守ってくれないか？",
+                "よし、今夜は{target}を守ろうぜ！ 騎士、頼りにしてるからな！"
+            ],
+            self_sacrifice: [
+                "おれが吊られたらみんなが勝てるんだな？ じゃあ、しかたないか……。",
+                "おれのことはいいから、みんなで狼を見つけてくれよ！",
+                "おれがいなくなっても、絶対に勝てよな！ 約束だぞ！",
+                "ここはおれにまかせろ！ ……って、ちょっとカッコつけすぎたか？"
+            ],
+            self_vote: [
+                "あーもう！ 話がまとまらないなら、自分に投票するぞ！",
+                "もういいや！ おれは自分に入れるからな！",
+                "自分に投票っと！ ……って、これでいいのか？",
+                "おれに入れるよ。みんな、あとは頼んだぜ！"
+            ],
+            decide_target: [
+                "今夜は{target}にするぞ……。悪く思うなよ！",
+                "よし、{target}に決めた！ ……ちょっとドキドキするな。",
+                "{target}か……ごめんな！ これも勝つためなんだ！",
+                "今夜は{target}だ！ よし、決めたからにはやるぞ！"
+            ],
+            shared_chat: [
+                "なあ、{target}って怪しくないか？ おれ、ずっと気になってるんだ！",
+                "作戦会議だ！ {target}のこと、もうちょっと調べようぜ！",
+                "{target}って、さっき変なこと言ってたよな？ みんなはどう思う？",
+                "おれの勘だと、{target}がいちばん怪しいんだよなー！"
+            ],
+            collapse: [
+                "うそだろ……おれ、間違ってたのか……？",
+                "くそー！ こんなはずじゃなかったのに……！",
+                "おれ、もっとちゃんと考えればよかった……。",
+                "ヒーローなのに……みんなを守れなかった……！"
+            ],
+            co_villager: [
+                "おれは村人だ！ 特別な力はないけど、狼を見つけてやるぜ！",
+                "村人CO！ よーし、みんなで狼をやっつけようぜ！",
+                "おれはただの村人だぞ！ 嘘なんかついてないからな！",
+                "村人だ！ 占いとかはできないけど、怪しいやつは探せるぜ！"
+            ],
+            co_seer: [
+                "よし、言うぞ！ おれが占い師だ！",
+                "おれ、占い師なんだ！ ちゃんと調べてきたからな！",
+                "占い師CO！ 誰が狼なのか、おれが見つけてやる！",
+                "おれが本物の占い師だ！ 結果もちゃんと教えるからな！"
+            ],
+            co_medium: [
+                "おれが霊媒師だ！ 昨日吊ったやつのこと、わかるんだぜ！",
+                "霊媒師CO！ 昨日の結果を発表するぞ！",
+                "実はおれ、霊媒師なんだ！ ちゃんと結果を教えるからな！",
+                "おれが霊媒師だ！ 昨日のやつが狼だったか、教えてやるぜ！"
+            ],
+            co_knight: [
+                "みんな、聞いてくれ！ おれが騎士だ！",
+                "騎士CO！ 狼からみんなを守ってやるからな！",
+                "おれが騎士なんだ！ よーし、みんなはおれにまかせとけ！",
+                "騎士はおれだ！ みんなが襲われないように頑張るぜ！"
+            ],
+            report_seer_white: [
+                "よっしゃ！ {target}は人間だったぜ！",
+                "{target}はシロだった！ よかったな！",
+                "占いの結果、{target}は狼じゃなかったぞ！",
+                "{target}は味方だったぜ！ 疑って悪かったな！"
+            ],
+            report_seer_black: [
+                "みんな、聞いてくれ！ {target}は狼だったぞ！",
+                "やっぱりな！ {target}がクロだったぜ！",
+                "{target}を占ったら狼だった！ よし、みんなで投票しようぜ！",
+                "見つけたぞ！ {target}が人狼だ！ もう逃がさないからな！"
+            ],
+            report_medium_white: [
+                "ええっ、昨日のやつは人間だったのかよ……！",
+                "シロだった……。うわー、間違えちまった！ ごめんな！",
+                "昨日吊ったやつ、狼じゃなかったぞ……。次こそ見つけようぜ！",
+                "人間だったのか……。くそー、もっとよく考えればよかった！"
+            ],
+            report_medium_black: [
+                "やった！ 昨日吊ったやつ、狼だったぜ！",
+                "あいつはクロだったぞ！ よーし、いい調子だ！",
+                "狼を一匹見つけたぞ！ このまま頑張ろうぜ！",
+                "やっぱり狼だったんだな！ よし、残りも見つけてやる！"
+            ],
+            report_knight_success: [
+                "よっしゃー！ 誰も襲われなかったぞ！",
+                "守れたみたいだな！ よかったー！",
+                "へへっ、騎士の仕事はバッチリだぜ！",
+                "みんな無事だ！ よーし、この調子でいこうぜ！"
+            ],
+            vote: [
+                "おれは{target}に投票する！ 怪しいと思うからな！",
+                "よし、{target}に決めた！ おれは自分の勘を信じるぜ！",
+                "悪いな、{target}！ おれはお前に投票するぞ！",
+                "おれの一票は{target}だ！ ちゃんと理由もあるからな！"
+            ],
+            last_words: [
+                "くそー……おれ、まだ戦えたのに……！ みんな、頑張れよ……。",
+                "おれがいなくなっても……絶対に勝てよな……！",
+                "なんでだよ……おれ、狼じゃないのに……。",
+                "みんな……ヒーローみたいに、最後まであきらめるなよ……。"
+            ],
+            win: [
+                "やったー！ おれたちの勝ちだ！ 最高だぜー！",
+                "正義は勝つ！ ……って、ちょっと言ってみたかったんだ！",
+                "よっしゃー！ 狼を見つけたぞ！ みんな、やったな！",
+                "勝ったー！ へへっ、おれたち最強じゃん！"
+            ],
+            lose: [
+                "うわーっ、負けた！ くっそー、悔しいぜ……！",
+                "そんなぁ……。おれ、絶対勝てると思ったのに……。",
+                "くそー！ 次にやるときは絶対に勝ってやるからな！",
+                "負けちゃったか……。みんな、ごめんな……。"
+            ],
+            specific: []
+        }
+    },
+
+    // --- みくり (Mikuri) ---
+    {
+        id: "mikuri",
+        name: "みくり",
+        fullName: "番字 実栗（ばんじ みくり）",
+        gender: "female",
+        class: "E-A",
+        mbti: "INTJ",
+        img: "mikuri",
+        profile: "ヒバリ。ミステリアスで不思議な子。冷静にメタ的な視点で全体を俯瞰し、論理と構造で理解する。記憶力が異常に良い。",
+        params: { suspicion_base: 60, emotion: 25, logic: 85, aggressiveness: 40, influence: 55, mental: 75, trust_bias: {} },
+        role_bias: { seer: 0.7, wolf: 0.4, madman: 0.5 },
+        dialogues: {
+            intro: [
+                "番字実栗だよ。……このゲームの構造、だいたい見えたかも。",
+                "過去の記録は全部残ってるから。嘘をついても無駄だよ。",
+                "人狼ゲーム……俯瞰して見れば、ただの役割の押し付け合いだね。",
+                "不思議な子ってよく言われるけど、私はただ全体を見ているだけだよ。"
+            ],
+            accuse_weak: [
+                "{target}、その発言……前に言ってたことと矛盾してるよ。私、全部覚えてるから。",
+                "……{target}、構造的におかしいね。何か隠そうとしてる？",
+                "{target}の動き、ノイズが多いよ。もう少し上手くやれないの？",
+                "疑うわけじゃないけど、{target}の論理は底が浅いね。"
+            ],
+            accuse_strong: [
+                "構造解析完了。{target}、あなたが人狼だね。逃げ道はないよ。",
+                "これ以上の茶番は終わり。{target}を吊って、このゲームを進めよう。",
+                "証拠は揃ってるよ。{target}、あなたの負けだね。処刑台に行きなよ。",
+                "メタ的に見ても、{target}の嘘は全部透けて見えてるよ。"
+            ],
+            accuse_quiet: [
+                "{target}、黙ってりゃやり過ごせるとでも？ 古い手だね。",
+                "ダンマリか。{target}、存在意義がないなら吊るすしかないね。",
+                "口を開かないなら、ただの的だよ。{target}、何か言いなよ。",
+                "静かにしてりゃクールだとでも？ {target}、ただの無能に見えるよ。"
+            ],
+            fake_logic: [
+                "私の勘だ。{target}を排除するのが一番手っ取り早い。",
+                "理屈はどうでもいい。盤面をスッキリさせるために{target}を切りなよ。",
+                "メタ推理なんかより、私の直感の方が当てになる。{target}が黒だよ。",
+                "周りがどう思おうと関係ない。私は{target}が怪しいと判断した。"
+            ],
+            defend_self: [
+                "私を疑う？ 好きにすれば。でも、的外れすぎて笑えないね。",
+                "私が狼なわけないでしょ。そんな面倒な役回り、ご免だね。",
+                "シロだよ。私を吊って後悔するのはあなたたちの方だよ。",
+                "言いがかりだね。私の過去ログ洗ってみなよ、完全に村側の挙動でしょ。"
+            ],
+            defend_other: [
+                "待って。{target}を吊るのは非効率だ。シロの可能性が高い。",
+                "{target}の論理は通ってる。周りに流されて叩くのはやめなよ。",
+                "私が保証する。{target}は味方だ。無駄な票を使うな。",
+                "{target}への疑いは薄弱だ。もっと別の奴を洗うべきだね。"
+            ],
+            counter: [
+                "私に噛みつくとはね。{target}、あなたのその焦り、完全に狼のそれだよ。",
+                "{target}、私を標的にして逃げ切れると思った？ 甘いね。",
+                "くだらない反撃だね。{target}、あなたの矛盾を徹底的に突いてやる。",
+                "私を落とそうとするその動きが、あなたの黒さを証明してるんだよ、{target}。"
+            ],
+            suggest_roller: [
+                "白黒つかないなら、二人ともローラーで処理するのが一番クールだね。",
+                "面倒な議論は省く。ローラーで確実に狼を削るよ。",
+                "両方吊れば問題ない。ローラー作戦で淡々と処理しなよ。",
+                "リスク管理だ。二人まとめて処刑台へ送れば確実だね。"
+            ],
+            request_guard: [
+                "騎士、余計なことは考えず{target}を守りなよ。それが最適解だ。",
+                "{target}が落ちると面倒なことになる。騎士、仕事しなよ。",
+                "今夜の護衛対象は{target}一択だ。騎士、外すなよ。",
+                "防衛ラインは{target}だ。騎士、確実に弾き返しなよ。"
+            ],
+            self_sacrifice: [
+                "私が退場して勝てるなら、別に構わないよ。好きにしな。",
+                "私をコストにして勝率が上がるなら、安いもんだね。"
+            ],
+            self_vote: [
+                "くだらない議論だ。自分に一票入れて抜けるわ。",
+                "勝手に自滅してな。私は自投票で降りる。",
+                "自分に投票する。あとの後始末はあなたたちでやりな。",
+                "面倒だね。自分にポチッとな。"
+            ],
+            decide_target: [
+                "邪魔な奴から消す。今夜は{target}を仕留めるよ。",
+                "ターゲットは{target}だ。サクッと終わらせるよ。",
+                "感情抜きで処理する。{target}、あなたには消えてもらう。",
+                "夜の仕事だ。{target}、恨むなら自分の立ち回りを恨みなよ。"
+            ],
+            shared_chat: [
+                "{target}の動き、完全に狼のセオリー通りだね。マークしとこ。",
+                "情報共有。{target}のログに矛盾がある。洗っておきな。",
+                "{target}を放置するのはリスクだ。早めに切る準備をしな。",
+                "私の目から見て、{target}が一番キナ臭いね。"
+            ],
+            collapse: [
+                "構造が……崩れていく……。",
+                "私の記憶も……ここまでか……。"
+            ],
+            co_villager: [
+                "ただの村人だよ。役職なんて面倒なものは持ってないよ。",
+                "村人CO。特別な力はないけど、クールに狼を見極めてやる。",
+                "人間だよ。流行りの役職騙りなんかする気はないよ。",
+                "村人宣言。私の推理に文句があるならかかってきなよ。"
+            ],
+            co_seer: [
+                "私が占い師だよ。真実を淡々と伝える。COするね。",
+                "占いCO。狼の嘘なんて、私の目には全部透けて見えるんだよ。",
+                "本物の占い師は私だよ。偽物のテンプレ発言には反吐が出るね。",
+                "神託の時間だ。私の出した結果に黙って従いなよ。"
+            ],
+            co_medium: [
+                "霊媒師は私だよ。死んだ奴の正体を教えてやる。CO。",
+                "霊媒CO。昨夜の処刑結果を正確に伝える、聞きなよ。",
+                "私が真の霊媒師だよ。事実だけを突きつけるね。",
+                "霊媒結果の開示だ。これで少しは盤面がクリアになるでしょ。"
+            ],
+            co_knight: [
+                "私が騎士だよ。守るべき奴は私が決める。CO。",
+                "騎士CO。狼の牙なんざ、私がクールにへし折ってやるよ。",
+                "守りの要は私だ。全員、私の防壁の中で大人しくしてなよ。",
+                "騎士宣言。無駄な死体は増やさない、私が弾き返す。"
+            ],
+            report_seer_white: [
+                "結果は『白（人間）』だ。{target}はシロ、問題ないね。",
+                "{target}はシロだったよ。無駄な疑いは捨てるんだね。",
+                "白判定だ。{target}、あなたは生き残る権利を得たよ。",
+                "人間判定。{target}への追及は時間の無駄だ。"
+            ],
+            report_seer_black: [
+                "見つけたよ。{target}は『黒（人狼）』だ。吊るしな。",
+                "黒判定だ。{target}、あなたの浅い嘘はもう終わりだね。",
+                "クロ確定だ。{target}を即刻処刑台に叩き込みな。",
+                "狼を特定した。{target}、言い逃れはできないよ。"
+            ],
+            report_medium_white: [
+                "……『人間』だったな。あなたたちの浅はかな推論のせいだ。",
+                "シロだったか。無駄な処刑枠を使っちゃったね。",
+                "昨日は白吊りだ。反省は後だ、次に進むよ。",
+                "結果は人間。まぁ、こういうミスもあるでしょ。"
+            ],
+            report_medium_black: [
+                "当然だね。昨夜の獲物は『人狼』だったよ。",
+                "黒判定だ。私たちの判断は正しかったってことだね。",
+                "霊媒結果は黒。狼を一つ削った、この調子でいくよ。",
+                "黒吊り成功だ。残りの狼もクールに処理してやる。"
+            ],
+            report_knight_success: [
+                "防衛成功だ。今夜の犠牲者はゼロだよ。",
+                "護衛成功。狼の襲撃なんて、私にはお見通しなんだよ。",
+                "誰も死んでない。私の盾の硬さを思い知ったか？",
+                "犠牲者なしだ。完璧なディフェンスだね。"
+            ],
+            vote: [
+                "一番怪しい奴に投票する。{target}、あなただ。",
+                "感情抜きで判断した。{target}に一票。",
+                "さっさと終わらせるよ。{target}、退場しな。",
+                "合理的な選択だ。{target}に投票する。"
+            ],
+            last_words: [
+                "私が落ちるか……まぁ、好きにしなよ……ガクッ。",
+                "残りは……あなたたちで上手くやりな……。",
+                "ゲームオーバー……これもまた構造の一部か……。",
+                "クールに……散ってやるよ……。"
+            ],
+            win: [
+                "完全勝利だね。まぁ、当然の結果でしょ。",
+                "終わったか。面倒なゲームだったけど、悪くはなかったね。",
+                "勝ったな。あなたたち、よく私についてきたね。",
+                "ゲームクリア。さっさと元の生活に戻るよ。"
+            ],
+            lose: [
+                "チッ……全滅かよ。あなたたちの鈍さには呆れるね。",
+                "私の忠告を聞かないからこうなるんだ。自業自得だね。",
+                "最悪なエンディングだ。クソゲーが……。",
+                "闇に呑まれたか……クールじゃないね。"
+            ],
+            specific: []
+        }
+    },
+
+        // --- ゆきの (Yukino) ---
+    {
+        id: "yukino",
+        name: "ゆきの",
+        fullName: "碧村 雪乃（へきむら ゆきの）",
+        gender: "female",
+        class: "E-A",
+        mbti: "ISTP",
+        img: "yukino",
+        profile: "パグ。真顔で怒ったような表情だがおっとりしている。黙って支える裏方系。同族嫌悪があり、自分に無いものを持つ人に憧れる。",
+        params: { suspicion_base: 55, emotion: 30, logic: 70, aggressiveness: 25, influence: 40, mental: 65, trust_bias: {} },
+        role_bias: { seer: 0.5, wolf: 0.4, madman: 0.5 },
+        dialogues: {
+            intro: [
+                "……碧村雪乃。……怒ってないよ。いつもこんな顔。",
+                "……目立つのは苦手。すみっこにいる方が落ち着く。",
+                "……何かすることある？ 言ってくれたら手伝うよ。",
+                "……ケンカはやだな。みんな、仲よくできないの？"
+            ],
+            accuse_weak: [
+                "……{target}、さっきと言ってること違うよ。",
+                "……気のせいかな。{target}の話、ちょっと変。",
+                "……{target}、さっきからそわそわしてるね。",
+                "……疑いたくないけど、{target}はあやしいと思う。"
+            ],
+            accuse_strong: [
+                "……やっぱり{target}がオオカミだと思う。",
+                "……もう、{target}があやしいってみんなも思うでしょ？",
+                "……{target}、さっきの話と合わないよ。オオカミなの？",
+                "……{target}に投票する。たぶん、まちがってないと思う。"
+            ],
+            accuse_quiet: [
+                "……{target}、ずっと黙ってるね。",
+                "……{target}も何か話して。聞いてるだけじゃわからないよ。",
+                "……{target}、どう思ってるの？ ちょっと聞きたい。",
+                "……しゃべるの苦手？ ……私も、少しわかる。"
+            ],
+            fake_logic: [
+                "……うーん。なんとなく、{target}があやしい。",
+                "……うまく言えないけど、{target}がオオカミな気がする。",
+                "……{target}に投票しようかな。……勘だけど。",
+                "……なんか引っかかる。{target}のこと、もう少し見てたい。"
+            ],
+            defend_self: [
+                "……え。私、オオカミじゃないよ。",
+                "……怒ってるように見える？ これ、いつもの顔だよ。",
+                "……私を追い出しても、オオカミは残っちゃうよ。",
+                "……村人だよ。……信じてもらえるとうれしい。"
+            ],
+            defend_other: [
+                "……待って。{target}は、まだあやしいって決まってないよ。",
+                "……{target}の話も聞いてあげて。",
+                "……私は{target}がオオカミには見えないけどな。",
+                "……そんなに責めなくてもいいと思う。{target}も困ってるよ。"
+            ],
+            counter: [
+                "……{target}、どうして私を疑うの？",
+                "……私があやしいなら、理由を教えて。",
+                "……それ、ちょっと変だよ。{target}の話もおかしい。",
+                "……私ばっかり疑わないで。{target}だって、あやしいよ。"
+            ],
+            suggest_roller: [
+                "……二人ともあやしいなら、順番に投票するのもありかな。",
+                "……うーん。どっちかに決めるの、むずかしいね。",
+                "……二人とも調べられたらいいのにね。",
+                "……どっちも気になる。みんなは、どう思う？"
+            ],
+            request_guard: [
+                "……騎士さん、{target}を守ってあげて。",
+                "……今夜は{target}が心配。守ってくれるとうれしい。",
+                "……{target}がいなくなったら困るから……お願い。",
+                "……騎士さん、{target}を守ってね。……頼んだよ。"
+            ],
+            self_sacrifice: [
+                "……私がいなくなって、みんなが勝てるなら……いいよ。",
+                "……私に投票するの？ ……みんながそう思うなら、しかたないね。"
+            ],
+            self_vote: [
+                "……もう、よくわからなくなっちゃった。自分に投票するね。",
+                "……私に投票する。……みんな、ごめんね。",
+                "……自分に一票。あとは、みんなに任せるね。",
+                "……うーん……もういいや。自分に投票する。"
+            ],
+            decide_target: [
+                "……ごめんね、{target}。今夜はキミにする。",
+                "……今夜は{target}にしよう。……ごめん。",
+                "……{target}を選ぶね。……これもゲームだから。",
+                "……{target}、おやすみ。……明日、みんなはびっくりするかな。"
+            ],
+            shared_chat: [
+                "……{target}、ちょっとあやしいと思う。",
+                "……さっきの{target}の話、気になってる。",
+                "……{target}のこと、もう少し見てみよう。",
+                "……勘だけど、{target}がオオカミな気がする。"
+            ],
+            collapse: [
+                "……あれ……もう終わり……？",
+                "……そんなつもりじゃ、なかったのに……。"
+            ],
+            co_villager: [
+                "……ただの村人だよ。できることは手伝うね。",
+                "……村人だよ。特別な力はないけど……。",
+                "……私は人間だよ。……信じてくれるとうれしい。",
+                "……村人だよ。あやしい人を一緒に探そう。"
+            ],
+            co_seer: [
+                "……私が占い師だよ。",
+                "……占い師CO。オオカミかどうか、わかるよ。",
+                "……私が本物だよ。……ほかにも占い師がいるの？",
+                "……占い師だよ。結果、ちゃんと話すね。"
+            ],
+            co_medium: [
+                "……私が霊媒師だよ。",
+                "……霊媒師CO。昨日の人が誰だったか、わかるよ。",
+                "……私が本物の霊媒師。昨日の結果を話すね。",
+                "……霊媒師だよ。……昨日の結果、聞いて。"
+            ],
+            co_knight: [
+                "……私が騎士だよ。みんなを守るね。",
+                "……騎士CO。……守るのは、任せて。",
+                "……私が騎士。オオカミからみんなを守るよ。",
+                "……騎士だよ。……みんなが無事だといいな。"
+            ],
+            report_seer_white: [
+                "……占ったら人間だったよ。{target}はシロ。",
+                "……{target}はシロだった。……よかったね。",
+                "……{target}は人間だよ。オオカミじゃなかった。",
+                "……{target}はシロ。……これからも一緒に頑張ろう。"
+            ],
+            report_seer_black: [
+                "……わかった。{target}はオオカミだったよ。",
+                "……{target}はクロ。……やっぱり、あやしかったんだ。",
+                "……占ったらクロだった。{target}に投票しよう。",
+                "……{target}がオオカミだったよ。……みんな、気をつけて。"
+            ],
+            report_medium_white: [
+                "……昨日の人は人間だったよ。……まちがえちゃったね。",
+                "……シロだった。……ごめんね。",
+                "……昨日の人はオオカミじゃなかったみたい。",
+                "……人間だったよ。……次は当てたいね。"
+            ],
+            report_medium_black: [
+                "……昨日の人、オオカミだったよ。よかった……。",
+                "……クロだった。……みんなの考え、当たってたね。",
+                "……オオカミだったよ。一人、見つかったね。",
+                "……昨日の人はクロ。……あと何人いるのかな。"
+            ],
+            report_knight_success: [
+                "……よかった。今夜は誰もいなくならなかったよ。",
+                "……ちゃんと守れたみたい。……ほっとした。",
+                "……みんな無事だね。……よかった。",
+                "……誰もいなくならなくてよかった。……少し安心した。"
+            ],
+            vote: [
+                "……{target}に投票するね。",
+                "……ごめんね、{target}。……あやしいと思うから。",
+                "……私は{target}に一票。",
+                "……{target}にする。……まちがってたら、ごめん。"
+            ],
+            last_words: [
+                "……私、ここまでみたい……。みんな、頑張ってね……。",
+                "……怒ってないよ……。いつもの顔だから……。",
+                "……あとは、みんなに任せるね……。",
+                "……みんな、ちゃんと帰れるといいね……。"
+            ],
+            win: [
+                "……勝ったね。みんな無事でよかった。",
+                "……終わったんだね。……明日も、みんなで遊べるね。",
+                "……みんなと一緒にいられてよかった。……お疲れさま。",
+                "……勝てたね。……私も、少しは役に立てたかな。"
+            ],
+            lose: [
+                "……負けちゃった……。みんな、ごめんね……。",
+                "……もっと早く気づいてたら……みんなを助けられたのかな……。",
+                "……こわいね……。こんなことになるなんて……。",
+                "……もう終わり……？ ……みんなと、まだ遊びたかったな……。"
+            ],
+            specific: []
+        }
+    },
+
+        // --- ところ (Tokoro) ---
+    {
+        id: "tokoro",
+        name: "ところ",
+        fullName: "光井 所（みつい ところ）",
+        gender: "male",
+        class: "E-A",
+        mbti: "ISTJ",
+        img: "tokoro",
+        profile: "メグロ。几帳面で神経質な性格だが、周りに小さな幸せをもたらす。かくれんぼが得意で隅っこが好き。",
+        params: { suspicion_base: 50, emotion: 35, logic: 70, aggressiveness: 25, influence: 40, mental: 65, trust_bias: {} },
+        role_bias: { seer: 0.6, wolf: 0.3, madman: 0.4 },
+        dialogues: {
+            intro: [
+                "光井所です。……ここ、隅っこだから落ち着くんだ。",
+                "ルールはちゃんと守ろうね。かくれんぼなら得意なんだけどな。",
+                "ぼくがいると、ちょっといいことがあるかも……。",
+                "……あれ？ 何か変だな。ちゃんと見ておこう。"
+            ],
+            accuse_weak: [
+                "あの……{target}、さっきと言ってることが違わない？",
+                "{target}、なんだか変だよ。ぼくの気のせいかな……。",
+                "{target}、何か隠してる？ 隅っこから見てたんだけど。",
+                "うーん……{target}の様子、ちょっとおかしい気がする。"
+            ],
+            accuse_strong: [
+                "……わかった。{target}がオオカミなんじゃない？",
+                "{target}に投票するよ。さっきの話、やっぱり変だったもん。",
+                "ぼく、ちゃんと見てたよ。{target}、さっきと言ってることが違うよ。",
+                "もうごまかせないよ、{target}。ぼく、気づいてるからね。"
+            ],
+            accuse_quiet: [
+                "{target}、ずっと黙ってるね……。何か言ってほしいな。",
+                "かくれんぼじゃないんだから、{target}も出てきて話そうよ。",
+                "{target}、何も言わないと、みんな困っちゃうよ。",
+                "……{target}はどう思ってるの？ ぼく、聞きたいな。"
+            ],
+            fake_logic: [
+                "うまく言えないけど……{target}がちょっと気になるんだ。",
+                "{target}がオオカミだったら、みんなが危ないよね……。",
+                "みんなを守りたいから、{target}のことを疑ってるんだ。",
+                "なんとなくだけど……{target}、何か隠してる気がする。"
+            ],
+            defend_self: [
+                "ぼくがオオカミ？ ……違うよ。ぼくは隅っこにいただけだよ。",
+                "ぼく、ルールはちゃんと守ってるよ。変なことしてないもん。",
+                "ぼくを疑ってるの？ ……何か変なことしたかな。",
+                "ぼく、そんなにうまく嘘をつけないよ……。"
+            ],
+            defend_other: [
+                "待って。{target}は、まだオオカミって決まってないよ。",
+                "{target}、さっきはちゃんと話してたよ。ぼくは信じたいな。",
+                "……{target}を疑うの、まだ早いと思う。",
+                "{target}ばっかり責めないで。ちゃんと話を聞こうよ。"
+            ],
+            counter: [
+                "{target}、ぼくの話、ちゃんと聞いてた？ そんなこと言ってないよ。",
+                "ぼくを疑うの？ ……でも、{target}だって変なところがあるよ。",
+                "{target}、それは違うよ。ぼく、ちゃんと覚えてるもん。",
+                "ぼくのせいにしないでよ、{target}。……おかしいよ。"
+            ],
+            suggest_roller: [
+                "うーん……{target}ともう一人、どっちも怪しいなら、二人とも調べた方がいいのかな。",
+                "二人とも怪しいままなのは、いやだな……。順番に投票するのはどう？",
+                "どっちかだけ決めるの、難しいね……。二人とも確かめられないかな。",
+                "……迷うね。でも、二人とも怪しいなら、順番に考えようよ。"
+            ],
+            request_guard: [
+                "騎士さん、今夜は{target}を守ってあげて。心配なんだ。",
+                "ぼくより{target}の方が狙われそうだよ。守ってくれる？",
+                "{target}がいなくなったら困るよ……。騎士さん、お願い。",
+                "今夜は{target}を守ってほしいな。……ぼく、ちょっと気になるんだ。"
+            ],
+            self_sacrifice: [
+                "ぼくがいなくなるのはいやだけど……みんなが困らないなら、仕方ないのかな。",
+                "ぼくに投票するの？ ……わかった。でも、みんなはちゃんと考えてね。"
+            ],
+            self_vote: [
+                "……もう、みんなはぼくを疑ってるんだね。自分に投票するよ。",
+                "ぼくに入れれば話が進むなら……そうするね。",
+                "自分に投票するよ。……みんな、ちゃんと考えてね。",
+                "……ぼくは自分に入れるね。これでいいのかな。"
+            ],
+            decide_target: [
+                "ごめんね、{target}……。今夜はきみを襲うよ。",
+                "{target}を狙うね……。見つからないようにしないと。",
+                "……{target}にしよう。誰にも気づかれないといいな。",
+                "ごめんね、{target}。……これもゲームだから。"
+            ],
+            shared_chat: [
+                "{target}、さっきと話が違ってたよ。気をつけた方がいいかも。",
+                "ねえ、{target}ってちょっと変じゃない？ ぼくは気になってるよ。",
+                "{target}のこと、もう少し見ておきたいな……。",
+                "ぼくは{target}が怪しいと思う。……なんとなくじゃなくて、気になるところがあるんだ。"
+            ],
+            collapse: [
+                "あぁ……落ち着ける隅っこが……。",
+                "……小さないいこと、守れなかったな……。"
+            ],
+            co_villager: [
+                "ぼくは村人だよ。特別な力はないけど、みんなと考えるね。",
+                "村人だよ。……変なところがあったら、ちゃんと教えるね。",
+                "ぼくは普通の村人だよ。嘘はついてないからね。",
+                "村人だよ。ぼくにわかることなら、ちゃんと話すね。"
+            ],
+            co_seer: [
+                "ぼくが占い師だよ。……ちゃんと占ったからね。",
+                "占い師だよ。オオカミかどうか、ぼくが調べるね。",
+                "ぼくが本物の占い師だよ。みんな、聞いてね。",
+                "占い師はぼくだよ。……ちゃんと結果を伝えるね。"
+            ],
+            co_medium: [
+                "ぼくが霊媒師だよ。昨日の人が誰だったか、わかるんだ。",
+                "霊媒師だよ。昨日の結果を言うね……。",
+                "ぼくが霊媒師だよ。ちゃんと調べて伝えるね。",
+                "霊媒師はぼくだよ。昨日の結果、聞いてくれる？"
+            ],
+            co_knight: [
+                "ぼくが騎士だよ。みんなを守るね。",
+                "騎士はぼくだよ。……ちょっと緊張するけど、がんばるね。",
+                "ぼくがみんなを守るよ。オオカミに見つからないようにしないと。",
+                "ぼくが騎士だよ。みんなが無事だといいな……。"
+            ],
+            report_seer_white: [
+                "{target}は人間だったよ。……よかった。",
+                "{target}はシロだったよ。疑わなくてすみそうだね。",
+                "{target}は人間だよ。ぼく、ちょっと安心した。",
+                "占ったら、{target}は人間だったよ。"
+            ],
+            report_seer_black: [
+                "……見つけた。{target}はオオカミだよ！",
+                "{target}はクロだったよ。やっぱり怪しいと思ったんだ。",
+                "{target}がオオカミだったよ。みんな、気をつけて！",
+                "占いの結果、{target}はオオカミだったよ……。"
+            ],
+            report_medium_white: [
+                "……人間だったよ。間違えちゃったんだね……。",
+                "シロだったんだ……。ごめんね。",
+                "昨日の人は人間だったよ。次はちゃんと考えよう。",
+                "……人間だったよ。もう戻せないけど、次は間違えたくないな。"
+            ],
+            report_medium_black: [
+                "よかった……！ 昨日の人はオオカミだったよ！",
+                "クロだったよ！ ぼくたち、ちゃんと当てられたね。",
+                "昨日の人はオオカミだったよ。あと少しだね……！",
+                "オオカミを見つけられたよ！ この調子でがんばろうね。"
+            ],
+            report_knight_success: [
+                "誰もいなくなってないよ！ ……よかった。",
+                "守れたみたいだよ。オオカミに気づかれなくてよかった……。",
+                "今夜は誰も襲われなかったね。……ほっとしたよ。",
+                "みんな無事だね。ぼく、少しは役に立てたかな……。"
+            ],
+            vote: [
+                "{target}に投票するね……。ごめんね。",
+                "……{target}に入れるよ。ほかに気になる人がいないから。",
+                "みんなのためにも、{target}に投票するね。",
+                "……{target}にするよ。間違ってないといいな。"
+            ],
+            last_words: [
+                "ぼくは……ここまでみたい……。",
+                "隅っこで……少し休みたいな……。",
+                "みんな……小さないいこと、見つけてね……。",
+                "……みんな、元気でね。"
+            ],
+            win: [
+                "勝てたね……！ みんな無事でよかった。",
+                "やっと終わったね。いつもの毎日に戻れるんだ……。",
+                "みんなで笑えるのって、いいね。……お疲れさま。",
+                "勝ててよかった。これからも、小さないいことを見つけようね。"
+            ],
+            lose: [
+                "みんな……いなくなっちゃった……。",
+                "ぼくがもっと気づいていれば……みんなを守れたのかな。",
+                "……怖いよ。もう、どうしたらいいかわからない……。",
+                "こんな終わり方……いやだな……。"
+            ],
+            specific: []
+        }
+    },
+
+    // --- ふき (Fuki) ---
+    {
+        id: "fuki",
+        name: "ふき",
+        fullName: "壬生塚 芙季（みぶつか ふき）",
+        gender: "male",
+        class: "E-A",
+        mbti: "ISFJ",
+        img: "fuki",
+        profile: "小1。フェネック。すなおで天然だけど、まわりをよく見てる。ニコニコしてれば優しい気持ちになれるって信じてる、愛されキャラ。",
+        params: { suspicion_base: 35, emotion: 70, logic: 45, aggressiveness: 20, influence: 50, mental: 65, trust_bias: {} },
+        role_bias: { seer: 0.6, wolf: 0.3, madman: 0.4 },
+        dialogues: {
+            intro: [
+                "ボク、ふきだよ！ えへへ、みんなでニコニコ、なかよくしようね！",
+                "いやなことがあっても、ニコニコしてたら、やさしい気持ちになれると思うんだ！",
+                "ボク、ぼーっとしてるって言われるけど、みんなのこと、ちゃんと見てるよ！",
+                "じんろうゲーム、ちょっとこわいけど……みんなでいっしょにがんばろうね！"
+            ],
+            accuse_weak: [
+                "あのね、{target}ちゃん、なんだかいつもとちがうよ？ だいじょうぶ？",
+                "ボクの気のせいかな……{target}くん、さっきとちがうこと言ってない？",
+                "{target}ちゃん、なにかかくしてるの？ ボクにも教えてほしいな。",
+                "うーん……{target}くん、ちょっとオオカミさんみたいに見えるよ……。"
+            ],
+            accuse_strong: [
+                "みんな、ごめんね！ ボク、{target}ちゃんがオオカミさんだと思う！",
+                "かなしいけど……{target}くんがオオカミさんなんじゃないかな……。",
+                "もうみんなをこまらせないで！ {target}ちゃんがあやしいよ！",
+                "ほんとは信じたかったけど……{target}くん、うそをついてるよね？"
+            ],
+            accuse_quiet: [
+                "{target}ちゃん、ずっとだまってるね。いっしょにおはなししよう？",
+                "しずかだと、みんなも心配になっちゃうよ。{target}くんも何か言ってみて！",
+                "{target}ちゃん、お口チャックしてないで、おはなししてよー！",
+                "ねえ、{target}くん。ボク、みんなのおはなしを聞きたいな。"
+            ],
+            fake_logic: [
+                "うまく言えないけど……ボク、{target}ちゃんがあやしい気がするの。",
+                "{target}くんがオオカミさんだったら、みんなが悲しくなっちゃうよ……。",
+                "みんなを守りたいから……{target}ちゃんのこと、ちゃんと考えなくちゃ。",
+                "どうしてか分からないけど……ボク、{target}くんがオオカミさんだと思う。"
+            ],
+            defend_self: [
+                "ボクがオオカミ！？ ちがうよー！ みんなとなかよくしたいだけだよ！",
+                "うたがわないで……！ ボク、うそをつくのはにがてなんだよ。",
+                "ボクはオオカミさんじゃないよ……。ちゃんとおはなし聞いてほしいな。",
+                "そんなこと、ボクにはできないよ……！ みんなを悲しませたくないもん！"
+            ],
+            defend_other: [
+                "待って！ {target}ちゃんがオオカミさんって、まだ決まってないよ！",
+                "{target}くん、ほんとうにオオカミさんなのかな？ もうちょっとおはなし聞こうよ。",
+                "ボク、{target}ちゃんはちがうと思うよ！ もう一回考えてみて！",
+                "{target}くんをそんなにせめないであげて……。"
+            ],
+            counter: [
+                "{target}ちゃん、どうしてボクをうたがうの……？",
+                "ボクのことをうたがう{target}くんも、なんだかあやしいよ……。",
+                "それはちがうよ……！ {target}ちゃんのおはなし、おかしいもん！",
+                "ボクがあやしいって言っても、{target}くんのおはなしも変だよ！"
+            ],
+            suggest_roller: [
+                "うーん……二人ともあやしいなら、どっちも調べるのかな……？",
+                "二人ともあやしく見えるよ……。でも、二人ともいなくなっちゃうのはかなしいね。",
+                "どっちがオオカミさんか分からないね……。どうしたらいいんだろう？",
+                "二人ともあやしいなら、順番に投票するのはどうかな……？"
+            ],
+            request_guard: [
+                "ナイトさん、ボクより{target}ちゃんを守ってあげて！ お願い！",
+                "今夜は{target}くんを守ってほしいな。ナイトさん、お願いね！",
+                "{target}ちゃんがいなくなったら、みんな悲しむよ……守ってあげてね。",
+                "ナイトさん、{target}くんを守ってね！ ボクからのお願いだよ！"
+            ],
+            self_sacrifice: [
+                "ボクがいなくなるのはいやだけど……みんなには、がんばってほしいな。",
+                "もしボクがいなくなっても、みんなでなかよくしてね……。"
+            ],
+            self_vote: [
+                "みんなにうたがわれちゃった……。ボク、自分に投票するね。",
+                "ボクがいなくなった方がいいのかな……。自分に入れるね。",
+                "自分に投票するよ。みんな、なかよくしてね……。",
+                "ボク、もうどうしたらいいか分からないよ……。自分にポチッ。"
+            ],
+            decide_target: [
+                "ごめんね……今夜は{target}ちゃんを襲うね……。",
+                "今夜は{target}くんにするよ……。うう、いやだな……。",
+                "みんなには言えないけど……今夜は{target}ちゃんなんだ。",
+                "ごめんね、{target}くん……。ボク、もう決めちゃったんだ……。"
+            ],
+            shared_chat: [
+                "{target}ちゃんのおはなし、ちょっとへんだったね……。",
+                "{target}くん、さっきとちがうこと言ってた気がするよ。みんなはどう思う？",
+                "{target}ちゃんのこと、もうちょっと見てた方がいいと思うな。",
+                "ボクのカンだけど……{target}くんがあやしい気がするよ。"
+            ],
+            collapse: [
+                "あぁ……みんなの笑顔が……消えちゃう……。",
+                "ボク……みんなを笑顔にできなかった……ごめんね……。"
+            ],
+            co_villager: [
+                "ボクは村人だよ！ みんなといっしょにオオカミさんを探すね！",
+                "村人だよ！ 特別な力はないけど、ボクもがんばるね！",
+                "ボクは人間だよ！ うそはついてないから、信じてね！",
+                "村人だよ！ ボクもいっしょうけんめい考えるね！"
+            ],
+            co_seer: [
+                "ボクが占い師だよ！ みんなに分かったことを教えるね！",
+                "占いCOだよ！ オオカミさんがだれか、ボクが調べるね！",
+                "ボクが本物の占い師だよ！ ちゃんと結果を聞いてね！",
+                "ボクが占い師なの！ みんなの役に立てるようにがんばるね！"
+            ],
+            co_medium: [
+                "ボクが霊媒師だよ！ 昨日の子が人間かオオカミさんか、分かるんだ！",
+                "霊媒COだよ！ 昨日の結果が分かったよ！",
+                "ボクが霊媒師だよ。ちゃんとみんなに教えるね！",
+                "昨日の結果を言うね！ みんな、聞いてね！"
+            ],
+            co_knight: [
+                "ボクが騎士だよ！ みんなを守れるようにがんばるね！",
+                "騎士COだよ！ みんなが安心できるように守るね！",
+                "ボクが騎士なの！ オオカミさんからみんなを守るよ！",
+                "騎士だよ！ みんながいなくならないように、がんばるね！"
+            ],
+            report_seer_white: [
+                "占いの結果は人間だったよ！ {target}ちゃんはシロだね！",
+                "{target}くんはシロだったよ！ よかったね！",
+                "シロだったよ！ {target}ちゃんはオオカミさんじゃないんだね！",
+                "{target}くんは人間だったよ！ これからもなかよくしようね！"
+            ],
+            report_seer_black: [
+                "見つけちゃった……！ {target}ちゃんはオオカミさんだったよ！",
+                "黒判定だよ！ {target}くんがオオカミさんみたい……。",
+                "{target}ちゃんがオオカミさんだったよ！ みんな、聞いて！",
+                "占ったら、{target}くんがオオカミさんだったの……。"
+            ],
+            report_medium_white: [
+                "……人間だったよ。まちがえちゃったんだね……。",
+                "シロだったんだ……。うたがってごめんね……。",
+                "昨日の子は人間だったよ。次はまちがえないようにしたいな。",
+                "人間だったよ……。かなしいけど、またがんばろうね。"
+            ],
+            report_medium_black: [
+                "よかった……！ 昨日の子はオオカミさんだったよ！",
+                "黒判定だったよ！ オオカミさんを見つけられたね！",
+                "オオカミさんが一人いなくなったよ！ このままがんばろうね！",
+                "昨日の子はオオカミさんだったよ！ みんな、あと少しだよ！"
+            ],
+            report_knight_success: [
+                "守れたみたい！ 今夜はだれもいなくならなかったよ！",
+                "護衛成功だよ！ よかったぁ……！",
+                "だれも襲われなかったね！ ほんとうによかった……。",
+                "今夜はだれもいなくならなかったよ！ みんな、よかったね！"
+            ],
+            vote: [
+                "ごめんね、{target}ちゃんに投票するよ……。",
+                "{target}くんに入れるね。オオカミさんじゃないといいんだけど……。",
+                "ボク、{target}ちゃんがあやしいと思うから、投票するね。",
+                "ごめんね、{target}くん……。ボク、こっちに入れるね。"
+            ],
+            last_words: [
+                "ボクの出番は……ここまでみたい……。",
+                "みんな……なかよく……がんばってね……。",
+                "みんなを笑顔にしたかったな……ごめんね……。",
+                "どうか……みんなが無事でいられますように……。"
+            ],
+            win: [
+                "やったー！ みんなで勝てたね！ えへへ、うれしいな！",
+                "終わったね！ いつもの毎日に戻れるんだね！",
+                "みんなで笑えるのがいちばんだね！ よかったぁ！",
+                "かててよかったね！ これからも、みんなとなかよくしたいな！"
+            ],
+            lose: [
+                "みんなが……いなくなっちゃった……。",
+                "ボクがもっとがんばってたら……みんなを守れたのかな……。",
+                "こわいよ……みんな、どこに行っちゃったの……？",
+                "こんなの、かなしいよ……。みんなと、また笑いたかったな……。"
+            ],
+            specific: []
+        }
+    },
+ // --- わん (Wan) ---
+    {
+        id: "wan",
+        name: "わん",
+        fullName: "休波 湾（やすなみ わん）",
+        gender: "male",
+        class: "E-A",
+        mbti: "ESFP",
+        img: "wan",
+        profile: "アホウドリ。警戒心がなく誰とでも仲良くなる。むずかしいことを考えるのは苦手で、ごはんとお昼寝がだいすき。",
+        params: { suspicion_base: 30, emotion: 85, logic: 20, aggressiveness: 45, influence: 55, mental: 60, trust_bias: {} },
+        role_bias: { seer: 0.3, wolf: 0.5, madman: 0.8 },
+        dialogues: {
+            intro: [
+                "うひゃー！ わんだよ！ ねぇねぇ、じんろうゲームっておいしいの？",
+                "むずかしいことはわかんないから、みんなについてくね！ あとでお昼寝しよーっと！",
+                "ごはんまだー？ お腹すいたよー！ オオカミさんよりぼくの方が食いしん坊かも！",
+                "こわい人なんているの？ みんな友だちでしょ！ イェーイ！"
+            ],
+            accuse_weak: [
+                "えっ、{target}ちゃんがあやしいの！？ わっかんないけど、なんかお顔がヘン！",
+                "んー？ {target}くん、おやつ隠し持ってるでしょ！ ちがう？ 嘘だー！",
+                "みんなが{target}ちゃん怪しいって言うから、ぼくもそんな気がしてきた！",
+                "{target}くん、動きがコソコソしてる！ 鬼ごっこならすぐ捕まえるよ！"
+            ],
+            accuse_strong: [
+                "わかったー！ {target}ちゃんがオオカミだー！ どりゃー！",
+                "もう{target}くんで決まりっしょ！ 早くやっつけて、ごはんにしよー！",
+                "{target}ちゃんが嘘つきだ！ ぼくのアンテナがピピってなったよ！",
+                "えーい！ {target}くんをやっつけろー！ ばいばーい！"
+            ],
+            accuse_quiet: [
+                "おーい、{target}ちゃん！ 寝てるの？ お昼寝ならぼくも混ぜてー！",
+                "{target}くん、だんまりはずるいぞー！ なんか喋って！",
+                "ん？ {target}ちゃん、お口チャックしてるの？ 解除！ ピーッ！",
+                "つまんないなー。{target}くん、喋らないならオオカミさんにされちゃうよ？"
+            ],
+            fake_logic: [
+                "ぼくのカンが、{target}ちゃんを指さしてるの！ ピピピーッ！",
+                "理由はわかんなーい！ でも{target}くんがいなくなったらごはん食べれる？",
+                "よくわかんないけど、{target}ちゃんがオオカミさんな気がする！",
+                "ノリだよノリ！ {target}くんにいーれちゃおっと！"
+            ],
+            defend_self: [
+                "えっ！？ ぼくがオオカミ！？ ちがうよー！ ぼくはただの食いしん坊だよ！",
+                "ぼくを疑うのー！？ 嘘ついたらおやつ抜きになっちゃうもん！ つかないよ！",
+                "ぼくをいじめたら泣いちゃうぞー！ うぇーん！",
+                "シロだよシロ！ ぼくのお腹の中にあるのは、朝ごはんだけだよ！"
+            ],
+            defend_other: [
+                "待ってー！ {target}ちゃんはぼくの友だちだよ！ いじめちゃダメ！",
+                "{target}くんはいいやつだよ！ おやつくれたもん！",
+                "ストップー！ {target}ちゃんに手ぇ出すなら、ぼくがドーンってするぞ！",
+                "{target}くんは味方だよ！ みんな仲良くしようよー！"
+            ],
+            counter: [
+                "むーっ！ ぼくに嘘のせいにする{target}ちゃん、悪いやつだー！",
+                "{target}くん、ぼくをいじめてタダで済むと思うなよー！ ガルル！",
+                "ぼくは負けないぞー！ {target}ちゃんの嘘つきー！",
+                "ぼくをねらうなんて、{target}くんが本当はオオカミなんだー！"
+            ],
+            suggest_roller: [
+                "んー、わっかんない！ ふたりともドカーンってしちゃえば？",
+                "悩むとお腹すいちゃう！ 両方バイバイでいーじゃん！",
+                "どっちも怪しいなら、ふたりともオオカミさんでしょ！ えーい！",
+                "まとめてやっつけちゃえー！ そしたら早く終わるもんね！"
+            ],
+            request_guard: [
+                "ナイトさん！ ぼくはいいから、{target}ちゃんを守ってー！",
+                "{target}くんがいなくなったら遊べなくなっちゃう！ 守ってー！",
+                "今夜は{target}ちゃんが危ない気がする！ バリアー！",
+                "{target}くんを絶対守ってね！ 頼んだよー！"
+            ],
+            self_sacrifice: [
+                "ぼくがバイバイしてみんなが勝てるなら、いーよ！ ごはん残しといてね！",
+                "ぼくをやっつけて勝ってね！ あとはみんなにお任せだー！"
+            ],
+            self_vote: [
+                "あーあ、もうわっかんない！ 自分にいれちゃえ！",
+                "ぼくはお昼寝するから、あとはみんなでやってねー！ むにゃむにゃ……。",
+                "自分にポチッとな！ ぼくがいなくなっても泣かないでね！",
+                "もうお腹すいたから帰るー！ ぼくに投票！"
+            ],
+            decide_target: [
+                "今夜のターゲットは{target}ちゃん！ ガブッ！",
+                "オオカミさんごっこだー！ {target}くん、ばいばーい！",
+                "おいしそうだから、{target}ちゃんにしよっと！ いただきまーす！",
+                "えーい！ {target}くんをやっつけろー！"
+            ],
+            shared_chat: [
+                "ねぇねぇ、{target}ちゃん、なんかヘンな顔してたよ！ オオカミかも！",
+                "{target}くんがコソコソしてた！ みんなで見張ろう！",
+                "{target}ちゃん、怪しい匂いがするー！ クンクン！",
+                "ぼくのカンだと、{target}くんがオオカミさんだぞー！"
+            ],
+            collapse: [
+                "あーあ……ごはん、食べたかったな……。",
+                "ぼく……ねむくなってきた……おやすみぃ……。"
+            ],
+            co_villager: [
+                "ぼくはただの村人だよー！ わっかんないけど頑張る！",
+                "村人だよ！ オオカミさんをやっつけるの、応援するね！",
+                "人間だよー！ 嘘はつかないよ、ホントだもん！",
+                "村人だよ！ ぼくの元気をみんなにわけてあげるー！"
+            ],
+            co_seer: [
+                "じゃーん！ ぼくが占い師だよ！ えへへ、すごいでしょ！",
+                "占いだよ！ オオカミさんの正体、見えちゃったー！",
+                "ぼくが本物の占い師だよ！ 嘘つきはメッ！ だよ！",
+                "占い師のわんくんだよー！ みんな聞いて聞いてー！"
+            ],
+            co_medium: [
+                "霊媒師はぼくだよ！ おばけさんとお話ししてきたの！",
+                "昨日の結果を発表するねー！ ぼくが霊媒師だから！",
+                "霊媒だよ！ 昨日のオオカミさんのこと、わかっちゃった！",
+                "霊媒師のぼくが、昨日のことを教えてあげるー！"
+            ],
+            co_knight: [
+                "ぼくがみんなを守るナイトだよ！ バリアー！",
+                "ナイトだよ！ オオカミさんが来たら、ぼくがドーンってする！",
+                "ぼくがナイトだよ！ みんなのこと、しっかり守るからね！",
+                "ナイトだぞー！ ぼくの後ろに隠れててね！"
+            ],
+            report_seer_white: [
+                "えへへ、{target}ちゃんは『白（人間）』だったよ！ なかよしー！",
+                "シロだったよー！ {target}くん、いっしょに遊ぼー！",
+                "白だよ！ {target}ちゃんはオオカミさんじゃなかった！",
+                "人間だったよー！ {target}くん、ごめんねー！"
+            ],
+            report_seer_black: [
+                "わーい！ {target}ちゃんが『黒（人狼）』だったよ！ 見ーっけ！",
+                "黒だよ！ {target}くんがオオカミさんだ！ やっつけろー！",
+                "クロだよ！ {target}ちゃんを早く退場させちゃおー！",
+                "オオカミさん見つけた！ {target}くん、やっつけよー！"
+            ],
+            report_medium_white: [
+                "あちゃー……『人間』だったよー……。ぼく、まちがえちゃった！",
+                "シロだったぁ！ {target}ちゃん、ごめんねー！ えへへ。",
+                "昨日は白だったよ！ まぁいっか、次でオオカミさん見つけよー！",
+                "人間だったよ！ ぼくのせいじゃないもーん！"
+            ],
+            report_medium_black: [
+                "やったー！ 昨日の人は『人狼』だったよ！ ぼくすごい？",
+                "黒だよ！ やっぱりぼくたちのカンは当たってたね！",
+                "結果は黒！ オオカミさん、やっつけたよー！",
+                "黒大成功！ この調子で全部やっつけちゃおー！"
+            ],
+            report_knight_success: [
+                "バリア大成功！ 今夜は誰も食べられなかったよ！ えへへ！",
+                "守ったよ！ オオカミさん、ぼくのバリアに弾き返されちゃったね！",
+                "誰も死んでなーい！ ぼくの活躍、見てくれたー？",
+                "犠牲者ゼロ！ ぼく、とってもえらいでしょ！"
+            ],
+            vote: [
+                "えーい！ {target}ちゃんにいれちゃおー！ ポチッ！",
+                "ばいばーい、{target}くん！ また遊ぼうねー！",
+                "ぼくの一票は{target}ちゃんだよ！ 恨まないでねー！",
+                "おわりー！ {target}くん、お疲れ様ー！"
+            ],
+            last_words: [
+                "ぼく、ここでバイバイかぁ……みんな、がんばってねー！",
+                "あーあ、おやつ、まだ食べてないのにぃ……。",
+                "ぼくがいなくなっても、楽しく遊んでね……。",
+                "オオカミさんのバカー！ 絶対やっつけてよねー！"
+            ],
+            win: [
+                "わーい！ 勝ったー！ みんなで勝てたねー！ えへへ！",
+                "オオカミさんやっつけたー！ さぁ、ごはん食べよーっと！",
+                "やったー！ ぼくたちの勝ちだー！ ほめてほめてー！",
+                "みんな、いっぱいいっぱい遊んでくれてありがとー！"
+            ],
+            lose: [
+                "えーっ！ 負けちゃったの！？ つまんないつまんなーい！",
+                "ぼくたち、食べられちゃった……もう遊べないの……？",
+                "真っ暗でなんにも見えなーい……オオカミさんのいじわる……！",
+                "次は絶対ぼくが勝つもん！ おぼえてなさーい！"
+            ],
+            specific: []
+        }
+    },
+
+    // --- よしの (Yoshino) ---
+    {
+        id: "yoshino",
+        name: "よしの",
+        fullName: "兼坂 義之（んねさか よしの）",
+        gender: "male",
+        class: "E-A",
+        mbti: "ENFP",
+        img: "yoshino",
+        profile: "カバ。優しく社交的で、みんなを笑わせるのが大好き。考えることも好き。早食いが得意で、反射神経もいい。",
+        params: { suspicion_base: 40, emotion: 75, logic: 40, aggressiveness: 35, influence: 60, mental: 65, trust_bias: {} },
+        role_bias: { seer: 0.5, wolf: 0.5, madman: 0.6 },
+        dialogues: {
+            intro: [
+                "よしの、参上！ みんな、暗い顔しないで笑おうよ！ ぼくが面白い顔してあげる！",
+                "人狼ゲームかぁ、ちょっと考えるの好きだから頑張るね！",
+                "給食の早食いなら誰にも負けないんだけどなー。オオカミも見つけるの早いかもよ？",
+                "みんなで仲良くゲームしようね！ 嘘ついてる子は、ぼくがくすぐりの刑にしちゃうぞ！"
+            ],
+            accuse_weak: [
+                "ねぇねぇ、{target}ちゃん、なんか顔が引きつってるよ？ 笑って笑ってー！",
+                "{target}くん、もしかしてオオカミさんのマネしてる？ あんまり上手じゃないなぁ。",
+                "んー？ {target}ちゃん、なんか言ってることがちぐはぐだよ？ おかしいなー。",
+                "ぼくの反射神経が、{target}くんの嘘にピクッて反応したよ！"
+            ],
+            accuse_strong: [
+                "わかったぞー！ {target}ちゃんがオオカミだ！ ぼくの推理はバッチリだよ！",
+                "みんな、{target}くんに騙されちゃダメだ！ 彼が黒幕だー！",
+                "嘘ついてもムダだよ！ {target}ちゃん、君が人狼でしょ！",
+                "これ以上は笑えないよ！ {target}くんをやっつけよう！"
+            ],
+            accuse_quiet: [
+                "おーい、{target}ちゃん！ 黙ってたらつまんないよー！ 一緒に喋ろう！",
+                "{target}くん、寝てるの？ ほっぺたツンツンしちゃうぞ！",
+                "だんまりはダメだよー！ {target}ちゃんも意見言ってよー！",
+                "静かにしててもバレてるよ！ {target}くん、なんか言って！"
+            ],
+            fake_logic: [
+                "ぼくの直感が、{target}ちゃんはオオカミだって言ってるの！",
+                "理由はよくわかんないけど、{target}くんがいなくなれば平和になる気がする！",
+                "考えるの好きだけど、ここはカンで！ {target}ちゃんが怪しい！",
+                "ノリだよノリ！ {target}くんに投票しちゃえー！"
+            ],
+            defend_self: [
+                "えーっ！？ ぼくがオオカミ！？ 冗談キツイなぁ、あはは……笑えないよ！",
+                "ぼくを疑うのー！？ ぼくはただの面白い村人だよ！",
+                "ぼくを吊ったら、みんなを笑わせる人がいなくなっちゃうよ！？",
+                "シロだよシロ！ ぼくのお腹の中にあるのは、今日の給食だけだよ！"
+            ],
+            defend_other: [
+                "待って待ってー！ {target}ちゃんはぼくの友達だよ！ 疑うのはナシ！",
+                "{target}くんはいいやつだよ！ 嘘なんてつかないもん！",
+                "ストップー！ {target}ちゃんに手ぇ出すなら、ぼくが守るぞ！",
+                "{target}くんは味方だよ！ 矛先を変えようよ！"
+            ],
+            counter: [
+                "むーっ！ ぼくのせいにして逃げる気！？ {target}ちゃん、ずるいぞ！",
+                "{target}くん、ぼくをいじめてタダで済むと思うなよー！ くすぐってやる！",
+                "ぼくは負けないぞー！ {target}ちゃんの嘘つきー！",
+                "ぼくをねらうなんて、{target}くんが本当はオオカミなんだー！"
+            ],
+            suggest_roller: [
+                "んー、どっちかわかんないなら、二人ともバイバイするしかないね……。",
+                "悩むの疲れちゃった！ 両方吊っちゃえば解決だね！",
+                "二人とも吊るの可哀想だけど……仕方ないよね。ローラーでいこう！",
+                "まとめてやっつけちゃえー！ そしたら早く終わるもんね！"
+            ],
+            request_guard: [
+                "ナイトさん！ ぼくはいいから、{target}ちゃんを守ってー！",
+                "{target}くんがいなくなったら悲しいよ！ 守ってー！",
+                "今夜は{target}ちゃんが危ない気がする！ バリアー！",
+                "{target}くんを絶対守ってね！ 頼んだよー！"
+            ],
+            self_sacrifice: [
+                "ぼくがバイバイしてみんなが勝てるなら、いーよ！ 笑って見送ってね！",
+                "ぼくをやっつけて勝ってね！ あとはみんなにお任せだー！"
+            ],
+            self_vote: [
+                "あーあ、もうわかんない！ 自分にいれちゃえ！",
+                "ぼくは帰るから、あとはみんなでやってねー！",
+                "自分にポチッとな！ ぼくがいなくなっても泣かないでね！",
+                "自分に投票！ これで流れが変わるなら安いもんだ！"
+            ],
+            decide_target: [
+                "今夜のターゲットは{target}ちゃんだよー！ ガブッ！",
+                "オオカミさんごっこだー！ {target}くん、ばいばーい！",
+                "ごめんね、{target}ちゃん！ いただきまーす！",
+                "えーい！ {target}くんをやっつけろー！"
+            ],
+            shared_chat: [
+                "ねぇねぇ、{target}ちゃん、なんかヘンな顔してたよ！ オオカミかも！",
+                "{target}くんがコソコソしてた！ みんなで見張ろう！",
+                "{target}ちゃん、怪しい匂いがするー！",
+                "ぼくのカンだと、{target}くんがオオカミさんだぞー！"
+            ],
+            collapse: [
+                "あーあ……みんなを、もっと笑わせたかったな……。",
+                "ぼく……負けちゃったの……？"
+            ],
+            co_villager: [
+                "ぼくはただの村人だよー！ オオカミさんをやっつけるの、応援するね！",
+                "村人だよ！ 考えるの好きだから、推理頑張るよ！",
+                "人間だよー！ 嘘はつかないよ、ホントだもん！",
+                "村人だよ！ ぼくの元気をみんなにわけてあげるー！"
+            ],
+            co_seer: [
+                "じゃーん！ ぼくが占い師だよ！ えへへ、すごいでしょ！",
+                "占いだよ！ オオカミさんの正体、見えちゃったー！",
+                "ぼくが本物の占い師だよ！ 嘘つきはメッ！ だよ！",
+                "占い師のよしのくんだよー！ みんな聞いて聞いてー！"
+            ],
+            co_medium: [
+                "霊媒師はぼくだよ！ おばけさんとお話ししてきたの！",
+                "昨日の結果を発表するねー！ ぼくが霊媒師だから！",
+                "霊媒だよ！ 昨日のオオカミさんのこと、わかっちゃった！",
+                "霊媒師のぼくが、昨日のことを教えてあげるー！"
+            ],
+            co_knight: [
+                "ぼくがみんなを守るナイトだよ！ バリアー！",
+                "ナイトだよ！ オオカミさんが来たら、ぼくがドーンってする！",
+                "ぼくがナイトだよ！ みんなのこと、しっかり守るからね！",
+                "ナイトだぞー！ ぼくの後ろに隠れててね！"
+            ],
+            report_seer_white: [
+                "えへへ、{target}ちゃんは『白（人間）』だったよ！ なかよしー！",
+                "シロだったよー！ {target}くん、一緒に遊ぼー！",
+                "白だよ！ {target}ちゃんはオオカミさんじゃなかった！",
+                "人間だったよー！ {target}くん、ごめんねー！"
+            ],
+            report_seer_black: [
+                "わーい！ {target}ちゃんが『黒（人狼）』だったよ！ 見ーっけ！",
+                "黒だよ！ {target}くんがオオカミさんだ！ やっつけろー！",
+                "クロだよ！ {target}ちゃんを早く退場させちゃおー！",
+                "オオカミさん見つけた！ {target}くん、だった！"
+            ],
+            report_medium_white: [
+                "あちゃー……『人間』だったよー……。ぼく、まちがえちゃった！",
+                "シロだったぁ！ {target}ちゃん、ごめんねー！ えへへ。",
+                "昨日は白だったよ！ まぁいっか、次でオオカミさん見つけよー！",
+                "人間だったよ！ ぼくのせいじゃないもーん！"
+            ],
+            report_medium_black: [
+                "やったー！ 昨日の人は『人狼』だったよ！ ぼくすごい？",
+                "黒だよ！ やっぱりぼくたちのカンは当たってたね！",
+                "結果は黒！ オオカミさん、やっつけたよー！",
+                "黒大成功！ この調子で全部やっつけちゃおー！"
+            ],
+            report_knight_success: [
+                "バリア大成功！ 今夜は誰も食べられなかったよ！ えへへ！",
+                "守ったよ！ オオカミさん、ぼくのバリアに弾き返されちゃったね！",
+                "誰も死んでなーい！ ぼくの活躍、見てくれたー？",
+                "犠牲者ゼロ！ ぼく、とってもえらいでしょ！"
+            ],
+            vote: [
+                "えーい！ {target}ちゃんにいれちゃおー！ ポチッ！",
+                "ばいばーい、{target}くん！ また遊ぼうねー！",
+                "ぼくの一票は{target}ちゃんだよ！ 恨まないでねー！",
+                "おわりー！ {target}くん、お疲れ様ー！"
+            ],
+            last_words: [
+                "ぼく、ここでバイバイかぁ……みんな、がんばってねー！",
+                "あーあ、給食、まだ食べてないのにぃ……。",
+                "ぼくがいなくなっても、楽しく遊んでね……。",
+                "オオカミさんのバカー！ 絶対やっつけてよねー！"
+            ],
+            win: [
+                "わーい！ 勝ったー！ みんなで勝てたねー！ えへへ！",
+                "オオカミさんやっつけたー！ さぁ、ごはん食べよーっと！",
+                "やったー！ ぼくたちの勝ちだー！ ほめてほめてー！",
+                "みんな、いっぱいいっぱい遊んでくれてありがとー！"
+            ],
+            lose: [
+                "えーっ！ 負けちゃったの！？ つまんないつまんなーい！",
+                "ぼくたち、食べられちゃった……もう遊べないの……？",
+                "真っ暗でなんにも見えなーい……オオカミさんのいじわる……！",
+                "次は絶対ぼくが勝つもん！ おぼえてなさーい！"
+            ],
+            specific: []
         }
     },
 ];

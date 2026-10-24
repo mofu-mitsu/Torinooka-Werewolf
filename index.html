@@ -12,7 +12,7 @@
       gtag('config', 'G-GNTX973GET');
     </script>
     <title>1人で遊べる無料人狼ゲーム！AIキャラと対戦するブラウザアプリ｜とりの丘人狼</title>
-    <meta name="description" content="1人でも人狼が楽しめる！個性豊かなAIキャラクターたちと対戦する無料ブラウザ人狼ゲーム。特殊役職も多数搭載、カオスな議論をソロで体験しよう。">
+    <meta name="description" content="1人でも人狼が楽しめる！個性豊かなAIキャラクターたちと対戦する無料ブラウザ人狼ゲーム。ダウンロード不要でブラウザで遊べるサイト。特殊役職も多数搭載、カオスな議論をソロで体験しよう。">
     <meta name="keywords" content="人狼ゲーム, 1人, 無料, ブラウザ, AI対戦, ソロプレイ, フリーゲーム, 創作キャラ">
     <meta name="author" content="mofu-mitsu">
     
@@ -33,8 +33,20 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <!-- ★追加: カッコいいフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Zen+Kaku+Gothic+New:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS読み込み -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- ★追加: 動くSVGアイコン用ライブラリ -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- ★追加: 動く背景用 -->
+    <div class="bg-particles"></div>
     <!-- BGM -->
     <!-- ★修正: パスを audio/ に変更 -->
     <audio id="bgm-title" loop><source src="audio/wolf_title.mp3" type="audio/mp3"></audio>
@@ -47,12 +59,27 @@
 <!-- 1. タイトル画面 -->
         <section id="title-screen" class="screen">
             <!-- ロゴとタイトル -->
+            
+            <!-- ★追加: パンくずリスト -->
+            <nav class="breadcrumbs">
+                <a href="https://mofu-mitsu.github.io/"><i class="fa-solid fa-house"></i> ホーム</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="https://mofu-mitsu.github.io/contents.html">コンテンツ一覧</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <a href="https://mofu-mitsu.github.io/Torinooka_portal/">とりの丘ポータル</a>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>とりの丘人狼</span>
+            </nav>
+
+            <!-- ★修正: 動くSVGアイコンに変更！ -->
             <div class="title-logo">
-                <i class="fa-solid fa-moon"></i>
-                <i class="fa-solid fa-feather-pointed"></i>
+                <iconify-icon icon="line-md:moon-twotone" style="color: #ffd700;" width="60"></iconify-icon>
+                <iconify-icon icon="line-md:alert-twotone" style="color: #ff0055;" width="60"></iconify-icon>
             </div>
             <h1 class="game-title">TORI-OKA<br>WEREWOLF</h1>
             <p class="sub-title">とりの丘学園 混沌の人狼ゲーム</p>
+
+
             
             <!-- 名前・アイコン入力エリア -->
             <div class="input-area">
@@ -83,20 +110,28 @@
 
             </div>
 
-            <!-- ボタンエリア -->
-            <div class="title-buttons">
-                <button id="to-selection-btn" class="main-btn">
-                    キャラ選択へ <i class="fa-solid fa-chevron-right"></i>
-                </button>
-                <button id="spectator-mode-btn" class="main-btn spectator-btn">
-                    観戦モード <i class="fa-solid fa-tv"></i>
-                </button>
+             <div class="title-buttons">
+                <button id="to-selection-btn" class="main-btn">キャラ選択へ <i class="fa-solid fa-chevron-right"></i></button>
+                <button id="spectator-mode-btn" class="main-btn spectator-btn">観戦モード <iconify-icon icon="line-md:computer"></iconify-icon></button>
             </div>
-            
-            <button id="show-rules-btn" class="sub-btn">ルール・役職説明</button>
-            <a href="https://mofu-mitsu.github.io/" class="home-link"><i class="fa-solid fa-house"></i> ホームへ戻る</a>
-        </section>
+            <button id="show-rules-btn" class="sub-btn"><i class="fa-solid fa-book"></i> ルール・役職説明</button>
 
+            <!-- ★修正: 広告を一番下に移動！ -->
+            <div class="affiliate-banner" style="margin: 40px auto 20px; text-align: center; max-width: 90%;">
+                <!-- START MoshimoAffiliateEasyLink -->
+                <script type="text/javascript">
+                (function(b,c,f,g,a,d,e){b.MoshimoAffiliateObject=a;
+                b[a]=b[a]||function(){arguments.currentScript=c.currentScript
+                ||c.scripts[c.scripts.length-2];(b[a].q=b[a].q||[]).push(arguments)};
+                c.getElementById(a)||(d=c.createElement(f),d.src=g,
+                d.id=a,e=c.getElementsByTagName("body")[0],e.appendChild(d))})
+                (window,document,"script","//dn.msmstatic.com/site/cardlink/bundle.js?20220329","msmaflink");
+                msmaflink({"n":"ボードゲーム ワンナイト人狼 ワンナイト人狼 3人 から 7人 10歳以上 10分 テーブルゲーム アナログゲーム 人狼ゲーム 短時間 心理戦 定番 カードゲーム","b":"","t":"","d":"https:\/\/thumbnail.image.rakuten.co.jp","c_p":"\/@0_mall\/boardgame-sugorokuya\/cabinet\/07163115","p":["\/imgrc0073668500.jpg","\/imgrc0073668501.jpg","\/imgrc0073668502.jpg"],"u":{"u":"https:\/\/item.rakuten.co.jp\/boardgame-sugorokuya\/ot0069rkt\/","t":"rakuten","r_v":""},"v":"2.1","b_l":[{"id":1,"u_tx":"楽天市場で見る","u_bc":"#f76956","u_url":"https:\/\/item.rakuten.co.jp\/boardgame-sugorokuya\/ot0069rkt\/","a_id":5854625,"p_id":54,"pl_id":27059,"pc_id":54,"s_n":"rakuten","u_so":1}],"eid":"0lcyb","s":"s"});
+                </script>
+                <div id="msmaflink-0lcyb">リンク</div>
+                <!-- MoshimoAffiliateEasyLink END -->
+            </div>
+        </section>
         <!-- 2. キャラ選択画面 -->
         <section id="selection-screen" class="screen hidden">
             <!-- ▼ ヘッダー構造を変更 -->
@@ -106,8 +141,10 @@
                     <h2>参加メンバー選択</h2>
                     <p>現在選択中: <span id="selected-count">0</span> 人</p>
                 </div>
+                <button id="clear-selection-btn" class="clear-btn"><i class="fa-solid fa-trash-can"></i> 全解除</button>
                 <!-- レイアウトバランス用のダミー（必要なら） -->
                 <div style="width: 60px;"></div> 
+                <!-- ★追加: 右上の全解除ボタン -->
             </header>
 
             <div class="options-area">
@@ -348,6 +385,31 @@
             <div style="display:flex; gap:10px; justify-content:center; margin-top:20px;">
                 <button id="skip-yes-btn" class="main-btn" style="background:#ff0055;">はい</button>
                 <button id="skip-no-btn" class="sub-btn">いいえ</button>
+            </div>
+        </div>
+    </div>
+<!-- ★追加: トースト通知コンテナ -->
+        <div id="toast-container" class="toast-container"></div>
+
+        <!-- ★追加: お知らせモーダル（占い結果・怪盗など） -->
+        <div id="notification-modal" class="modal hidden">
+            <div class="modal-content" style="max-width: 400px;">
+                <h3 id="notification-title"><i class="fa-solid fa-bell"></i> お知らせ</h3>
+                <p id="notification-message" style="font-size:1.2rem; margin: 20px 0; color:#fff;"></p>
+                <div class="modal-footer">
+                    <button id="close-notification-btn" class="main-btn">OK</button>
+                </div>
+            </div>
+        </div>
+<!-- ★追加: 確認用モーダル (中断などの Yes/No) -->
+        <div id="confirm-modal" class="modal hidden">
+            <div class="modal-content" style="max-width: 400px;">
+                <h3 id="confirm-title"><i class="fa-solid fa-circle-question"></i> 確認</h3>
+                <p id="confirm-message" style="font-size:1.1rem; margin: 20px 0; color:#fff;"></p>
+                <div class="modal-footer" style="display:flex; gap:10px; justify-content:center;">
+                    <button id="confirm-yes-btn" class="main-btn" style="background:#ff0055;">はい</button>
+                    <button id="confirm-no-btn" class="sub-btn">いいえ</button>
+                </div>
             </div>
         </div>
     </div>

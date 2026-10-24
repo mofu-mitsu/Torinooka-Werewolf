@@ -75,7 +75,7 @@ let isSkipping = false;
 let isAutoPlaying = false; 
 let playerStats = { coCount: 0, selfDefendCount: 0 }; 
 
-const CLASSES = ["1-1", "1-2", "1-3", "1-4", "2-1", "2-2", "3-1", "3-2"];
+const CLASSES = ["1-1", "1-2", "1-3", "1-4", "2-1", "2-2", "3-1", "3-2", "M1-1", "M1-2", "M2-1", "M2-2", "M3-1","M3-2","E-A" ];
 
 // --- 2. DOM取得 ---
 // ... (DOM取得は前回と同じ) ...
@@ -247,7 +247,17 @@ function showCharProfile(char) {
     detailImg.src = `img/${char.img}.png`;
     detailImg.onerror = () => { detailImg.src = 'https://via.placeholder.com/70'; };
     detailName.innerText = char.fullName || char.name;
-    detailGender.innerHTML = char.gender === 'male' ? '<i class="fa-solid fa-mars"></i> 男子' : '<i class="fa-solid fa-venus"></i> 女子';
+    
+    // ★性別の3パターン判定
+    if (char.gender === 'male') {
+        detailGender.innerHTML = '<i class="fa-solid fa-mars" style="color:#4facfe;"></i> 男子';
+    } else if (char.gender === 'female') {
+        detailGender.innerHTML = '<i class="fa-solid fa-venus" style="color:#fa709a;"></i> 女子';
+    } else {
+        // "none" や未記入の場合は「性別なし」
+        detailGender.innerHTML = '<i class="fa-solid fa-genderless" style="color:#aaddff;"></i> 性別なし';
+    }
+
     detailMbti.innerText = char.mbti;
     detailClass.innerText = char.class;
     detailProfile.innerText = char.profile || "情報なし";
@@ -721,9 +731,15 @@ executeActionBtn.addEventListener("click", () => {
         const targetId = targetSelect.value;
         
         if (currentActionType !== "co") {
-            if (!targetId) { alert("対象を選んでください！"); return; }
+            if (!targetId) {
+                showToast("対象を選んでください！"); // ★変更
+                return;
+            }
             target = participants.find(p => p.id === targetId);
-            if (!target) { alert("対象が見つかりませんでした。"); return; }
+            if (!target) {
+                showToast("対象が見つかりませんでした。"); // ★変更
+                return;
+            }
         }
 
         // --- 1. 疑う ---
@@ -817,10 +833,10 @@ executeActionBtn.addEventListener("click", () => {
         consumeTurn();
 
     } catch(e) {
-        console.error("プレイヤー行動エラー:", e);
-        alert("エラーが発生しました。\n" + e.message);
-    }
-});
+            console.error("プレイヤー行動エラー:", e);
+            showToast("エラーが発生しました。"); // ★変更
+        }
+    });
 
 function consumeTurn() {
     remainingTurns--;
@@ -1719,7 +1735,10 @@ async function startNightPhase() {
         const target = participants.find(p => p.id === divineTargetId);
         if (me && me.role === "占い師" && me.isAlive) {
             let result = (target.role === "人狼") ? "人狼" : "人間";
-            alert(`🔮 占い結果: ${target.name} は 【${result}】 でした。`);
+            
+            // ★変更: alert からオシャレなモーダルへ（awaitで待つ）
+            await showNotification("🔮 占い結果", `${target.name} は 【${result}】 でした。`);
+            
             me.nightInfo = { targetId: target.id, result: result === "人狼" ? "black" : "white" };
         }
     }
@@ -1733,13 +1752,13 @@ async function startNightPhase() {
 // 【完全版】resolveNight
 // 夜の結果反映 & スキップ・観戦のループ継続処理
 // ==========================================
-function resolveNight(actions) {
+async function resolveNight(actions) {
     remainingTurns = MAX_TURNS; 
     updateTurnDisplay();
     playBgm("noon");
     addLog("system", "=== 朝が来ました ===");
     
-    // --- 1. 怪盗 ---
+    // 1. 怪盗
     if (actions.thief) {
         const thief = participants.find(p => p.role === "怪盗");
         const target = participants.find(p => p.id === actions.thief);
@@ -1747,7 +1766,11 @@ function resolveNight(actions) {
             const stolenRole = target.role;
             target.role = "村人";
             thief.role = stolenRole;
-            if (thief.isPlayer) alert(`🎩 怪盗成功！ あなたは ${stolenRole} になりました！`);
+            
+            // ★変更: alert からモーダルへ
+            if (thief.isPlayer) {
+                await showNotification("🎩 怪盗成功！", `あなたは ${stolenRole} になりました！`);
+            }
         }
     }
 
@@ -2073,18 +2096,158 @@ function addLog(charId, text, emotion = "normal") {
 // ★追加: 戻る・中断ボタンの制御
 // ==========================================
 // キャラ選択画面からタイトルへ
-document.getElementById("back-to-title-btn").addEventListener("click", () => {
-    selectionScreen.classList.add("hidden");
-    titleScreen.classList.remove("hidden");
-    playBgm("title");
-});
+const backToTitleBtn = document.getElementById("back-to-title-btn");
+if (backToTitleBtn) {
+    backToTitleBtn.addEventListener("click", () => {
+        selectionScreen.classList.add("hidden");
+        titleScreen.classList.remove("hidden");
+        playBgm("title");
+    });
+}
 
-// 中断ボタン（IDが exit-game-btn の場合）
-const exitBtn = document.getElementById("exit-game-btn-action");
-if (exitBtn) {
-    exitBtn.addEventListener("click", () => {
-        if(confirm("ゲームを中断してタイトルに戻りますか？")) {
+// ゲーム画面からタイトルへ (クラス名 exit-btn で複数まとめて処理)
+const exitBtns = document.querySelectorAll(".exit-btn");
+exitBtns.forEach(btn => {
+    btn.addEventListener("click", async () => {
+        // ★ダサい confirm() をやめて、専用モーダルで待つ！
+        const isOk = await showConfirm(
+            "<i class='fa-solid fa-door-open'></i> ゲーム中断", 
+            "ゲームを中断してタイトルに戻りますか？<br><span style='font-size:0.8rem; color:#aaa;'>(進行状況はリセットされます)</span>"
+        );
+        
+        if(isOk) {
             location.reload(); 
         }
     });
+});
+// ==========================================
+// ★追加: アラート代わりの通知機能
+// ==========================================
+function showToast(message) {
+    const container = document.getElementById('toast-container');
+    if (!container) return;
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerHTML = `<i class="fa-solid fa-circle-exclamation"></i> ${message}`;
+    container.appendChild(toast);
+    
+    setTimeout(() => {
+        if (container.contains(toast)) container.removeChild(toast);
+    }, 3000);
 }
+
+function showNotification(title, message) {
+    return new Promise(resolve => {
+        const modal = document.getElementById("notification-modal");
+        document.getElementById("notification-title").innerHTML = title;
+        document.getElementById("notification-message").innerHTML = message;
+        modal.classList.remove("hidden");
+        
+        document.getElementById("close-notification-btn").onclick = () => {
+            modal.classList.add("hidden");
+            resolve(); // OKを押したら進む
+        };
+    });
+}
+// ==========================================
+// ★追加: 選択式(Yes/No)のカスタムモーダル
+// ==========================================
+function showConfirm(title, message) {
+    return new Promise(resolve => {
+        const modal = document.getElementById("confirm-modal");
+        document.getElementById("confirm-title").innerHTML = title;
+        document.getElementById("confirm-message").innerHTML = message;
+        modal.classList.remove("hidden");
+        
+        // 「はい」を押した時
+        document.getElementById("confirm-yes-btn").onclick = () => {
+            modal.classList.add("hidden");
+            resolve(true); // true を返す
+        };
+        // 「いいえ」を押した時
+        document.getElementById("confirm-no-btn").onclick = () => {
+            modal.classList.add("hidden");
+            resolve(false); // false を返す
+        };
+    });
+}
+
+// ==========================================
+// ★追加: キャラクターの全解除機能
+// ==========================================
+document.getElementById("clear-selection-btn").addEventListener("click", () => {
+    if (selectedCharIds.length === 0) return; // 既に空なら何もしない
+    
+    selectedCharIds = []; // 選択リストを空にする
+    
+    // 画面上の選択枠（光ってるエフェクト）を全部消す
+    document.querySelectorAll(".char-card").forEach(card => {
+        card.classList.remove("selected");
+    });
+    
+    updateStartButton(); // 人数カウントとボタンを更新
+    showToast("選択をすべて解除しました。");
+});
+
+// ==========================================
+// ★追加: データの自動保存（キャッシュ機能）
+// ==========================================
+
+// ページ読み込み時に、保存されたデータを復元する
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. プレイヤー名の復元
+    const savedName = localStorage.getItem("torioka_playerName");
+    if (savedName) {
+        nameInput.value = savedName;
+        playerName = savedName;
+    }
+
+    // 2. カスタムアイコンの復元 (Base64形式の画像データ)
+    const savedIcon = localStorage.getItem("torioka_playerIcon");
+    if (savedIcon) {
+        playerCustomImg = savedIcon;
+        previewIcon.src = savedIcon;
+    }
+
+    // 3. 追加役職オプションの復元
+    const savedRoles = localStorage.getItem("torioka_selectedRoles");
+    if (savedRoles) {
+        const rolesArray = JSON.parse(savedRoles);
+        document.querySelectorAll(".role-opt").forEach(cb => {
+            // 保存されていた配列の中に自分がいたらチェックを入れる
+            cb.checked = rolesArray.includes(cb.value);
+        });
+    }
+});
+
+// --- 何か変更があったらその都度保存するイベント ---
+
+// 名前が入力されたら保存
+nameInput.addEventListener("change", (e) => {
+    localStorage.setItem("torioka_playerName", e.target.value.trim());
+});
+
+// 画像がアップロードされたら保存
+// (既存の playerIconInput の change イベントの中で playerCustomImg を更新しているので、そこに保存処理を相乗りさせる)
+playerIconInput.addEventListener("change", function(e) {
+    const file = e.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            playerCustomImg = e.target.result; 
+            previewIcon.src = playerCustomImg;
+            // ★画像をローカルストレージに保存
+            localStorage.setItem("torioka_playerIcon", playerCustomImg); 
+        }
+        reader.readAsDataURL(file);
+    }
+});
+
+// 役職オプションのチェックが切り替わったら保存
+document.querySelectorAll(".role-opt").forEach(cb => {
+    cb.addEventListener("change", () => {
+        // 現在チェックされているものをすべて集めて配列にする
+        const checkedRoles = Array.from(document.querySelectorAll(".role-opt:checked")).map(opt => opt.value);
+        localStorage.setItem("torioka_selectedRoles", JSON.stringify(checkedRoles));
+    });
+});
