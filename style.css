@@ -1583,3 +1583,146 @@ input[type="text"]:focus {
     align-items: center !important;
 }
 
+
+
+/* =========================================
+   レスポンシブ調整：タイトルボタンと参加メンバーヘッダー
+   ========================================= */
+
+/* タイトル画面：2つの主要ボタンを離して、幅に合わせて整列 */
+.title-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(16px, 3.5vw, 28px);
+    width: 100%;
+    margin: 28px auto 24px;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+.title-buttons .main-btn {
+    margin: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* 参加メンバー画面：左右のボタンと中央タイトルの間隔を確保 */
+.selection-header {
+    display: grid !important;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center !important;
+    column-gap: clamp(12px, 2.5vw, 24px);
+    row-gap: 16px;
+    width: 100%;
+    padding: 16px 8px !important;
+    box-sizing: border-box;
+}
+
+.selection-header > .header-center {
+    min-width: 0;
+    flex: initial !important;
+    padding: 0 8px;
+}
+
+.selection-header > .header-center h2 {
+    overflow-wrap: anywhere;
+    text-align: center;
+}
+
+.selection-header > .back-btn,
+.selection-header > .clear-btn {
+    position: static !important;
+    margin: 0 !important;
+    justify-self: center;
+    align-self: center;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* HTML内のレイアウト用ダミーは、Gridの幅を奪わないように非表示 */
+.selection-header > div[style*="width: 60px"] {
+    display: none !important;
+}
+
+/* タブレット・スマホ */
+@media screen and (max-width: 600px) {
+    .title-buttons {
+        gap: 20px;
+        margin: 24px auto 20px;
+    }
+
+    .title-buttons .main-btn {
+        width: min(100%, 420px);
+        min-height: 56px;
+        padding: 14px 18px;
+        white-space: normal;
+        line-height: 1.35;
+    }
+
+    .selection-header {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        column-gap: 14px;
+        row-gap: 18px;
+        padding: 72px 8px 18px !important;
+        margin-bottom: 22px !important;
+    }
+
+    .selection-header > .back-btn {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
+    }
+
+    .selection-header > .clear-btn {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+    }
+
+    .selection-header > .header-center {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        width: 100%;
+        margin: 0 !important;
+        padding: 0 4px;
+    }
+
+    .selection-header > .header-center h2 {
+        font-size: clamp(1.25rem, 5vw, 1.65rem);
+        line-height: 1.25;
+    }
+
+    .selection-header > .header-center p {
+        margin-top: 8px;
+        font-size: clamp(0.95rem, 3.8vw, 1.1rem);
+    }
+
+    .selection-header > .back-btn,
+    .selection-header > .clear-btn {
+        padding: 9px 12px;
+        font-size: clamp(0.82rem, 3.4vw, 0.95rem);
+        white-space: nowrap;
+    }
+}
+
+/* とても狭いスマホでもボタン同士が押し合わないようにする */
+@media screen and (max-width: 360px) {
+    .selection-header {
+        column-gap: 8px;
+        padding-right: 2px !important;
+        padding-left: 2px !important;
+    }
+
+    .selection-header > .back-btn,
+    .selection-header > .clear-btn {
+        padding: 8px 9px;
+        font-size: 0.8rem;
+    }
+
+    .title-buttons .main-btn {
+        padding: 12px 10px;
+        font-size: 0.95rem;
+    }
+}
