@@ -32738,7 +32738,7 @@ const charactersData = [
         fullName: "路熊 花音莉（ろくま　かおり）",
         gender: "female",
         class: "M1-1",
-        mbti: "ENFJ",
+        mbti: "ENFP",
         img: "kaori",
         profile: "クマ。おしゃべりで明るく女子力高め。実は思慮深く、期待に揺れやすいが価値観は守る。",
         params: { suspicion_base: 30, emotion: 70, logic: 40, aggressiveness: 30, influence: 70, mental: 50, trust_bias: {} },
