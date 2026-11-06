@@ -36309,7 +36309,7 @@ const charactersData = [
         fullName: "陽江 日葵（ようえ　ひまり）",
         gender: "female",
         class: "M1-2",
-        mbti: "ESFP",
+        mbti: "ENFJ",
         img: "himari",
         profile: "ひまわりモチーフ。太陽みたいに陽気で明るい。背は小さい。落とし物は絶対拾う。",
         params: { suspicion_base: 10, emotion: 90, logic: 20, aggressiveness: 40, influence: 70, mental: 90, trust_bias: {} },
@@ -55062,7 +55062,7 @@ const charactersData = [
         fullName: "亀貝 帆波（かめがい ほなみ）",
         gender: "none",
         class: "E-A",
-        mbti: "ESTP",
+        mbti: "ISTJ",
         img: "honami",
         profile: "クリオネ。普段は温厚だが、ご飯（処刑や襲撃）の時になると理性が飛んで豹変する二重人格。好物はリマキナ。",
         params: { suspicion_base: 45, emotion: 65, logic: 40, aggressiveness: 75, influence: 65, mental: 70, trust_bias: {} },
@@ -58505,7 +58505,6 @@ const charactersData = [
         }
     },
 ];
-
 
 
 
